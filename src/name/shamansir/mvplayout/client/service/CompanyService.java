@@ -13,7 +13,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  * The client side stub for the RPC service.
  */
 @RemoteServiceRelativePath("companies")
-public interface CompaniesService extends RemoteService {
+public interface CompanyService extends RemoteService {
 	Set<Company> getCompanies(String filter) throws NoMatchesException;
 	Company getCompany(int cid) throws ItemNotFoundException;
 	int saveCompany(Company company); 

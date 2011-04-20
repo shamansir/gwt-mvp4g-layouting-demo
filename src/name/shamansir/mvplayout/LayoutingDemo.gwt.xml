@@ -2,12 +2,9 @@
 <module rename-to='LayoutingDemo'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
-  <inherits name="com.google.gwt.json.JSON" />    
-  <inherits name="com.google.gwt.inject.Inject"/> 
-  
+  <inherits name="com.google.gwt.inject.Inject"/>   
   <inherits name="com.google.gwt.i18n.I18N" />
   
-
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->
   <!-- any one of the following lines.                            -->
@@ -16,12 +13,15 @@
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
 
   <!-- Other module inherits                                      -->
+  
+  <inherits name='com.mvp4g.Mvp4gModule' />  
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='name.shamansir.mvplayout.client.LayoutingDemo'/>
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
+  <source path='pages'/>
   <source path='shared'/>
 
 </module>

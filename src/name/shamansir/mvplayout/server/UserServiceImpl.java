@@ -5,7 +5,7 @@ import java.util.Set;
 
 import name.shamansir.mvplayout.client.exception.ItemNotFoundException;
 import name.shamansir.mvplayout.client.exception.NoMatchesException;
-import name.shamansir.mvplayout.client.service.UsersService;
+import name.shamansir.mvplayout.client.service.UserService;
 import name.shamansir.mvplayout.shared.dao.User;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -14,8 +14,8 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
  * The server side implementation of the RPC service.
  */
 @SuppressWarnings("serial")
-public class UsersServiceImpl extends RemoteServiceServlet implements
-		UsersService {
+public class UserServiceImpl extends RemoteServiceServlet implements
+		UserService {
 
 	@Override
 	public Set<User> getUsers(String filter) throws NoMatchesException {

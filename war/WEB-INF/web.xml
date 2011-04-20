@@ -6,29 +6,41 @@
 <web-app>
     
   <!-- Default page to serve -->
+  
   <welcome-file-list>
     <welcome-file>LayoutingDemo.html</welcome-file>
   </welcome-file-list>
   
   <!-- Servlets -->
+  
   <servlet>
     <servlet-name>usersServlet</servlet-name>
-    <servlet-class>name.shamansir.mvplayout.server.UsersServiceImpl</servlet-class>
+    <servlet-class>name.shamansir.mvplayout.server.UserServiceImpl</servlet-class>
   </servlet>
+  
+  <servlet>
+    <servlet-name>companiesServlet</servlet-name>
+    <servlet-class>name.shamansir.mvplayout.server.CompanyServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>newsServlet</servlet-name>
+    <servlet-class>name.shamansir.mvplayout.server.NewsServiceImpl</servlet-class>
+  </servlet>  
   
   <servlet-mapping>
     <servlet-name>usersServlet</servlet-name>
     <url-pattern>/LayoutingDemo/users</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>companiesServlet</servlet-name>
+    <url-pattern>/LayoutingDemo/companies</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>newsServlet</servlet-name>
+    <url-pattern>/LayoutingDemo/news</url-pattern>
   </servlet-mapping>  
   
-    <!-- 
-    <servlet>
-      <servlet-name>remoteLoggerServiceImpl</servlet-name>
-      <servlet-class>com.allen_sauer.gwt.log.server.RemoteLoggerServiceImpl</servlet-class>
-    </servlet>
-    <servlet-mapping>
-      <servlet-name>remoteLoggerServiceImpl</servlet-name>
-      <url-pattern>/LayoutingDemo/gwt-log</url-pattern>
-    </servlet-mapping>  -->  
-
 </web-app>

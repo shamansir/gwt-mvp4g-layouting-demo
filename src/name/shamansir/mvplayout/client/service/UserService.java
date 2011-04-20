@@ -13,7 +13,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  * The client side stub for the RPC service.
  */
 @RemoteServiceRelativePath("users")
-public interface UsersService extends RemoteService {
+public interface UserService extends RemoteService {
 	Set<User> getUsers(String filter) throws NoMatchesException;
 	User getUser(int uid) throws ItemNotFoundException;
 	int saveUser(User user); 

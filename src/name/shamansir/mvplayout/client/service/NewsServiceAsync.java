@@ -7,7 +7,7 @@ import name.shamansir.mvplayout.shared.dao.NewsItem;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 /**
- * The async counterpart of <code>UsersService</code>.
+ * The async counterpart of <code>UserService</code>.
  */
 public interface NewsServiceAsync {
 	void getNews(String filter, AsyncCallback<Set<NewsItem>> callback);

@@ -5,7 +5,7 @@ import java.util.Set;
 
 import name.shamansir.mvplayout.client.exception.ItemNotFoundException;
 import name.shamansir.mvplayout.client.exception.NoMatchesException;
-import name.shamansir.mvplayout.client.service.CompaniesService;
+import name.shamansir.mvplayout.client.service.CompanyService;
 import name.shamansir.mvplayout.shared.dao.Company;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -14,8 +14,8 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
  * The server side implementation of the RPC service.
  */
 @SuppressWarnings("serial")
-public class CompaniesServiceImpl extends RemoteServiceServlet implements
-		CompaniesService {
+public class CompanyServiceImpl extends RemoteServiceServlet implements
+		CompanyService {
 
 	@Override
 	public Set<Company> getCompanies(String filter) throws NoMatchesException {
