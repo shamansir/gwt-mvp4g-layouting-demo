@@ -4,11 +4,11 @@ import java.util.Date;
 
 import name.shamansir.mvplayout.shared.Card;
 
-public class News extends Card {
+public class NewsItem extends Card {
 	
-	public News() { super(); };	
+	public NewsItem() { super(); };	
 	
-	public News(int nid) { super(nid); }
+	public NewsItem(int nid) { super(nid); }
 	
 	public String title;
 	public String text;

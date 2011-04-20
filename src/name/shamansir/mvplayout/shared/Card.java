@@ -4,7 +4,7 @@ import com.google.gwt.user.client.rpc.IsSerializable;
 
 public class Card implements IsSerializable {
 	
-	private final int id;
+	private int id;
 
 	protected Card() {
 		this(-1);

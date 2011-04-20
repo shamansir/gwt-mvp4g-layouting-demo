@@ -3,7 +3,8 @@ package name.shamansir.mvplayout.server;
 import java.util.HashSet;
 import java.util.Set;
 
-import name.shamansir.mvplayout.client.connection.NoMatchesException;
+import name.shamansir.mvplayout.client.exception.ItemNotFoundException;
+import name.shamansir.mvplayout.client.exception.NoMatchesException;
 import name.shamansir.mvplayout.client.service.UsersService;
 import name.shamansir.mvplayout.shared.dao.User;
 
@@ -22,7 +23,12 @@ public class UsersServiceImpl extends RemoteServiceServlet implements
 	}
 
 	@Override
-	public User getUser(int uid) throws NoMatchesException {
+	public User getUser(int uid) throws ItemNotFoundException {
 		return new User();
+	}
+
+	@Override
+	public int saveUser(User user) {
+		return -1;
 	}
 }
