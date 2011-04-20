@@ -1,6 +1,11 @@
 package name.shamansir.mvplayout.client;
 
-import name.shamansir.mvplayout.shared.FieldVerifier;
+import java.util.Set;
+
+import name.shamansir.mvplayout.client.service.UsersService;
+import name.shamansir.mvplayout.client.service.UsersServiceAsync;
+import name.shamansir.mvplayout.shared.dao.User;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -30,10 +35,10 @@ public class LayoutingDemo implements EntryPoint {
 			+ "connection and try again.";
 
 	/**
-	 * Create a remote service proxy to talk to the server-side Greeting service.
+	 * Create a remote service proxy to talk to the server-side UsersService service.
 	 */
-	private final GreetingServiceAsync greetingService = GWT
-			.create(GreetingService.class);
+	private final UsersServiceAsync usersService = GWT
+			.create(UsersService.class);
 
 	/**
 	 * This is the entry point method.
@@ -110,33 +115,31 @@ public class LayoutingDemo implements EntryPoint {
 				// First, we validate the input.
 				errorLabel.setText("");
 				String textToServer = nameField.getText();
-				if (!FieldVerifier.isValidName(textToServer)) {
-					errorLabel.setText("Please enter at least four characters");
-					return;
-				}
-
+				
 				// Then, we send the input to the server.
 				sendButton.setEnabled(false);
 				textToServerLabel.setText(textToServer);
 				serverResponseLabel.setText("");
-				greetingService.greetServer(textToServer,
-						new AsyncCallback<String>() {
+				usersService.getUsers("",
+						new AsyncCallback<Set<User>>() {
+							@Override
 							public void onFailure(Throwable caught) {
 								// Show the RPC error message to the user
 								dialogBox
 										.setText("Remote Procedure Call - Failure");
 								serverResponseLabel
 										.addStyleName("serverResponseLabelError");
-								serverResponseLabel.setHTML(SERVER_ERROR);
+								serverResponseLabel.setHTML(SERVER_ERROR + " " + caught.getLocalizedMessage());
 								dialogBox.center();
 								closeButton.setFocus(true);
 							}
 
-							public void onSuccess(String result) {
+							@Override
+							public void onSuccess(Set<User> users) {
 								dialogBox.setText("Remote Procedure Call");
 								serverResponseLabel
 										.removeStyleName("serverResponseLabelError");
-								serverResponseLabel.setHTML(result);
+								serverResponseLabel.setHTML(users.toString());
 								dialogBox.center();
 								closeButton.setFocus(true);
 							}

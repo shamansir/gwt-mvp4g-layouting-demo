@@ -4,3 +4,6 @@
 
 war/LayoutingDemo/
 war/WEB-INF/deploy
+war/WEB-INF/classes
+
+hs_err_pid*.log

@@ -2,6 +2,11 @@
 <module rename-to='LayoutingDemo'>
   <!-- Inherit the core Web Toolkit stuff.                        -->
   <inherits name='com.google.gwt.user.User'/>
+  <inherits name="com.google.gwt.json.JSON" />    
+  <inherits name="com.google.gwt.inject.Inject"/> 
+  
+  <inherits name="com.google.gwt.i18n.I18N" />
+  
 
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->

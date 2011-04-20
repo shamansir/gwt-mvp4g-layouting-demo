@@ -1,0 +1,28 @@
+package name.shamansir.mvplayout.server;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import name.shamansir.mvplayout.client.connection.NoMatchesException;
+import name.shamansir.mvplayout.client.service.UsersService;
+import name.shamansir.mvplayout.shared.dao.User;
+
+import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+
+/**
+ * The server side implementation of the RPC service.
+ */
+@SuppressWarnings("serial")
+public class UsersServiceImpl extends RemoteServiceServlet implements
+		UsersService {
+
+	@Override
+	public Set<User> getUsers(String filter) throws NoMatchesException {
+		return new HashSet<User>();
+	}
+
+	@Override
+	public User getUser(int uid) throws NoMatchesException {
+		return new User();
+	}
+}
