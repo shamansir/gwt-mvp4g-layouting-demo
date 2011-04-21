@@ -19,4 +19,6 @@ public abstract class Layout {
 	public abstract HasWidgets place(Place place);
 	public abstract Map<Place, HasWidgets> places();
 	
+	public static enum State { NO_DATA, HAS_DATA, LOADING_DATA, NO_MATCHES };
+	
 }
