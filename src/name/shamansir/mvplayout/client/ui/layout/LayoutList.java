@@ -1,27 +1,26 @@
 package name.shamansir.mvplayout.client.ui.layout;
 
-import java.util.Map;
-
 import com.google.gwt.user.client.ui.HasWidgets;
 
-import name.shamansir.mvplayout.client.ui.layout.base.Layout;
+import name.shamansir.mvplayout.client.ui.layout.base.LayoutWithState;
 import name.shamansir.mvplayout.client.ui.layout.base.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.layout.base.Layouts.Place;
 
-public class LayoutList extends Layout {
+public class LayoutList extends LayoutWithState {
 
 	public LayoutList() {
-		super(LayoutId.LIST);
+		super(LayoutId.EDIT, new Place[] { Place.A, Place.B, Place.C, Place.STATUS } );
 	}
 
 	@Override
-	public HasWidgets place(Place place) {
+	public void prepare(State state) {
 		// TODO Auto-generated method stub
-		return null;
+		
 	}
 
 	@Override
-	public Map<Place, HasWidgets> places() {
+	protected HasWidgets preparePanel(Place place)
+			throws IndexOutOfBoundsException {
 		// TODO Auto-generated method stub
 		return null;
 	}

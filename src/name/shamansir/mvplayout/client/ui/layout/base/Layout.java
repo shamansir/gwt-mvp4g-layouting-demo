@@ -1,5 +1,6 @@
 package name.shamansir.mvplayout.client.ui.layout.base;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import name.shamansir.mvplayout.client.ui.layout.base.Layouts.LayoutId;
@@ -10,15 +11,39 @@ import com.google.gwt.user.client.ui.HasWidgets;
 public abstract class Layout {
 	
 	private final LayoutId id;
+	private final Place[] places;
+	protected final Map<Place, HasWidgets> panels = new HashMap<Place, HasWidgets>();
 	
-	protected Layout(LayoutId id) {
+	private boolean panelsLoaded;	
+	
+	protected Layout(LayoutId id, Place[] places) {
 		this.id = id;
+		this.places = places;		
 	}
 
 	public LayoutId id() { return id; }
-	public abstract HasWidgets place(Place place);
-	public abstract Map<Place, HasWidgets> places();
 	
-	public static enum State { NO_DATA, HAS_DATA, LOADING_DATA, NO_MATCHES };
+	protected abstract HasWidgets preparePanel(Place place) throws IndexOutOfBoundsException;	
+	
+	public final Place[] places() { return places; };	
+	public final boolean has(Place place) { return panels.containsKey(place); };
+	
+	public final HasWidgets panel(Place place) { ensurePanelsLoaded(); return panels.get(place); }	
+	protected final Map<Place, HasWidgets> panels() { ensurePanelsLoaded(); return panels; }
+ 	
+	
+	protected void ensurePanelsLoaded() {
+		if (panelsLoaded) return;
+		for (Place place: this.places) {
+			this.panels.put(place, preparePanel(place));
+		}
+		panelsLoaded = true;
+	}
+	
+	public void clear() {
+		for (Place place: this.places) {
+			panels.get(place).clear();
+		}
+	}	
 	
 }

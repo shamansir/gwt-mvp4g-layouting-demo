@@ -1,7 +1,5 @@
 package name.shamansir.mvplayout.client.ui.layout;
 
-import java.util.Map;
-
 import com.google.gwt.user.client.ui.HasWidgets;
 
 import name.shamansir.mvplayout.client.ui.layout.base.Layout;
@@ -11,19 +9,12 @@ import name.shamansir.mvplayout.client.ui.layout.base.Layouts.Place;
 public class LayoutEdit extends Layout {
 
 	public LayoutEdit() {
-		super(LayoutId.EDIT);
+		super(LayoutId.EDIT, new Place[] { Place.A, Place.B, Place.C, Place.D } );
 	}
 
 	@Override
-	public HasWidgets place(Place place) {
-		// TODO Auto-generated method stub
+	protected HasWidgets preparePanel(Place place)
+			throws IndexOutOfBoundsException {
 		return null;
 	}
-
-	@Override
-	public Map<Place, HasWidgets> places() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 }
