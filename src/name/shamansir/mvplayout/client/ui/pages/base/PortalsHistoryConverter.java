@@ -18,7 +18,20 @@ public class PortalsHistoryConverter<E extends ChildEventBus> implements History
 	
 	@Override
 	public final void convertFromToken(String historyName, String param, E eventBus) {
-			
+		
+		/*
+		// get current URL and portal
+		final PortalUrl url = PortalUrl.fromEvent(group, event, param);
+		final Portal view = url.getView();
+		
+		// prepare layout
+		eventBus.newPortal(view, layoutBuilder.make(view, eventBus));
+		
+		// dispatch current URL
+		if (!convertFromUrl(url, url.getView(), eventBus) && !PortalUrl.call(url, eventBus)) {
+			eventBus.dispatch(event, param);
+		} */
+		
 	}
 
 	@Override
