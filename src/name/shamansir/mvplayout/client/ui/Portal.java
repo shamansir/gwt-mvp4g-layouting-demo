@@ -1,7 +1,6 @@
 package name.shamansir.mvplayout.client.ui;
 
-import name.shamansir.mvplayout.client.ui.base.MakesLink;
-import name.shamansir.mvplayout.client.ui.layout.base.Layouts.LayoutId;
+import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 
 public enum Portal implements MakesLink {
 	
