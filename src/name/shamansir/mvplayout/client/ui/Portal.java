@@ -3,9 +3,8 @@ package name.shamansir.mvplayout.client.ui;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
-
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
+import name.shamansir.mvplayout.client.utils.StringUtils;
 
 public enum Portal implements MakesLink {
 	

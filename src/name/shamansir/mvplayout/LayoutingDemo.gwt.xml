@@ -5,6 +5,8 @@
   <inherits name="com.google.gwt.inject.Inject"/>   
   <inherits name="com.google.gwt.i18n.I18N" />
   
+  <inherits name="com.allen_sauer.gwt.log.gwt-log-DEBUG" />  
+  
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->
   <!-- any one of the following lines.                            -->
@@ -18,7 +20,7 @@
 
   <!-- Specify the app entry point class.                         -->
   <entry-point class='name.shamansir.mvplayout.client.LayoutingDemo'/>
-
+  
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
   <source path='shared'/>
