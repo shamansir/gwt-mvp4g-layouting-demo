@@ -6,9 +6,10 @@ import java.util.Map;
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 
+import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasWidgets;
 
-public abstract class Layout {
+public abstract class Layout extends Composite {
 	
 	private final LayoutId id;
 	private final Place[] places;

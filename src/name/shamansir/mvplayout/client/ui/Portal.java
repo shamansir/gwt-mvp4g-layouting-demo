@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.google.appengine.repackaged.com.google.common.base.StringUtil;
-
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 
 public enum Portal implements MakesLink {
@@ -58,11 +56,52 @@ public enum Portal implements MakesLink {
 	        this.params.add(value);
 	        return this;
 	    }
+	    
+        public PortalUrl addParams(String... values) {
+            for (String value: values) this.params.add(value);
+            return this;
+        }	    
+	    
+        public Portal view() {
+            return portal;
+        }	    
 
         @Override
         public String makeLink() {
             return portal.makeLink() + PARAM_MARKER + StringUtils.join(params, PARAM_DELIM);
         }
+
+        public static PortalUrl fromEvent(Group group, String event,
+                String param) {
+            return null;
+        }
+        
+	}
+	
+	public static interface UrlBuilder {
+	    public String build(Portal portal, String... params);
+	    public String parameters(String... values);
+	}
+	
+	public static class PortalUrlBuilder implements UrlBuilder {
+	    
+	    private static PortalUrlBuilder instance;
+	    
+	    private PortalUrlBuilder() { };
+	    
+	    public String build(Portal portal, String... params) {
+	        return new PortalUrl(portal).addParams(params).makeLink();
+	    }
+	    
+        public String parameters(String... values) {
+            return StringUtils.join(values, PARAM_DELIM);
+        }
+        
+        public static PortalUrlBuilder get() {
+            if (instance == null) return (instance = new PortalUrlBuilder());
+            else return instance;
+        }
+	    
 	    
 	}
 	

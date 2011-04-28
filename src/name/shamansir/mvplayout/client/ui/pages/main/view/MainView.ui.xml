@@ -3,14 +3,14 @@
     xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
 
     <gwt:VerticalPanel>
-        <gwt:cell>
-            <gwt:HTMLPanel><h1>Hello</h1></gwt:HTMLPanel>
+        <gwt:cell width="100%">
+            <gwt:HTMLPanel><h1>Toolbar</h1></gwt:HTMLPanel>
         </gwt:cell>
-        <gwt:cell>
-            <gwt:HTMLPanel><h2>My</h2></gwt:HTMLPanel>
+        <gwt:cell width="100%">
+            <gwt:FlowPanel ui:field="layoutHolder" />
         </gwt:cell>
-        <gwt:cell>
-            <gwt:HTMLPanel><h3>Friend</h3></gwt:HTMLPanel>
+        <gwt:cell width="100%">
+            <gwt:HTMLPanel><h1>Footer</h1></gwt:HTMLPanel>
         </gwt:cell> 
     </gwt:VerticalPanel>
 

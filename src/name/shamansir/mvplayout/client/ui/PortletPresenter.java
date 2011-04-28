@@ -1,30 +1,19 @@
 package name.shamansir.mvplayout.client.ui;
 
-public class PortletPresenter {
+import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.Widget;
+import com.mvp4g.client.event.EventBus;
+import com.mvp4g.client.presenter.LazyPresenter;
+import com.mvp4g.client.view.LazyView;
 
-	/*
-	@Override public abstract void bindView();
-	
-	@Override
-	public final void start() { super.start(); }	
-	
-	// protected void beforeProject(HasWidgets where) { };
-	// protected void afterProject(HasWidgets where) { };
-	
-	@FromEventBus(projectingEvent = true)
-	// TODO: call using event forwarded to parent ?	
-	public final void project(HasWidgets where) {
-		Log.debug("Projecting " + this + "(" + view.getIdCode() + ") to the " + where);		
-		view.beforeProject(where);
-		eventBus.project(where, (Widget)view);
-		view.afterProject(where);
+public abstract class PortletPresenter<V extends LazyView,
+                                       E extends EventBus> 
+                      extends LazyPresenter<V, E>{
+
+	protected final void project(HasWidgets where) {
+		// Log.debug("Projecting " + this + "(" + view.id() + ") to the " + where);		
+        where.clear();
+        where.add((Widget)view);
 	}
-	
-	@FromEventBus(projectingEvent = true)
-	public final void projectAndStart(HasWidgets where) {
-		project(where);
-		start();
-	}
-	 */	
-	
+		
 }
