@@ -8,6 +8,7 @@ import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.PortalPresenter;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 
+import com.google.gwt.user.client.ui.HasWidgets;
 import com.mvp4g.client.view.LazyView;
 
 /**
@@ -39,5 +40,17 @@ public abstract class StatedPortalPresenter<V extends ViewWithStates & LazyView,
     public void bindView() {
         state = new StateDirector(view, eventBus);
     }
+    
+    public void projectEmpty(HasWidgets where) {
+        project(where, view.getEmptyView());
+    }
+    
+    public void projectLoading(HasWidgets where) {
+        
+    }
+    
+    public void projectNoMatches(HasWidgets where) {
+        
+    }    
 
 }

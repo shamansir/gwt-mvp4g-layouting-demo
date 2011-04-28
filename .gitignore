@@ -4,6 +4,7 @@
 .settings/
 .gwt/
 .externalToolBuilders/
+.apt_generated/
 
 war/LayoutingDemo/
 war/WEB-INF/deploy

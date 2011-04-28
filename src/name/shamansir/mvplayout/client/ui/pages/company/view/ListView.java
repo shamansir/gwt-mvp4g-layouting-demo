@@ -1,6 +1,6 @@
 package name.shamansir.mvplayout.client.ui.pages.company.view;
 
-import name.shamansir.mvplayout.client.ui.pages.user.presenter.ListPresenter.IListView;
+import name.shamansir.mvplayout.client.ui.pages.company.presenter.ListPresenter.IListView;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;

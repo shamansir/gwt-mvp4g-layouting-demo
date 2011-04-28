@@ -6,7 +6,7 @@ import com.mvp4g.client.annotation.Events;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 import name.shamansir.mvplayout.client.ui.pages.user.view.ListView;
 
-@Events(startView = ListView.class)
+@Events(module = UserModule.class, startView = ListView.class)
 public interface UserEventBus extends ChildEventBus {
 	
 	@Event(name = "list", navigationEvent = true)

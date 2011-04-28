@@ -5,7 +5,7 @@ package name.shamansir.mvplayout.client.ui.state;
 
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
-import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.Widget;
 
 /**
  * <dl>
@@ -25,8 +25,8 @@ public interface ViewWithStates {
     
     public void prepareFor(State to);    
     
-    public HasWidgets getEmptyView();
-    public HasWidgets getLoadingView();
-    public HasWidgets getNoMathesView();
+    public Widget getEmptyView();
+    public Widget getLoadingView();
+    public Widget getNoMathesView();    
 
 }
