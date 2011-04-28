@@ -1,11 +1,11 @@
 package name.shamansir.mvplayout.client.ui.pages.main.presenter;
 
 import name.shamansir.mvplayout.client.ui.Layout;
-import name.shamansir.mvplayout.client.ui.LayoutWithState.State;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.client.ui.pages.main.MainEventBus;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView;
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 import com.allen_sauer.gwt.log.client.Log;
 import com.mvp4g.client.annotation.Presenter;

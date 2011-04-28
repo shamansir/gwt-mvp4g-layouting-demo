@@ -6,10 +6,11 @@ import java.util.Map;
 import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.user.client.ui.HasWidgets;
 
-import name.shamansir.mvplayout.client.ui.LayoutWithState.State;
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState;
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 public abstract class LayoutBuilder<E extends ChildEventBus> {
 	

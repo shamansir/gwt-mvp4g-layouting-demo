@@ -2,9 +2,9 @@ package name.shamansir.mvplayout.client.ui.layout;
 
 import com.google.gwt.user.client.ui.HasWidgets;
 
-import name.shamansir.mvplayout.client.ui.LayoutWithState;
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState;
 
 public class LayoutList extends LayoutWithState {
 

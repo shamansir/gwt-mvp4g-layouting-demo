@@ -1,7 +1,9 @@
-package name.shamansir.mvplayout.client.ui;
+package name.shamansir.mvplayout.client.ui.state;
 
 import com.google.gwt.user.client.ui.HasWidgets;
 
+import name.shamansir.mvplayout.client.ui.Layout;
+import name.shamansir.mvplayout.client.ui.Layouts;
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 

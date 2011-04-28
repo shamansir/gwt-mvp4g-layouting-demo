@@ -7,9 +7,9 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import name.shamansir.mvplayout.client.ui.Layout;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder;
 import name.shamansir.mvplayout.client.ui.Portal;
-import name.shamansir.mvplayout.client.ui.LayoutWithState.State;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.company.CompanyEventBus;
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 public class CompanyLayoutBuilder extends LayoutBuilder<CompanyEventBus> {
 

@@ -1,26 +1,30 @@
-package name.shamansir.mvplayout.client.ui;
+package name.shamansir.mvplayout.client.ui.state;
+
+import java.util.Collection;
+
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 public final class StateDirector {
 	
-	/* private final ViewWithStatePanels view;
-	private final EventBusSupportsStates eventBus;
+	private final ViewWithStates view;
+	private final HandlesStates reactor;
 	
-	protected StateDirector(ViewWithStatePanels view, EventBusSupportsStates eventBus) {
+	protected StateDirector(ViewWithStates view, HandlesStates reactor) {
 		this.view = view;
-		this.eventBus = eventBus;
+		this.reactor = reactor;
 	}
 	
 	public final void update() {
-		eventBus.updateState(State.LOADING_DATA);
+	    reactor.updateState(State.LOADING_DATA);
 		view.prepareFor(State.LOADING_DATA);
 	}
 	
 	public final void update(int dataSize) {
 		if (dataSize > 0) {
-			eventBus.updateState(State.HAS_DATA);
+		    reactor.updateState(State.HAS_DATA);
 			view.prepareFor(State.HAS_DATA);
 		} else {
-			eventBus.updateState(State.NO_DATA);
+		    reactor.updateState(State.NO_DATA);
 			view.prepareFor(State.NO_DATA);
 		}
 	}	
@@ -56,7 +60,7 @@ public final class StateDirector {
 	}
 	
 	public final void update(State to) {
-		eventBus.updateState(to);
+		reactor.updateState(to);
 		view.prepareFor(to);
 	}	
 	
@@ -67,7 +71,15 @@ public final class StateDirector {
 	public final void gotData(Collection<?> data) { update(data); };
 	public final void gotData(int size) { update(size); };
 	public final void check(Collection<?> data) { update(data); };	
-	public final void check(int size) { update(size); };*/
+	public final void check(int size) { update(size); };
 
+	public static interface Filter<What> {
+	    public boolean matches(What what);	    
+	}
+	
+	public static interface MatchHandler<Type> {
+	    public void handle(Type subject, boolean matched);
+	}
+	
 }
 
