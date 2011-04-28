@@ -2,6 +2,8 @@
 .project
 .factorypath
 .settings/
+.gwt/
+.externalToolBuilders/
 
 war/LayoutingDemo/
 war/WEB-INF/deploy

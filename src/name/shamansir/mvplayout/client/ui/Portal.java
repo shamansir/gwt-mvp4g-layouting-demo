@@ -1,5 +1,12 @@
 package name.shamansir.mvplayout.client.ui;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.commons.lang.StringUtils;
+
+import com.google.appengine.repackaged.com.google.common.base.StringUtil;
+
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 
 public enum Portal implements MakesLink {
@@ -16,6 +23,10 @@ public enum Portal implements MakesLink {
 	COMPANY_EDIT(LayoutId.EDIT, Group.COMPANY, "edit"),
 	COMPANY_SHOW(LayoutId.ITEM, Group.COMPANY, "show");
 	
+	public static final String EVENT_DELIM = "/";
+	public static final String PARAM_MARKER = "/";
+	public static final String PARAM_DELIM = "/";
+	
 	public enum Group { USER, NEWS, COMPANY };
 	
 	public final LayoutId layout;
@@ -30,13 +41,29 @@ public enum Portal implements MakesLink {
 
 	@Override
 	public String makeLink() {
-		return null;
+		return group.name() + EVENT_DELIM + event;
 	}
 
-	@Override
-	public String makeHistoryLink() {
-		return null;
+	public static class PortalUrl implements MakesLink {
+	    
+	    private final Portal portal;
+	    private final List<String> params;
+	    
+	    public PortalUrl(Portal portal) {
+	        this.portal = portal;
+	        this.params = new ArrayList<String>();
+	    }
+	    
+	    public PortalUrl addParam(String value) {
+	        this.params.add(value);
+	        return this;
+	    }
+
+        @Override
+        public String makeLink() {
+            return portal.makeLink() + PARAM_MARKER + StringUtils.join(params, PARAM_DELIM);
+        }
+	    
 	}
-	
 	
 }
