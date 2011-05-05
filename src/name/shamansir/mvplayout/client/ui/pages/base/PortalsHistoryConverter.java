@@ -1,5 +1,6 @@
 package name.shamansir.mvplayout.client.ui.pages.base;
 
+import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder;
 import name.shamansir.mvplayout.client.ui.LayoutBuilders;
 import name.shamansir.mvplayout.client.ui.Portal;
@@ -21,15 +22,23 @@ public abstract class PortalsHistoryConverter<E extends ChildEventBus> implement
 	@Override
 	public final void convertFromToken(String event, String param, E eventBus) {
 		
-		// get current URL and portal
-		final PortalUrl url = PortalUrl.fromEvent(group, event, param);
-		final Portal view = url.view();
+		try {
+
+			// get current URL and portal
+			final PortalUrl url = PortalUrl.fromEvent(group, event, param);
+			final Portal view = url.view();
 		
-		// prepare layout
-		eventBus.newPortal(view, layoutBuilder.make(view, eventBus));
+			// prepare layout
+			eventBus.newPortal(view, layoutBuilder.make(view, eventBus));
 		
-		// dispatch current URL
-		convertFromUrl(url, url.view(), eventBus);
+			// dispatch current URL
+			convertFromUrl(url, url.view(), eventBus);
+			
+		} catch (PortalNotFoundException pnfe) {
+			
+			eventBus.portalNotFound(pnfe);
+			
+		}
 		
 	}
 	
