@@ -16,6 +16,10 @@ public class UserLayoutBuilder extends LayoutBuilder<UserEventBus> {
 	@Override
 	protected boolean layout(Portal view, Layout layout, State state,
 			Map<Place, HasWidgets> panels, UserEventBus eventBus) {
+		
+		switch (view) {
+		
+		}
 		// TODO Auto-generated method stub
 		
 		/*

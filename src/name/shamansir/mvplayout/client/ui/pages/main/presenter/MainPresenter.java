@@ -68,16 +68,12 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	view.switchLayout(currentBuilder.build(state));		
     }
     
-    public void clearPage() {  view.clear(); }    
+    public void clearPage() { view.clear(); }    
     
     public void onPortalNotFound(PortalNotFoundException pnfe) { 
     	Log.debug("Portal not found: " + pnfe.getLocalizedMessage());
     };
-    /*
-	public void forceLayout(LayoutId layout) { view.switchLayout(LayoutFactory.getLayout(layout)); }
-	
-	public void project(HasWidgets where, Widget what) { view.project(where, what); }
-	
-	public void changeWidget(Place where, Widget widget) { view.changeWidget(where, widget); } */
+    
+    /* public void forceLayout(LayoutId layout) { view.switchLayout(LayoutFactory.getLayout(layout)); } */
 	
 }

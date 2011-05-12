@@ -27,6 +27,6 @@ public interface ViewWithStates {
     
     public Widget getEmptyView();
     public Widget getLoadingView();
-    public Widget getNoMathesView();    
+    public Widget getNoMatchesView();    
 
 }

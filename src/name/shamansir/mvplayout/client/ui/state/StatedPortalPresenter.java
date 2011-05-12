@@ -46,11 +46,11 @@ public abstract class StatedPortalPresenter<V extends ViewWithStates & LazyView,
     }
     
     public void projectLoading(HasWidgets where) {
-        
+    	project(where, view.getLoadingView());
     }
     
     public void projectNoMatches(HasWidgets where) {
-        
+    	project(where, view.getNoMatchesView());
     }    
 
 }

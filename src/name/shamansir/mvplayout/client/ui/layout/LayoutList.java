@@ -4,6 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -17,10 +18,10 @@ public class LayoutList extends LayoutWithState {
 	interface LayoutListUiBinder extends UiBinder<Widget, LayoutList> { }
 	private static LayoutListUiBinder uiBinder = GWT.create(LayoutListUiBinder.class);
 	
-	@UiField HasWidgets placeA;
-	@UiField HasWidgets placeB;
-	@UiField HasWidgets placeC;
-	@UiField HasWidgets status;
+	@UiField FlowPanel placeA;
+	@UiField FlowPanel placeB;
+	@UiField FlowPanel placeC;
+	@UiField FlowPanel status;
 
 	public LayoutList() {
 		super(LayoutId.LIST, new Place[] { Place.A, Place.B, Place.C, Place.STATUS } );
@@ -35,15 +36,13 @@ public class LayoutList extends LayoutWithState {
 		   case LOADING_DATA: 
 		   case NO_DATA: 
 		   case NO_MATCHES: {
-			   nav.setVisible(false);
-			   main.setVisible(false);
+			   placeA.setVisible(false);
 			   status.setVisible(true);
 		   } break;
 		
 		   case HAS_DATA: {
 			   status.setVisible(false);			   
-			   nav.setVisible(true);
-			   main.setVisible(true);			   
+			   placeA.setVisible(true);			   
 		   } break;
 				   
 		}		

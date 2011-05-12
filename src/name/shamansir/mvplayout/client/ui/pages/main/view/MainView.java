@@ -63,7 +63,7 @@ public final class MainView extends Composite implements IMainView {
 	public Portal getCurPortal() { return currentPortal; }
 	
 	protected static String generatePortalCSSClassName(Portal portal) {
-		return "a-" + portal.name().toLowerCase().replace('_', '-');
+		return "p-" + portal.name().toLowerCase().replace('_', '-');
 	}
 	
 	protected static String generateLayoutCSSClassName(Layout layout) {
@@ -72,7 +72,7 @@ public final class MainView extends Composite implements IMainView {
 	
 	protected static String generatePlaceCSSClassName(Place place) {
 		if (Place.STATUS.equals(place)) return "l-status b-empty";
-		return "l-" + place.name().toLowerCase().replace('_', '-');
+		return "b-" + place.name().toLowerCase().replace('_', '-');
 	}	
 
 	@Override
