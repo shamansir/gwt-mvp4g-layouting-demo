@@ -2,6 +2,22 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
     xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
 
-    <gwt:FlowPanel />
+    <gwt:FlowPanel> <!-- just a wrapper -->
+
+	    <gwt:FlowPanel ui:field="ifEmpty">
+	        <gwt:Label>No users found</gwt:Label>
+	    </gwt:FlowPanel>
+	    
+        <gwt:FlowPanel ui:field="whenLoading">
+            <gwt:Label>Loading users list...</gwt:Label>
+        </gwt:FlowPanel>
+        
+        <gwt:FlowPanel ui:field="noMatches">
+            <gwt:Label>No users matched your request</gwt:Label>
+        </gwt:FlowPanel>     
+        
+        <gwt:VerticalPanel ui:field="usersHolder" />
+    
+    </gwt:FlowPanel>
 
 </ui:UiBinder> 
