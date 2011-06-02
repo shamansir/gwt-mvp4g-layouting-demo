@@ -19,16 +19,16 @@ public class UserLayoutBuilder extends LayoutBuilder<UserEventBus> {
 		
 		switch (view) {
 			case USERS_LIST: {
-				eventBus.projectUserAvatar(Place.B);
-				eventBus.projectUserDetails(Place.C);
+				eventBus.projectUserAvatar(panels.get(Place.B));
+				eventBus.projectUserDetails(panels.get(Place.C));
 				if (State.HAS_DATA.equals(state)) {
-					eventBus.projectUsersList(Place.A);
+					eventBus.projectUsersList(panels.get(Place.A));
 				} else if (State.LOADING_DATA.equals(state)) {
-					eventBus.projectUsersLoading(Place.STATUS);
+					eventBus.projectUsersLoading(panels.get(Place.STATUS));
 				} else if (State.NO_DATA.equals(state)) {
-					eventBus.projectUsersEmpty(Place.STATUS);
+					eventBus.projectUsersEmpty(panels.get(Place.STATUS));
 				} else if (State.NO_MATCHES.equals(state)) {
-					eventBus.projectUsersNoMatches(Place.STATUS);
+					eventBus.projectUsersNoMatches(panels.get(Place.STATUS));
 				} else return false;
 				return true;
 			}
