@@ -10,6 +10,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -81,6 +82,11 @@ public final class MainView extends Composite implements IMainView {
     @Override
     public void whenPortalChanged(Portal portal) { }	
 	
+    @Override
+    public void showError(Throwable caught) {
+    	Window.alert("Error: " + caught.getMessage());
+    }
+    
 	/* @Override
 	public void changeWidget(Place where, Widget widget) {
 		if (!currentLayout.has(where)) throw new IllegalArgumentException("No such place " + where + " in current layout " + currentLayout.getLayoutId());

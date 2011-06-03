@@ -52,4 +52,7 @@ public interface MainEventBus extends EventBus, HandlesStates {
 	@Event(handlers = MainPresenter.class)
 	public void portalNotFound(PortalNotFoundException pnfe);
 	
+	@Event(handlers = MainPresenter.class)
+	public void handle(Throwable caught);
+	
 }

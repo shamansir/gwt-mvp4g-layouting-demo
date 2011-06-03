@@ -28,6 +28,8 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
         public void switchLayout(Layout to);
         public void beforePortalChange(Portal portal);        
         public void whenPortalChanged(Portal portal);
+
+		public void showError(Throwable caught);
 		
 	}
 	
@@ -73,6 +75,10 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     public void onPortalNotFound(PortalNotFoundException pnfe) { 
     	Log.debug("Portal not found: " + pnfe.getLocalizedMessage());
     };
+    
+    public void onHandle(Throwable caught) {
+    	view.showError(caught);
+    }
     
     /* public void forceLayout(LayoutId layout) { view.switchLayout(LayoutFactory.getLayout(layout)); } */
 	

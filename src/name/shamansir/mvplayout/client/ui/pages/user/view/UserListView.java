@@ -1,7 +1,10 @@
 package name.shamansir.mvplayout.client.ui.pages.user.view;
 
+import java.util.Set;
+
 import name.shamansir.mvplayout.client.ui.pages.user.presenter.UserListPresenter.Display;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
+import name.shamansir.mvplayout.shared.dao.User;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -42,6 +45,12 @@ public final class UserListView extends Composite implements Display {
 	public Widget getNoMatchesView() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void showUsers(Set<User> users) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

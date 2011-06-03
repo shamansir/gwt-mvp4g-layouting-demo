@@ -33,8 +33,9 @@ public abstract class PortalPresenter<V extends LazyView,
 	
 	protected final void project(HasWidgets where, Widget what, String id) {
 		Log.debug("Projecting " + what + "(" + id + ") to the " + where);
+		// TODO: what.clear
 		where.clear();
 		where.add(what);
 	}
-		
+	
 }

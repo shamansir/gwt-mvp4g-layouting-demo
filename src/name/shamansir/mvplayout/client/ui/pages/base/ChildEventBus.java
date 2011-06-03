@@ -22,6 +22,9 @@ public interface ChildEventBus extends EventBus, HandlesStates {
     
     @Event(forwardToParent = true)
     public void portalNotFound(PortalNotFoundException pnfe);
+
+    @Event(forwardToParent = true)
+	public void handle(Throwable caught);
     
     /* 
     @Event(forwardToParent = true)
