@@ -28,7 +28,8 @@ import com.mvp4g.client.view.LazyView;
 public abstract class StatedPortalPresenter<V extends ViewWithStates & LazyView, 
                                    E extends ChildEventBus,
                                    L extends LayoutBuilder<E>> 
-                                   extends PortalPresenter<V, E, L> {
+                                   extends PortalPresenter<V, E, L> 
+								   implements ProjectsStates {
     
     protected StateDirector state;    
     
@@ -41,14 +42,17 @@ public abstract class StatedPortalPresenter<V extends ViewWithStates & LazyView,
         state = new StateDirector(view, eventBus);
     }
     
+    @Override    
     public void projectEmpty(HasWidgets where) {
         project(where, view.getEmptyView());
     }
     
+    @Override    
     public void projectLoading(HasWidgets where) {
     	project(where, view.getLoadingView());
     }
     
+    @Override    
     public void projectNoMatches(HasWidgets where) {
     	project(where, view.getNoMatchesView());
     }    
