@@ -33,7 +33,7 @@ public final class MainView extends Composite implements IMainView {
 	
 	@Override
 	public void switchLayout(Layout to) {
-		Log.debug(">>>>>>>>>>>>>>> NEW PAGE with layout " + to);
+		Log.debug("NEW PAGE with layout " + to);
 		
 		layoutHolder.clear();
 		if (currentLayout != null) {
@@ -65,6 +65,7 @@ public final class MainView extends Composite implements IMainView {
 	
 	protected static String generatePortalCSSClassName(Portal portal) {
 		return "p-" + portal.name().toLowerCase().replace('_', '-');
+		// return "p-" + portal.name().toLowerCase().replace('_', '-') + " " + ((portal.group != null) ? "p-" + portal.group.code() : "p-top-level");
 	}
 	
 	protected static String generateLayoutCSSClassName(Layout layout) {
