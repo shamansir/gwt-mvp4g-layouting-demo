@@ -3,12 +3,12 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
+import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.PortalPresenter;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 
-import com.google.gwt.user.client.ui.HasWidgets;
 import com.mvp4g.client.view.LazyView;
 
 /**
@@ -43,18 +43,18 @@ public abstract class StatedPortalPresenter<V extends ViewWithStates & LazyView,
     }
     
     @Override    
-    public void projectEmpty(HasWidgets where) {
-        project(where, view.getEmptyView());
+    public void projectEmpty(IsOutlet where) {
+        project(where, view.getEmptyView(), portal.name() + "-empty");
     }
     
     @Override    
-    public void projectLoading(HasWidgets where) {
-    	project(where, view.getLoadingView());
+    public void projectLoading(IsOutlet where) {
+    	project(where, view.getLoadingView(), portal.name() + "-loading");
     }
     
     @Override
-    public void projectNoMatches(HasWidgets where) {
-    	project(where, view.getNoMatchesView());
+    public void projectNoMatches(IsOutlet where) {
+    	project(where, view.getNoMatchesView(), portal.name() + "-no-matches");
     }    
 
 }

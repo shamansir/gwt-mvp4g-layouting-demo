@@ -3,15 +3,14 @@ package name.shamansir.mvplayout.client.ui;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.allen_sauer.gwt.log.client.Log;
-import com.google.gwt.user.client.ui.HasWidgets;
-
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 import name.shamansir.mvplayout.client.ui.pages.main.MainEventBus;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
+
+import com.allen_sauer.gwt.log.client.Log;
 
 public abstract class LayoutBuilder<E extends ChildEventBus> {
 	
@@ -34,7 +33,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		return newBuilder;
 	}
 	
-	protected abstract boolean layout(Portal view, Layout layout, State state, Map<Place, HasWidgets> panels, E eventBus);
+	protected abstract boolean layout(Portal view, Layout layout, State state, Map<Place, IsOutlet> outlets, E eventBus);
 	
 	protected static abstract class CanBuildStatedLayout implements CanBuildLayout {
 		
@@ -65,14 +64,14 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 			Log.debug("Building " + layout.id() + " with state " + state + " (Layout has states: " + hasStates + ") for view " + view);
 			if ((state == null) && hasStates) throw new IllegalStateException("Layout " + layout.id() + " requires state to be set, use layoutHasStates() method of builder to determine is current layout requires states");
 			if (((state != null) && ((curState != null) && !curState.equals(state)))) throw new IllegalStateException("Passed state " + state + " is not prepared, call prepare() before build()");
-			if (!doLayout(view, layout, state, layout.panels())) {
+			if (!doLayout(view, layout, state, layout.outlets())) {
 				throw new IllegalStateException("Layout " + layout.id() + " was not built ");
 			}
 			curState = null;
 			return layout;
 		}
 
-		protected abstract boolean doLayout(Portal view, Layout layout, State state, Map<Place, HasWidgets> panels);
+		protected abstract boolean doLayout(Portal view, Layout layout, State state, Map<Place, IsOutlet> outlets);
 
 		@Override
 		public boolean layoutHasStates() { return hasStates; }
@@ -100,8 +99,8 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 
 		@Override
 		protected boolean doLayout(Portal view, Layout layout, State state,
-				Map<Place, HasWidgets> panels) {
-			return layout(view, layout, state, layout.panels(), eventBus);
+				Map<Place, IsOutlet> outlets) {
+			return layout(view, layout, state, layout.outlets(), eventBus);
 		}
 		
 		
@@ -114,9 +113,9 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 	 * new CanLayoutMainView(Portal.VIEW_404, eventBus) {
      *
      *		protected boolean doLayout(Portal view, Layout layout, State state,
-	 *				Map<Place, HasWidgets> panels) {
-	 *			panels.get(Place.MAIN).clear();
-	 *			panels.get(Place.MAIN).add(dialog);
+	 *				Map<Place, HasWidgets> outlets) {
+	 *			outlets.get(Place.MAIN).clear();
+	 *			outlets.get(Place.MAIN).add(dialog);
 	 *			return true;
 	 *		}
 	 *		

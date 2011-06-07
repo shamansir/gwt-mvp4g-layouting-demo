@@ -1,16 +1,16 @@
 package name.shamansir.mvplayout.client.ui.layout;
 
+import name.shamansir.mvplayout.client.ui.IsOutlet;
+import name.shamansir.mvplayout.client.ui.Outlet;
+import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState;
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
-import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
-
-import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
-import name.shamansir.mvplayout.client.ui.Layouts.Place;
-import name.shamansir.mvplayout.client.ui.state.LayoutWithState;
 
 public class LayoutList extends LayoutWithState {
 	
@@ -18,10 +18,10 @@ public class LayoutList extends LayoutWithState {
 	interface LayoutListUiBinder extends UiBinder<Widget, LayoutList> { }
 	private static LayoutListUiBinder uiBinder = GWT.create(LayoutListUiBinder.class);
 	
-	@UiField FlowPanel placeA;
-	@UiField FlowPanel placeB;
-	@UiField FlowPanel placeC;
-	@UiField FlowPanel status;
+	@UiField Outlet placeA;
+	@UiField Outlet placeB;
+	@UiField Outlet placeC;
+	@UiField Outlet status;
 
 	public LayoutList() {
 		super(LayoutId.LIST, new Place[] { Place.A, Place.B, Place.C, Place.STATUS } );
@@ -49,7 +49,7 @@ public class LayoutList extends LayoutWithState {
 	}
 
 	@Override
-	protected HasWidgets preparePanel(Place place)
+	protected IsOutlet prepareOutlet(Place place)
 			throws IndexOutOfBoundsException {
 		if (place.equals(Place.A)) return placeA;
 		if (place.equals(Place.B)) return placeB;

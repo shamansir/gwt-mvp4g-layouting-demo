@@ -19,6 +19,6 @@ import name.shamansir.mvplayout.client.ui.Pluggable;
  * @date Jun 7, 2011 7:45:21 PM 
  *
  */
-public interface PluggableWithStates extends Pluggable {
-
+public interface PluggableWithStates extends Pluggable, ViewWithStates {
+    
 }

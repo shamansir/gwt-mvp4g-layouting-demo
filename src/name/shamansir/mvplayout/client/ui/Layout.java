@@ -7,15 +7,14 @@ import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HasWidgets;
 
 public abstract class Layout extends Composite {
 	
 	private final LayoutId id;
 	private final Place[] places;
-	protected final Map<Place, HasWidgets> panels = new HashMap<Place, HasWidgets>();
+	protected final Map<Place, IsOutlet> outlets = new HashMap<Place, IsOutlet>();
 	
-	private boolean panelsLoaded;	
+	private boolean outletsLoaded;	
 	
 	protected Layout(LayoutId id, Place[] places) {
 		this.id = id;
@@ -24,26 +23,26 @@ public abstract class Layout extends Composite {
 
 	public LayoutId id() { return id; }
 	
-	protected abstract HasWidgets preparePanel(Place place) throws IndexOutOfBoundsException;	
+	protected abstract IsOutlet prepareOutlet(Place place) throws IndexOutOfBoundsException;	
 	
 	public final Place[] places() { return places; };	
-	public final boolean has(Place place) { return panels.containsKey(place); };
+	public final boolean has(Place place) { return outlets.containsKey(place); };
 	
-	public final HasWidgets panel(Place place) { ensurePanelsLoaded(); return panels.get(place); }	
-	protected final Map<Place, HasWidgets> panels() { ensurePanelsLoaded(); return panels; }
+	public final IsOutlet outlet(Place place) { ensureOutletsLoaded(); return outlets.get(place); }	
+	protected final Map<Place, IsOutlet> outlets() { ensureOutletsLoaded(); return outlets; }
  	
 	
-	protected void ensurePanelsLoaded() {
-		if (panelsLoaded) return;
+	protected void ensureOutletsLoaded() {
+		if (outletsLoaded) return;
 		for (Place place: this.places) {
-			this.panels.put(place, preparePanel(place));
+			this.outlets.put(place, prepareOutlet(place));
 		}
-		panelsLoaded = true;
+		outletsLoaded = true;
 	}
 	
 	public void clear() {
 		for (Place place: this.places) {
-			panels.get(place).clear();
+			outlets.get(place).clear();
 		}
 	}	
 	

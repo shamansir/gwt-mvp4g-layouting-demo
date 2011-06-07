@@ -1,12 +1,12 @@
 package name.shamansir.mvplayout.client.ui.state;
 
-import com.google.gwt.user.client.ui.HasWidgets;
+import name.shamansir.mvplayout.client.ui.IsOutlet;
 
 // TODO: refactor to project(HasWidgets, State)
 public interface ProjectsStates {
 	
-    public void projectEmpty(HasWidgets where);    
-    public void projectLoading(HasWidgets where);    
-    public void projectNoMatches(HasWidgets where);
+    public void projectEmpty(IsOutlet where);    
+    public void projectLoading(IsOutlet where);    
+    public void projectNoMatches(IsOutlet where);
 
 }

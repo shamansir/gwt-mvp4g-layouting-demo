@@ -15,17 +15,17 @@ public abstract class LayoutWithState extends Layout {
 	}
 	
 	@Override
-	protected void ensurePanelsLoaded() {
-		super.ensurePanelsLoaded();
+	protected void ensureOutletsLoaded() {
+		super.ensureOutletsLoaded();
 		
 		if (!has(Place.STATUS)) throw new IllegalStateException("Layout with state must contain STATUS place");
 	}
 	
-	public HasWidgets emptyHolder() { return panel(Place.STATUS); }
+	public HasWidgets emptyHolder() { return outlet(Place.STATUS); }
 	
-	public HasWidgets loadingHolder() { return panel(Place.STATUS); }
+	public HasWidgets loadingHolder() { return outlet(Place.STATUS); }
 	
-	public HasWidgets noMatchesHolder() { return panel(Place.STATUS); }
+	public HasWidgets noMatchesHolder() { return outlet(Place.STATUS); }
 	
 	public abstract void prepare(State state);	
 

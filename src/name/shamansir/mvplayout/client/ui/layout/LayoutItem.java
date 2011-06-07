@@ -1,7 +1,6 @@
 package name.shamansir.mvplayout.client.ui.layout;
 
-import com.google.gwt.user.client.ui.HasWidgets;
-
+import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.Layout;
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
@@ -13,7 +12,7 @@ public class LayoutItem extends Layout {
 	}
 
 	@Override
-	protected HasWidgets preparePanel(Place place)
+	protected IsOutlet prepareOutlet(Place place)
 			throws IndexOutOfBoundsException {
 		// TODO Auto-generated method stub
 		return null;

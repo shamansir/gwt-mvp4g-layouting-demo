@@ -2,8 +2,7 @@ package name.shamansir.mvplayout.client.ui.pages.news.layout;
 
 import java.util.Map;
 
-import com.google.gwt.user.client.ui.HasWidgets;
-
+import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.Layout;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder;
 import name.shamansir.mvplayout.client.ui.Portal;
@@ -15,7 +14,7 @@ public class NewsLayoutBuilder extends LayoutBuilder<NewsEventBus> {
 
 	@Override
 	protected boolean layout(Portal view, Layout layout, State state,
-			Map<Place, HasWidgets> panels, NewsEventBus eventBus) {
+	        Map<Place, IsOutlet> outlets, NewsEventBus eventBus) {
 		// TODO Auto-generated method stub
 		return false;
 	}

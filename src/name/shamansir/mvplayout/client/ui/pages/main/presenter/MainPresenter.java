@@ -67,7 +67,8 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	if ((currentBuilder.curState() != null) && currentBuilder.curState().equals(state)) return;     	
     	
     	if (state != null) currentBuilder.prepare(state);
-    	currentBuilder.update(state, view.getPlugs());		
+    	// FIXME: implement
+    	//currentBuilder.update(state, view.getPlugs());		
     }
     
     public void clearPage() { view.clear(); }    

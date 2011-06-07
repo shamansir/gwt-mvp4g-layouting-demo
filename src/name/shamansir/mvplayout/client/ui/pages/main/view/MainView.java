@@ -45,7 +45,7 @@ public final class MainView extends Composite implements IMainView {
 		layoutHolder.addStyleName(generateLayoutCSSClassName(currentLayout));
 		
 		for (Place place: currentLayout.places()) {
-			Widget target = (Widget)currentLayout.panel(place);
+			Widget target = (Widget)currentLayout.outlet(place);
 			target.addStyleName(generatePlaceCSSClassName(place));
 		}
 	}
