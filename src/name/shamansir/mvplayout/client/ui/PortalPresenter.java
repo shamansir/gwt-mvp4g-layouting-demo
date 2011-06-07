@@ -5,8 +5,6 @@ import name.shamansir.mvplayout.client.ui.Portal.UrlBuilder;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 
 import com.allen_sauer.gwt.log.client.Log;
-import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.Widget;
 import com.mvp4g.client.presenter.LazyPresenter;
 import com.mvp4g.client.view.LazyView;
 
@@ -27,15 +25,11 @@ public abstract class PortalPresenter<V extends LazyView,
 	
 	@Override public abstract void bindView();	
 	
-	protected final void project(HasWidgets where, Widget what) { 
-		project(where, what, "");
-	}
-	
-	protected final void project(HasWidgets where, Widget what, String id) {
-		Log.debug("Projecting " + what + "(" + id + ") to the " + where);
+	protected final void project(IsOutlet where, Pluggable what) {
+		Log.debug("Projecting " + what + "(" + what.id() + ") to the " + where);
 		// TODO: what.clear
 		where.clear();
-		where.add(what);
+		where.add(what.asWidget());
 	}
 	
 }

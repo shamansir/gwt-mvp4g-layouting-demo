@@ -23,21 +23,14 @@ import com.mvp4g.client.view.LazyView;
  * @date Apr 28, 2011 10:16:17 PM 
  *
  */
-public abstract class StatedPortletPresenter<V extends ViewWithStates & LazyView, 
+public abstract class StatedPortletPresenter<V extends PluggableWithStates & LazyView, 
                                    E extends ChildEventBus> 
                                    extends PortletPresenter<V, E>
 								   implements ProjectsStates {
     
-    protected StateDirector state;    
-    
     protected StatedPortletPresenter() {
 
     }  
-    
-    @Override
-    public void bindView() {
-        state = new StateDirector(view, eventBus);
-    }
     
     @Override
     public void projectEmpty(HasWidgets where) {

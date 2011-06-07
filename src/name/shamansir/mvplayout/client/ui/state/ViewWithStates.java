@@ -13,7 +13,7 @@ import com.google.gwt.user.client.ui.Widget;
  * <dt>Package:</dt> <dd>name.shamansir.mvplayout.client.ui</dd>
  * </dl>
  *
- * <code>ViewWithStates</code>
+ * <code>PluggableWithStates</code>
  *
  * <p>Description</p>
  *

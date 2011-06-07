@@ -67,7 +67,7 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	if ((currentBuilder.curState() != null) && currentBuilder.curState().equals(state)) return;     	
     	
     	if (state != null) currentBuilder.prepare(state);
-    	view.switchLayout(currentBuilder.build(state));		
+    	currentBuilder.update(state, view.get);		
     }
     
     public void clearPage() { view.clear(); }    
