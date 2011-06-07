@@ -4,6 +4,7 @@
 package name.shamansir.mvplayout.client.utils;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * <dl>
@@ -22,11 +23,17 @@ import java.util.Collection;
 public class StringUtils {
 
     public static String join(Collection<String> source, String delim) {
-        throw new RuntimeException("Not implemented");
+        if (source == null || source.isEmpty()) return "";
+        Iterator<String> iter = source.iterator();
+        StringBuilder builder = new StringBuilder(iter.next());
+        while (iter.hasNext()) {
+            builder.append(delim).append(iter.next());
+        }
+        return builder.toString();
     }
     
     public static String join(String[] source, String delim) {
-        throw new RuntimeException("Not implemented");
+        return join(source, delim);
     }    
     
 }

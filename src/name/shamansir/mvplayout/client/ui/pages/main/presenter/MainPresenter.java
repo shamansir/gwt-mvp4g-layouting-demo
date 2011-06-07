@@ -1,5 +1,6 @@
 package name.shamansir.mvplayout.client.ui.pages.main.presenter;
 
+import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvplayout.client.ui.Layout;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
@@ -27,6 +28,8 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
         public void switchLayout(Layout to);
         public void beforePortalChange(Portal portal);        
         public void whenPortalChanged(Portal portal);
+
+		public void showError(Throwable caught);
 		
 	}
 	
@@ -64,16 +67,19 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	if ((currentBuilder.curState() != null) && currentBuilder.curState().equals(state)) return;     	
     	
     	if (state != null) currentBuilder.prepare(state);
-    	view.switchLayout(currentBuilder.build(state));		
+    	currentBuilder.update(state, view.get);		
     }
     
-    public void clearPage() {  view.clear(); }    
+    public void clearPage() { view.clear(); }    
     
-    /*
-	public void forceLayout(LayoutId layout) { view.switchLayout(LayoutFactory.getLayout(layout)); }
-	
-	public void project(HasWidgets where, Widget what) { view.project(where, what); }
-	
-	public void changeWidget(Place where, Widget widget) { view.changeWidget(where, widget); } */
+    public void onPortalNotFound(PortalNotFoundException pnfe) { 
+    	Log.debug("Portal not found: " + pnfe.getLocalizedMessage());
+    };
+    
+    public void onHandle(Throwable caught) {
+    	view.showError(caught);
+    }
+    
+    /* public void forceLayout(LayoutId layout) { view.switchLayout(LayoutFactory.getLayout(layout)); } */
 	
 }

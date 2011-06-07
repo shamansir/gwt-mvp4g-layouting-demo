@@ -10,6 +10,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -32,7 +33,7 @@ public final class MainView extends Composite implements IMainView {
 	
 	@Override
 	public void switchLayout(Layout to) {
-		Log.debug(">>>>>>>>>>>>>>> NEW PAGE with layout " + to);
+		Log.debug("NEW PAGE with layout " + to);
 		
 		layoutHolder.clear();
 		if (currentLayout != null) {
@@ -63,7 +64,8 @@ public final class MainView extends Composite implements IMainView {
 	public Portal getCurPortal() { return currentPortal; }
 	
 	protected static String generatePortalCSSClassName(Portal portal) {
-		return "a-" + portal.name().toLowerCase().replace('_', '-');
+		return "p-" + portal.name().toLowerCase().replace('_', '-');
+		// return "p-" + portal.name().toLowerCase().replace('_', '-') + " " + ((portal.group != null) ? "p-" + portal.group.code() : "p-top-level");
 	}
 	
 	protected static String generateLayoutCSSClassName(Layout layout) {
@@ -72,7 +74,7 @@ public final class MainView extends Composite implements IMainView {
 	
 	protected static String generatePlaceCSSClassName(Place place) {
 		if (Place.STATUS.equals(place)) return "l-status b-empty";
-		return "l-" + place.name().toLowerCase().replace('_', '-');
+		return "b-" + place.name().toLowerCase().replace('_', '-');
 	}	
 
 	@Override
@@ -81,6 +83,11 @@ public final class MainView extends Composite implements IMainView {
     @Override
     public void whenPortalChanged(Portal portal) { }	
 	
+    @Override
+    public void showError(Throwable caught) {
+    	Window.alert("Error: " + caught.getMessage());
+    }
+    
 	/* @Override
 	public void changeWidget(Place where, Widget widget) {
 		if (!currentLayout.has(where)) throw new IllegalArgumentException("No such place " + where + " in current layout " + currentLayout.getLayoutId());

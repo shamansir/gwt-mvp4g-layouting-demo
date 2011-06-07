@@ -1,5 +1,6 @@
 package name.shamansir.mvplayout.client.ui.pages.base;
 
+import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.client.ui.state.HandlesStates;
@@ -18,6 +19,12 @@ public interface ChildEventBus extends EventBus, HandlesStates {
     
     @Event(forwardToParent = true)
     public void clearPage();
+    
+    @Event(forwardToParent = true)
+    public void portalNotFound(PortalNotFoundException pnfe);
+
+    @Event(forwardToParent = true)
+	public void handle(Throwable caught);
     
     /* 
     @Event(forwardToParent = true)

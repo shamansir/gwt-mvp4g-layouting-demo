@@ -18,4 +18,5 @@ public class LayoutingDemo implements EntryPoint {
     	mvpModule.createAndStartModule();
     	RootLayoutPanel.get().add((Widget) mvpModule.getStartView());
 	}
+	
 }

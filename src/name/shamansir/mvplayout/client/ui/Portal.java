@@ -3,6 +3,7 @@ package name.shamansir.mvplayout.client.ui;
 import java.util.ArrayList;
 import java.util.List;
 
+import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.utils.StringUtils;
 
@@ -56,10 +57,19 @@ public enum Portal implements MakesLink {
 	        return this;
 	    }
 	    
+	    public PortalUrl addParam(Object value) {
+	        return addParam(value.toString());
+	    }
+	    
         public PortalUrl addParams(String... values) {
-            for (String value: values) this.params.add(value);
+            for (String value: values) addParam(value);
             return this;
-        }	    
+        }
+        
+        public PortalUrl addParams(Object... values) {
+            for (Object value: values) addParam(value);
+            return this;
+        }	        
 	    
         public Portal view() {
             return portal;
@@ -71,8 +81,12 @@ public enum Portal implements MakesLink {
         }
 
         public static PortalUrl fromEvent(Group group, String event,
-                String param) {
-            return null;
+                String param) throws PortalNotFoundException {
+        	for (Portal portal: Portal.values()) {
+        		if (portal.group.equals(group) &&
+        			portal.event.equals(event)) return new PortalUrl(portal).addParams(param.split(PARAM_DELIM));
+        	}
+            throw new PortalNotFoundException(group + "/" + event + "/" + param);
         }
         
 	}
