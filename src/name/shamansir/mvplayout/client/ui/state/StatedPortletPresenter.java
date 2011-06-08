@@ -3,8 +3,8 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
-import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.PortletPresenter;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 
 import com.mvp4g.client.view.LazyView;
@@ -30,21 +30,24 @@ public abstract class StatedPortletPresenter<V extends PluggableWithStates & Laz
     
     protected StatedPortletPresenter() {
 
+    }
+
+    @Override
+    public void plugEmpty(Place where) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override    
+    public void plugLoading(Place where) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override    
+    public void plugNoMatches(Place where) {
+        // TODO Auto-generated method stub
+        
     }  
     
-    @Override
-    public void projectEmpty(IsOutlet where) {
-        //project(where, view.getEmptyView());
-    }
-
-    @Override    
-    public void projectLoading(IsOutlet where) {
-    	//project(where, view.getLoadingView());
-    }
-    
-    @Override    
-    public void projectNoMatches(IsOutlet where) {
-    	//project(where, view.getNoMatchesView());
-    }    
-
 }

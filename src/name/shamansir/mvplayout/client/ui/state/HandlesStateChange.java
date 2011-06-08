@@ -3,7 +3,6 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
-import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 /**
@@ -20,12 +19,8 @@ import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
  * @date Apr 28, 2011 10:20:20 PM 
  *
  */
-public interface ViewWithStates {
+public interface HandlesStateChange {
     
     public void prepareFor(State to);    
-    
-    public Pluggable getEmptyView();
-    public Pluggable getLoadingView();
-    public Pluggable getNoMatchesView();    
 
 }

@@ -4,6 +4,7 @@
 package name.shamansir.mvplayout.client.ui.state;
 
 import name.shamansir.mvplayout.client.ui.LayoutBuilder;
+import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.PortalPresenter;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
@@ -25,13 +26,15 @@ import com.mvp4g.client.view.LazyView;
  * @date Apr 28, 2011 10:16:17 PM 
  *
  */
-public abstract class StatedPortalPresenter<V extends ViewWithStates & LazyView, 
+public abstract class StatedPortalPresenter<V extends HasStatesPanels 
+                                                      & Pluggable
+                                                      & LazyView, 
                                    E extends ChildEventBus,
                                    L extends LayoutBuilder<E>> 
                                    extends PortalPresenter<V, E, L> 
 								   implements PlugsStates {
     
-    protected StateDirector state;    
+    protected StateDirector<V> state;    
     
     protected StatedPortalPresenter(Portal portal) {
         super(portal);
@@ -39,7 +42,7 @@ public abstract class StatedPortalPresenter<V extends ViewWithStates & LazyView,
     
     @Override
     public void bindView() {
-        state = new StateDirector(view, eventBus);
+        state = new StateDirector<V>(view, eventBus);
     }
     
     @Override    

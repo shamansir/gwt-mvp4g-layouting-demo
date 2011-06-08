@@ -2,29 +2,30 @@ package name.shamansir.mvplayout.client.ui.state;
 
 import java.util.Collection;
 
+import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
-public final class StateDirector {
+public final class StateDirector<V extends HandlesStateChange & Pluggable> {
 	
-	private final ViewWithStates view;
-	private final HandlesStates reactor;
+	private final V view;
+	private final UpdatesState reactor;
 	
-	protected StateDirector(ViewWithStates view, HandlesStates reactor) {
+	protected StateDirector(V view, UpdatesState reactor) {
 		this.view = view;
 		this.reactor = reactor;
 	}
 	
 	public final void update() {
-	    reactor.updateState(State.LOADING_DATA);
+	    reactor.updateState(view.getPlace(), State.LOADING_DATA);
 		view.prepareFor(State.LOADING_DATA);
 	}
 	
 	public final void update(int dataSize) {
 		if (dataSize > 0) {
-		    reactor.updateState(State.HAS_DATA);
+		    reactor.updateState(view.getPlace(), State.HAS_DATA);
 			view.prepareFor(State.HAS_DATA);
 		} else {
-		    reactor.updateState(State.NO_DATA);
+		    reactor.updateState(view.getPlace(), State.NO_DATA);
 			view.prepareFor(State.NO_DATA);
 		}
 	}	
@@ -60,7 +61,7 @@ public final class StateDirector {
 	}
 	
 	public final void update(State to) {
-		reactor.updateState(to);
+		reactor.updateState(view.getPlace(), to);
 		view.prepareFor(to);
 	}	
 	

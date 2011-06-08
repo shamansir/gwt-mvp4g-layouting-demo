@@ -3,6 +3,7 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 /**
@@ -11,7 +12,7 @@ import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
  * <dt>Package:</dt> <dd>name.shamansir.mvplayout.client.ui</dd>
  * </dl>
  *
- * <code>HandlesStates</code>
+ * <code>UpdatesState</code>
  *
  * <p>Description</p>
  *
@@ -19,6 +20,6 @@ import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
  * @date Apr 28, 2011 10:32:24 PM 
  *
  */
-public interface HandlesStates {
-    public void updateState(State to);
+public interface UpdatesState {
+    public void updateState(Place where, State to);
 }

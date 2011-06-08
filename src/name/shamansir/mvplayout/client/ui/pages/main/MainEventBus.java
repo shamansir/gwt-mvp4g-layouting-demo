@@ -1,16 +1,16 @@
 package name.shamansir.mvplayout.client.ui.pages.main;
 
 import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
-import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.company.CompanyModule;
 import name.shamansir.mvplayout.client.ui.pages.main.presenter.MainPresenter;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView;
 import name.shamansir.mvplayout.client.ui.pages.news.NewsModule;
 import name.shamansir.mvplayout.client.ui.pages.user.UserModule;
-import name.shamansir.mvplayout.client.ui.state.HandlesStates;
+import name.shamansir.mvplayout.client.ui.state.UpdatesState;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 import com.mvp4g.client.annotation.Debug;
@@ -27,7 +27,7 @@ import com.mvp4g.client.event.EventBus;
 	@ChildModule(moduleClass = CompanyModule.class, autoDisplay = false, async = true),	
 	@ChildModule(moduleClass = NewsModule.class, autoDisplay = false, async = true),
 } )
-public interface MainEventBus extends EventBus, HandlesStates {
+public interface MainEventBus extends EventBus, UpdatesState {
     
     // =============== navigation ==============================================
 
@@ -46,7 +46,7 @@ public interface MainEventBus extends EventBus, HandlesStates {
     public void newPortal(Portal portal, CanBuildLayout builder);
     
     @Override @Event(handlers = MainPresenter.class, calledMethod = "updateState")
-    public void updateState(State state);
+    public void updateState(Place where, State state); // if null, updates layout state
     
     @Event(handlers = MainPresenter.class, calledMethod = "clearPage")
     public void clearPage();
@@ -55,7 +55,7 @@ public interface MainEventBus extends EventBus, HandlesStates {
 	public void portalNotFound(PortalNotFoundException pnfe);
 	
 	@Event(handlers = MainPresenter.class, calledMethod = "plug")
-    public void plug(IsOutlet where, Pluggable what);	
+    public void plug(Place where, Pluggable what);	
 	
 	@Event(handlers = MainPresenter.class)
 	public void handle(Throwable caught);

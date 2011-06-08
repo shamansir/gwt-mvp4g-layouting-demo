@@ -82,9 +82,10 @@ public final class MainView extends Composite implements IMainView {
             if (!outlet.isVisible()) Log.warn("Outlet at place " + where + " is not visible, but youa are plugging " + what + " there"); 
             outlet.clear();
             outlet.add(what.asWidget());
-            what.refresh();
-            plugged.put(where, what); 
+            plugged.put(where, what);            
             Log.debug("Plugged " + what.id() + " into outlet at place " + where);
+            what.setPlace(where);
+            what.refresh();            
         }
     }
 	

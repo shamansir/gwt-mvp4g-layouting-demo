@@ -7,7 +7,7 @@ import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 import com.mvp4g.client.presenter.LazyPresenter;
 import com.mvp4g.client.view.LazyView;
 
-public abstract class PortalPresenter<V extends LazyView, 
+public abstract class PortalPresenter<V extends Pluggable & LazyView, 
                                       E extends ChildEventBus,
                                       L extends LayoutBuilder<E>> 
                       extends LazyPresenter<V, E> {

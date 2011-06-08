@@ -11,14 +11,18 @@ import name.shamansir.mvplayout.client.ui.Pluggable;
  * <dt>Package:</dt> <dd>name.shamansir.mvplayout.client.ui.state</dd>
  * </dl>
  *
- * <code>PluggableWithStates</code>
+ * <code>HasStatesPanels</code>
  *
  * <p>Description</p>
  *
  * @author Ulric Wilfred <shaman.sir@gmail.com>
- * @date Jun 7, 2011 7:45:21 PM 
+ * @date Jun 8, 2011 11:21:56 PM 
  *
  */
-public interface PluggableWithStates extends Pluggable, HandlesStateChange {
+public interface HasStatesPanels extends HandlesStateChange {
     
+    public Pluggable getEmptyView();
+    public Pluggable getLoadingView();
+    public Pluggable getNoMatchesView();    
+
 }

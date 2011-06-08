@@ -4,14 +4,16 @@ import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.Composite;
 
 import name.shamansir.mvplayout.client.ui.Pluggable;
+import name.shamansir.mvplayout.client.ui.Portal;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 
 public class PortalView extends Composite implements Pluggable {
 	
 	private final String alias;
 	
 	@UiConstructor
-	public PortalView(final String alias) {
-		this.alias = alias;
+	public PortalView(final Portal portal) {
+		this.alias = portal.name();
 	}
 
 	@Override
@@ -23,5 +25,11 @@ public class PortalView extends Composite implements Pluggable {
 	public void refresh() {
 		// TODO:
 	}
+
+    @Override
+    public Place getPlace() { return null; }
+
+    @Override
+    public void setPlace(Place place) { }
 
 }
