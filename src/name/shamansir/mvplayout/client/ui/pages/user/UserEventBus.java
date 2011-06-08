@@ -1,9 +1,9 @@
 package name.shamansir.mvplayout.client.ui.pages.user;
 
-import com.google.gwt.user.client.ui.HasWidgets;
 import com.mvp4g.client.annotation.Event;
 import com.mvp4g.client.annotation.Events;
 
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 import name.shamansir.mvplayout.client.ui.pages.user.presenter.UserListPresenter;
 import name.shamansir.mvplayout.client.ui.pages.user.view.UserListView;
@@ -24,21 +24,21 @@ public interface UserEventBus extends ChildEventBus {
 	// projecting events
 	
 	@Event
-	public void projectUserAvatar(HasWidgets where);
+	public void plugUserAvatar(Place where);
 	
 	@Event
-	public void projectUserDetails(HasWidgets where);
+	public void plugUserDetails(Place where);
 	
 	@Event
-	public void projectUsersList(HasWidgets where);
+	public void plugUsersList(Place where);
 	
 	@Event
-	public void projectUsersLoading(HasWidgets where);
+	public void plugUsersLoading(Place where);
 	
 	@Event
-	public void projectUsersEmpty(HasWidgets where);
+	public void plugUsersEmpty(Place where);
 	
 	@Event
-	public void projectUsersNoMatches(HasWidgets where);
+	public void plugUsersNoMatches(Place where);
 
 }

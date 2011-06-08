@@ -26,7 +26,7 @@ import com.mvp4g.client.view.LazyView;
 public abstract class StatedPortletPresenter<V extends PluggableWithStates & LazyView, 
                                    E extends ChildEventBus> 
                                    extends PortletPresenter<V, E>
-								   implements ProjectsStates {
+								   implements PlugsStates {
     
     protected StatedPortletPresenter() {
 

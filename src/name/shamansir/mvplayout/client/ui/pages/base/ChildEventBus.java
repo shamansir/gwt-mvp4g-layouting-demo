@@ -1,10 +1,10 @@
 package name.shamansir.mvplayout.client.ui.pages.base;
 
 import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
-import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.state.HandlesStates;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
@@ -29,17 +29,6 @@ public interface ChildEventBus extends EventBus, HandlesStates {
 	public void handle(Throwable caught);
     
     @Event(forwardToParent = true)
-    public void plug(IsOutlet where, Pluggable what);
-    
-    /* 
-    @Event(forwardToParent = true)
-    public void forceLayout(LayoutId layout);
-
-    @Event(forwardToParent = true)
-    public void project(HasWidgets where, Widget what);
-    
-    @Event(forwardToParent = true)
-    public void changeWidget(Place where, Widget widget);
-    */
+    public void plug(Place where, Pluggable what);
     
 }

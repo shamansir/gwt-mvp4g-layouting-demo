@@ -3,9 +3,8 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
+import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
-
-import com.google.gwt.user.client.ui.Widget;
 
 /**
  * <dl>
@@ -25,8 +24,8 @@ public interface ViewWithStates {
     
     public void prepareFor(State to);    
     
-    public Widget getEmptyView();
-    public Widget getLoadingView();
-    public Widget getNoMatchesView();    
+    public Pluggable getEmptyView();
+    public Pluggable getLoadingView();
+    public Pluggable getNoMatchesView();    
 
 }

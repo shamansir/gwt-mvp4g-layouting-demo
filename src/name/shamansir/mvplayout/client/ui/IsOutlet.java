@@ -20,5 +20,8 @@ import com.google.gwt.user.client.ui.HasWidgets;
  *
  */
 public interface IsOutlet extends HasWidgets {
+    
+    public void setVisible(boolean visible);
+    public boolean isVisible();
 
 }

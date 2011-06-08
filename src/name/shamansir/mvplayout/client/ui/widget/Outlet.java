@@ -25,6 +25,6 @@ import com.google.gwt.user.client.ui.FlowPanel;
 public class Outlet extends FlowPanel implements IsOutlet {
     
     @UiConstructor
-    public Outlet() { super(); }
+    public Outlet() {  }
 
 }

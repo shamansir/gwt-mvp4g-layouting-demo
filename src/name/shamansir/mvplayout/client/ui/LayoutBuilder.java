@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
-import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 import name.shamansir.mvplayout.client.ui.pages.main.MainEventBus;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState;
@@ -17,8 +16,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 	
 	private static final Map<Portal, CanBuildLayout> cache = new HashMap<Portal, CanBuildLayout>();  
 	
-	public static interface CanBuildLayout {
-		public void prepare(State state);		
+	public static interface CanBuildLayout {		
 		public Layout build(State state);
 		
 		public boolean layoutHasStates();		
@@ -34,7 +32,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		return newBuilder;
 	}
 	
-	protected abstract boolean layout(Portal view, Layout layout, State state, Map<Place, IsOutlet> outlets, E eventBus);
+	protected abstract boolean layout(Portal view, Layout layout, State state, E eventBus);
 	
 	protected static abstract class CanBuildStatedLayout implements CanBuildLayout {
 		
@@ -50,8 +48,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 			this.hasStates = (this.layout instanceof LayoutWithState);
 		}
 		
-		@Override
-		public void prepare(State state) {
+		protected void prepare(State state) {
 			Log.debug("Preparing to build layout " + layout.id() + " with state " + state + " (Layout has states: " + hasStates + ")");
 			if (!hasStates)  throw new IllegalStateException("Layout " + layout.id() + " requires to support states to use prepare() method");
 			if (state == null) throw new IllegalArgumentException("Passed state is null");
@@ -61,18 +58,19 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		}		
 		
 		@Override
-		public final Layout build(State state) {
+		public final Layout build(State state) {		    
 			Log.debug("Building " + layout.id() + " with state " + state + " (Layout has states: " + hasStates + ") for view " + view);
 			if ((state == null) && hasStates) throw new IllegalStateException("Layout " + layout.id() + " requires state to be set, use layoutHasStates() method of builder to determine is current layout requires states");
 			if (((state != null) && ((curState != null) && !curState.equals(state)))) throw new IllegalStateException("Passed state " + state + " is not prepared, call prepare() before build()");
-			if (!doLayout(view, layout, state, layout.outlets())) {
+			if (state != null) prepare(state);
+			if (!doLayout(view, layout, state)) {
 				throw new IllegalStateException("Layout " + layout.id() + " was not built ");
 			}
 			curState = null;
 			return layout;
 		}
 
-		protected abstract boolean doLayout(Portal view, Layout layout, State state, Map<Place, IsOutlet> outlets);
+		protected abstract boolean doLayout(Portal view, Layout layout, State state);
 
 		@Override
 		public boolean layoutHasStates() { return hasStates; }
@@ -99,9 +97,8 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		}
 
 		@Override
-		protected boolean doLayout(Portal view, Layout layout, State state,
-				Map<Place, IsOutlet> outlets) {
-			return layout(view, layout, state, layout.outlets(), eventBus);
+		protected boolean doLayout(Portal view, Layout layout, State state) {
+			return layout(view, layout, state, eventBus);
 		}
 		
 		

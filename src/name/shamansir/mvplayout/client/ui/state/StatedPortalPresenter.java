@@ -3,10 +3,10 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
-import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.PortalPresenter;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 
 import com.mvp4g.client.view.LazyView;
@@ -29,7 +29,7 @@ public abstract class StatedPortalPresenter<V extends ViewWithStates & LazyView,
                                    E extends ChildEventBus,
                                    L extends LayoutBuilder<E>> 
                                    extends PortalPresenter<V, E, L> 
-								   implements ProjectsStates {
+								   implements PlugsStates {
     
     protected StateDirector state;    
     
@@ -43,18 +43,18 @@ public abstract class StatedPortalPresenter<V extends ViewWithStates & LazyView,
     }
     
     @Override    
-    public void projectEmpty(IsOutlet where) {
-        project(where, view.getEmptyView(), portal.name() + "-empty");
+    public void plugEmpty(Place where) {
+        eventBus.plug(where, view.getEmptyView());
     }
     
     @Override    
-    public void projectLoading(IsOutlet where) {
-    	project(where, view.getLoadingView(), portal.name() + "-loading");
+    public void plugLoading(Place where) {
+        eventBus.plug(where, view.getLoadingView());
     }
     
     @Override
-    public void projectNoMatches(IsOutlet where) {
-    	project(where, view.getNoMatchesView(), portal.name() + "-no-matches");
+    public void plugNoMatches(Place where) {
+        eventBus.plug(where, view.getNoMatchesView());
     }    
 
 }

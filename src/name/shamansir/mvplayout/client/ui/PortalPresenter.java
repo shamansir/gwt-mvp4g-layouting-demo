@@ -24,17 +24,4 @@ public abstract class PortalPresenter<V extends LazyView,
 	
 	@Override public abstract void bindView();
 	
-	/* protected final void project(IsOutlet where, Pluggable what) {
-		Log.debug("Projecting " + what + "(" + what.id() + ") to the " + where);
-		what.refresh();
-		where.clear();
-		where.add(what.asWidget());
-	}
-	
-    protected final void project(IsOutlet where, IsWidget what, String id) {
-        Log.debug("Projecting " + what + "(" + id + ") to the " + where);
-        where.clear();
-        where.add(what.asWidget());
-    } */
-	
 }

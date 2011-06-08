@@ -54,7 +54,7 @@ public interface MainEventBus extends EventBus, HandlesStates {
 	@Event(handlers = MainPresenter.class)
 	public void portalNotFound(PortalNotFoundException pnfe);
 	
-	@Event(handlers = MainPresenter.class)
+	@Event(handlers = MainPresenter.class, calledMethod = "plug")
     public void plug(IsOutlet where, Pluggable what);	
 	
 	@Event(handlers = MainPresenter.class)

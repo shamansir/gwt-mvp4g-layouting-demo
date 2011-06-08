@@ -1,5 +1,10 @@
 package name.shamansir.mvplayout.client.ui.pages.main.view;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import name.shamansir.mvplayout.client.ui.IsOutlet;
+import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.main.presenter.MainPresenter.IMainView;
@@ -26,6 +31,8 @@ public final class MainView extends Composite implements IMainView {
 	private Layout currentLayout;
 	private Portal currentPortal;
 	
+	private final Map<Place, Pluggable> plugged = new HashMap<Place, Pluggable>();
+	
 	@Override
 	public void createView() {
 		initWidget(uiBinder.createAndBindUi(this));
@@ -36,11 +43,12 @@ public final class MainView extends Composite implements IMainView {
 		Log.debug("NEW PAGE with layout " + to);
 		
 		layoutHolder.clear();
+        plugged.clear();		
 		if (currentLayout != null) {
 			layoutHolder.removeStyleName(generateLayoutCSSClassName(currentLayout));
 		}
-		
-		currentLayout = to;
+				
+		currentLayout = to;		
 		layoutHolder.add(currentLayout);
 		layoutHolder.addStyleName(generateLayoutCSSClassName(currentLayout));
 		
@@ -59,6 +67,26 @@ public final class MainView extends Composite implements IMainView {
 		currentPortal = to;
 		layoutHolder.addStyleName(generatePortalCSSClassName(currentPortal));
 	}
+	
+    @Override
+    public void plug(Place where, Pluggable what) {
+        if (currentLayout == null) throw new IllegalStateException("Current layout is null");
+        if (!currentLayout.has(where)) throw new IllegalStateException("Current layout " + currentLayout + " has no place " + where);
+        // if it is the same place and the same pluggable there, just refresh it
+        // else, put a new pluggable in corresponding outlet
+        if (plugged.containsKey(where) &&
+            plugged.get(where).id().equals(what.id())) {            
+            plugged.get(where).refresh(); // just refresh, nothing else
+        } else {
+            final IsOutlet outlet = currentLayout.outlet(where);
+            if (!outlet.isVisible()) Log.warn("Outlet at place " + where + " is not visible, but youa are plugging " + what + " there"); 
+            outlet.clear();
+            outlet.add(what.asWidget());
+            what.refresh();
+            plugged.put(where, what); 
+            Log.debug("Plugged " + what.id() + " into outlet at place " + where);
+        }
+    }
 	
 	@Override
 	public Portal getCurPortal() { return currentPortal; }
@@ -81,25 +109,11 @@ public final class MainView extends Composite implements IMainView {
 	public void clear() { currentLayout.clear(); }
 
     @Override
-    public void whenPortalChanged(Portal portal) { }	
-	
+    public void whenPortalChanged(Portal portal) { }
+    
     @Override
     public void showError(Throwable caught) {
     	Window.alert("Error: " + caught.getMessage());
     }
-    
-	/* @Override
-	public void changeWidget(Place where, Widget widget) {
-		if (!currentLayout.has(where)) throw new IllegalArgumentException("No such place " + where + " in current layout " + currentLayout.getLayoutId());
-		final HasWidgets placeholder = currentLayout.panel(where);
-		placeholder.clear();
-		placeholder.add(widget);
-	} */
-	
-	/* @Override
-	public void project(HasWidgets where, Widget what) {
-		where.clear();
-		where.add(what);
-	} */
 
 }
