@@ -6,6 +6,7 @@ import java.util.Map;
 import name.shamansir.mvplayout.client.ui.layout.LayoutEdit;
 import name.shamansir.mvplayout.client.ui.layout.LayoutItem;
 import name.shamansir.mvplayout.client.ui.layout.LayoutList;
+import name.shamansir.mvplayout.client.ui.widget.Layout;
 
 public class Layouts {
 	

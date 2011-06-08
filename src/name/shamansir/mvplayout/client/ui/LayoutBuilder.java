@@ -9,6 +9,7 @@ import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 import name.shamansir.mvplayout.client.ui.pages.main.MainEventBus;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
+import name.shamansir.mvplayout.client.ui.widget.Layout;
 
 import com.allen_sauer.gwt.log.client.Log;
 

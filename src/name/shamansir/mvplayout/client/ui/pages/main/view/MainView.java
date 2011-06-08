@@ -1,9 +1,9 @@
 package name.shamansir.mvplayout.client.ui.pages.main.view;
 
-import name.shamansir.mvplayout.client.ui.Layout;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.main.presenter.MainPresenter.IMainView;
+import name.shamansir.mvplayout.client.ui.widget.Layout;
 
 import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.core.client.GWT;

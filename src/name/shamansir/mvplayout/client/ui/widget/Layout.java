@@ -1,8 +1,9 @@
-package name.shamansir.mvplayout.client.ui;
+package name.shamansir.mvplayout.client.ui.widget;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 
@@ -29,7 +30,7 @@ public abstract class Layout extends Composite {
 	public final boolean has(Place place) { return outlets.containsKey(place); };
 	
 	public final IsOutlet outlet(Place place) { ensureOutletsLoaded(); return outlets.get(place); }	
-	protected final Map<Place, IsOutlet> outlets() { ensureOutletsLoaded(); return outlets; }
+	public final Map<Place, IsOutlet> outlets() { ensureOutletsLoaded(); return outlets; }
  	
 	
 	protected void ensureOutletsLoaded() {

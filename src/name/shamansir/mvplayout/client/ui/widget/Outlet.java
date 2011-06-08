@@ -1,7 +1,9 @@
 /**
  * 
  */
-package name.shamansir.mvplayout.client.ui;
+package name.shamansir.mvplayout.client.ui.widget;
+
+import name.shamansir.mvplayout.client.ui.IsOutlet;
 
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.FlowPanel;

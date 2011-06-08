@@ -1,10 +1,10 @@
 package name.shamansir.mvplayout.client.ui.layout;
 
 import name.shamansir.mvplayout.client.ui.IsOutlet;
-import name.shamansir.mvplayout.client.ui.Outlet;
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState;
+import name.shamansir.mvplayout.client.ui.widget.Outlet;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;

@@ -1,6 +1,8 @@
 package name.shamansir.mvplayout.client.ui.pages.main;
 
 import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
+import name.shamansir.mvplayout.client.ui.IsOutlet;
+import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.client.ui.pages.company.CompanyModule;
@@ -51,6 +53,9 @@ public interface MainEventBus extends EventBus, HandlesStates {
     
 	@Event(handlers = MainPresenter.class)
 	public void portalNotFound(PortalNotFoundException pnfe);
+	
+	@Event(handlers = MainPresenter.class)
+    public void plug(IsOutlet where, Pluggable what);	
 	
 	@Event(handlers = MainPresenter.class)
 	public void handle(Throwable caught);
