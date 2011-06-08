@@ -1,0 +1,2 @@
+-remoteUI "${gwt_remote_ui_server_port}:${unique_id}" -logLevel INFO -codeServerPort 9997 -port 8888 -server com.google.appengine.tools.development.gwt.AppEngineLauncher -war /home/<username>/Workspace/gwt-mvp4g-layouting-demo/war name.shamansir.mvplayout.LayoutingDemo
+

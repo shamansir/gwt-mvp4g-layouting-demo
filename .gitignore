@@ -5,9 +5,12 @@
 .gwt/
 .externalToolBuilders/
 .apt_generated/
+*.launch
 
 war/LayoutingDemo/
 war/WEB-INF/deploy
 war/WEB-INF/classes
+mvp4g-apt-*.jar
+eclipse-files.zip
 
 hs_err_pid*.log
