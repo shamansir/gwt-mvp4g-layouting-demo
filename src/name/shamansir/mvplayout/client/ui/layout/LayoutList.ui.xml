@@ -7,7 +7,6 @@
         <l:Outlet ui:field="placeA" />
         <l:Outlet ui:field="placeB" />
         <l:Outlet ui:field="placeC" />
-        <l:Outlet ui:field="status" />
     </gwt:FlowPanel>
     
 </ui:UiBinder>
