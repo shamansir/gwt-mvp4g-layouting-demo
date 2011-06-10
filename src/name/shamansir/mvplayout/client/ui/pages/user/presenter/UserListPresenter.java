@@ -20,7 +20,7 @@ import com.mvp4g.client.view.LazyView;
 @Presenter(view = UserListView.class)
 public class UserListPresenter extends StatedPortalPresenter<UserListPresenter.Display, UserEventBus, UserLayoutBuilder> {
 	
-	public interface Display extends LazyView, Pluggable, HasStatesPanels {
+	public interface Display extends LazyView, HasStatesPanels {
 		public void showUsers(Set<User> users);
 	}	
 

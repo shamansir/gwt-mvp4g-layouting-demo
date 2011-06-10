@@ -17,7 +17,7 @@ public interface ChildEventBus extends EventBus, UpdatesState {
     public void newPortal(Portal portal, CanBuildLayout builder);
     
     @Event(forwardToParent = true)
-    public void updateState(Place where, State state);
+    public void changeState(Place where, State state);
     
     @Event(forwardToParent = true)
     public void clearPage();

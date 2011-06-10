@@ -2,31 +2,23 @@ package name.shamansir.mvplayout.client.ui.state;
 
 import java.util.Collection;
 
-import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
-public final class StateDirector<V extends HandlesStateChange & Pluggable> {
+public abstract class StateDirector {
 	
-	private final V view;
-	private final UpdatesState reactor;
+	protected StateDirector() { }
 	
-	protected StateDirector(V view, UpdatesState reactor) {
-		this.view = view;
-		this.reactor = reactor;
-	}
+    public abstract void update(State to);	
 	
 	public final void update() {
-	    reactor.updateState(view.getPlace(), State.LOADING_DATA);
-		view.prepareFor(State.LOADING_DATA);
+	    update(State.LOADING_DATA);
 	}
 	
 	public final void update(int dataSize) {
 		if (dataSize > 0) {
-		    reactor.updateState(view.getPlace(), State.HAS_DATA);
-			view.prepareFor(State.HAS_DATA);
+		    update(State.HAS_DATA);
 		} else {
-		    reactor.updateState(view.getPlace(), State.NO_DATA);
-			view.prepareFor(State.NO_DATA);
+            update(State.NO_DATA);
 		}
 	}	
 	
@@ -59,11 +51,6 @@ public final class StateDirector<V extends HandlesStateChange & Pluggable> {
 	public final <A> void update(Collection<A> collection, Filter<A> filter) {
 		update(collection, filter, null);
 	}
-	
-	public final void update(State to) {
-		reactor.updateState(view.getPlace(), to);
-		view.prepareFor(to);
-	}	
 	
 	public final void loading() { update(State.LOADING_DATA); };
 	public final void noData() { update(State.NO_DATA); };

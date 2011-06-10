@@ -21,5 +21,6 @@ import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
  *
  */
 public interface UpdatesState {
-    public void updateState(Place where, State to);
+    public void changeState(State to);
+    public void changeState(Place where, State to);    
 }

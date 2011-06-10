@@ -46,7 +46,7 @@ public interface MainEventBus extends EventBus, UpdatesState {
     public void newPortal(Portal portal, CanBuildLayout builder);
     
     @Override @Event(handlers = MainPresenter.class, calledMethod = "updateState")
-    public void updateState(Place where, State state); // if null, updates layout state
+    public void changeState(Place where, State state); // if null, updates layout state
     
     @Event(handlers = MainPresenter.class, calledMethod = "clearPage")
     public void clearPage();

@@ -9,6 +9,7 @@ import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.PortalPresenter;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
+import name.shamansir.mvplayout.client.ui.state.PortalStateDirector;
 
 import com.mvp4g.client.view.LazyView;
 
@@ -27,14 +28,14 @@ import com.mvp4g.client.view.LazyView;
  *
  */
 public abstract class StatedPortalPresenter<V extends HasStatesPanels 
-                                                      & Pluggable
+                                                      & HandlesStateChange
                                                       & LazyView, 
                                    E extends ChildEventBus,
                                    L extends LayoutBuilder<E>> 
                                    extends PortalPresenter<V, E, L> 
 								   implements PlugsStates {
     
-    protected StateDirector<V> state;    
+    protected StateDirector state;    
     
     protected StatedPortalPresenter(Portal portal) {
         super(portal);
@@ -42,7 +43,7 @@ public abstract class StatedPortalPresenter<V extends HasStatesPanels
     
     @Override
     public void bindView() {
-        state = new StateDirector<V>(view, eventBus);
+        state = new PortalStateDirector(view, eventBus);
     }
     
     @Override    

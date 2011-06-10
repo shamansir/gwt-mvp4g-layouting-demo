@@ -3,8 +3,6 @@
  */
 package name.shamansir.mvplayout.client.ui;
 
-import name.shamansir.mvplayout.client.ui.Layouts.Place;
-
 import com.google.gwt.user.client.ui.IsWidget;
 
 /**
@@ -21,12 +19,9 @@ import com.google.gwt.user.client.ui.IsWidget;
  * @date Jun 7, 2011 7:42:44 PM 
  *
  */
-public interface Pluggable extends IsWidget {
+public interface Pluggable extends IsWidget, HasPlace {
     
     public String id();
     public void refresh();
-    
-    public Place getPlace();
-    public void setPlace(Place place);
 
 }

@@ -3,7 +3,6 @@ package name.shamansir.mvplayout.client.ui.pages.user.view;
 import java.util.Set;
 
 import name.shamansir.mvplayout.client.ui.Pluggable;
-import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.pages.user.presenter.UserListPresenter.Display;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 import name.shamansir.mvplayout.client.ui.widget.PortalView;
@@ -21,9 +20,7 @@ public final class UserListView extends PortalView implements Display {
 	interface ListViewUiBinder extends UiBinder<Widget, UserListView> { }	
 	private static ListViewUiBinder uiBinder = GWT.create(ListViewUiBinder.class);
 	
-    public UserListView() {
-        super(Portal.USERS_LIST);
-    }	
+    public UserListView() { }	
 	
 	@Override
 	public void createView() {
