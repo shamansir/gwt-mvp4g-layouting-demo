@@ -20,7 +20,7 @@ import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
  * @date Jun 10, 2011 9:54:56 AM 
  *
  */
-public final class PortletStateDirector<V extends HandlesStateChange & HasPlace> extends StateDirector {
+public final class PortletStateDirector<V extends HasPlace> extends StateDirector {
     
     private final V view;
     protected final UpdatesState reactor;       
@@ -33,7 +33,6 @@ public final class PortletStateDirector<V extends HandlesStateChange & HasPlace>
     @Override
     public void update(State to) {
         reactor.changeState(view.getPlace(), to);
-        view.prepareFor(to);
     }
     
 }

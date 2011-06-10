@@ -88,6 +88,11 @@ public final class MainView extends Composite implements IMainView {
             what.refresh();            
         }
     }
+    
+    @Override
+    public Pluggable getPluggable(Place where) {
+        return plugged.get(where);
+    }
 	
 	@Override
 	public Portal getCurPortal() { return currentPortal; }

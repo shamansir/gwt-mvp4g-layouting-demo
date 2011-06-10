@@ -31,8 +31,8 @@ public final class PortalStateDirector<V extends HandlesStateChange> extends Sta
 
     @Override
     public void update(State to) {
-        reactor.changeState(null, to);
         view.prepareFor(to);
+        reactor.changeState(null, to);
     }
     
 }
