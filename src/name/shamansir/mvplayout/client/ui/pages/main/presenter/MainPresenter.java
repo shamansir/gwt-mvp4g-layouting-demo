@@ -89,6 +89,10 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	Log.debug("Portal not found: " + pnfe.getLocalizedMessage());
     };
     
+    public void onStart() {
+        eventBus.users(null);
+    }
+    
     public void onHandle(Throwable caught) {
     	view.showError(caught);
     }

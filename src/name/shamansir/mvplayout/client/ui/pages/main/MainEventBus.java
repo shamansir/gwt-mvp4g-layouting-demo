@@ -16,6 +16,7 @@ import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 import com.mvp4g.client.annotation.Debug;
 import com.mvp4g.client.annotation.Event;
 import com.mvp4g.client.annotation.Events;
+import com.mvp4g.client.annotation.Start;
 import com.mvp4g.client.annotation.module.ChildModule;
 import com.mvp4g.client.annotation.module.ChildModules;
 import com.mvp4g.client.event.EventBus;
@@ -29,10 +30,14 @@ import com.mvp4g.client.event.EventBus;
 } )
 public interface MainEventBus extends EventBus, UpdatesState {
     
+    @Start
+    @Event(handlers = MainPresenter.class)
+    public void start();
+    
     // =============== navigation ==============================================
 
 	@Event(modulesToLoad = UserModule.class)
-	public void users();
+	public void users(String filter);
 
 	@Event(modulesToLoad = CompanyModule.class)	
 	public void companies();

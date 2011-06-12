@@ -6,17 +6,20 @@ import name.shamansir.mvplayout.client.ui.LayoutBuilders;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.Portal.Group;
 import name.shamansir.mvplayout.client.ui.Portal.PortalUrl;
+import name.shamansir.mvplayout.client.ui.Portal.PortalUrlBuilder;
+import name.shamansir.mvplayout.client.ui.Portal.UrlBuilder;
 
 import com.mvp4g.client.history.HistoryConverter;
 
 public abstract class PortalsHistoryConverter<E extends ChildEventBus> implements HistoryConverter<E> {
 
 	protected final Group group;
-	protected final LayoutBuilder<E> layoutBuilder;	
+	protected final LayoutBuilder<E> layout;
+	protected final UrlBuilder url = PortalUrlBuilder.get();
 	
 	protected PortalsHistoryConverter(Group group) {
 		this.group = group;
-		this.layoutBuilder = LayoutBuilders.get(group);		
+		this.layout = LayoutBuilders.get(group);		
 	}
 	
 	@Override
@@ -29,7 +32,7 @@ public abstract class PortalsHistoryConverter<E extends ChildEventBus> implement
 			final Portal view = url.view();
 		
 			// prepare layout
-			eventBus.newPortal(view, layoutBuilder.make(view, eventBus));
+			eventBus.newPortal(view, layout.make(view, eventBus));
 		
 			// dispatch current URL
 			convertFromUrl(url, url.view(), eventBus);

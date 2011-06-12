@@ -69,11 +69,21 @@ public enum Portal implements MakesLink {
         public PortalUrl addParams(Object... values) {
             for (Object value: values) addParam(value);
             return this;
-        }	        
+        }
+        
+        public List<String> params() {
+            return params;
+        }
+        
+        public String param(int pos) {
+            return (pos < params.size())
+                   ? params.get(pos)
+                   : null;
+        }
 	    
         public Portal view() {
             return portal;
-        }	    
+        }
 
         @Override
         public String makeLink() {
