@@ -4,9 +4,13 @@
     xmlns:l="urn:import:name.shamansir.mvplayout.client.ui.widget">
     
     <gwt:FlowPanel>
-        <l:Outlet ui:field="placeA" />
-        <l:Outlet ui:field="placeB" />
-        <l:Outlet ui:field="placeC" />
+        <gwt:VerticalPanel>
+            <l:Outlet ui:field="placeA" />
+	        <gwt:HorizontalPanel>
+	            <l:Outlet ui:field="placeC" />
+	            <l:Outlet ui:field="placeB" />
+	        </gwt:HorizontalPanel>
+        </gwt:VerticalPanel>
         <l:Outlet ui:field="status" />                        
     </gwt:FlowPanel>
     
