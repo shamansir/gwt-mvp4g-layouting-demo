@@ -14,7 +14,7 @@ import com.google.gwt.user.client.ui.Widget;
 
 public final class UserListView extends PortletView implements Display {
     
-    public static final String PORTLET_ID = "uesrs-list";
+    public static final String PORTLET_ID = "users-list";
 
     @UiTemplate("UserListView.ui.xml")	
 	interface ListViewUiBinder extends UiBinder<Widget, UserListView> { }	

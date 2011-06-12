@@ -25,7 +25,6 @@ public class UserHistoryConverter extends PortalsHistoryConverter<UserEventBus> 
 	
 	public String onUsers(String filter) {
 	    return url.build(Portal.USERS_LIST, filter);
-	}
-	
+	}	
 
 }

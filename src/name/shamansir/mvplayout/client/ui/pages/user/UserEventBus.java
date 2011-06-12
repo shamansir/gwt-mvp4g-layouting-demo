@@ -33,14 +33,5 @@ public interface UserEventBus extends ChildEventBus {
 	
 	@Event
 	public void plugUsersList(Place where);
-	
-	@Event
-	public void plugUsersLoading(Place where);
-	
-	@Event
-	public void plugUsersEmpty(Place where);
-	
-	@Event
-	public void plugUsersNoMatches(Place where);
 
 }
