@@ -107,11 +107,11 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     /* public void forceLayout(LayoutId layout) { view.switchLayout(LayoutFactory.getLayout(layout)); } */
     
     public void subscribePageScroll(PageScrollListener listener) {
-    	view.addPageScrollHandler(listener);
+    	handlers.add(view.addPageScrollHandler(listener));
     }
 
     public void subscribePageResize(PageResizeListener listener) {
-    	view.addPageResizeHandler(listener);
+    	handlers.add(view.addPageResizeHandler(listener));
     }    
     
     protected void unregisterHandlers() {
