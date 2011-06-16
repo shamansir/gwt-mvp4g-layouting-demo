@@ -8,6 +8,8 @@ import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.company.CompanyModule;
 import name.shamansir.mvplayout.client.ui.pages.main.presenter.MainPresenter;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageResizeListener;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageScrollListener;
 import name.shamansir.mvplayout.client.ui.pages.news.NewsModule;
 import name.shamansir.mvplayout.client.ui.pages.user.UserModule;
 import name.shamansir.mvplayout.client.ui.state.UpdatesState;
@@ -59,5 +61,11 @@ public interface MainEventBus extends EventBus, UpdatesState {
 	
 	@Event(handlers = MainPresenter.class)
 	public void handle(Throwable caught);
+	
+	@Event(handlers = MainPresenter.class, calledMethod = "subscribePageResize")
+	public void subscribePageResize(PageResizeListener listener);
+	
+	@Event(handlers = MainPresenter.class, calledMethod = "subscribePageScroll")
+	public void subscribePageScroll(PageScrollListener listener);	
 	
 }

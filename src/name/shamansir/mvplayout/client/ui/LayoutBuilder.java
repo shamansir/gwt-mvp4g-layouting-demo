@@ -98,7 +98,13 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 
 		@Override
 		protected boolean doLayout(Portal view, Layout layout, State state) {
-			return layout(view, layout, state, eventBus);
+			boolean result = layout(view, layout, state, eventBus);
+			if (result) { 
+				// TODO: ensure not subscribed twice  
+				eventBus.subscribePageResize(layout);
+				eventBus.subscribePageScroll(layout);
+			}
+			return result;
 		}
 		
 		
@@ -133,6 +139,9 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		@Override
 		public final void run() {
 			eventBus.newPortal(view, this);
+			// TODO: ensure not subscribed twice  
+			eventBus.subscribePageResize(layout);
+			eventBus.subscribePageScroll(layout);
 		}
 
 	}

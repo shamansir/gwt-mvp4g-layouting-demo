@@ -6,10 +6,15 @@ import java.util.Map;
 import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.Layouts.LayoutId;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageResizeEvent;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageResizeListener;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageScrollEvent;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageScrollListener;
 
+import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.user.client.ui.Composite;
 
-public abstract class Layout extends Composite {
+public abstract class Layout extends Composite implements PageScrollListener, PageResizeListener {
 	
 	private final LayoutId id;
 	private final Place[] places;
@@ -46,5 +51,13 @@ public abstract class Layout extends Composite {
 			outlets.get(place).clear();
 		}
 	}	
+	
+	public void onPageScroll(PageScrollEvent event) {
+		Log.debug("Layout " + id + " handled scrolling event");
+	}
+	
+	public void onPageResize(PageResizeEvent event) { 
+		Log.debug("Layout " + id + " handled resize event");
+	}
 	
 }

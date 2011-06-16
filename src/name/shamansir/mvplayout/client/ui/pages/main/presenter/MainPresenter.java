@@ -1,16 +1,19 @@
 package name.shamansir.mvplayout.client.ui.pages.main.presenter;
 
 import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
-import name.shamansir.mvplayout.client.ui.Pluggable;
-import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
+import name.shamansir.mvplayout.client.ui.Pluggable;
+import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.pages.main.MainEventBus;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageResizeListener;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageScrollListener;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 import name.shamansir.mvplayout.client.ui.widget.Layout;
 
 import com.allen_sauer.gwt.log.client.Log;
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.mvp4g.client.annotation.Presenter;
 import com.mvp4g.client.presenter.LazyPresenter;
 import com.mvp4g.client.view.LazyView;
@@ -34,6 +37,9 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
         public void plug(Place where, Pluggable what);
 
 		public void showError(Throwable caught);
+
+		public HandlerRegistration addPageResizeHandler(PageResizeListener handler);
+		public HandlerRegistration addPageScrollHandler(PageScrollListener handler);
 		
 	}
 	
@@ -91,5 +97,13 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     }
     
     /* public void forceLayout(LayoutId layout) { view.switchLayout(LayoutFactory.getLayout(layout)); } */
+    
+    public void subscribePageScroll(PageScrollListener listener) {
+    	view.addPageScrollHandler(listener);
+    }
+
+    public void subscribePageResize(PageResizeListener listener) {
+    	view.addPageResizeHandler(listener);
+    }    
 	
 }

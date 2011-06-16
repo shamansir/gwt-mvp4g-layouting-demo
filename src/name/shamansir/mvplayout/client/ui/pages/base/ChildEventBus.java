@@ -5,6 +5,8 @@ import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageResizeListener;
+import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageScrollListener;
 import name.shamansir.mvplayout.client.ui.state.UpdatesState;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
@@ -30,5 +32,11 @@ public interface ChildEventBus extends EventBus, UpdatesState {
     
     @Event(forwardToParent = true)
     public void plug(Place where, Pluggable what);
+    
+	@Event(forwardToParent = true)
+	public void subscribePageResize(PageResizeListener listener);
+	
+	@Event(forwardToParent = true)
+	public void subscribePageScroll(PageScrollListener listener);	    
     
 }
