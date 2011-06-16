@@ -7,11 +7,5 @@ import com.mvp4g.client.view.LazyView;
 public abstract class PortletPresenter<V extends LazyView,
                                        E extends EventBus> 
                       extends LazyPresenter<V, E> {
-
-	/* protected final void project(HasWidgets where) {
-		// Log.debug("Projecting " + this + "(" + view.id() + ") to the " + where);		
-        where.clear();
-        where.add((Widget)view);
-	} */
 		
 }

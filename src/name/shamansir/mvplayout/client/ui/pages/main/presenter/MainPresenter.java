@@ -12,6 +12,7 @@ import name.shamansir.mvplayout.client.ui.pages.main.MainEventBus;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageResizeListener;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageScrollListener;
+import name.shamansir.mvplayout.client.ui.state.HandlesStateChange;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 import name.shamansir.mvplayout.client.ui.widget.Layout;
 
@@ -40,6 +41,7 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
         public void whenPortalChanged(Portal portal);
         
         public void plug(Place where, Pluggable what);
+        public Pluggable getPluggable(Place where);
 
 		public void showError(Throwable caught);
 
@@ -82,11 +84,12 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	if (state == null) throw new IllegalArgumentException("Passed state is null");
     	if (where == null) { // update whole page
         	if (!currentBuilder.layoutHasStates()) Log.warn("Current layout " + currentBuilder.getLayout() + " do not supports states, please ensure you do what you want");
-        	if ((currentBuilder.curState() != null) && currentBuilder.curState().equals(state)) return;     	
-        	
+        	if ((currentBuilder.curState() != null) && currentBuilder.curState().equals(state)) return;     	        	
         	currentBuilder.build(state); // just changes layout inside it, do not re-renders anything that not required
     	} else {
-    	    // TODO: implement
+    	    Pluggable portlet = view.getPluggable(where);
+    	    if (!(portlet instanceof HandlesStateChange)) throw new IllegalStateException("Portlet at place " + where + " does not implements HandlesStateChange, so it can not change states");
+    	    ((HandlesStateChange)portlet).prepareFor(state);
     	}
     }
     
@@ -99,6 +102,10 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     public void onPortalNotFound(PortalNotFoundException pnfe) { 
     	Log.debug("Portal not found: " + pnfe.getLocalizedMessage());
     };
+    
+    public void onStart() {
+        eventBus.users(null);
+    }
     
     public void onHandle(Throwable caught) {
     	view.showError(caught);

@@ -14,18 +14,9 @@ public class UserLayoutBuilder extends LayoutBuilder<UserEventBus> {
 		
 		switch (view) {
 			case USERS_LIST: {
+                eventBus.plugUsersList(Place.A);			    
 				eventBus.plugUserAvatar(Place.B);
 				eventBus.plugUserDetails(Place.C);
-				if (State.HAS_DATA.equals(state)) {
-					eventBus.plugUsersList(Place.A);
-				} else if (State.LOADING_DATA.equals(state)) {
-					eventBus.plugUsersLoading(Place.STATUS);
-				} else if (State.NO_DATA.equals(state)) {
-					eventBus.plugUsersEmpty(Place.STATUS);
-				} else if (State.NO_MATCHES.equals(state)) {
-					eventBus.plugUsersNoMatches(Place.STATUS);
-				} else return false;
-				return true;
 			}
 		}
 		

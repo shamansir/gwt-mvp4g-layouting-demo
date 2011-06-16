@@ -1,12 +1,18 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-    xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+    xmlns:l="urn:import:name.shamansir.mvplayout.client.ui.widget">
     
     <gwt:FlowPanel>
-        <gwt:FlowPanel ui:field="placeA"></gwt:FlowPanel>
-        <gwt:FlowPanel ui:field="placeB"></gwt:FlowPanel>
-        <gwt:FlowPanel ui:field="placeC"></gwt:FlowPanel>
-        <gwt:FlowPanel ui:field="placeD"></gwt:FlowPanel>                                
+        <gwt:HorizontalPanel>
+        	<l:Outlet ui:field="placeA" />
+            <gwt:VerticalPanel>
+		        <l:Outlet ui:field="placeB" />
+                <l:Outlet ui:field="placeD" />		        
+		        <l:Outlet ui:field="placeC" />
+	        </gwt:VerticalPanel>
+        </gwt:HorizontalPanel>
+        <l:Outlet ui:field="status" />
     </gwt:FlowPanel>
     
 </ui:UiBinder>

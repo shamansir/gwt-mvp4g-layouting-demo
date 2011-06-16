@@ -4,7 +4,6 @@
 package name.shamansir.mvplayout.client.ui.state;
 
 import name.shamansir.mvplayout.client.ui.PortletPresenter;
-import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 
 import com.mvp4g.client.view.LazyView;
@@ -25,29 +24,17 @@ import com.mvp4g.client.view.LazyView;
  */
 public abstract class StatedPortletPresenter<V extends PluggableWithStates & LazyView, 
                                    E extends ChildEventBus> 
-                                   extends PortletPresenter<V, E>
-								   implements PlugsStates {
+                                   extends PortletPresenter<V, E> {
+    
+    protected StateDirector state;
     
     protected StatedPortletPresenter() {
 
     }
-
-    @Override
-    public void plugEmpty(Place where) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override    
-    public void plugLoading(Place where) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override    
-    public void plugNoMatches(Place where) {
-        // TODO Auto-generated method stub
-        
-    }  
     
+    @Override
+    public void bindView() {
+        state = new PortletStateDirector<V>(view, eventBus); 
+    }
+
 }

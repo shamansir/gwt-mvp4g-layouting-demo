@@ -4,9 +4,9 @@ import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 
 import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Composite;
 
-public class PortletView extends FlowPanel implements Pluggable {
+public class PortletView extends Composite implements Pluggable {
 	
 	private final String alias;
 	private Place place;
