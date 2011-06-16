@@ -1,5 +1,8 @@
 package name.shamansir.mvplayout.client.ui.pages.main.presenter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
@@ -24,7 +27,9 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     public static final State DEFAULT_LAYOUT_STATE = State.LOADING_DATA;
     
     private CanBuildLayout currentBuilder;
-
+    
+    private List<HandlerRegistration> handlers = new ArrayList<HandlerRegistration>();
+    
 	public interface IMainView extends LazyView {
 
         public Portal getCurPortal();
@@ -54,6 +59,8 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	if ((view.getCurPortal() != null) &&
     		view.getCurPortal().equals(portal)) return; // no need in rebuilding layout
     	
+    	unregisterHandlers();
+    	
     	view.beforePortalChange(portal);
     	
     	final State state = builder.layoutHasStates() ? DEFAULT_LAYOUT_STATE : null;
@@ -64,7 +71,8 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	}
     	currentBuilder = builder;
     	
-    	view.switchLayout(layoutBuilt);    	
+    	view.switchLayout(layoutBuilt);
+    	subscribePageEvents(layoutBuilt);
     	
 		view.whenPortalChanged(portal);    	
 	}
@@ -105,5 +113,16 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     public void subscribePageResize(PageResizeListener listener) {
     	view.addPageResizeHandler(listener);
     }    
-	
+    
+    protected void unregisterHandlers() {
+    	for (HandlerRegistration handler: handlers) {
+    		handler.removeHandler();
+    	}
+    }
+    
+    protected void subscribePageEvents(Layout layout) {
+    	handlers.add(view.addPageResizeHandler(layout));
+    	handlers.add(view.addPageScrollHandler(layout));
+    }    
+    
 }
