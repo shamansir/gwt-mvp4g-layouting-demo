@@ -3,13 +3,13 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
+import com.mvp4g.client.view.LazyView;
+
 import name.shamansir.mvplayout.client.ui.LayoutBuilder;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.PortalPresenter;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
-
-import com.mvp4g.client.view.LazyView;
 
 /**
  * <dl>
@@ -25,9 +25,9 @@ import com.mvp4g.client.view.LazyView;
  * @date Apr 28, 2011 10:16:17 PM 
  *
  */
-public abstract class StatedPortalPresenter<V extends HasStatesPanels 
-                                                      & HandlesStateChange
-                                                      & LazyView, 
+public abstract class StatedPortalPresenter<V extends LazyView &
+                                                      HasStatesPanels &
+                                                      HandlesStateChange,  
                                    E extends ChildEventBus,
                                    L extends LayoutBuilder<E>> 
                                    extends PortalPresenter<V, E, L> 

@@ -3,8 +3,11 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
+import name.shamansir.mvplayout.client.ui.HasMainView;
 import name.shamansir.mvplayout.client.ui.PortletPresenter;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 import com.mvp4g.client.view.LazyView;
 
@@ -22,7 +25,10 @@ import com.mvp4g.client.view.LazyView;
  * @date Apr 28, 2011 10:16:17 PM 
  *
  */
-public abstract class StatedPortletPresenter<V extends PluggableWithStates & LazyView, 
+public abstract class StatedPortletPresenter<V extends LazyView & 
+                                                       HasMainView &
+                                                       HasStatesPanels &
+                                                       HandlesStateChange, 
                                    E extends ChildEventBus> 
                                    extends PortletPresenter<V, E> {
     
@@ -35,6 +41,15 @@ public abstract class StatedPortletPresenter<V extends PluggableWithStates & Laz
     @Override
     public void bindView() {
         state = new PortletStateDirector<V>(view, eventBus); 
+    }
+    
+    public void plugState(Place where, State state) {
+        switch (state) {
+            case HAS_DATA: plug(where); break; 
+            case LOADING_DATA: eventBus.plug(where, view.getLoadingView()); break;
+            case NO_DATA: eventBus.plug(where, view.getEmptyView()); break;
+            case NO_MATCHES: eventBus.plug(where, view.getNoMatchesView()); break;
+        }
     }
 
 }

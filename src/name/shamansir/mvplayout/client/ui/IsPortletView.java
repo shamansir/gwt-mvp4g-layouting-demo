@@ -3,7 +3,7 @@
  */
 package name.shamansir.mvplayout.client.ui;
 
-import com.google.gwt.user.client.ui.IsWidget;
+import com.mvp4g.client.view.LazyView;
 
 /**
  * <dl>
@@ -11,17 +11,14 @@ import com.google.gwt.user.client.ui.IsWidget;
  * <dt>Package:</dt> <dd>name.shamansir.mvplayout.client.ui</dd>
  * </dl>
  *
- * <code>Pluggable</code>
+ * <code>IsPortletView</code>
  *
  * <p>Description</p>
  *
  * @author Ulric Wilfred <shaman.sir@gmail.com>
- * @date Jun 7, 2011 7:42:44 PM 
+ * @date Jun 16, 2011 8:25:36 PM 
  *
  */
-public interface Pluggable extends IsWidget, CanBePlaced, HasRefreshHandler {
-    
-    public String id();
-    public void refresh();
-    
+public interface IsPortletView extends LazyView, HasMainView {
+
 }

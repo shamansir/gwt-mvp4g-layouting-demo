@@ -3,7 +3,6 @@
  */
 package name.shamansir.mvplayout.client.ui;
 
-import name.shamansir.mvplayout.client.ui.Layouts.Place;
 
 /**
  * <dl>
@@ -11,17 +10,15 @@ import name.shamansir.mvplayout.client.ui.Layouts.Place;
  * <dt>Package:</dt> <dd>name.shamansir.mvplayout.client.ui</dd>
  * </dl>
  *
- * <code>HasPlace</code>
+ * <code>HasRefreshHandler</code>
  *
  * <p>Description</p>
  *
  * @author Ulric Wilfred <shaman.sir@gmail.com>
- * @date Jun 9, 2011 7:14:44 PM 
+ * @date Jun 16, 2011 9:07:21 PM 
  *
  */
-public interface HasPlace {
-    
-    public Place getPlace();
-    public void setPlace(Place place);    
-
+public interface HasRefreshHandler {
+    public RefreshHandler getRefreshHandler();
+    public void setRefreshHandler(RefreshHandler refreshHandler);
 }

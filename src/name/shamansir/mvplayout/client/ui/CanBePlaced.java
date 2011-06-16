@@ -3,7 +3,7 @@
  */
 package name.shamansir.mvplayout.client.ui;
 
-import com.google.gwt.user.client.ui.IsWidget;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 
 /**
  * <dl>
@@ -11,17 +11,17 @@ import com.google.gwt.user.client.ui.IsWidget;
  * <dt>Package:</dt> <dd>name.shamansir.mvplayout.client.ui</dd>
  * </dl>
  *
- * <code>Pluggable</code>
+ * <code>CanBePlaced</code>
  *
  * <p>Description</p>
  *
  * @author Ulric Wilfred <shaman.sir@gmail.com>
- * @date Jun 7, 2011 7:42:44 PM 
+ * @date Jun 9, 2011 7:14:44 PM 
  *
  */
-public interface Pluggable extends IsWidget, CanBePlaced, HasRefreshHandler {
+public interface CanBePlaced {
     
-    public String id();
-    public void refresh();
-    
+    public Place getPlace();
+    public void setPlace(Place place);    
+
 }

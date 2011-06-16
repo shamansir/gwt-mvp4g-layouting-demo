@@ -3,7 +3,7 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
-import name.shamansir.mvplayout.client.ui.Pluggable;
+import name.shamansir.mvplayout.client.ui.IsPortalView;
 
 /**
  * <dl>
@@ -11,14 +11,14 @@ import name.shamansir.mvplayout.client.ui.Pluggable;
  * <dt>Package:</dt> <dd>name.shamansir.mvplayout.client.ui.state</dd>
  * </dl>
  *
- * <code>PluggableWithStates</code>
+ * <code>IsStatedPortalView</code>
  *
  * <p>Description</p>
  *
  * @author Ulric Wilfred <shaman.sir@gmail.com>
- * @date Jun 7, 2011 7:45:21 PM 
+ * @date Jun 16, 2011 8:26:25 PM 
  *
  */
-public interface PluggableWithStates extends Pluggable, HandlesStateChange {
-    
+public interface IsStatedPortalView extends IsPortalView, HasStatesPanels, HandlesStateChange {
+
 }
