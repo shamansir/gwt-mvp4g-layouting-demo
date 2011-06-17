@@ -11,5 +11,6 @@ public class User extends Card {
 	public String name;
 	public String familyName;
 	public int age;
+	public String avatar;
 	
 }

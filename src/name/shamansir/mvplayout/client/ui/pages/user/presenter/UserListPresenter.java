@@ -26,7 +26,7 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
 	@Inject UserServiceAsync service;
 
 	public void onUsers(String filter) {
-		service.getUsers(null, new ErrorsSafeCallback<Set<User>>(eventBus) {
+		service.getUsers(filter, new ErrorsSafeCallback<Set<User>>(eventBus) {
 			
 			@Override
 			public void onSuccess(Set<User> users) {
