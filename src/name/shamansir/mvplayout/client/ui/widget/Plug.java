@@ -3,13 +3,12 @@
  */
 package name.shamansir.mvplayout.client.ui.widget;
 
-import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.Widget;
-
 import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.RefreshHandler;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
+
+import com.google.gwt.uibinder.client.UiConstructor;
+import com.google.gwt.user.client.ui.FlowPanel;
 
 /**
  * <dl>
@@ -25,7 +24,7 @@ import name.shamansir.mvplayout.client.ui.Layouts.Place;
  * @date Jun 16, 2011 8:57:10 PM 
  *
  */
-public class Plug extends Composite implements Pluggable {
+public class Plug extends FlowPanel implements Pluggable {
     
     private String alias;
     private Place place;
@@ -44,11 +43,6 @@ public class Plug extends Composite implements Pluggable {
     @Override
     public void refresh() {
         if (refreshHandler != null) refreshHandler.doRefresh();
-    }
-
-    @Override
-    public Widget asWidget() {
-        return this;
     }
 
     @Override

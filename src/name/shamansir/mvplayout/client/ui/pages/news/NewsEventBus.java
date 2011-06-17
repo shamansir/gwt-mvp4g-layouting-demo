@@ -9,13 +9,13 @@ import name.shamansir.mvplayout.client.ui.pages.news.view.NewsListView;
 @Events(module = NewsModule.class, startView = NewsListView.class)
 public interface NewsEventBus extends ChildEventBus {
 	
-	@Event(name = "list", navigationEvent = true)
+	@Event(/*name = "list", navigationEvent = true*/)
 	public void news();
 	
-	@Event(name = "show", navigationEvent = true)
+	@Event(/*name = "show", navigationEvent = true*/)
 	public void show(int nid);
 	
-	@Event(name = "edit", navigationEvent = true)
+	@Event(/*name = "edit", navigationEvent = true*/)
 	public void edit(int nid);	
 
 }

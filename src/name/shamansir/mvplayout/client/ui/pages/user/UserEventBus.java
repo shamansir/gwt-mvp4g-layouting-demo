@@ -17,10 +17,10 @@ public interface UserEventBus extends ChildEventBus {
 		   historyConverter = UserHistoryConverter.class)
 	public void users(String filter);
 	
-	@Event(name = "show", navigationEvent = true)
+	@Event(/*name = "show", navigationEvent = true*/)
 	public void show(int uid);
 	
-	@Event(name = "edit", navigationEvent = true)
+	@Event(/*name = "edit", navigationEvent = true*/)
 	public void edit(int uid);
 	
 	// projecting events

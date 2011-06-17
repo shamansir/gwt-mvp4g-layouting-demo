@@ -13,6 +13,8 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
 public final class UserListView extends Composite implements Display {
@@ -26,6 +28,8 @@ public final class UserListView extends Composite implements Display {
 	@UiField Plug whenLoading;
 	@UiField Plug noMatches;
 	
+	@UiField VerticalPanel usersHolder;	
+	
     public UserListView() {  }	
 	
 	@Override
@@ -35,7 +39,10 @@ public final class UserListView extends Composite implements Display {
 
     @Override
     public void showUsers(Set<User> users) {
-        
+        usersHolder.clear();
+        for (User user: users) {
+            usersHolder.add(new Label(user.name + " " + user.familyName));
+        }
     }
 
     @Override
