@@ -125,6 +125,7 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	for (HandlerRegistration handler: handlers) {
     		handler.removeHandler();
     	}
+    	handlers.clear();
     }
     
     protected void subscribePageEvents(Layout layout) {
