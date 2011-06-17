@@ -4,11 +4,11 @@ import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public abstract class ErrorHandlingCallback<T> implements AsyncCallback<T> {
+public abstract class ErrorsSafeCallback<T> implements AsyncCallback<T> {
 	
 	private final ChildEventBus eventBus;
 	
-	public ErrorHandlingCallback(ChildEventBus eventBus) {
+	public ErrorsSafeCallback(ChildEventBus eventBus) {
 		this.eventBus = eventBus;
 	}
 

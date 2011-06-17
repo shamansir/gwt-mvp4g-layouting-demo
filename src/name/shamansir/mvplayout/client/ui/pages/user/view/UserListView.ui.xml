@@ -1,23 +1,26 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
-    xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
+             xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+             xmlns:l="urn:import:name.shamansir.mvplayout.client.ui.widget">
 
-    <gwt:FlowPanel> <!-- just a wrapper -->
+    <l:Plugs>
 
-	    <gwt:FlowPanel ui:field="ifEmpty">
-	        <gwt:Label>No users found</gwt:Label>
-	    </gwt:FlowPanel>
-	    
-        <gwt:FlowPanel ui:field="whenLoading">
-            <gwt:Label>Loading users list...</gwt:Label>
-        </gwt:FlowPanel>
-        
-        <gwt:FlowPanel ui:field="noMatches">
-            <gwt:Label>No users matched your request</gwt:Label>
-        </gwt:FlowPanel>     
-        
-        <gwt:VerticalPanel ui:field="usersHolder" />
+        <l:Plug ui:field="mainView" alias="users-list">
+            <gwt:VerticalPanel ui:field="usersHolder" />    
+        </l:Plug>
     
-    </gwt:FlowPanel>
+	    <l:Plug ui:field="ifEmpty" alias="users-list-empty">
+	        <gwt:Label>No users found</gwt:Label>
+	    </l:Plug>
+	    
+        <l:Plug ui:field="whenLoading" alias="users-list-loading">
+            <gwt:Label>Loading users list...</gwt:Label>
+        </l:Plug>
+        
+        <l:Plug ui:field="noMatches" alias="users-list-no-matches">
+            <gwt:Label>No users matched your request</gwt:Label>
+        </l:Plug>     
+    
+    </l:Plugs>
 
 </ui:UiBinder> 

@@ -3,7 +3,7 @@ package name.shamansir.mvplayout.client.ui.pages.user.presenter;
 import java.util.Set;
 
 import name.shamansir.mvplayout.client.service.UserServiceAsync;
-import name.shamansir.mvplayout.client.ui.ErrorHandlingCallback;
+import name.shamansir.mvplayout.client.ui.ErrorsSafeCallback;
 import name.shamansir.mvplayout.client.ui.pages.user.UserEventBus;
 import name.shamansir.mvplayout.client.ui.pages.user.view.UserListView;
 import name.shamansir.mvplayout.client.ui.state.IsStatedPortletView;
@@ -26,7 +26,7 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
 	@Inject UserServiceAsync service;
 
 	public void onUsers(String filter) {
-		service.getUsers(null, new ErrorHandlingCallback<Set<User>>(eventBus) {
+		service.getUsers(null, new ErrorsSafeCallback<Set<User>>(eventBus) {
 			
 			@Override
 			public void onSuccess(Set<User> users) {
