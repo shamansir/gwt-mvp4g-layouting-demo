@@ -40,7 +40,7 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
         public void beforePortalChange(Portal portal);        
         public void whenPortalChanged(Portal portal);
         
-        public void plug(Place where, Pluggable what);
+        public void plug(Layout layout, Place where, Pluggable what);
         public Pluggable getPluggable(Place where);
 
 		public void showError(Throwable caught);
@@ -65,13 +65,13 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	
     	view.beforePortalChange(portal);
     	
+    	currentBuilder = builder;
     	final State state = builder.layoutHasStates() ? DEFAULT_LAYOUT_STATE : null;
     	final Layout layoutBuilt = builder.build(state);
     	if (!portal.layout.equals(layoutBuilt.id())) {
     		throw new IllegalArgumentException("Layout of passed portal (" + portal + " - " + portal.layout + ") does not matches " +
 					                           "the passed layout built (" +  layoutBuilt.id() + ")");    		
     	}
-    	currentBuilder = builder;
     	
     	view.switchLayout(layoutBuilt);
     	subscribePageEvents(layoutBuilt);
@@ -81,6 +81,7 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     
     public void updateState(Place where, State state) {
     	if (currentBuilder == null) throw new IllegalStateException("Current layout builder is null, so I can not update state");
+    	if (!currentBuilder.built()) throw new IllegalStateException("Current layout builder already has built a layout, call reset before rebuild");
     	if (state == null) throw new IllegalArgumentException("Passed state is null");
     	if (where == null) { // update whole page
         	if (!currentBuilder.layoutHasStates()) Log.warn("Current layout " + currentBuilder.getLayout() + " do not supports states, please ensure you do what you want");
@@ -94,7 +95,9 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     }
     
     public void plug(Place where, Pluggable what) {
-        view.plug(where, what);
+    	if (currentBuilder == null) throw new IllegalStateException("Current layout builder is null, so I can not plug widgets");
+    	if (currentBuilder.built()) throw new IllegalStateException("Current layout builder already has built a layout, so I can not plug anything inside");
+        view.plug(currentBuilder.constructing(), where, what);
     }
     
     public void clearPage() { view.clear(); }    

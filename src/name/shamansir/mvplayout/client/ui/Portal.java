@@ -39,7 +39,12 @@ public enum Portal implements MakesLink {
 
 	@Override
 	public String makeLink() {
-		return group.name() + EVENT_DELIM + event;
+		return group.name().toLowerCase() + EVENT_DELIM + event;
+	}
+	
+	@Override
+	public String toString() {
+		return group.name().toLowerCase() + "/" + event + " [" + layout + "]";
 	}
 
 	public static class PortalUrl implements MakesLink {
@@ -53,6 +58,7 @@ public enum Portal implements MakesLink {
 	    }
 	    
 	    public PortalUrl addParam(String value) {
+	    	if (value == null) return this;
 	        this.params.add(value);
 	        return this;
 	    }
@@ -98,6 +104,11 @@ public enum Portal implements MakesLink {
         	}
             throw new PortalNotFoundException(group + "/" + event + "/" + param);
         }
+        
+    	@Override
+    	public String toString() {
+    		return portal.toString() + " + " + params.toString();
+    	}        
         
 	}
 	

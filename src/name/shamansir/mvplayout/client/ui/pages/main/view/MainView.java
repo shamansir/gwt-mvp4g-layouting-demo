@@ -93,7 +93,8 @@ public final class MainView extends Composite implements IMainView {
 	}
 	
     @Override
-    public void plug(Place where, Pluggable what) {
+    public void plug(Layout layout, Place where, Pluggable what) {
+    	// FIXME: implemented wrong, may be
         if (currentLayout == null) throw new IllegalStateException("Current layout is null");
         if (!currentLayout.has(where)) throw new IllegalStateException("Current layout " + currentLayout + " has no place " + where);
         // if it is the same place and the same pluggable there, just refresh it

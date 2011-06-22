@@ -16,20 +16,30 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 	
 	private static final Map<Portal, CanBuildLayout> cache = new HashMap<Portal, CanBuildLayout>();  
 	
-	public static interface CanBuildLayout {		
+	public static interface CanBuildLayout {	
 		public Layout build(State state);
+		public boolean built();
+		
+		public void reset();
 		
 		public boolean layoutHasStates();		
 		public LayoutId getLayout();
+		public Layout constructing();
 		public Portal getPortal();
 		public State curState();
+		
 	}
 
 	public final CanBuildLayout make(final Portal view, final E eventBus) {
-		if (cache.containsKey(view)) return cache.get(view);
-		final CanBuildLayout newBuilder = new CanLayoutModuleView(view, eventBus);
-		cache.put(view, newBuilder);
-		return newBuilder;
+		if (cache.containsKey(view)) {
+			final CanBuildLayout builder = cache.get(view);
+			builder.reset();
+			return builder;
+		} else {
+			final CanBuildLayout newBuilder = new CanLayoutModuleView(view, eventBus);
+			cache.put(view, newBuilder);
+			return newBuilder;
+		}
 	}
 	
 	protected abstract boolean layout(Portal view, Layout layout, State state, E eventBus);
@@ -40,6 +50,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		protected final Layout layout;
 		protected final boolean hasStates;
 		
+		protected boolean built;
 		protected State curState;
 		
 		protected CanBuildStatedLayout(Portal view) {
@@ -60,29 +71,42 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		@Override
 		public final Layout build(State state) {		    
 			Log.debug("Building " + layout.id() + " with state " + state + " (Layout has states: " + hasStates + ") for view " + view);
+			if (built) throw new IllegalStateException("Layout " + layout.id() + " was already built with this builder, reset it or use another builder");
 			if ((state == null) && hasStates) throw new IllegalStateException("Layout " + layout.id() + " requires state to be set, use layoutHasStates() method of builder to determine is current layout requires states");
-			if (((state != null) && ((curState != null) && !curState.equals(state)))) throw new IllegalStateException("Passed state " + state + " is not prepared, call prepare() before build()");
 			if (state != null) prepare(state);
 			if (!doLayout(view, layout, state)) {
 				throw new IllegalStateException("Layout " + layout.id() + " was not built ");
 			}
-			curState = null;
+			built = true;
 			return layout;
 		}
-
+		
 		protected abstract boolean doLayout(Portal view, Layout layout, State state);
+		
+		@Override
+		public boolean built() { return built; }		
 
 		@Override
 		public boolean layoutHasStates() { return hasStates; }
 
 		@Override
 		public LayoutId getLayout() { return view.layout; }
+		
+		@Override
+		public Layout constructing() { return layout; }		
 
 		@Override
 		public Portal getPortal() { return view; }
 
 		@Override
 		public State curState() { return curState; }
+		
+		@Override
+		public void reset() {
+			curState = null;
+			built = false;
+			layout.clear();
+		}
 		
 		
 	}

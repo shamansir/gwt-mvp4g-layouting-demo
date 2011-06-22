@@ -14,7 +14,7 @@ public class UserLayoutBuilder extends LayoutBuilder<UserEventBus> {
 		
 		switch (view) {
 			case USERS_LIST: {
-                eventBus.plugUsersList(Place.A);			    
+                eventBus.plugUsersList(Place.A);
 				eventBus.plugUserAvatar(Place.B);
 				eventBus.plugUserDetails(Place.C);
 			}
