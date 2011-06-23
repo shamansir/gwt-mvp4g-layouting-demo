@@ -34,7 +34,7 @@ public abstract class Layout extends Composite implements PageScrollListener, Pa
 	protected abstract IsOutlet prepareOutlet(Place place) throws IndexOutOfBoundsException;	
 	
 	public final Place[] places() { return places; };	
-	public final boolean has(Place place) { return outlets.containsKey(place); };
+	public final boolean has(Place place) { ensureOutletsLoaded(); return outlets.containsKey(place); };
 	
 	public final IsOutlet outlet(Place place) { ensureOutletsLoaded(); return outlets.get(place); }	
 	public final Map<Place, IsOutlet> outlets() { ensureOutletsLoaded(); return outlets; }
