@@ -3,6 +3,7 @@
  */
 package name.shamansir.mvplayout.client.utils;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -24,16 +25,22 @@ public class StringUtils {
 
     public static String join(Collection<String> source, String delim) {
         if (source == null || source.isEmpty()) return "";
-        Iterator<String> iter = source.iterator();
-        StringBuilder builder = new StringBuilder(iter.next());
+        final StringBuffer buffer = new StringBuffer();
+        final Iterator<String> iter = source.iterator();
         while (iter.hasNext()) {
-            builder.append(delim).append(iter.next());
+        	final String item = iter.next();
+        	if (item != null) {
+	            buffer.append(item);
+	            if (iter.hasNext()) {
+	                buffer.append(delim);
+	            }
+        	}
         }
-        return builder.toString();
+        return buffer.toString();
     }
     
     public static String join(String[] source, String delim) {
-        return join(source, delim);
+        return join(Arrays.asList(source), delim);
     }    
     
 }

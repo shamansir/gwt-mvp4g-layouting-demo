@@ -100,7 +100,11 @@ public enum Portal implements MakesLink {
                 String param) throws PortalNotFoundException {
         	for (Portal portal: Portal.values()) {
         		if (portal.group.equals(group) &&
-        			portal.event.equals(event)) return new PortalUrl(portal).addParams(param.split(PARAM_DELIM));
+        			portal.event.equals(event)) {
+        			final PortalUrl url = new PortalUrl(portal);
+        			if (param != null) url.addParams(param.split(PARAM_DELIM));
+        			return url;
+        		}
         	}
             throw new PortalNotFoundException(group + "/" + event + "/" + param);
         }
@@ -128,7 +132,7 @@ public enum Portal implements MakesLink {
 	    }
 	    
         public String parameters(String... values) {
-            return StringUtils.join(values, PARAM_DELIM);
+        	return StringUtils.join(values, PARAM_DELIM);
         }
         
         public static PortalUrlBuilder get() {
