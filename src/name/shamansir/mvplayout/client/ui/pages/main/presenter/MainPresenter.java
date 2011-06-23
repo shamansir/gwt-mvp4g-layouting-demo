@@ -102,7 +102,7 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     }
     
     protected Layout getActualLayout() {
-    	return (currentBuilder.built()) ? currentBuilder.getLayout() : view.getCurLayout();
+    	return (!currentBuilder.built()) ? currentBuilder.getLayout() : view.getCurLayout();
     }
     
     public void clearPage() { view.clear(); }    
