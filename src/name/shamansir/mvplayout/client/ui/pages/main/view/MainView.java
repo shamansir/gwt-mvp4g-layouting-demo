@@ -1,11 +1,6 @@
 package name.shamansir.mvplayout.client.ui.pages.main.view;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import name.shamansir.mvplayout.client.ui.IsOutlet;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
-import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.pages.main.presenter.MainPresenter.IMainView;
 import name.shamansir.mvplayout.client.ui.widget.Layout;
@@ -41,8 +36,6 @@ public final class MainView extends Composite implements IMainView {
 	private Layout currentLayout;
 	private Portal currentPortal;
 	
-	private final Map<Place, Pluggable> plugged = new HashMap<Place, Pluggable>();
-	
 	@Override
 	public void createView() {
 		initWidget(uiBinder.createAndBindUi(this));
@@ -67,7 +60,6 @@ public final class MainView extends Composite implements IMainView {
 		Log.debug("NEW PAGE with layout " + to);
 		
 		layoutHolder.clear();
-        plugged.clear();		
 		if (currentLayout != null) {
 			layoutHolder.removeStyleName(generateLayoutCSSClassName(currentLayout));
 		}
@@ -92,35 +84,11 @@ public final class MainView extends Composite implements IMainView {
 		layoutHolder.addStyleName(generatePortalCSSClassName(currentPortal));
 	}
 	
-    @Override
-    public void plug(Layout layout, Place where, Pluggable what) {
-    	// FIXME: implemented wrong, may be
-        if (currentLayout == null) throw new IllegalStateException("Current layout is null");
-        if (!currentLayout.has(where)) throw new IllegalStateException("Current layout " + currentLayout + " has no place " + where);
-        // if it is the same place and the same pluggable there, just refresh it
-        // else, put a new pluggable in corresponding outlet
-        if (plugged.containsKey(where) &&
-            plugged.get(where).id().equals(what.id())) {            
-            plugged.get(where).refresh(); // just refresh, nothing else
-        } else {
-            final IsOutlet outlet = currentLayout.outlet(where);
-            if (!outlet.isVisible()) Log.warn("Outlet at place " + where + " is not visible, but youa are plugging " + what + " there"); 
-            outlet.clear();
-            outlet.add(what.asWidget());
-            plugged.put(where, what);            
-            Log.debug("Plugged " + what.id() + " into outlet at place " + where);
-            what.setPlace(where);
-            what.refresh();            
-        }
-    }
-    
-    @Override
-    public Pluggable getPluggable(Place where) {
-        return plugged.get(where);
-    }
-	
 	@Override
 	public Portal getCurPortal() { return currentPortal; }
+	
+	@Override
+	public Layout getCurLayout() { return currentLayout; }
 	
 	protected static String generatePortalCSSClassName(Portal portal) {
 		return "p-" + portal.name().toLowerCase().replace('_', '-');
