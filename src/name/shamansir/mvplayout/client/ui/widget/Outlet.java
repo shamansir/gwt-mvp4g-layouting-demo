@@ -7,6 +7,7 @@ import name.shamansir.mvplayout.client.ui.IsOutlet;
 
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 /**
  * <dl>
@@ -26,5 +27,10 @@ public class Outlet extends FlowPanel implements IsOutlet {
     
     @UiConstructor
     public Outlet() {  }
+    
+    public void add(Widget w) {
+        if (!(w instanceof Plug)) throw new IllegalStateException("Only Plug instances can be children of Outlet");
+        super.add(w);
+    }    
 
 }

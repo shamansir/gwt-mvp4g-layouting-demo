@@ -17,7 +17,7 @@ public class UserLayoutBuilder extends LayoutBuilder<UserEventBus> {
                 eventBus.plugUsersList(Place.A);
 				eventBus.plugUserAvatar(Place.B);
 				eventBus.plugUserDetails(Place.C);
-			}
+			} return true;
 		}
 		
 		return false;

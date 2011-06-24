@@ -3,6 +3,7 @@
  */
 package name.shamansir.mvplayout.client.ui.widget;
 
+import name.shamansir.mvplayout.client.ui.IsPortletView;
 import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.RefreshHandler;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
@@ -29,6 +30,7 @@ public class Plug extends FlowPanel implements Pluggable {
     private String alias;
     private Place place;
     private RefreshHandler refreshHandler;
+    private IsPortletView parent;
 
     @UiConstructor
     public Plug(final String alias) {
@@ -65,4 +67,13 @@ public class Plug extends FlowPanel implements Pluggable {
         this.refreshHandler = refreshHandler;
     }
 
+	@Override
+	public IsPortletView getPortlet() {
+		return parent;
+	}
+	
+	public void setPortlet(IsPortletView parent) {
+		this.parent = parent;
+	}	
+	
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
+import name.shamansir.mvplayout.client.ui.IsPortletView;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.Pluggable;
@@ -90,8 +91,8 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
         	//currentBuilder.reset();
         	currentBuilder.build(state); // just changes layout inside it, do not re-renders anything that not required
     	} else {
-    	    Pluggable portlet = getActualLayout().getPluggable(where);
-    	    if (!(portlet instanceof HandlesStateChange)) throw new IllegalStateException("Portlet at place " + where + " does not implements HandlesStateChange, so it can not change states");
+    	    IsPortletView portlet = getActualLayout().getPluggable(where).getPortlet();
+    	    if (!(portlet instanceof HandlesStateChange)) throw new IllegalStateException("Portlet " + portlet + " at place " + where + " does not implements HandlesStateChange, so it can not change states");
     	    ((HandlesStateChange)portlet).prepareFor(state);
     	}
     }
