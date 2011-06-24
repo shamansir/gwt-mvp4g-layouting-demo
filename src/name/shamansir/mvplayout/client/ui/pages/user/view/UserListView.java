@@ -2,22 +2,21 @@ package name.shamansir.mvplayout.client.ui.pages.user.view;
 
 import java.util.Set;
 
-import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.pages.user.presenter.UserListPresenter.Display;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 import name.shamansir.mvplayout.client.ui.widget.Plug;
+import name.shamansir.mvplayout.client.ui.widget.StatedPortlet;
 import name.shamansir.mvplayout.shared.dao.User;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
-import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public final class UserListView extends Composite implements Display {
+public final class UserListView extends StatedPortlet implements Display {
     
     @UiTemplate("UserListView.ui.xml")	
 	interface ListViewUiBinder extends UiBinder<Widget, UserListView> { }	
@@ -35,6 +34,11 @@ public final class UserListView extends Composite implements Display {
 	@Override
 	public void createView() {
 		initWidget(uiBinder.createAndBindUi(this));
+		
+		register(ifEmpty, State.NO_DATA);
+		register(whenLoading, State.LOADING_DATA);
+		register(noMatches, State.NO_MATCHES);
+		register(mainView, State.HAS_DATA);
 	}
 
     @Override
@@ -49,17 +53,5 @@ public final class UserListView extends Composite implements Display {
     public void prepareFor(State to) {
         
     }
-
-    @Override
-    public Pluggable getMainView() { return mainView; }
-
-    @Override
-    public Pluggable getEmptyView() { return ifEmpty; }
-
-    @Override
-    public Pluggable getLoadingView() { return whenLoading; }
-
-    @Override
-    public Pluggable getNoMatchesView() { return noMatches; }
 
 }
