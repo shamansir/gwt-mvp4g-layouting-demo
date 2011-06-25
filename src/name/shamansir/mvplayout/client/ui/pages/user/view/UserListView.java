@@ -1,8 +1,10 @@
 package name.shamansir.mvplayout.client.ui.pages.user.view;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import name.shamansir.mvplayout.client.ui.pages.user.presenter.UserListPresenter.Display;
+import name.shamansir.mvplayout.client.ui.pages.user.presenter.UserListPresenter.UserRow;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 import name.shamansir.mvplayout.client.ui.widget.Plug;
 import name.shamansir.mvplayout.client.ui.widget.StatedPortlet;
@@ -12,6 +14,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -29,7 +32,11 @@ public final class UserListView extends StatedPortlet implements Display {
 	
 	@UiField VerticalPanel usersHolder;	
 	
-    public UserListView() {  }	
+	private final Set<UserRow> rows = new HashSet<UserRow>();
+	
+    public UserListView() { 
+        rows.clear();
+    }	
 	
 	@Override
 	public void createView() {
@@ -43,14 +50,37 @@ public final class UserListView extends StatedPortlet implements Display {
 
     @Override
     public void showUsers(Set<User> users) {
+        rows.clear();
         usersHolder.clear();
         for (User user: users) {
-            usersHolder.add(new Label(user.name + " " + user.familyName));
+            final UserPanel userPanel = new UserPanel(user);
+            userPanel.add(new Label(user.name + " " + user.familyName));
+            rows.add(userPanel);
+            usersHolder.add(userPanel);
         }
+    }
+
+    @Override 
+    public Set<UserRow> getRows() {
+        return rows;
     }
 
     @Override
     public void prepareFor(State to) {
+        
+    }
+    
+    public class UserPanel extends FocusPanel implements UserRow {
+
+        private final User user;
+        
+        public UserPanel(User user) {
+            super();
+            this.user = user;
+        }
+        
+        @Override
+        public User getUser() { return user; }
         
     }
 

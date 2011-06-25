@@ -4,6 +4,7 @@ import name.shamansir.mvplayout.client.ui.pages.user.UserEventBus;
 import name.shamansir.mvplayout.client.ui.pages.user.view.UserAvatarView;
 import name.shamansir.mvplayout.client.ui.state.IsStatedPortletView;
 import name.shamansir.mvplayout.client.ui.state.StatedPortletPresenter;
+import name.shamansir.mvplayout.shared.dao.User;
 
 import com.mvp4g.client.annotation.Presenter;
 
@@ -15,5 +16,9 @@ public class UserAvatarPresenter extends StatedPortletPresenter<UserAvatarPresen
 
 	public UserAvatarPresenter() {
 	}
+	
+    public void onUserSelected(User user) {
+        
+    }	
 		
 }

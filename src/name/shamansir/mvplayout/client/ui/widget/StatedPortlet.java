@@ -43,9 +43,4 @@ public abstract class StatedPortlet extends Composite implements IsStatedPortlet
 		return states.get(state);
 	}
 	
-	@Override
-	public void prepareFor(State to) {
-	    
-	}
-	
 }
