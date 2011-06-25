@@ -39,10 +39,10 @@ public interface UserEventBus extends ChildEventBus {
     @Event(handlers = UserListPresenter.class, calledMethod = "plug")
 	public void plugUsersList(Place where);
     
-    @Event(handlers = UserDetailsPresenter.class, calledMethod = "plug")
+    @Event(/*handlers = UserDetailsPresenter.class, calledMethod = "plug"*/)
     public void plugUserDetails(Place where);    
     
-    @Event(handlers = UserAvatarPresenter.class, calledMethod = "plug")
+    @Event(/*handlers = UserAvatarPresenter.class, calledMethod = "plug"*/)
     public void plugUserAvatar(Place where);    
 
 }
