@@ -44,12 +44,7 @@ public abstract class StatedPortletPresenter<V extends LazyView &
     }
     
     public void plugState(Place where, State state) {
-        switch (state) {
-            case HAS_DATA: plug(where); break; 
-            case LOADING_DATA: eventBus.plug(where, view.getLoadingView()); break;
-            case NO_DATA: eventBus.plug(where, view.getEmptyView()); break;
-            case NO_MATCHES: eventBus.plug(where, view.getNoMatchesView()); break;
-        }
+        eventBus.plug(where, view.getViewFor(state));
     }
 
 }

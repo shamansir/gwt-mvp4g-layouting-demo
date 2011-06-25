@@ -34,19 +34,8 @@ public final class UserDetailsView extends Composite implements Display {
     }
 
     @Override
-    public Pluggable getEmptyView() {
+    public Pluggable getViewFor(State state) {
         return null;
     }
-
-    @Override
-    public Pluggable getLoadingView() {
-        return null;
-    }
-
-    @Override
-    public Pluggable getNoMatchesView() {
-        return null;
-    }
-
 
 }

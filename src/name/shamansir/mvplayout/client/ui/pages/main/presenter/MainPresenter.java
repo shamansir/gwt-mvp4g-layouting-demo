@@ -93,16 +93,9 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
     	} else {
     	    Layout layout = getActualLayout();
     	    IsPortletView portlet = layout.getPluggable(where).getPortlet();
-    	    /* if (!(portlet instanceof HandlesStateChange)) throw new IllegalStateException("Portlet " + portlet + " at place " + where + " does not implements HandlesStateChange, so it can not change states");
-    	    ((HandlesStateChange)portlet).prepareFor(state); */
             if (!(portlet instanceof HasStatesPanels)) throw new IllegalStateException("Portlet " + portlet + " at place " + where + " does not implements HasStatesPanels, so it can not change states");
             HasStatesPanels panels = (HasStatesPanels)portlet;
-            switch (state) {
-                case HAS_DATA: /* layout.plug(where, panels.get); */break;
-                case LOADING_DATA: layout.plug(where, panels.getLoadingView()); break;
-                case NO_DATA: layout.plug(where, panels.getEmptyView()); break;
-                case NO_MATCHES: layout.plug(where, panels.getNoMatchesView()); break;
-            }
+            layout.plug(where, panels.getViewFor(state));
     	}
     }
     

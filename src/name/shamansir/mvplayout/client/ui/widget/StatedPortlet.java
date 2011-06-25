@@ -39,18 +39,8 @@ public abstract class StatedPortlet extends Composite implements IsStatedPortlet
 	}
 
 	@Override
-	public Pluggable getEmptyView() {
-		return states.get(State.NO_DATA);
-	}
-
-	@Override
-	public Pluggable getLoadingView() {
-		return states.get(State.LOADING_DATA);
-	}
-
-	@Override
-	public Pluggable getNoMatchesView() {
-		return states.get(State.NO_MATCHES);
+	public Pluggable getViewFor(State state) {
+		return states.get(state);
 	}
 	
 	@Override

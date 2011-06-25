@@ -10,6 +10,7 @@ import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.PortalPresenter;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 /**
  * <dl>
@@ -46,17 +47,17 @@ public abstract class StatedPortalPresenter<V extends LazyView &
     
     @Override    
     public void plugEmpty(Place where) {
-        eventBus.plug(where, view.getEmptyView());
+        eventBus.plug(where, view.getViewFor(State.NO_DATA));
     }
     
     @Override    
     public void plugLoading(Place where) {
-        eventBus.plug(where, view.getLoadingView());
+        eventBus.plug(where, view.getViewFor(State.LOADING_DATA));
     }
     
     @Override
     public void plugNoMatches(Place where) {
-        eventBus.plug(where, view.getNoMatchesView());
-    }    
+        eventBus.plug(where, view.getViewFor(State.NO_MATCHES));
+    }
 
 }
