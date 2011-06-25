@@ -5,15 +5,15 @@ import java.util.List;
 
 import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvplayout.client.ui.IsPortletView;
-import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
-import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.Portal;
+import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.main.MainEventBus;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageResizeListener;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageScrollListener;
-import name.shamansir.mvplayout.client.ui.state.HandlesStateChange;
+import name.shamansir.mvplayout.client.ui.state.HasStatesPanels;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 import name.shamansir.mvplayout.client.ui.widget.Layout;
 
@@ -26,7 +26,7 @@ import com.mvp4g.client.view.LazyView;
 @Presenter(view = MainView.class)
 public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEventBus> {
     
-    public static final State DEFAULT_LAYOUT_STATE = State.LOADING_DATA;
+    public static final State DEFAULT_LAYOUT_STATE = State.LOADING_DATA; // TODO: move to builder
     
     private CanBuildLayout currentBuilder;
     
@@ -91,9 +91,18 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
         	//currentBuilder.reset();
         	currentBuilder.build(state); // just changes layout inside it, do not re-renders anything that not required
     	} else {
-    	    IsPortletView portlet = getActualLayout().getPluggable(where).getPortlet();
-    	    if (!(portlet instanceof HandlesStateChange)) throw new IllegalStateException("Portlet " + portlet + " at place " + where + " does not implements HandlesStateChange, so it can not change states");
-    	    ((HandlesStateChange)portlet).prepareFor(state);
+    	    Layout layout = getActualLayout();
+    	    IsPortletView portlet = layout.getPluggable(where).getPortlet();
+    	    /* if (!(portlet instanceof HandlesStateChange)) throw new IllegalStateException("Portlet " + portlet + " at place " + where + " does not implements HandlesStateChange, so it can not change states");
+    	    ((HandlesStateChange)portlet).prepareFor(state); */
+            if (!(portlet instanceof HasStatesPanels)) throw new IllegalStateException("Portlet " + portlet + " at place " + where + " does not implements HasStatesPanels, so it can not change states");
+            HasStatesPanels panels = (HasStatesPanels)portlet;
+            switch (state) {
+                case HAS_DATA: /* layout.plug(where, panels.get); */break;
+                case LOADING_DATA: layout.plug(where, panels.getLoadingView()); break;
+                case NO_DATA: layout.plug(where, panels.getEmptyView()); break;
+                case NO_MATCHES: layout.plug(where, panels.getNoMatchesView()); break;
+            }
     	}
     }
     

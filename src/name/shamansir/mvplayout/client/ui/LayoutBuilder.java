@@ -16,7 +16,10 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 	
 	private static final Map<Portal, CanBuildLayout> cache = new HashMap<Portal, CanBuildLayout>();  
 	
-	public static interface CanBuildLayout {	
+	public static interface CanBuildLayout {
+	    
+	    public static final State DEFAULT_LAYOUT_STATE = State.LOADING_DATA;
+	    
 		public Layout build(State state);
 		public boolean built();
 		
@@ -44,7 +47,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 	
 	protected abstract boolean layout(Portal view, Layout layout, State state, E eventBus);
 	
-	protected static abstract class CanBuildStatedLayout implements CanBuildLayout {
+	protected static abstract class CanBuildStatedLayout implements CanBuildLayout {	    
 		
 		protected final Portal view;
 		protected final Layout layout;

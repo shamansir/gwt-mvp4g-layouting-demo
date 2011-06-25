@@ -53,4 +53,9 @@ public abstract class StatedPortlet extends Composite implements IsStatedPortlet
 		return states.get(State.NO_MATCHES);
 	}
 	
+	@Override
+	public void prepareFor(State to) {
+	    
+	}
+	
 }

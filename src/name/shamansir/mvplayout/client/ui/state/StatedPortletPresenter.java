@@ -40,7 +40,7 @@ public abstract class StatedPortletPresenter<V extends LazyView &
     
     @Override
     public void bindView() {
-        state = new PortletStateDirector<V>(view, eventBus); 
+        state = new PortletStateDirector<V>(view, eventBus);
     }
     
     public void plugState(Place where, State state) {

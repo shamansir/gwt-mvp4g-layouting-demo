@@ -21,6 +21,7 @@ import name.shamansir.mvplayout.client.ui.Pluggable;
  */
 public interface HasStatesPanels extends HandlesStateChange {
     
+    // TODO: change to getViewFor(State)
     public Pluggable getEmptyView();
     public Pluggable getLoadingView();
     public Pluggable getNoMatchesView();    

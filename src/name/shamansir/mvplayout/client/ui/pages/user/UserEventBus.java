@@ -12,8 +12,8 @@ import name.shamansir.mvplayout.client.ui.pages.user.view.UserListView;
 @Events(module = UserModule.class, startView = UserListView.class)
 public interface UserEventBus extends ChildEventBus {
 	
-	@Event(name = "list", navigationEvent = true,
-		   handlers = UserListPresenter.class,
+	@Event(name = "list", navigationEvent = true, passive = true,
+		   handlers = UserListPresenter.class, 
 		   historyConverter = UserHistoryConverter.class)
 	public void users(String filter);
 	

@@ -28,6 +28,8 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
 
 	public void onUsers(String filter) {
 	    
+	    state.loading();
+	    
 		service.getUsers(filter, new ErrorsSafeCallback<Set<User>>(eventBus) {
 			
 			@Override
@@ -40,7 +42,7 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
                         view.showUsers(users);
                     }
 			        
-			    }.schedule(5000); // emulate slow data receiving
+			    }.schedule(3000); // emulate slow data receiving
 			}
 			
 		});
