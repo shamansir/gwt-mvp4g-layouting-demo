@@ -7,7 +7,7 @@ import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
-public abstract class Portlet extends Composite implements IsPortletView/*, HasWidgets*/ {
+public abstract class Portlet extends Composite implements IsPortletView {
 	
 	private final Plug plug;
 	
@@ -27,25 +27,5 @@ public abstract class Portlet extends Composite implements IsPortletView/*, HasW
 	
 	@Override
 	public Pluggable getMainView() { return plug; }
-
-	/* @Override
-	public void add(Widget w) {
-		plug.add(w);
-	}
-
-	@Override
-	public void clear() {
-		plug.clear();
-	}
-
-	@Override
-	public Iterator<Widget> iterator() {
-		return plug.iterator();
-	}
-
-	@Override
-	public boolean remove(Widget w) {
-		return plug.remove(w);
-	} */
 
 }

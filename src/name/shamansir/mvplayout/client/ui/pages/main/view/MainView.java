@@ -57,7 +57,7 @@ public final class MainView extends Composite implements IMainView {
 	
 	@Override
 	public void switchLayout(Layout to) {
-		Log.debug("NEW PAGE with layout " + to);
+		Log.debug("NEW PAGE with layout " + to.id());
 		
 		layoutHolder.clear();
 		if (currentLayout != null) {
