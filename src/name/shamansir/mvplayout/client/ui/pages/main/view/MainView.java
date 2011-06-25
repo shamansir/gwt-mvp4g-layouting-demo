@@ -91,17 +91,17 @@ public final class MainView extends Composite implements IMainView {
 	public Layout getCurLayout() { return currentLayout; }
 	
 	protected static String generatePortalCSSClassName(Portal portal) {
-		return "p-" + portal.name().toLowerCase().replace('_', '-');
+		return "portal-" + portal.name().toLowerCase().replace('_', '-');
 		// return "p-" + portal.name().toLowerCase().replace('_', '-') + " " + ((portal.group != null) ? "p-" + portal.group.code() : "p-top-level");
 	}
 	
 	protected static String generateLayoutCSSClassName(Layout layout) {
-		return "l-" + layout.id().name().toLowerCase().replace('_', '-');
+		return "layout-" + layout.id().name().toLowerCase().replace('_', '-');
 	}
 	
 	protected static String generatePlaceCSSClassName(Place place) {
-		if (Place.STATUS.equals(place)) return "l-status b-empty";
-		return "b-" + place.name().toLowerCase().replace('_', '-');
+		//if (Place.STATUS.equals(place)) return "l-status b-empty";
+		return "place-" + place.name().toLowerCase().replace('_', '-');
 	}	
 
 	@Override
