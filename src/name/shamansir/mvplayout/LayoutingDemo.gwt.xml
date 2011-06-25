@@ -5,7 +5,14 @@
   <inherits name="com.google.gwt.inject.Inject"/>   
   <inherits name="com.google.gwt.i18n.I18N" />
   
-  <inherits name="com.allen_sauer.gwt.log.gwt-log-DEBUG" />  
+  <inherits name="com.allen_sauer.gwt.log.gwt-log-DEBUG" />
+  
+  <set-property name="log_ConsoleLogger" value="ENABLED" />
+  <set-property name="log_DivLogger" value="DISABLED" />
+  <set-property name="log_FirebugLogger" value="ENABLED" />
+  <set-property name="log_GWTLogger" value="ENABLED" />
+  <set-property name="log_SystemLogger" value="ENABLED" />
+  <set-property name="log_WindowLogger" value="DISABLED" />  
   
   <!-- Inherit the default GWT style sheet.  You can change       -->
   <!-- the theme of your GWT application by uncommenting          -->
