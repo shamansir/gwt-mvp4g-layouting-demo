@@ -9,6 +9,7 @@ public abstract class StateDirector {
 	protected StateDirector() { }
 	
     public abstract void update(State to);	
+    // TODO: check if it is not a current state and then update
 	
 	public final void update() {
 	    update(State.LOADING_DATA);

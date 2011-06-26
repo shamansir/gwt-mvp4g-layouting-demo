@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import name.shamansir.mvplayout.client.exception.PortalNotFoundException;
-import name.shamansir.mvplayout.client.ui.IsPortletView;
-import name.shamansir.mvplayout.client.ui.Pluggable;
-import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
+import name.shamansir.mvplayout.client.ui.Pluggable;
+import name.shamansir.mvplayout.client.ui.PlugsContainer;
+import name.shamansir.mvplayout.client.ui.Portal;
 import name.shamansir.mvplayout.client.ui.pages.main.MainEventBus;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView;
 import name.shamansir.mvplayout.client.ui.pages.main.view.MainView.PageResizeListener;
@@ -92,9 +92,10 @@ public class MainPresenter extends LazyPresenter<MainPresenter.IMainView, MainEv
         	currentBuilder.build(state); // just changes layout inside it, do not re-renders anything that not required
     	} else {
     	    Layout layout = getActualLayout();
-    	    IsPortletView portlet = layout.getPluggable(where).getPortlet();
-            if (!(portlet instanceof HasStatesPanels)) throw new IllegalStateException("Portlet " + portlet + " at place " + where + " does not implements HasStatesPanels, so it can not change states");
-            HasStatesPanels panels = (HasStatesPanels)portlet;
+    	    PlugsContainer container = layout.getPluggable(where).getContainer();
+            if (!(container instanceof HasStatesPanels)) throw new IllegalStateException("Container " + container + " at place " + where + " does not implements HasStatesPanels, so it can not change states");
+            HasStatesPanels panels = (HasStatesPanels)container;
+            // TODO: check if it is already in this state
             layout.plug(where, panels.getViewFor(state));
     	}
     }

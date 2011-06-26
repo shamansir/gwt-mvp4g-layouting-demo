@@ -23,6 +23,6 @@ public interface Pluggable extends IsWidget, CanBePlaced, HasRefreshHandler {
     
     public String id();
     public void refresh();
-    public IsPortletView getPortlet();
+    public PlugsContainer getContainer();
     
 }

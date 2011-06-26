@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import name.shamansir.mvplayout.client.ui.IsPortletView;
+import name.shamansir.mvplayout.client.ui.PlugsContainer;
 
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.HasWidgets;
@@ -35,9 +35,13 @@ public class Plugs extends Widget implements HasWidgets {
     @UiConstructor
     public Plugs() { }
     
+    public void add(Plug p) {
+        plugs.add(p);
+    }
+    
     public void add(Widget w) {
         if (!(w instanceof Plug)) throw new IllegalStateException("Only Plug instances can be children of Plugs");
-        plugs.add((Plug)w);
+        add((Plug)w);
     }
 
     @Override
@@ -60,9 +64,9 @@ public class Plugs extends Widget implements HasWidgets {
         return plugs.remove((Plug)w);
     }
 
-    public void setPortlet(IsPortletView statedPortlet) {
+    public void setContainer(PlugsContainer statedPortlet) {
         for (Plug plug: plugs) {
-            plug.setPortlet(statedPortlet);
+            plug.setContainer(statedPortlet);
         }
     }
 

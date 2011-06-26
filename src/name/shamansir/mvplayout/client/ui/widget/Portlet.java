@@ -9,23 +9,27 @@ import com.google.gwt.user.client.ui.Widget;
 
 public abstract class Portlet extends Composite implements IsPortletView {
 	
-	private final Plug plug;
-	
+    private Plug plug;
+    private Plugs plugs;
+    
 	@UiConstructor
-	public Portlet(String alias) {
+	public Portlet() {
 		super();
-		
-		plug = new Plug(alias);
-		plug.setPortlet(this);
 	}
 	
 	@Override
 	protected void initWidget(Widget widget) {
-		plug.add(widget);
+        if (!(widget instanceof Plug)) 
+            throw new IllegalStateException("Plug instance must be a root of Portlet view");
+        plug = (Plug)widget;
+        plug.setContainer(this);
+        plugs.add(plug);
 		super.initWidget(plug);
 	}
 	
 	@Override
 	public Pluggable getMainView() { return plug; }
+	
+	public Plugs getPlugs() { return plugs; }
 
 }

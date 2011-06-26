@@ -28,7 +28,7 @@ public abstract class StatedPortlet extends Composite implements IsStatedPortlet
 	    if (!(widget instanceof Plugs)) 
 	        throw new IllegalStateException("Plugs instance must be a root of StatedPortlet view");
 	    plugs = (Plugs)widget; 
-	    plugs.setPortlet(this);
+	    plugs.setContainer(this);
 	}
 	
 	protected void register(Plug plug, State forState) {
@@ -50,12 +50,19 @@ public abstract class StatedPortlet extends Composite implements IsStatedPortlet
         return states.containsKey(state);
     }
     
+    @Override
     public void setPlace(Place place) {
         this.place = place;
     }
     
+    @Override
     public Place getPlace() {
         return place;
+    }
+    
+    @Override
+    public Plugs getPlugs() {
+        return plugs;
     }
 	
 }

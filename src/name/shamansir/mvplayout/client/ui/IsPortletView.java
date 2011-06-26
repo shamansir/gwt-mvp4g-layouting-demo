@@ -19,6 +19,6 @@ import com.mvp4g.client.view.LazyView;
  * @date Jun 16, 2011 8:25:36 PM 
  *
  */
-public interface IsPortletView extends LazyView, HasMainView, CanBePlaced {
+public interface IsPortletView extends LazyView, HasMainView, CanBePlaced, PlugsContainer {
 
 }

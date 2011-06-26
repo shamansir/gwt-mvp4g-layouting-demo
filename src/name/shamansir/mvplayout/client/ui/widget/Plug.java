@@ -3,10 +3,11 @@
  */
 package name.shamansir.mvplayout.client.ui.widget;
 
-import name.shamansir.mvplayout.client.ui.IsPortletView;
-import name.shamansir.mvplayout.client.ui.Pluggable;
-import name.shamansir.mvplayout.client.ui.RefreshHandler;
+import name.shamansir.mvplayout.client.ui.CanBePlaced;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
+import name.shamansir.mvplayout.client.ui.Pluggable;
+import name.shamansir.mvplayout.client.ui.PlugsContainer;
+import name.shamansir.mvplayout.client.ui.RefreshHandler;
 
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -30,7 +31,7 @@ public class Plug extends FlowPanel implements Pluggable {
     private String alias;
     private Place place;
     private RefreshHandler refreshHandler;
-    private IsPortletView parent;
+    private PlugsContainer parent;
 
     @UiConstructor
     public Plug(final String alias) {
@@ -55,7 +56,10 @@ public class Plug extends FlowPanel implements Pluggable {
     @Override
     public void setPlace(Place place) {
         this.place = place;
-        if (parent != null) parent.setPlace(place);
+        if ((parent != null)
+            && (parent instanceof CanBePlaced)) {
+            ((CanBePlaced)parent).setPlace(place);
+        }
     }
 
     @Override
@@ -69,11 +73,11 @@ public class Plug extends FlowPanel implements Pluggable {
     }
 
 	@Override
-	public IsPortletView getPortlet() {
+	public PlugsContainer getContainer() {
 		return parent;
 	}
 	
-	public void setPortlet(IsPortletView parent) {
+	public void setContainer(PlugsContainer parent) {
 		this.parent = parent;
 	}	
 	
