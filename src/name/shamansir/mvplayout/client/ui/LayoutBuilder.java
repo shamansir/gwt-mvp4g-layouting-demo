@@ -81,6 +81,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 				throw new IllegalStateException("Layout " + layout.id() + " was not built ");
 			}
 			built = true;
+			layout.whenBuilt();
 			return layout;
 		}
 		
@@ -125,7 +126,9 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 
 		@Override
 		protected boolean doLayout(Portal view, Layout layout, State state) {
-			return layout(view, layout, state, eventBus);
+		    boolean result = layout(view, layout, state, eventBus);
+		    //TODO: if (result) eventBus.layoutBuilt(view);
+			return result;
 		}
 		
 		
@@ -160,6 +163,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		@Override
 		public final void run() {
 			eventBus.newPortal(view, this);
+			//TODO: eventBus.layoutBuilt(view);
 		}
 
 	}

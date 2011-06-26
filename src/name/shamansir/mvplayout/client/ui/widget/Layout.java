@@ -84,5 +84,10 @@ public abstract class Layout extends Composite implements PageScrollListener, Pa
     public Pluggable getPluggable(Place where) {
         return plugged.get(where);
     }
+
+    // FIXME: make protected
+    public void whenBuilt() {
+        
+    }
 	
 }

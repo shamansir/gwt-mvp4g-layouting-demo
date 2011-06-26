@@ -71,6 +71,6 @@ public interface MainEventBus extends EventBus, UpdatesState {
 	public void subscribePageResize(PageResizeListener listener);
 	
 	@Event(handlers = MainPresenter.class, calledMethod = "subscribePageScroll")
-	public void subscribePageScroll(PageScrollListener listener);	
+	public void subscribePageScroll(PageScrollListener listener);
 	
 }

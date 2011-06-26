@@ -9,6 +9,7 @@ import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.pages.base.ChildEventBus;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
+import com.allen_sauer.gwt.log.client.Log;
 import com.mvp4g.client.view.LazyView;
 
 /**
@@ -44,7 +45,12 @@ public abstract class StatedPortletPresenter<V extends LazyView &
     }
     
     public void plugState(Place where, State state) {
-        eventBus.plug(where, view.getViewFor(state));
+        if (view.hasViewFor(state)) {
+            eventBus.plug(where, view.getViewFor(state));
+        } else {
+            Log.warn("No view regitstered for state " + state +
+                     " to place it to " + where);
+        }
     }
 
 }

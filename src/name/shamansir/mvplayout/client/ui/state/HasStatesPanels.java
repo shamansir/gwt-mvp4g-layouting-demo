@@ -22,6 +22,7 @@ import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
  */
 public interface HasStatesPanels extends HandlesStateChange {
     
+    public boolean hasViewFor(State state);
     public Pluggable getViewFor(State state);    
 
 }

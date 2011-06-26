@@ -43,8 +43,7 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
 			public void onSuccess(final Set<User> users) {
 			    new Timer() {
 
-                    @Override
-                    public void run() {
+			        @Override public void run() {
                         state.gotData(users);
                         view.showUsers(users);
                         

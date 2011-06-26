@@ -4,6 +4,7 @@
 package name.shamansir.mvplayout.client.ui.state;
 
 import name.shamansir.mvplayout.client.ui.HasMainView;
+import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 /**
@@ -32,8 +33,10 @@ public final class PortletStateDirector<V extends HasMainView & HandlesStateChan
     
     @Override
     public void update(State to) {
-        view.prepareFor(to);
-        reactor.changeState(view.getMainView().getPlace(), to);
+        final Pluggable plug = view.getMainView();
+        if (plug == null) throw new IllegalStateException("Main view is null for view " + view + ", can not determine current place");
+        view.prepareFor(to);        
+        reactor.changeState(plug.getPlace(), to);
     }
     
 }
