@@ -8,7 +8,7 @@
   <!-- Default page to serve -->
   
   <welcome-file-list>
-    <welcome-file>LayoutingDemo.html</welcome-file>
+    <welcome-file>mvplayout.html</welcome-file>
   </welcome-file-list>
   
   <!-- Servlets -->
@@ -30,17 +30,17 @@
   
   <servlet-mapping>
     <servlet-name>usersServlet</servlet-name>
-    <url-pattern>/LayoutingDemo/users</url-pattern>
+    <url-pattern>/mvplayout/users</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>
     <servlet-name>companiesServlet</servlet-name>
-    <url-pattern>/LayoutingDemo/companies</url-pattern>
+    <url-pattern>/mvplayout/companies</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>
     <servlet-name>newsServlet</servlet-name>
-    <url-pattern>/LayoutingDemo/news</url-pattern>
+    <url-pattern>/mvplayout/news</url-pattern>
   </servlet-mapping>  
   
 </web-app>

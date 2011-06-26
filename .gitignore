@@ -7,7 +7,7 @@
 .apt_generated/
 *.launch
 
-war/LayoutingDemo/
+war/mvplayout/
 war/WEB-INF/deploy
 war/WEB-INF/classes
 mvp4g-apt-*.jar
