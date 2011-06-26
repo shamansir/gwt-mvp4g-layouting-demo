@@ -3,8 +3,9 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
+import name.shamansir.mvplayout.client.ui.CanBePlaced;
 import name.shamansir.mvplayout.client.ui.HasMainView;
-import name.shamansir.mvplayout.client.ui.Pluggable;
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 
 /**
@@ -21,7 +22,9 @@ import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
  * @date Jun 10, 2011 9:54:56 AM 
  *
  */
-public final class PortletStateDirector<V extends HasMainView & HandlesStateChange> extends StateDirector {
+public final class PortletStateDirector<V extends HasMainView 
+                                                  & HandlesStateChange
+                                                  & CanBePlaced> extends StateDirector {
     
     private final V view;
     protected final UpdatesState reactor;       
@@ -33,10 +36,10 @@ public final class PortletStateDirector<V extends HasMainView & HandlesStateChan
     
     @Override
     public void update(State to) {
-        final Pluggable plug = view.getMainView();
-        if (plug == null) throw new IllegalStateException("Main view is null for view " + view + ", can not determine current place");
+        final Place place = view.getPlace();
+        if (place == null) throw new IllegalStateException("Cannot determine current place");
         view.prepareFor(to);        
-        reactor.changeState(plug.getPlace(), to);
+        reactor.changeState(place, to);
     }
     
 }

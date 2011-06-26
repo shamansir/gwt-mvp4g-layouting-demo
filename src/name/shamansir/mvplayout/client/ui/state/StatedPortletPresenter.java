@@ -3,6 +3,7 @@
  */
 package name.shamansir.mvplayout.client.ui.state;
 
+import name.shamansir.mvplayout.client.ui.CanBePlaced;
 import name.shamansir.mvplayout.client.ui.HasMainView;
 import name.shamansir.mvplayout.client.ui.PortletPresenter;
 import name.shamansir.mvplayout.client.ui.Layouts.Place;
@@ -29,19 +30,30 @@ import com.mvp4g.client.view.LazyView;
 public abstract class StatedPortletPresenter<V extends LazyView & 
                                                        HasMainView &
                                                        HasStatesPanels &
-                                                       HandlesStateChange, 
+                                                       HandlesStateChange &
+                                                       CanBePlaced, 
                                    E extends ChildEventBus> 
                                    extends PortletPresenter<V, E> {
     
     protected StateDirector state;
+    protected final State initialState;
     
     protected StatedPortletPresenter() {
-
+        this(State.LOADING_DATA);
+    }
+    
+    protected StatedPortletPresenter(State initialState) {
+        this.initialState = initialState; 
     }
     
     @Override
     public void bindView() {
         state = new PortletStateDirector<V>(view, eventBus);
+    }
+    
+    @Override
+    public void plug(Place where) {
+        plugState(where, initialState);
     }
     
     public void plugState(Place where, State state) {

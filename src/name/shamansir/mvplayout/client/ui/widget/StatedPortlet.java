@@ -3,6 +3,7 @@ package name.shamansir.mvplayout.client.ui.widget;
 import java.util.HashMap;
 import java.util.Map;
 
+import name.shamansir.mvplayout.client.ui.Layouts.Place;
 import name.shamansir.mvplayout.client.ui.Pluggable;
 import name.shamansir.mvplayout.client.ui.state.IsStatedPortletView;
 import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
@@ -14,7 +15,8 @@ import com.google.gwt.user.client.ui.Widget;
 public abstract class StatedPortlet extends Composite implements IsStatedPortletView {
 	
 	private Plugs plugs;
-	private final Map<State, Plug> states = new HashMap<State, Plug>();
+	private Place place;
+	private final Map<State, Plug> states = new HashMap<State, Plug>();	
 	
 	@UiConstructor
 	public StatedPortlet() {
@@ -46,6 +48,14 @@ public abstract class StatedPortlet extends Composite implements IsStatedPortlet
     @Override
     public boolean hasViewFor(State state) {
         return states.containsKey(state);
-    }	
+    }
+    
+    public void setPlace(Place place) {
+        this.place = place;
+    }
+    
+    public Place getPlace() {
+        return place;
+    }
 	
 }

@@ -4,6 +4,7 @@ import name.shamansir.mvplayout.client.ui.pages.user.UserEventBus;
 import name.shamansir.mvplayout.client.ui.pages.user.view.UserAvatarView;
 import name.shamansir.mvplayout.client.ui.state.IsStatedPortletView;
 import name.shamansir.mvplayout.client.ui.state.StatedPortletPresenter;
+import name.shamansir.mvplayout.client.ui.state.LayoutWithState.State;
 import name.shamansir.mvplayout.shared.dao.User;
 
 import com.mvp4g.client.annotation.Presenter;
@@ -16,13 +17,7 @@ public class UserAvatarPresenter extends StatedPortletPresenter<UserAvatarPresen
 	}	
 
 	public UserAvatarPresenter() {
-	}
-	
-	@Override
-	public void bindView() {
-	    super.bindView();
-	    
-	    //state.noData();
+	    super(State.NO_DATA);
 	}
 	
     public void onUserSelected(User user) {

@@ -55,6 +55,7 @@ public class Plug extends FlowPanel implements Pluggable {
     @Override
     public void setPlace(Place place) {
         this.place = place;
+        if (parent != null) parent.setPlace(place);
     }
 
     @Override

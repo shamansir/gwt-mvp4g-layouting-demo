@@ -73,9 +73,10 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		
 		@Override
 		public final Layout build(State state) {		    
-			Log.debug("Building " + layout.id() + " with state " + state + " (Layout has states: " + hasStates + ") for view " + view);
-			if (built && curState.equals(state)) throw new IllegalStateException("Layout " + layout.id() + " was already built for state " + state + " with this builder, reset it or use another builder");
-			if ((state == null) && hasStates) throw new IllegalStateException("Layout " + layout.id() + " requires state to be set, use layoutHasStates() method of builder to determine is current layout requires states");
+			Log.debug("Building layout " + layout.id() + " with state " + state + " (Layout has states: " + hasStates + ") for view " + view);
+			if (built && (hasStates && curState.equals(state))) throw new IllegalStateException("Layout " + layout.id() + " was already built for state " + state + " with this builder, reset it or use another builder");
+			if (built && (!hasStates && (state == null))) throw new IllegalStateException("Layout " + layout.id() + " was already built with this builder, reset it or use another builder");
+			if (hasStates && (state == null)) throw new IllegalStateException("Layout " + layout.id() + " requires state to be set, use layoutHasStates() method of builder to determine is current layout requires states");
 			if (state != null) prepare(state);
 			if (!doLayout(view, layout, state)) {
 				throw new IllegalStateException("Layout " + layout.id() + " was not built ");
