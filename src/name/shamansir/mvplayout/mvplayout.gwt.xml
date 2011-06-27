@@ -30,6 +30,7 @@
   
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
+  <source path='lib'/>
   <source path='shared'/>
 
 </module>

@@ -30,7 +30,7 @@ public class Portal implements MakesLink {
 		this.group = group;
 		this.event = event;
 		this.id = id.id();
-		instances.put(this.id, this);
+		//instances.put(this.id, this);
 	}	
 
 	@Override
@@ -55,6 +55,10 @@ public class Portal implements MakesLink {
 	    public PortalUrl(Portal portal) {
 	        this.portal = portal;
 	        this.params = new ArrayList<String>();
+	    }
+	    
+	    public PortalUrl(PortalId portal) {
+	        this(instances.get(portal.id()));
 	    }
 	    
 	    public PortalUrl addParam(String value) {
@@ -118,6 +122,7 @@ public class Portal implements MakesLink {
 	
 	public static interface UrlBuilder {
 	    public String build(Portal portal, String... params);
+	    public String build(PortalId portal, String... params);
 	    public String parameters(String... values);
 	}
 	
@@ -131,6 +136,10 @@ public class Portal implements MakesLink {
 	        return new PortalUrl(portal).addParams(params).makeLink();
 	    }
 	    
+	    public String build(PortalId portal, String... params) {
+            return build(instances.get(portal.id()), params);
+        }
+	    
         public String parameters(String... values) {
         	return StringUtils.join(values, PARAM_DELIM);
         }
@@ -141,6 +150,13 @@ public class Portal implements MakesLink {
         }
 	    
 	}
+
+    public static void registerAll(PortalId[] portals) {
+        for (PortalId id: portals) {
+            instances.put(id.id(), id.portal());
+        }
+        
+    }
 
     
 }
