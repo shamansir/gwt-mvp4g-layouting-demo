@@ -1,6 +1,6 @@
 package name.shamansir.mvplayout.client;
 
-import name.shamansir.mvplayout.client.ui.pages.main.MainModule;
+import name.shamansir.mvplayout.client.pages.main.MainModule;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;

@@ -2,8 +2,8 @@ package name.shamansir.mvplayout.client.service;
 
 import java.util.Set;
 
-import name.shamansir.mvplayout.client.exception.ItemNotFoundException;
-import name.shamansir.mvplayout.client.exception.NoMatchesException;
+import name.shamansir.mvplayout.lib.exception.ItemNotFoundException;
+import name.shamansir.mvplayout.lib.exception.NoMatchesException;
 import name.shamansir.mvplayout.shared.dao.Company;
 
 import com.google.gwt.user.client.rpc.RemoteService;

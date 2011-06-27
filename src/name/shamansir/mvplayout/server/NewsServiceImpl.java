@@ -3,9 +3,9 @@ package name.shamansir.mvplayout.server;
 import java.util.HashSet;
 import java.util.Set;
 
-import name.shamansir.mvplayout.client.exception.ItemNotFoundException;
-import name.shamansir.mvplayout.client.exception.NoMatchesException;
 import name.shamansir.mvplayout.client.service.NewsService;
+import name.shamansir.mvplayout.lib.exception.ItemNotFoundException;
+import name.shamansir.mvplayout.lib.exception.NoMatchesException;
 import name.shamansir.mvplayout.shared.dao.NewsItem;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
