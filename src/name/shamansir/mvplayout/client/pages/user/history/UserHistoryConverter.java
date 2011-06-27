@@ -6,8 +6,8 @@ import name.shamansir.mvplayout.client.id.G;
 import name.shamansir.mvplayout.client.id.P;
 import name.shamansir.mvplayout.client.pages.user.UserEventBus;
 import name.shamansir.mvplayout.lib.mvp.PortalsHistoryConverter;
-import name.shamansir.mvplayout.lib.ui.structure.Portal;
-import name.shamansir.mvplayout.lib.ui.structure.Portal.PortalUrl;
+import name.shamansir.mvplayout.lib.ui.Portal;
+import name.shamansir.mvplayout.lib.ui.Portal.PortalUrl;
 
 @History
 public class UserHistoryConverter extends PortalsHistoryConverter<UserEventBus> {

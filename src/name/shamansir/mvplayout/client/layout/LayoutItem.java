@@ -26,7 +26,7 @@ public class LayoutItem extends LayoutWithState {
     @UiField Outlet status;
     
     public LayoutItem() {
-        super(L.ITEM, new Place[] { O.A, O.B, O.C, O.STATUS } );
+        super(L.ITEM, new Place[] { O.A, O.B, O.C }, O.STATUS);
 
         initWidget(uiBinder.createAndBindUi(this));     
     }

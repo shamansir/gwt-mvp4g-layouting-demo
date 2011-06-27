@@ -11,11 +11,11 @@ import name.shamansir.mvplayout.lib.mvp.AMainView.PageResizeListener;
 import name.shamansir.mvplayout.lib.mvp.AMainView.PageScrollListener;
 import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.PlugsContainer;
+import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.lib.ui.state.HasStatesPanels;
 import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
-import name.shamansir.mvplayout.lib.ui.structure.Portal;
 import name.shamansir.mvplayout.lib.ui.widget.Layout;
 
 import com.allen_sauer.gwt.log.client.Log;

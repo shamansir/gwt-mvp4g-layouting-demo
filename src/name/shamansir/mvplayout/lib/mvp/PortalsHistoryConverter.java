@@ -3,11 +3,11 @@ package name.shamansir.mvplayout.lib.mvp;
 import name.shamansir.mvplayout.lib.exception.PortalNotFoundException;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilders;
+import name.shamansir.mvplayout.lib.ui.Portal;
+import name.shamansir.mvplayout.lib.ui.Portal.PortalUrl;
+import name.shamansir.mvplayout.lib.ui.Portal.PortalUrlBuilder;
+import name.shamansir.mvplayout.lib.ui.Portal.UrlBuilder;
 import name.shamansir.mvplayout.lib.ui.structure.Group;
-import name.shamansir.mvplayout.lib.ui.structure.Portal;
-import name.shamansir.mvplayout.lib.ui.structure.Portal.PortalUrl;
-import name.shamansir.mvplayout.lib.ui.structure.Portal.PortalUrlBuilder;
-import name.shamansir.mvplayout.lib.ui.structure.Portal.UrlBuilder;
 
 import com.mvp4g.client.history.HistoryConverter;
 

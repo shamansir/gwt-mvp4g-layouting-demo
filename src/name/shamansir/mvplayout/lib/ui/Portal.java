@@ -1,41 +1,37 @@
 package name.shamansir.mvplayout.lib.ui;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import name.shamansir.mvplayout.lib.exception.PortalNotFoundException;
-import name.shamansir.mvplayout.lib.ui.Layouts.LayoutId;
+import name.shamansir.mvplayout.lib.ui.structure.Group;
+import name.shamansir.mvplayout.lib.ui.structure.LayoutId;
+import name.shamansir.mvplayout.lib.ui.structure.PortalId;
 import name.shamansir.mvplayout.lib.utils.StringUtils;
 
-public enum Portal implements MakesLink {
-	
-	USERS_LIST(LayoutId.LIST, Group.USER, "list"),
-	USER_EDIT(LayoutId.EDIT, Group.USER, "edit"),
-	USER_SHOW(LayoutId.ITEM, Group.USER, "show"),
-	
-	NEWS_LIST(LayoutId.LIST, Group.NEWS, "list"),
-	NEWS_EDIT(LayoutId.EDIT, Group.NEWS, "edit"),
-	NEWS_SHOW(LayoutId.ITEM, Group.NEWS, "show"),
-	
-	COMPANY_LIST(LayoutId.LIST, Group.COMPANY, "list"),
-	COMPANY_EDIT(LayoutId.EDIT, Group.COMPANY, "edit"),
-	COMPANY_SHOW(LayoutId.ITEM, Group.COMPANY, "show");
+public class Portal implements MakesLink {
+    
+    private static final Map<String, Portal> instances = 
+                                        new HashMap<String, Portal>();
 	
 	public static final String EVENT_DELIM = "/";
 	public static final String PARAM_MARKER = "/";
 	public static final String PARAM_DELIM = "/";
 	
-	public enum Group { USER, NEWS, COMPANY };
-	
+	public final String id;
 	public final LayoutId layout;
 	public final Group group;
 	public final String event;
 	
-	private Portal(LayoutId layout, Group group, String event) {
+	public Portal(PortalId id, LayoutId layout, Group group, String event) {
 		this.layout = layout;
 		this.group = group;
 		this.event = event;
-	}
+		this.id = id.id();
+		instances.put(this.id, this);
+	}	
 
 	@Override
 	public String makeLink() {
@@ -46,7 +42,11 @@ public enum Portal implements MakesLink {
 	public String toString() {
 		return group.name().toLowerCase() + "/" + event + " [" + layout + "]";
 	}
-
+	
+    public String name() {
+        return group + "-" + event;
+    }	
+	
 	public static class PortalUrl implements MakesLink {
 	    
 	    private final Portal portal;
@@ -98,7 +98,7 @@ public enum Portal implements MakesLink {
 
         public static PortalUrl fromEvent(Group group, String event,
                 String param) throws PortalNotFoundException {
-        	for (Portal portal: Portal.values()) {
+        	for (Portal portal: Portal.instances.values()) {
         		if (portal.group.equals(group) &&
         			portal.event.equals(event)) {
         			final PortalUrl url = new PortalUrl(portal);
@@ -140,7 +140,7 @@ public enum Portal implements MakesLink {
             else return instance;
         }
 	    
-	    
 	}
-	
+
+    
 }

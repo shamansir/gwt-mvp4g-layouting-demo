@@ -8,6 +8,7 @@ import com.mvp4g.client.view.LazyView;
 import name.shamansir.mvplayout.lib.mvp.ChildEventBus;
 import name.shamansir.mvplayout.lib.mvp.PortalPresenter;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder;
+import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.state.HandlesStateChange;
 import name.shamansir.mvplayout.lib.ui.state.HasStatesPanels;
 import name.shamansir.mvplayout.lib.ui.state.PlugsStates;
@@ -15,7 +16,6 @@ import name.shamansir.mvplayout.lib.ui.state.PortalStateDirector;
 import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.lib.ui.state.StateDirector;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
-import name.shamansir.mvplayout.lib.ui.structure.Portal;
 
 /**
  * <dl>

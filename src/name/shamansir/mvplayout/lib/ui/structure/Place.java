@@ -9,4 +9,6 @@ package name.shamansir.mvplayout.lib.ui.structure;
  */
 public interface Place {
 
+    public String name();
+
 }

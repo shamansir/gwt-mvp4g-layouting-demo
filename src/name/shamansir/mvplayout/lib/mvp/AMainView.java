@@ -3,8 +3,8 @@
  */
 package name.shamansir.mvplayout.lib.mvp;
 
+import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
-import name.shamansir.mvplayout.lib.ui.structure.Portal;
 import name.shamansir.mvplayout.lib.ui.widget.Layout;
 
 import com.allen_sauer.gwt.log.client.Log;

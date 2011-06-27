@@ -2,9 +2,9 @@ package name.shamansir.mvplayout.lib.mvp;
 
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilders;
-import name.shamansir.mvplayout.lib.ui.structure.Portal;
-import name.shamansir.mvplayout.lib.ui.structure.Portal.PortalUrlBuilder;
-import name.shamansir.mvplayout.lib.ui.structure.Portal.UrlBuilder;
+import name.shamansir.mvplayout.lib.ui.Portal;
+import name.shamansir.mvplayout.lib.ui.Portal.PortalUrlBuilder;
+import name.shamansir.mvplayout.lib.ui.Portal.UrlBuilder;
 
 import com.mvp4g.client.presenter.LazyPresenter;
 import com.mvp4g.client.view.LazyView;

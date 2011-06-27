@@ -8,7 +8,6 @@ import name.shamansir.mvplayout.lib.mvp.ChildEventBus;
 import name.shamansir.mvplayout.lib.ui.state.LayoutWithState;
 import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.lib.ui.structure.LayoutId;
-import name.shamansir.mvplayout.lib.ui.structure.Portal;
 import name.shamansir.mvplayout.lib.ui.widget.Layout;
 
 import com.allen_sauer.gwt.log.client.Log;

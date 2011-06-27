@@ -2,7 +2,7 @@ package name.shamansir.mvplayout.client.pages.main.view;
 
 import name.shamansir.mvplayout.client.pages.main.presenter.MainPresenter.IMainView;
 import name.shamansir.mvplayout.lib.mvp.AMainView;
-import name.shamansir.mvplayout.lib.ui.structure.Portal;
+import name.shamansir.mvplayout.lib.ui.Portal;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;

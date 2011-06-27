@@ -27,7 +27,7 @@ public class LayoutEdit extends LayoutWithState {
     @UiField Outlet status;
     
 	public LayoutEdit() {
-		super(L.EDIT, new Place[] { O.A, O.B, O.C, O.D, O.STATUS } );
+		super(L.EDIT, new Place[] { O.A, O.B, O.C, O.D }, O.STATUS );
 
         initWidget(uiBinder.createAndBindUi(this));		
 	}

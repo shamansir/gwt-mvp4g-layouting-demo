@@ -4,8 +4,8 @@ import name.shamansir.mvplayout.client.id.O;
 import name.shamansir.mvplayout.client.id.P;
 import name.shamansir.mvplayout.client.pages.user.UserEventBus;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder;
+import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.state.State;
-import name.shamansir.mvplayout.lib.ui.structure.Portal;
 import name.shamansir.mvplayout.lib.ui.widget.Layout;
 
 public class UserLayoutBuilder extends LayoutBuilder<UserEventBus> {
