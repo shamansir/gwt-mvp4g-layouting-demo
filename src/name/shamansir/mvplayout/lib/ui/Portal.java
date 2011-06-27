@@ -155,7 +155,6 @@ public class Portal implements MakesLink {
         for (PortalId id: portals) {
             instances.put(id.id(), id.portal());
         }
-        
     }
 
     

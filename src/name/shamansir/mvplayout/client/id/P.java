@@ -39,10 +39,6 @@ public enum P implements PortalId {
     @Override
     public String id() { return name(); }
     
-    public Portal portal() { return portal; };
-    
-    static { 
-        Portal.registerAll(P.values()); 
-    }
+    public Portal portal() { return portal; };    
 
 }
