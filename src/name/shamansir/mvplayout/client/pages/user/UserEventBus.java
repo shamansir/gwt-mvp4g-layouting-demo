@@ -2,6 +2,7 @@ package name.shamansir.mvplayout.client.pages.user;
 
 import name.shamansir.mvplayout.client.pages.user.history.UserHistoryConverter;
 import name.shamansir.mvplayout.client.pages.user.presenter.UserAvatarPresenter;
+import name.shamansir.mvplayout.client.pages.user.presenter.UserDetailsPresenter;
 import name.shamansir.mvplayout.client.pages.user.presenter.UserListPresenter;
 import name.shamansir.mvplayout.client.pages.user.view.UserListView;
 import name.shamansir.mvplayout.lib.mvp.ChildEventBus;
@@ -29,7 +30,7 @@ public interface UserEventBus extends ChildEventBus {
 	
 	// secondary events
 	
-	@Event(handlers = { /*UserDetailsPresenter.class,*/ 
+	@Event(handlers = { UserDetailsPresenter.class, 
 	                    UserAvatarPresenter.class })
     public void userSelected(User user);
 	
@@ -38,7 +39,7 @@ public interface UserEventBus extends ChildEventBus {
     @Event(handlers = UserListPresenter.class, calledMethod = "plug")
 	public void plugUsersList(Place where);
     
-    @Event(/*handlers = UserDetailsPresenter.class, calledMethod = "plug"*/)
+    @Event(handlers = UserDetailsPresenter.class, calledMethod = "plug")
     public void plugUserDetails(Place where);    
     
     @Event(handlers = UserAvatarPresenter.class, calledMethod = "plug")

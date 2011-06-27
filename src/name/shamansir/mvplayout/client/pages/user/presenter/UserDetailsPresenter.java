@@ -4,6 +4,7 @@ import name.shamansir.mvplayout.client.pages.user.UserEventBus;
 import name.shamansir.mvplayout.client.pages.user.view.UserDetailsView;
 import name.shamansir.mvplayout.lib.mvp.state.IsStatedPortletView;
 import name.shamansir.mvplayout.lib.mvp.state.StatedPortletPresenter;
+import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.shared.dao.User;
 
 import com.mvp4g.client.annotation.Presenter;
@@ -16,13 +17,7 @@ public class UserDetailsPresenter extends StatedPortletPresenter<UserDetailsPres
 	}	
 
 	public UserDetailsPresenter() {
-	}
-	
-	@Override
-	public void bindView() {
-	    super.bindView();
-	    
-	    state.loading();
+	    super(State.NO_DATA);
 	}
 	
 	//@FromEventBus
