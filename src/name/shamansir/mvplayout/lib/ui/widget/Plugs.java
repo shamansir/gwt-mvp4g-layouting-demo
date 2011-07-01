@@ -64,9 +64,9 @@ public class Plugs extends Widget implements HasWidgets {
         return plugs.remove((Plug)w);
     }
 
-    public void setContainer(PlugsContainer statedPortlet) {
+    public void setContainer(PlugsContainer portlet) {
         for (Plug plug: plugs) {
-            plug.setContainer(statedPortlet);
+            plug.setContainer(portlet);
         }
     }
 

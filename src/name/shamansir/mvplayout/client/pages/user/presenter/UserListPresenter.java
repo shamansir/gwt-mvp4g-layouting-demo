@@ -29,14 +29,13 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
         public Set<UserRow> getRows();
 	}	
 
-	public UserListPresenter() {
-	}
+	public UserListPresenter() { }
 	
 	@Inject UserServiceAsync service;
 
 	public void onUsers(String filter) {	    
 	    //state.loading();
-
+	    
 	    service.getUsers(filter, new ErrorsSafeCallback<Set<User>>(eventBus) {
 			
 			@Override

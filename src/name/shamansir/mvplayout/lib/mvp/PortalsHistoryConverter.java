@@ -26,11 +26,11 @@ public abstract class PortalsHistoryConverter<E extends ChildEventBus> implement
 	public final void convertFromToken(String event, String param, E eventBus) {
 		
 		try {
-
+		    
 			// get current URL and portal
 			final PortalUrl url = PortalUrl.fromEvent(group, event, param);
 			final Portal view = url.view();
-		
+			
 			// prepare layout
 			eventBus.newPortal(view, layout.make(view, eventBus));
 		

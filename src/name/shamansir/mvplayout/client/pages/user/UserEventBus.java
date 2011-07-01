@@ -17,7 +17,7 @@ public interface UserEventBus extends ChildEventBus {
 	
     // navigation events
     
-	@Event(name = "list", navigationEvent = true, passive = true,
+	@Event(name = "list", navigationEvent = true,
 		   handlers = UserListPresenter.class, 
 		   historyConverter = UserHistoryConverter.class)
 	public void users(String filter);

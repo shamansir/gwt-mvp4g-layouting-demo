@@ -13,6 +13,8 @@ import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.PlugsContainer;
 import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder.CanBuildLayout;
+import name.shamansir.mvplayout.lib.ui.Portal.PortalUrlBuilder;
+import name.shamansir.mvplayout.lib.ui.Portal.UrlBuilder;
 import name.shamansir.mvplayout.lib.ui.state.HasStatesPanels;
 import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
@@ -32,6 +34,7 @@ public abstract class AMainPresenter<V extends IsMainView, E extends IsMainEvent
     public static final State DEFAULT_LAYOUT_STATE = State.LOADING_DATA; // TODO: move to builder
     
     private CanBuildLayout currentBuilder;
+    protected UrlBuilder url = PortalUrlBuilder.get();
     
     private List<HandlerRegistration> handlers = new ArrayList<HandlerRegistration>();    
     

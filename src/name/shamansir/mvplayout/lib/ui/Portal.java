@@ -13,7 +13,7 @@ import name.shamansir.mvplayout.lib.utils.StringUtils;
 
 public class Portal implements MakesLink {
     
-    private static final Map<String, Portal> instances = 
+    private static final Map<String, Portal> portals = 
                                         new HashMap<String, Portal>();
 	
 	public static final String EVENT_DELIM = "/";
@@ -30,7 +30,7 @@ public class Portal implements MakesLink {
 		this.group = group;
 		this.event = event;
 		this.id = id.id();
-		//instances.put(this.id, this);
+		//portals.put(this.id, this);
 	}	
 
 	@Override
@@ -58,7 +58,7 @@ public class Portal implements MakesLink {
 	    }
 	    
 	    public PortalUrl(PortalId portal) {
-	        this(instances.get(portal.id()));
+	        this(portals.get(portal.id()));
 	    }
 	    
 	    public PortalUrl addParam(String value) {
@@ -97,12 +97,13 @@ public class Portal implements MakesLink {
 
         @Override
         public String makeLink() {
-            return portal.makeLink() + PARAM_MARKER + StringUtils.join(params, PARAM_DELIM);
+            if (params.size() == 0) return portal.makeLink();
+            else return portal.makeLink() + PARAM_MARKER + StringUtils.join(params, PARAM_DELIM);
         }
 
         public static PortalUrl fromEvent(Group group, String event,
                 String param) throws PortalNotFoundException {
-        	for (Portal portal: Portal.instances.values()) {
+        	for (Portal portal: Portal.portals.values()) {
         		if (portal.group.equals(group) &&
         			portal.event.equals(event)) {
         			final PortalUrl url = new PortalUrl(portal);
@@ -137,7 +138,7 @@ public class Portal implements MakesLink {
 	    }
 	    
 	    public String build(PortalId portal, String... params) {
-            return build(instances.get(portal.id()), params);
+            return build(portals.get(portal.id()), params);
         }
 	    
         public String parameters(String... values) {
@@ -151,9 +152,9 @@ public class Portal implements MakesLink {
 	    
 	}
 
-    public static void registerAll(PortalId[] portals) {
-        for (PortalId id: portals) {
-            instances.put(id.id(), id.portal());
+    public static void registerAll(PortalId[] portalIds) {
+        for (PortalId id: portalIds) {
+            portals.put(id.id(), id.portal());
         }
     }
 

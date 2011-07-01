@@ -1,13 +1,13 @@
 package name.shamansir.mvplayout.client.pages.user.history;
 
-import com.mvp4g.client.annotation.History;
-
 import name.shamansir.mvplayout.client.id.G;
 import name.shamansir.mvplayout.client.id.P;
 import name.shamansir.mvplayout.client.pages.user.UserEventBus;
 import name.shamansir.mvplayout.lib.mvp.PortalsHistoryConverter;
 import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.Portal.PortalUrl;
+
+import com.mvp4g.client.annotation.History;
 
 @History
 public class UserHistoryConverter extends PortalsHistoryConverter<UserEventBus> {
