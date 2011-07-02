@@ -26,9 +26,9 @@ public final class PortletStateDirector<V extends HasMainView
                                                   & CanBePlaced> extends StateDirector {
     
     private final V view;
-    protected final UpdatesState reactor;       
+    protected final UpdatesStateByPlace reactor;       
 
-    public PortletStateDirector(V handler, UpdatesState reactor) {
+    public PortletStateDirector(V handler, UpdatesStateByPlace reactor) {
         this.view = handler;
         this.reactor = reactor;
     }

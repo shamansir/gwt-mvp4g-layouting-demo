@@ -7,6 +7,7 @@ import name.shamansir.mvplayout.lib.mvp.ChildEventBus;
 import name.shamansir.mvplayout.lib.mvp.PortletPresenter;
 import name.shamansir.mvplayout.lib.ui.CanBePlaced;
 import name.shamansir.mvplayout.lib.ui.HasMainView;
+import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.state.HandlesStateChange;
 import name.shamansir.mvplayout.lib.ui.state.HasStatesPanels;
 import name.shamansir.mvplayout.lib.ui.state.PortletStateDirector;
@@ -62,7 +63,9 @@ public abstract class StatedPortletPresenter<V extends LazyView &
     
     public void plugState(Place where, State state) {
         if (view.hasViewFor(state)) {
-            eventBus.plug(where, view.getViewFor(state));
+            Pluggable plug = view.getViewFor(state);
+            plug.changeState(state);
+            eventBus.plug(where, plug);
         } else {
             Log.warn("No view regitstered for state " + state +
                      " to place it to " + where);

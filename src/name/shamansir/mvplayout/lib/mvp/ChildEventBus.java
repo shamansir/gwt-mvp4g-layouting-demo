@@ -7,13 +7,13 @@ import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.lib.ui.state.State;
-import name.shamansir.mvplayout.lib.ui.state.UpdatesState;
+import name.shamansir.mvplayout.lib.ui.state.UpdatesStateByPlace;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
 
 import com.mvp4g.client.annotation.Event;
 import com.mvp4g.client.event.EventBus;
 
-public interface ChildEventBus extends EventBus, UpdatesState {
+public interface ChildEventBus extends EventBus, UpdatesStateByPlace {
     
     @Event(forwardToParent = true)
     public void newPortal(Portal portal, CanBuildLayout builder);

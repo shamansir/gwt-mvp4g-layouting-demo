@@ -5,15 +5,15 @@
 
     <l:Plugs>
 
-        <l:Plug ui:field="mainView" alias="details">
+        <l:Plug ui:field="mainView" alias="user-details">
             <gwt:Label ui:field="dataSummary" />    
         </l:Plug>
     
-        <l:Plug ui:field="ifEmpty" alias="details-empty">
+        <l:Plug ui:field="ifEmpty" alias="user-details-empty">
             <gwt:Label>No user selected</gwt:Label>
         </l:Plug>
         
-        <l:Plug ui:field="whenLoading" alias="details-loading">
+        <l:Plug ui:field="whenLoading" alias="user-details-loading">
             <gwt:Label>Loading details...</gwt:Label>
         </l:Plug>
         

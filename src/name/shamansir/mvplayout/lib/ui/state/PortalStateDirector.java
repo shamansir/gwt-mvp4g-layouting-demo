@@ -21,9 +21,9 @@ package name.shamansir.mvplayout.lib.ui.state;
 public final class PortalStateDirector<V extends HandlesStateChange> extends StateDirector {
     
     private final V view;
-    protected final UpdatesState reactor;
+    protected final UpdatesStateByPlace reactor;
     
-    public PortalStateDirector(V view, UpdatesState reactor) {
+    public PortalStateDirector(V view, UpdatesStateByPlace reactor) {
         this.view = view;
         this.reactor = reactor;
     }

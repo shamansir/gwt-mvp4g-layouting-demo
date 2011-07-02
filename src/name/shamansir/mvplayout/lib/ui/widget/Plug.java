@@ -7,7 +7,9 @@ import name.shamansir.mvplayout.lib.ui.CanBePlaced;
 import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.PlugsContainer;
 import name.shamansir.mvplayout.lib.ui.RefreshHandler;
+import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
+import name.shamansir.mvplayout.lib.utils.StringUtils;
 
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.FlowPanel;
@@ -32,6 +34,7 @@ public class Plug extends FlowPanel implements Pluggable {
     private Place place;
     private RefreshHandler refreshHandler;
     private PlugsContainer parent;
+    private State state; // may be null
 
     @UiConstructor
     public Plug(final String alias) {
@@ -80,5 +83,20 @@ public class Plug extends FlowPanel implements Pluggable {
 	public void setContainer(PlugsContainer parent) {
 		this.parent = parent;
 	}	
+
+    public final void changeState(State state) {
+        if (this.state != null) removeStyleName(generateStateCSSClassName(this.state));
+        this.state = state;
+        addStyleName(generateStateCSSClassName(this.state));
+    }   
+    
+    protected static String generateStateCSSClassName(State state) {
+        return "state-" + StringUtils.toCSS(state.name());
+    }
+    
+    @Override
+    public State getState() { // may be null
+        return this.state;
+    }
 	
 }

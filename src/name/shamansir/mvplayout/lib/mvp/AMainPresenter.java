@@ -77,14 +77,16 @@ public abstract class AMainPresenter<V extends IsMainView, E extends IsMainEvent
             if (!currentBuilder.layoutHasStates()) Log.warn("Current layout " + currentBuilder.layoutId() + " do not supports states, please ensure you do what you want");
             if ((currentBuilder.curState() != null) && currentBuilder.curState().equals(state)) return;
             //currentBuilder.reset();
-            currentBuilder.build(state); // just changes layout inside it, do not re-renders anything that not required
+            currentBuilder.build(state); // just changes layout inside it, do not re-renders anything that not required 
         } else {
             Layout layout = getActualLayout();
             PlugsContainer container = layout.getPluggable(where).getContainer();
             if (!(container instanceof HasStatesPanels)) throw new IllegalStateException("Container " + container + " at place " + where + " does not implements HasStatesPanels, so it can not change states");
             HasStatesPanels panels = (HasStatesPanels)container;
             // TODO: check if it is already in this state
-            layout.plug(where, panels.getViewFor(state));
+            Pluggable plug = panels.getViewFor(state);
+            plug.changeState(state);
+            layout.plug(where, plug);
         }
     }
     

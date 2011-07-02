@@ -108,7 +108,7 @@ public abstract class AMainView extends Composite implements IsMainView {
     
     protected static String generatePlaceCSSClassName(Place place) {
         return "place place-" + StringUtils.toCSS(place.name());
-    }   
+    }
 
     @Override
     public void clear() { currentLayout.clear(); }

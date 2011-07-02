@@ -11,7 +11,7 @@ import name.shamansir.mvplayout.lib.ui.structure.Place;
  * <dt>Package:</dt> <dd>name.shamansir.mvplayout.lib.ui</dd>
  * </dl>
  *
- * <code>UpdatesState</code>
+ * <code>UpdatesStateByPlace</code>
  *
  * <p>Description</p>
  *
@@ -19,6 +19,6 @@ import name.shamansir.mvplayout.lib.ui.structure.Place;
  * @date Apr 28, 2011 10:32:24 PM 
  *
  */
-public interface UpdatesState {
+public interface UpdatesStateByPlace {
     public void changeState(Place where, State to);    
 }

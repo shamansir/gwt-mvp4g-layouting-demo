@@ -3,6 +3,8 @@
  */
 package name.shamansir.mvplayout.lib.ui;
 
+import name.shamansir.mvplayout.lib.ui.state.ChangesState;
+
 import com.google.gwt.user.client.ui.IsWidget;
 
 /**
@@ -19,7 +21,8 @@ import com.google.gwt.user.client.ui.IsWidget;
  * @date Jun 7, 2011 7:42:44 PM 
  *
  */
-public interface Pluggable extends IsWidget, CanBePlaced, HasRefreshHandler {
+public interface Pluggable extends IsWidget, CanBePlaced, 
+                                   HasRefreshHandler, ChangesState {
     
     public String id();
     public void refresh();

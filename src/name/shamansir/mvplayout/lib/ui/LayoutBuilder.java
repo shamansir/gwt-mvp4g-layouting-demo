@@ -68,7 +68,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 			if (state == null) throw new IllegalArgumentException("Passed state is null");
 			if ((curState != null) && curState.equals(state)) throw new IllegalStateException("Current state is already prepared");
 			curState = state;
-			((LayoutWithState)layout).prepare(state); 
+			((LayoutWithState)layout).changeState(state); 
 		}		
 		
 		@Override
@@ -77,7 +77,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 			if (built && (hasStates && curState.equals(state))) throw new IllegalStateException("Layout " + layout.id() + " was already built for state " + state + " with this builder, reset it or use another builder");
 			if (built && (!hasStates && (state == null))) throw new IllegalStateException("Layout " + layout.id() + " was already built with this builder, reset it or use another builder");
 			if (hasStates && (state == null)) throw new IllegalStateException("Layout " + layout.id() + " requires state to be set, use layoutHasStates() method of builder to determine is current layout requires states");
-			if (state != null) prepare(state);
+			if (state != null) prepare(state);			
 			if (!doLayout(view, layout, state)) {
 				throw new IllegalStateException("Layout " + layout.id() + " was not built ");
 			}

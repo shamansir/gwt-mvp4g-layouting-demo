@@ -12,7 +12,7 @@ import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvplayout.lib.ui.state.State;
-import name.shamansir.mvplayout.lib.ui.state.UpdatesState;
+import name.shamansir.mvplayout.lib.ui.state.UpdatesStateByPlace;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
 
 
@@ -20,7 +20,7 @@ import name.shamansir.mvplayout.lib.ui.structure.Place;
  * @author Ulric Wilfred <shaman.sir@gmail.com>
  *
  */
-public interface IsMainEventBus extends EventBus, UpdatesState {
+public interface IsMainEventBus extends EventBus, UpdatesStateByPlace {
     
     public void newPortal(Portal portal, CanBuildLayout builder);
     
