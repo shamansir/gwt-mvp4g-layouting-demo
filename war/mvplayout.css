@@ -1,34 +1,122 @@
-/** Add css rules here for your application. */
+/* =========== Toolbar, Layout, Footer ====================================== */
 
-
-/** Example rules used by the template application (remove for your app) */
-h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: #777777;
-  margin: 40px 0px 70px;
-  text-align: center;
+.toolbar, .layout, .footer {
+    border: 4px solid #c83830;
+    padding: 30px 7px 7px;
+    margin: 5px;
+    background-position: -2px -2px;
+    background-repeat: no-repeat;	
 }
 
-.sendButton {
-  display: block;
-  font-size: 16pt;
+.toolbar {
+    background-image: url('./img/toolbar.png');	
 }
 
-/** Most GWT widgets already have a style name defined */
-.gwt-DialogBox {
-  width: 400px;
+.layout {
+    background-image: url('./img/layout.png'); 
 }
 
-.dialogVPanel {
-  margin: 5px;
+.footer {
+    background-image: url('./img/footer.png'); 
 }
 
-.serverResponseLabelError {
-  color: red;
+.copy, .logo {
+	margin: 1px;
+	padding: 2px;
+	border: 3px solid #bbbbbb;
 }
 
-/** Set ids using widget.getElement().setId("idOfElement") */
-#closeButton {
-  margin: 15px 6px 6px;
+/* =========== Layout: List, Edit, Show ===================================== */
+
+.layout-list, .layout-edit, .layout-show {
+	border: 4px solid #31b27c;
+    padding: 35px 10px 10px;
+	margin: 5px;
+	background-position: -6px -2px;
+	background-repeat: no-repeat;
+}
+
+.layout-list {
+	background-image: url('./img/list.png');
+}
+
+.layout-show {
+    background-image: url('./img/show.png');
+}
+
+.layout-edit {
+    background-image: url('./img/edit.png');
+}
+
+/* =========== Group: User, News, Company =================================== */
+
+/* .group-user, .group-news, .group-company {
+    border: 4px solid #007f89;
+    padding: 35px 10px 10px;
+    margin: 5px;	
+    background-position: -9px -2px;
+    background-repeat: no-repeat;	
+}
+
+.group-user {
+	background-image: url('./img/user.png');
+}
+
+.group-news {
+    background-image: url('./img/news.png');
+}
+
+.group-company {
+    background-image: url('./img/company.png');
+} */
+
+/* =========== Place: A, B, ..., Status ===================================== */
+
+.place {
+    border: 4px solid #004789;
+    padding: 30px 7px 7px;
+    margin: 5px;
+    background-position: -2px -2px;
+    background-repeat: no-repeat;   	
+}
+
+.place-a {
+    background-image: url('./img/a.png');	
+}
+
+.place-b {
+    background-image: url('./img/b.png');   
+}
+
+.place-c {
+    background-image: url('./img/c.png');   
+}
+
+.place-d {
+    background-image: url('./img/d.png');   
+}
+
+.place-status {
+    background-image: url('./img/s.png');   
+}
+
+/* =========== Plug ========================================================= */
+
+.plug {
+    margin: 1px;
+    padding: 2px;
+    border: 3px solid #9999ff;
+    background-color: #eee;	
+}
+
+/* =========== Special ====================================================== */
+
+.plug-users-list > table > tbody > tr > td {
+	cursor: pointer;
+	padding: 5px;
+	background-color: #ddd;
+}
+
+.plug-users-list > table > tbody > tr > td:hover {
+    background-color: #ccc;	
 }

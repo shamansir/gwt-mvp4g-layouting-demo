@@ -41,6 +41,11 @@ public class StringUtils {
     
     public static String join(String[] source, String delim) {
         return join(Arrays.asList(source), delim);
-    }    
+    }
+    
+    // someId expected in format LIKE_THIS, like Enum.name() and constants do
+    public static String toCSS(String constant) {
+        return constant.toLowerCase().replace('_', '-');
+    }
     
 }

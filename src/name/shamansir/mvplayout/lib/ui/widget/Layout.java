@@ -11,6 +11,7 @@ import name.shamansir.mvplayout.lib.ui.IsOutlet;
 import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.structure.LayoutId;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
+import name.shamansir.mvplayout.lib.utils.StringUtils;
 
 import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.user.client.ui.Composite;
@@ -74,10 +75,11 @@ public abstract class Layout extends Composite implements PageScrollListener, Pa
             if (!outlet.isVisible()) Log.warn("Outlet at place " + where + " is not visible, but you are plugging " + what + " there"); 
             outlet.clear();
             outlet.add(what.asWidget());
+            what.asWidget().addStyleName(generatePlugCSSClassName(what));
             plugged.put(where, what);            
             Log.debug("Plugged " + what.id() + " into outlet at place " + where);
             what.setPlace(where);
-            what.refresh();
+            what.refresh();            
         }
     }
     
@@ -89,5 +91,8 @@ public abstract class Layout extends Composite implements PageScrollListener, Pa
     public void whenBuilt() {
         
     }
-	
+    
+    protected static String generatePlugCSSClassName(Pluggable plug) {
+        return "plug plug-" + StringUtils.toCSS(plug.id());
+    }
 }

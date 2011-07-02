@@ -6,6 +6,7 @@ package name.shamansir.mvplayout.lib.mvp;
 import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
 import name.shamansir.mvplayout.lib.ui.widget.Layout;
+import name.shamansir.mvplayout.lib.utils.StringUtils;
 
 import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.event.dom.client.ScrollEvent;
@@ -96,17 +97,17 @@ public abstract class AMainView extends Composite implements IsMainView {
     public Layout getCurLayout() { return currentLayout; }
     
     protected static String generatePortalCSSClassName(Portal portal) {
-        return "portal-" + portal.name().toLowerCase().replace('_', '-');
-        // return "p-" + portal.name().toLowerCase().replace('_', '-') + " " + ((portal.group != null) ? "p-" + portal.group.code() : "p-top-level");
+        return "portal portal-" + StringUtils.toCSS(portal.name()) + " " + 
+               ((portal.group != null) ? "group-" + StringUtils.toCSS(portal.group.name())
+                                       : "group-top-level");
     }
     
     protected static String generateLayoutCSSClassName(Layout layout) {
-        return "layout-" + layout.id().name().toLowerCase().replace('_', '-');
+        return "page layout-" + StringUtils.toCSS(layout.id().name());
     }
     
     protected static String generatePlaceCSSClassName(Place place) {
-        //if (Place.STATUS.equals(place)) return "l-status b-empty";
-        return "place-" + place.name().toLowerCase().replace('_', '-');
+        return "place place-" + StringUtils.toCSS(place.name());
     }   
 
     @Override

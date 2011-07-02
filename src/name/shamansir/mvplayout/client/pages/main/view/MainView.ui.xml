@@ -2,19 +2,26 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
     xmlns:gwt="urn:import:com.google.gwt.user.client.ui">
 
-    <gwt:VerticalPanel>
-        <gwt:Label styleName="toolbar">Toolbar</gwt:Label>
-        <gwt:cell height="80%" styleName="layout">
-            <gwt:ScrollPanel ui:field="scrollable">
+    <gwt:VerticalPanel width="80%" height="100%">
+        <gwt:cell>
+            <gwt:Label styleName="toolbar">Toolbar</gwt:Label>
+        </gwt:cell>
+        <gwt:cell height="80%">
+            <gwt:ScrollPanel ui:field="scrollable" styleName="layout">
+                <!-- LAYOUT WILL BE PLACED HERE -->
                 <gwt:FlowPanel ui:field="layoutHolder" />
             </gwt:ScrollPanel>    
         </gwt:cell>
-        <gwt:HorizontalPanel styleName="footer">
-            <gwt:cell width="80%">
-                <gwt:Label>Copy</gwt:Label>
-            </gwt:cell>
-            <gwt:Label>Logo</gwt:Label>                
-        </gwt:HorizontalPanel>             
+        <gwt:cell>
+	        <gwt:HorizontalPanel styleName="footer" width="99%">
+	            <gwt:cell width="70%">
+	                <gwt:Label styleName="copy">Copy</gwt:Label>
+	            </gwt:cell>
+	            <gwt:cell>
+	               <gwt:Label styleName="logo">Logo</gwt:Label>
+	            </gwt:cell>                
+	        </gwt:HorizontalPanel>
+        </gwt:cell>             
     </gwt:VerticalPanel>
 
 </ui:UiBinder> 

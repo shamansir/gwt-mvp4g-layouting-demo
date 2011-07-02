@@ -3,12 +3,16 @@
     xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
     xmlns:l="urn:import:name.shamansir.mvplayout.lib.ui.widget">
     
-    <gwt:HorizontalPanel>
-        <gwt:VerticalPanel>
-             <l:Outlet ui:field="placeB" />                
-             <l:Outlet ui:field="placeC" />                
-        </gwt:VerticalPanel>
-        <l:Outlet ui:field="placeA" />
+    <gwt:HorizontalPanel width="80%">
+        <gwt:cell width="35%">
+	        <gwt:VerticalPanel>
+	             <l:Outlet ui:field="placeB" />                
+	             <l:Outlet ui:field="placeC" />                
+	        </gwt:VerticalPanel>
+        </gwt:cell>
+        <gwt:cell width="60%">        
+            <l:Outlet ui:field="placeA" />
+        </gwt:cell>
     </gwt:HorizontalPanel>
     
 </ui:UiBinder>

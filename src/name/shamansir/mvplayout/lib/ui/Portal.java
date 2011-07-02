@@ -31,7 +31,9 @@ public class Portal implements MakesLink {
 		this.event = event;
 		this.id = id.id();
 		//portals.put(this.id, this);
-	}	
+	}
+	
+	// TODO: handle null group
 
 	@Override
 	public String makeLink() {
