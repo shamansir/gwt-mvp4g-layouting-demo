@@ -7,10 +7,12 @@
             <gwt:Label styleName="toolbar">Toolbar</gwt:Label>
         </gwt:cell>
         <gwt:cell height="80%">
-            <gwt:ScrollPanel ui:field="scrollable" styleName="layout">
-                <!-- LAYOUT WILL BE PLACED HERE -->
-                <gwt:FlowPanel ui:field="layoutHolder" />
-            </gwt:ScrollPanel>    
+            <gwt:SimplePanel styleName="frame"> <!-- just to mark it in hierarchy for CSS -->            
+                <gwt:ScrollPanel ui:field="scrollable"> <!--  -->
+                    <!-- LAYOUT WILL BE PLACED HERE -->
+                    <gwt:FlowPanel ui:field="layoutHolder" />
+                </gwt:ScrollPanel>
+            </gwt:SimplePanel>                    
         </gwt:cell>
         <gwt:cell>
 	        <gwt:HorizontalPanel styleName="footer" width="99%">

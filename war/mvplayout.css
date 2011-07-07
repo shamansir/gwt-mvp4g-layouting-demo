@@ -1,6 +1,6 @@
 /* =========== Toolbar, Layout, Footer ====================================== */
 
-.toolbar, .layout, .footer {
+.toolbar, .frame, .footer {
     border: 4px solid #c83830;
     padding: 30px 7px 7px;
     margin: 5px;
@@ -12,7 +12,7 @@
     background-image: url('./img/toolbar.png');	
 }
 
-.layout {
+.frame {
     background-image: url('./img/layout.png'); 
 }
 

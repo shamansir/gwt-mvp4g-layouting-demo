@@ -33,9 +33,11 @@ public abstract class AMainView extends Composite implements IsMainView {
     
     private HasScrolling scrollable;
     private Panel layoutHolder;
+    private Panel portalHolder; 
     
     protected abstract HasScrolling getScrollable();
     protected abstract Panel getLayoutHolder();
+    protected abstract Panel getPortalHolder();
     
     public abstract void makeView();
     
@@ -45,6 +47,7 @@ public abstract class AMainView extends Composite implements IsMainView {
         
         scrollable = getScrollable();
         layoutHolder = getLayoutHolder();
+        portalHolder = getPortalHolder();
         
         scrollable.addScrollHandler(new ScrollHandler() {
             @Override public void onScroll(ScrollEvent event) {
@@ -83,11 +86,11 @@ public abstract class AMainView extends Composite implements IsMainView {
     @Override
     public void beforePortalChange(Portal to) {
         if (currentLayout != null) {
-            layoutHolder.removeStyleName(generatePortalCSSClassName(currentPortal));
+            portalHolder.removeStyleName(generatePortalCSSClassName(currentPortal));
         }
         
         currentPortal = to;
-        layoutHolder.addStyleName(generatePortalCSSClassName(currentPortal));
+        portalHolder.addStyleName(generatePortalCSSClassName(currentPortal));
     }
     
     @Override

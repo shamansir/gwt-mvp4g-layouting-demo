@@ -38,13 +38,13 @@ public final class MainView extends AMainView implements IMainView {
     }
 
     @Override
-    protected HasScrolling getScrollable() {
-        return scrollable;
-    }
+    protected HasScrolling getScrollable() { return scrollable; }
 
     @Override
-    protected Panel getLayoutHolder() {
-        return layoutHolder;
-    }
+    protected Panel getLayoutHolder() { return layoutHolder; }
+
+    @Override
+    protected Panel getPortalHolder() { return scrollable; }
+    // parent will change only CSS classes
     
 }
