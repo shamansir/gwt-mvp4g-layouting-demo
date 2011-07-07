@@ -124,6 +124,8 @@ public class Portal implements MakesLink {
 	}
 	
 	public static interface UrlBuilder {
+	    public String to(Portal portal);
+	    public String to(PortalId portal);
 	    public String build(Portal portal, String... params);
 	    public String build(PortalId portal, String... params);
 	    public String parameters(String... values);
@@ -134,6 +136,16 @@ public class Portal implements MakesLink {
 	    private static PortalUrlBuilder instance;
 	    
 	    private PortalUrlBuilder() { };
+	    
+	    @Override
+        public String to(Portal portal) {
+            return new PortalUrl(portal).makeLink();
+        }
+	    
+        @Override
+        public String to(PortalId portal) {
+            return to(portals.get(portal.id()));
+        }	    
 	    
 	    public String build(Portal portal, String... params) {
 	        return new PortalUrl(portal).addParams(params).makeLink();

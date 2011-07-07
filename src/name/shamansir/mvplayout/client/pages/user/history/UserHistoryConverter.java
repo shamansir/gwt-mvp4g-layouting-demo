@@ -19,13 +19,18 @@ public class UserHistoryConverter extends PortalsHistoryConverter<UserEventBus> 
 			UserEventBus eventBus) {
 		
 		switch (P.by(view)) {
-			case USERS_LIST: eventBus.users(url.param(0));
+			case USERS_LIST: eventBus.users(url.param(0)); break;
+			case USER_SHOW: eventBus.show(Integer.parseInt(url.param(0)));
 		}
 		
 	}
 	
 	public String onUsers(String filter) {
 	    return url.parameters(filter);
-	}	
+	}
+	
+	public String onShow(int uid) {
+	    return url.parameters(String.valueOf(uid));
+	}
 
 }

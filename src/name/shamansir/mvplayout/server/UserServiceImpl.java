@@ -1,6 +1,8 @@
 package name.shamansir.mvplayout.server;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import name.shamansir.mvplayout.client.service.UserService;
@@ -17,43 +19,51 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class UserServiceImpl extends RemoteServiceServlet implements
 		UserService {
     
-    final Set<User> users = new HashSet<User>();
+    final Map<Integer, User> users = new HashMap<Integer, User>();
     
     public UserServiceImpl() {
-        User userOne = new User();
+        int u1id = users.size();
+        User userOne = new User(u1id);
         userOne.name = "John";
         userOne.familyName = "Fassbinder";
         userOne.age = 12;
         userOne.avatar = "1.jpg";        
-        users.add(userOne);
+        users.put(u1id, userOne);
         
-        User userTwo = new User();
+        int u2id = users.size();
+        User userTwo = new User(u2id);
         userTwo.name = "Bruce";
         userTwo.familyName = "Lee";
         userTwo.age = 27;
         userTwo.avatar = "lee.jpg";        
-        users.add(userTwo);
+        users.put(u2id, userTwo);
         
-        User userThree = new User();
+        int u3id = users.size();
+        User userThree = new User(u3id);
         userThree.name = "Chuck";
         userThree.familyName = "Boo";
         userThree.age = 37;
         userThree.avatar = "484930.png";        
-        users.add(userThree);        
+        users.put(u3id, userThree);
     }
 
 	@Override
-	public Set<User> getUsers(String filter) throws NoMatchesException {	    
-		return users;
+	public Set<User> getUsers(String filter) throws NoMatchesException {
+	    // TODO: apply filter
+		return new HashSet<User>(users.values());
 	}
 
 	@Override
 	public User getUser(int uid) throws ItemNotFoundException {
-		return new User();
+		return users.get(uid);
 	}
 
 	@Override
 	public int saveUser(User user) {
-		return -1;
+	    int id = (user.getId() != -1) 
+	             ? user.getId() 
+	             : users.size();
+	    users.put(id, user);
+		return id;
 	}
 }

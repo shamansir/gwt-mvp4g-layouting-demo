@@ -21,7 +21,7 @@ public class UserDetailsPresenter extends StatedPortletPresenter<UserDetailsPres
 	}
 	
 	//@FromEventBus
-	public void onUserSelected(User user) {
+	public void onShowAdditionalInfo(User user) {
 	    state.gotData();
 	    view.showDetails(user);
 	}

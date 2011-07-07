@@ -14,6 +14,8 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -54,7 +56,6 @@ public final class UserListView extends StatedPortlet implements Display {
         usersHolder.clear();
         for (User user: users) {
             final UserPanel userPanel = new UserPanel(user);
-            userPanel.add(new Label(user.name + " " + user.familyName));
             rows.add(userPanel);
             usersHolder.add(userPanel);
         }
@@ -74,13 +75,29 @@ public final class UserListView extends StatedPortlet implements Display {
 
         private final User user;
         
+        private Anchor anchor;
+        
         public UserPanel(User user) {
             super();
             this.user = user;
+            setupComponent();
+        }
+        
+        private void setupComponent() {
+            final FlowPanel wrapper = new FlowPanel();
+            wrapper.add(new Label(user.name + " " + user.familyName));
+            this.anchor = new Anchor("show");
+            wrapper.add(anchor);
+            this.add(wrapper);
         }
         
         @Override
         public User getUser() { return user; }
+
+        @Override
+        public void setUserLink(String href) {
+            anchor.setHref(href);
+        }
         
     }
 

@@ -20,7 +20,7 @@ public class UserAvatarPresenter extends StatedPortletPresenter<UserAvatarPresen
 	    super(State.NO_DATA);
 	}
 	
-    public void onUserSelected(User user) {
+    public void onShowAdditionalInfo(User user) {
         state.gotData();
         view.showAvatar(user.avatar);
     }

@@ -2,6 +2,7 @@ package name.shamansir.mvplayout.client.pages.user.presenter;
 
 import java.util.Set;
 
+import name.shamansir.mvplayout.client.id.P;
 import name.shamansir.mvplayout.client.pages.user.UserEventBus;
 import name.shamansir.mvplayout.client.pages.user.view.UserListView;
 import name.shamansir.mvplayout.client.service.UserServiceAsync;
@@ -22,6 +23,7 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
     
     public interface UserRow extends HasClickHandlers {
         public User getUser();
+        public void setUserLink(String href);
     }
 	
 	public interface Display extends IsStatedPortletView {
@@ -50,13 +52,15 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
                             row.addClickHandler(new ClickHandler() {                                
                                 @Override
                                 public void onClick(ClickEvent event) {
-                                    eventBus.userSelected(row.getUser());
+                                    eventBus.showAdditionalInfo(row.getUser());
                                 }
                             });
+                            row.setUserLink(url.build(P.USER_SHOW, 
+                                        String.valueOf(row.getUser().getId())));
                         }
                     }
 			        
-			    }.schedule(3000); // emulate slow data receiving
+			    }.schedule(3000); // emulate slow data load
 			}
 			
 		});
