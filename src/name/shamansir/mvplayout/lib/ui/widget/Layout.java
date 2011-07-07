@@ -1,6 +1,7 @@
 package name.shamansir.mvplayout.lib.ui.widget;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import name.shamansir.mvplayout.lib.mvp.AMainView.PageResizeEvent;
@@ -29,6 +30,10 @@ public abstract class Layout extends Composite implements PageScrollListener, Pa
 		this.id = id;
 		this.places = places;		
 	}
+	
+    protected Layout(LayoutId id, List<Place> places) {
+        this(id, places.toArray(new Place[places.size()]));       
+    }	
 
 	public LayoutId id() { return id; }
 	

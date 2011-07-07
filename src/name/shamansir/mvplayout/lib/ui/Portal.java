@@ -20,10 +20,10 @@ public class Portal implements MakesLink {
                                         new HashMap<String, Portal>();
 	
     // means URL_PREFIX group EVENT_DELIM event [ PARAM_MARKER param1 [ PARAM_DELIM param2 [ PARAM_DELIM param3 ... ]  ] ]
-    //       #          user  /           show    /            1        /           no_info    /         read_only  
+    //       #          user  /           show    ?            1        /           no_info    /         read_only  
     public static final String URL_PREFIX = "#";
 	public static final String EVENT_DELIM = "/";
-	public static final String PARAM_MARKER = "/";
+	public static final String PARAM_MARKER = "?";
 	public static final String PARAM_DELIM = "/";
 	
 	public final String id;

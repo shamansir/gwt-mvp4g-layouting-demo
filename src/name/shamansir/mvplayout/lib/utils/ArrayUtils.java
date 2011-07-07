@@ -13,12 +13,11 @@ import java.util.List;
  */
 public class ArrayUtils {
     
-    @SuppressWarnings("unchecked")
-    public static <T> T[] concat(T[] first, T[] second) {
+    public static <T> List<T> concat(T[] first, T[] second) {
         List<T> list = new ArrayList<T>();
         list.addAll(Arrays.asList(first));
         list.addAll(Arrays.asList(second));
-        return (T[])list.toArray();
+        return list;
     }
     
     /* public static <T> T[] add(T[] array, T item) {

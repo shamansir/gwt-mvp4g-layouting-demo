@@ -22,7 +22,8 @@ public abstract class LayoutWithState extends Layout implements ChangesState {
 	protected void ensureOutletsLoaded() {
 		super.ensureOutletsLoaded();
 		
-		if (!has(statusPlace)) throw new IllegalStateException("Layout with state must contain STATUS place");
+		// FIXME: check it once
+		if (!outlets.containsKey(statusPlace)) throw new IllegalStateException("Layout with state must contain STATUS place");
 	}
 	
 	public HasWidgets holderFor(State state) { return outlet(statusPlace); }

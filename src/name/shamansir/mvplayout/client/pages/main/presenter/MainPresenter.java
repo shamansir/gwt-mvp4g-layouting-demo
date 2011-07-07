@@ -17,7 +17,9 @@ public class MainPresenter extends AMainPresenter<MainPresenter.IMainView, MainE
 	}
 	
     public void onStart() {        
-        History.newItem(url.build(P.USERS_LIST), false);
+        if (History.getToken().isEmpty()) {
+            History.newItem(url.build(P.USERS_LIST), false);
+        }
         //eventBus.users(null); // FIXME: do not calls history converter when not in dev-mode
     }
     

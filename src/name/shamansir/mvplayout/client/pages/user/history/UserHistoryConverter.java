@@ -20,7 +20,7 @@ public class UserHistoryConverter extends PortalsHistoryConverter<UserEventBus> 
 		
 		switch (P.by(view)) {
 			case USERS_LIST: eventBus.users(url.param(0)); break;
-			case USER_SHOW: eventBus.show(Integer.parseInt(url.param(0)));
+			case USER_SHOW: eventBus.show(Integer.parseInt(url.param(0))); break;
 		}
 		
 	}
