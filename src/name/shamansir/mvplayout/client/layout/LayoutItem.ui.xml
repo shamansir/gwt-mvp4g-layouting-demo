@@ -10,8 +10,7 @@
 	            <l:Outlet ui:field="placeC" />
 	            <l:Outlet ui:field="placeB" />
 	        </gwt:HorizontalPanel>
-        </gwt:VerticalPanel>
-        <l:Outlet ui:field="status" />                        
+        </gwt:VerticalPanel>                        
     </gwt:FlowPanel>
     
 </ui:UiBinder>
