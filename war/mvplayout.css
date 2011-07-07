@@ -50,7 +50,7 @@
 
 /* =========== Group: User, News, Company =================================== */
 
-/* .group-user, .group-news, .group-company {
+.group-user, .group-news, .group-company {
     border: 4px solid #007f89;
     padding: 35px 10px 10px;
     margin: 5px;	
@@ -68,7 +68,7 @@
 
 .group-company {
     background-image: url('./img/company.png');
-} */
+}
 
 /* =========== Place: A, B, ..., Status ===================================== */
 
