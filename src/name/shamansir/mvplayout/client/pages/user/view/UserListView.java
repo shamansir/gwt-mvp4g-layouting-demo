@@ -11,12 +11,15 @@ import name.shamansir.mvplayout.lib.ui.widget.StatedPortlet;
 import name.shamansir.mvplayout.shared.dao.User;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -71,11 +74,12 @@ public final class UserListView extends StatedPortlet implements Display {
         
     }
     
-    public class UserPanel extends FocusPanel implements UserRow {
+    public class UserPanel extends FlowPanel implements UserRow {
 
         private final User user;
         
         private Anchor anchor;
+        private FocusPanel clickable;
         
         public UserPanel(User user) {
             super();
@@ -84,8 +88,12 @@ public final class UserListView extends StatedPortlet implements Display {
         }
         
         private void setupComponent() {
-            final FlowPanel wrapper = new FlowPanel();
-            wrapper.add(new Label(user.name + " " + user.familyName));
+            final HorizontalPanel wrapper = new HorizontalPanel();
+            clickable = new FocusPanel();
+            
+            clickable.add(new Label(user.name + " " + user.familyName));
+            wrapper.add(clickable);
+            
             this.anchor = new Anchor("show");
             wrapper.add(anchor);
             this.add(wrapper);
@@ -93,10 +101,13 @@ public final class UserListView extends StatedPortlet implements Display {
         
         @Override
         public User getUser() { return user; }
-
+        
         @Override
-        public void setUserLink(String href) {
-            anchor.setHref(href);
+        public Anchor getAnchor() { return anchor; }
+        
+        @Override
+        public HandlerRegistration addClickHandler(ClickHandler handler) {
+            return clickable.addClickHandler(handler);
         }
         
     }

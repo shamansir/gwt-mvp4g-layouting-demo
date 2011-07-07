@@ -15,6 +15,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.Timer;
+import com.google.gwt.user.client.ui.Anchor;
 import com.google.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
 
@@ -23,7 +24,8 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
     
     public interface UserRow extends HasClickHandlers {
         public User getUser();
-        public void setUserLink(String href);
+        //public void setUserLink(String href);
+        public Anchor getAnchor();
     }
 	
 	public interface Display extends IsStatedPortletView {
@@ -55,8 +57,10 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
                                     eventBus.showAdditionalInfo(row.getUser());
                                 }
                             });
-                            row.setUserLink(url.build(P.USER_SHOW, 
-                                        String.valueOf(row.getUser().getId())));
+                            /* row.setUserLink("#" + url.build(P.USER_SHOW, 
+                                        String.valueOf(row.getUser().getId()))); */
+                            url.link(row.getAnchor(), P.USER_SHOW, 
+                                    String.valueOf(row.getUser().getId()));
                         }
                     }
 			        

@@ -39,7 +39,7 @@ public class UserInfoPresenter extends StatedPortletPresenter<UserInfoPresenter.
                         eventBus.showAdditionalInfo(user);
                     }
                     
-                }.schedule(3000); // emulate slow data receiving
+                }.schedule(3000); // emulate slow data load
 
             }
         });

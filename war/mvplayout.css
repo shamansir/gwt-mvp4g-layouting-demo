@@ -111,12 +111,18 @@
 
 /* =========== Special ====================================================== */
 
-.plug-users-list > table > tbody > tr > td {
+.plug-users-list > table table > tbody > tr > td > div {
 	cursor: pointer;
 	padding: 5px;
 	background-color: #ddd;
 }
 
-.plug-users-list > table > tbody > tr > td:hover {
+.plug-users-list > table table > tbody > tr > td > div:hover {
     background-color: #ccc;	
+}
+
+.plug-users-list > table table > tbody > tr > td > a {
+    padding: 5px;
+    display: block;
+    background-color: #ddb;	
 }
