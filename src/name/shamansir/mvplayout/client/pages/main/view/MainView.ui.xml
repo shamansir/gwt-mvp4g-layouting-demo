@@ -8,14 +8,14 @@
         </gwt:cell>
         <gwt:cell height="80%">
             <gwt:SimplePanel styleName="frame"> <!-- just to mark it in hierarchy for CSS -->            
-                <gwt:ScrollPanel ui:field="scrollable"> <!--  -->
+                <gwt:ScrollPanel ui:field="scrollable"> <!-- if you really need scrolling -->
                     <!-- LAYOUT WILL BE PLACED HERE -->
                     <gwt:FlowPanel ui:field="layoutHolder" />
                 </gwt:ScrollPanel>
             </gwt:SimplePanel>                    
         </gwt:cell>
-        <gwt:cell>
-	        <gwt:HorizontalPanel styleName="footer" width="99%">
+        <gwt:cell width="100%">
+	        <gwt:HorizontalPanel styleName="footer">
 	            <gwt:cell width="70%">
 	                <gwt:Label styleName="copy">Copy</gwt:Label>
 	            </gwt:cell>
