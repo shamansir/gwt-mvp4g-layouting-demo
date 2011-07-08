@@ -49,11 +49,13 @@ public abstract class AMainView extends Composite implements IsMainView {
         layoutHolder = getLayoutHolder();
         portalHolder = getPortalHolder();
         
-        scrollable.addScrollHandler(new ScrollHandler() {
-            @Override public void onScroll(ScrollEvent event) {
-                AMainView.this.fireEvent(new PageScrollEvent(AMainView.this, scrollable, scrollable.getVerticalScrollPosition(), event));
-            }
-        });
+        if (scrollable != null) {
+            scrollable.addScrollHandler(new ScrollHandler() {
+                @Override public void onScroll(ScrollEvent event) {
+                    AMainView.this.fireEvent(new PageScrollEvent(AMainView.this, scrollable, scrollable.getVerticalScrollPosition(), event));
+                }
+            });
+        }
         
         Window.addResizeHandler(new ResizeHandler() {
             @Override public void onResize(ResizeEvent event) {
