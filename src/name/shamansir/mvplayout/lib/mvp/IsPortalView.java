@@ -21,6 +21,6 @@ import com.mvp4g.client.view.LazyView;
  * @date Jun 16, 2011 8:25:46 PM 
  *
  */
-public interface IsPortalView extends LazyView, PlugsContainer{
+public interface IsPortalView extends LazyView, PlugsContainer {
 
 }

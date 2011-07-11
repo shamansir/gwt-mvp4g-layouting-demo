@@ -3,6 +3,7 @@ package name.shamansir.mvplayout.client.pages.user;
 import name.shamansir.mvplayout.client.pages.user.history.UserHistoryConverter;
 import name.shamansir.mvplayout.client.pages.user.presenter.UserAvatarPresenter;
 import name.shamansir.mvplayout.client.pages.user.presenter.UserDetailsPresenter;
+import name.shamansir.mvplayout.client.pages.user.presenter.UserEditPresenter;
 import name.shamansir.mvplayout.client.pages.user.presenter.UserInfoPresenter;
 import name.shamansir.mvplayout.client.pages.user.presenter.UserListPresenter;
 import name.shamansir.mvplayout.client.pages.user.view.UserListView;
@@ -28,7 +29,9 @@ public interface UserEventBus extends ChildEventBus {
 	       historyConverter = UserHistoryConverter.class)
 	public void show(int uid);
 	
-	@Event(/*name = "edit", navigationEvent = true*/)
+	@Event(name = "edit", navigationEvent = true,
+	       handlers = UserEditPresenter.class,
+	       historyConverter = UserHistoryConverter.class)
 	public void edit(int uid);
 	
 	// secondary events
@@ -37,7 +40,7 @@ public interface UserEventBus extends ChildEventBus {
 	                    UserAvatarPresenter.class })
     public void showAdditionalInfo(User user);
 	
-	// projecting events
+	// projecting events, portlets
 	
 	@Event(handlers = UserInfoPresenter.class, calledMethod = "plug")
     public void plugUserInfo(Place where);
@@ -49,6 +52,26 @@ public interface UserEventBus extends ChildEventBus {
     public void plugUserDetails(Place where);    
     
     @Event(handlers = UserAvatarPresenter.class, calledMethod = "plug")
-    public void plugUserAvatar(Place where);    
+    public void plugUserAvatar(Place where);
+    
+    // projecting events, portals
+
+    @Event(handlers = UserEditPresenter.class, calledMethod = "plugInfoEditor")
+    public void plugUserInfoEditor(Place where);
+
+    @Event(handlers = UserEditPresenter.class, calledMethod = "plugAgeEditor")
+    public void plugUserAgeEditor(Place where);
+
+    @Event(handlers = UserEditPresenter.class, calledMethod = "plugAvatarEditor")
+    public void plugUserAvatarEditor(Place where);
+
+    @Event(handlers = UserEditPresenter.class, calledMethod = "plugTestWidget")
+    public void plugTestWidget(Place where);
+
+    @Event(handlers = UserEditPresenter.class, calledMethod = "plugLoading")
+    public void plugLoadingUserInEditor(Place where);
+
+    @Event(handlers = UserEditPresenter.class, calledMethod = "plugEmpty")
+    public void plugNoUserInEditor(Place where);
 
 }

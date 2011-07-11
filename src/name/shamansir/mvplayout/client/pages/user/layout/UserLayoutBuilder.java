@@ -23,7 +23,25 @@ public class UserLayoutBuilder extends LayoutBuilder<UserEventBus> {
                 eventBus.plugUserInfo(O.A);
                 eventBus.plugUserAvatar(O.B);
                 eventBus.plugUserDetails(O.C);			    
-			} return true;   
+			} return true;
+			case USER_EDIT: {
+			    switch (state) {
+			        case HAS_DATA: {
+			            eventBus.plugUserInfoEditor(O.A);
+			            eventBus.plugUserAgeEditor(O.B);
+			            eventBus.plugUserAvatarEditor(O.C);
+			            eventBus.plugTestWidget(O.D);
+			        } return true;
+			        case LOADING_DATA: {
+                        eventBus.plugLoadingUserInEditor(O.STATUS);
+                        eventBus.plugTestWidget(O.D);
+			        } return true;
+                    case NO_DATA: {
+                        eventBus.plugNoUserInEditor(O.STATUS);
+                        eventBus.plugTestWidget(O.D);
+                    } return true;	    
+			    }
+			}
 		}
 		
 		return false;

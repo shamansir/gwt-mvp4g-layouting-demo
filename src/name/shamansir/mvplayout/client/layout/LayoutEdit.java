@@ -50,7 +50,7 @@ public class LayoutEdit extends LayoutWithState {
                 placeA.setVisible(false);
                 placeB.setVisible(false);
                 placeC.setVisible(false);
-                placeD.setVisible(false);
+                //placeD.setVisible(true);
                 status.setVisible(true);
             } break;
             case HAS_DATA: {
@@ -58,7 +58,7 @@ public class LayoutEdit extends LayoutWithState {
                 placeA.setVisible(true);
                 placeB.setVisible(true);
                 placeC.setVisible(true);
-                placeD.setVisible(true);                
+                //placeD.setVisible(true);                
             }
         }        
     }

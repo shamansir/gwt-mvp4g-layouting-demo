@@ -3,8 +3,8 @@ package name.shamansir.mvplayout.lib.ui;
 import java.util.HashMap;
 import java.util.Map;
 
-import name.shamansir.mvplayout.client.pages.main.MainEventBus;
 import name.shamansir.mvplayout.lib.mvp.ChildEventBus;
+import name.shamansir.mvplayout.lib.mvp.IsMainEventBus;
 import name.shamansir.mvplayout.lib.ui.state.LayoutWithState;
 import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.lib.ui.structure.LayoutId;
@@ -154,9 +154,9 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 	 */
 	public static abstract class CanLayoutMainView extends CanBuildStatedLayout implements Runnable {
 	
-		protected final MainEventBus eventBus;
+		protected final IsMainEventBus eventBus;
 		
-		public CanLayoutMainView(Portal view, MainEventBus eventBus) {
+		public CanLayoutMainView(Portal view, IsMainEventBus eventBus) {
 			super(view);
 			this.eventBus = eventBus;
 		}

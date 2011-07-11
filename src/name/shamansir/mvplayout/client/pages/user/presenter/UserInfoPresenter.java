@@ -25,25 +25,25 @@ public class UserInfoPresenter extends StatedPortletPresenter<UserInfoPresenter.
 
 	public void onShow(int uid) {	    
 	    //state.loading();
-	    
-	    service.getUser(uid, new ErrorsSafeCallback<User>(eventBus) {
-
-            @Override
-            public void onSuccess(final User user) {
-                new Timer() {
-
-                    @Override public void run() {
-                        state.gotData();
-                        view.showUser(user);
+	    if (uid != -1) {
+    	    service.getUser(uid, new ErrorsSafeCallback<User>(eventBus) {
+    
+                @Override
+                public void onSuccess(final User user) {
+                    new Timer() {
+    
+                        @Override public void run() {
+                            state.gotData();
+                            view.showUser(user);
+                            
+                            eventBus.showAdditionalInfo(user);
+                        }
                         
-                        eventBus.showAdditionalInfo(user);
-                    }
-                    
-                }.schedule(3000); // emulate slow data load
-
-            }
-        });
-	    
+                    }.schedule(3000); // emulate slow data load
+    
+                }
+            });
+	    } else throw new IllegalArgumentException("UID is -1");    
 	}	
 	
 }

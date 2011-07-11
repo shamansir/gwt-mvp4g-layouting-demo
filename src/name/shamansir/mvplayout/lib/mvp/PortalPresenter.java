@@ -16,7 +16,7 @@ public abstract class PortalPresenter<V extends LazyView,
     
     protected final UrlBuilder url = PortalUrlBuilder.get();
 	protected final Portal portal;
-	protected final L layoutBuilder;
+	protected final L layoutBuilder; // FIXME: do we really need it?
 	
 	@SuppressWarnings("unchecked")
 	protected PortalPresenter(Portal portal) {

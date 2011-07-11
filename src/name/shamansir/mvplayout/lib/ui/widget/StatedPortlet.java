@@ -9,10 +9,9 @@ import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
 
 import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 
-public abstract class StatedPortlet extends Composite implements IsStatedPortletView {
+public abstract class StatedPortlet extends Portlet implements IsStatedPortletView {
 	
 	private Plugs plugs;
 	private Place place;
@@ -20,7 +19,7 @@ public abstract class StatedPortlet extends Composite implements IsStatedPortlet
 	
 	@UiConstructor
 	public StatedPortlet() {
-		
+		super();
 	}
 
 	@Override
