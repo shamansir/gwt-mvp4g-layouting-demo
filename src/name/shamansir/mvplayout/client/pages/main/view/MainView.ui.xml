@@ -12,10 +12,10 @@
                     <!-- LAYOUT WILL BE PLACED HERE -->
                     <gwt:FlowPanel ui:field="layoutHolder" />
                 </gwt:ScrollPanel>
-            </gwt:SimplePanel>                    
+            </gwt:SimplePanel>
         </gwt:cell>
         <gwt:cell width="100%">
-	        <gwt:HorizontalPanel styleName="footer">
+	        <gwt:HorizontalPanel styleName="footer" width="99%">
 	            <gwt:cell width="70%">
 	                <gwt:Label styleName="copy">Copy</gwt:Label>
 	            </gwt:cell>

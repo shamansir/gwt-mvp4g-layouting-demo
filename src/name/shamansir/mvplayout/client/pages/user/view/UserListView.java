@@ -78,7 +78,8 @@ public final class UserListView extends StatedPortlet implements Display {
 
         private final User user;
         
-        private Anchor anchor;
+        private Anchor showAnchor;
+        private Anchor editAnchor;
         private FocusPanel clickable;
         
         public UserPanel(User user) {
@@ -94,16 +95,21 @@ public final class UserListView extends StatedPortlet implements Display {
             clickable.add(new Label(user.name + " " + user.familyName));
             wrapper.add(clickable);
             
-            this.anchor = new Anchor("show");
-            wrapper.add(anchor);
-            this.add(wrapper);
+            this.showAnchor = new Anchor("show");
+            wrapper.add(showAnchor);
+            this.editAnchor = new Anchor("edit");
+            wrapper.add(editAnchor);            
+            this.add(wrapper);                       
         }
         
         @Override
         public User getUser() { return user; }
         
         @Override
-        public Anchor getAnchor() { return anchor; }
+        public Anchor getShowAnchor() { return showAnchor; }        
+        
+        @Override
+        public Anchor getEditAnchor() { return editAnchor; }
         
         @Override
         public HandlerRegistration addClickHandler(ClickHandler handler) {

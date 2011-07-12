@@ -68,8 +68,7 @@ public class UserEditPresenter extends
                         view.userSavedAs(newId);                        
                     }
                     
-                });                
-                
+                });
             }
             
         });

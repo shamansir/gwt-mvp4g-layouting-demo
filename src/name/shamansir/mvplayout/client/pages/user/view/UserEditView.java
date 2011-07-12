@@ -12,6 +12,7 @@ import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
@@ -74,7 +75,11 @@ public final class UserEditView extends StatedPortlet implements Display {
 
     @Override
     public void showUser(User user) {
-        this.currentUser = user.getId();        
+        this.currentUser = user.getId();
+        name.setValue(user.name);
+        familyName.setValue(user.familyName);
+        age.setValue(String.valueOf(user.age));
+        avatar.setValue(String.valueOf(user.avatar));
     }
 
     @Override
@@ -94,7 +99,8 @@ public final class UserEditView extends StatedPortlet implements Display {
 
     @Override
     public void userSavedAs(int newId) {
-        this.currentUser = newId;        
+        this.currentUser = newId;
+        Window.alert("User " + newId + " is saved");
     }
 
 }

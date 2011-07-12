@@ -22,16 +22,16 @@ import com.mvp4g.client.annotation.Presenter;
 @Presenter(view = UserListView.class)
 public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.Display, UserEventBus> {
     
-    public interface UserRow extends HasClickHandlers {
-        public User getUser();
-        //public void setUserLink(String href);
-        public Anchor getAnchor();
-    }
-	
 	public interface Display extends IsStatedPortletView {
 		public void showUsers(Set<User> users);
         public Set<UserRow> getRows();
-	}	
+	}
+	
+    public interface UserRow extends HasClickHandlers {
+        public User getUser();
+        public Anchor getEditAnchor();
+        public Anchor getShowAnchor();
+    }	
 
 	public UserListPresenter() { }
 	
@@ -57,10 +57,12 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
                                     eventBus.showAdditionalInfo(row.getUser());
                                 }
                             });
-                            /* row.setUserLink("#" + url.build(P.USER_SHOW, 
+                            /* row.setShowHref("#" + url.build(P.USER_SHOW, 
                                         String.valueOf(row.getUser().getId()))); */
-                            url.link(row.getAnchor(), P.USER_SHOW, 
+                            url.link(row.getShowAnchor(), P.USER_SHOW, 
                                     String.valueOf(row.getUser().getId()));
+                            url.link(row.getEditAnchor(), P.USER_EDIT, 
+                                    String.valueOf(row.getUser().getId()));                            
                         }
                     }
 			        
