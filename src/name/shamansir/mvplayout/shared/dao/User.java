@@ -12,5 +12,14 @@ public class User extends Card {
 	public String familyName;
 	public int age;
 	public String avatar;
+
+    public static User applyId(User user, int id) {
+        final User newUser = new User(id);
+        newUser.name = user.name;
+        newUser.familyName = user.familyName;
+        newUser.age = user.age;
+        newUser.avatar = user.avatar;
+        return null;
+    }
 	
 }

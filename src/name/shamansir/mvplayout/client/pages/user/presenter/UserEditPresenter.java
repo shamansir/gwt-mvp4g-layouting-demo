@@ -6,6 +6,7 @@ package name.shamansir.mvplayout.client.pages.user.presenter;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
+import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.Timer;
 import com.google.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
@@ -65,7 +66,8 @@ public class UserEditPresenter extends
 
                     @Override
                     public void onSuccess(Integer newId) {
-                        view.userSavedAs(newId);                        
+                        History.newItem(url.build(P.USER_EDIT, String.valueOf(newId)));
+                        view.userSavedAs(newId);
                     }
                     
                 });

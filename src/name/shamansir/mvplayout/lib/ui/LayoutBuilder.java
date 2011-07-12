@@ -108,9 +108,9 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		
 		@Override
 		public void reset() {
-			curState = null;
-			built = false;
-			layout.clear();
+			//curState = null;
+			//built = false;
+			//layout.clear();
 		}
 		
 		

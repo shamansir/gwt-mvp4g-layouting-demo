@@ -57,6 +57,7 @@ public final class UserEditView extends StatedPortlet implements Display {
 
     @Override
     public void clear() {
+        currentUser = -1;
         name.setValue("");
         familyName.setValue("");
         age.setValue("");

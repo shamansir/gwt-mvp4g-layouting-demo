@@ -60,10 +60,13 @@ public class UserServiceImpl extends RemoteServiceServlet implements
 
 	@Override
 	public int saveUser(User user) {
-	    int id = (user.getId() != -1) 
-	             ? user.getId() 
-	             : users.size();
-	    users.put(id, user);
-		return id;
+	    int id = user.getId();
+	    if (id != -1) {
+	        users.put(id, user);
+	    } else {
+	        id = users.size();
+	        users.put(id, User.applyId(user, id));
+	    }
+        return id;
 	}
 }
