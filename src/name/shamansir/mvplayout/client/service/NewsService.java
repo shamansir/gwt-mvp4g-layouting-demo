@@ -3,7 +3,6 @@ package name.shamansir.mvplayout.client.service;
 import java.util.Set;
 
 import name.shamansir.mvplayout.lib.exception.ItemNotFoundException;
-import name.shamansir.mvplayout.lib.exception.NoMatchesException;
 import name.shamansir.mvplayout.shared.dao.NewsItem;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -14,7 +13,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  */
 @RemoteServiceRelativePath("news")
 public interface NewsService extends RemoteService {
-	Set<NewsItem> getNews(String filter) throws NoMatchesException;
+	Set<NewsItem> getNews();
 	NewsItem getNewsItem(int nid) throws ItemNotFoundException;
 	int saveNewsItem(NewsItem newsItem); 
 }
