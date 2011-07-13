@@ -1,17 +1,54 @@
 package name.shamansir.mvplayout.client.page.news.presenter;
 
+import java.util.Set;
+
+import name.shamansir.mvplayout.client.id.P;
 import name.shamansir.mvplayout.client.page.news.NewsEventBus;
 import name.shamansir.mvplayout.client.page.news.view.NewsListView;
+import name.shamansir.mvplayout.client.page.news.widget.NewsItemWidget;
+import name.shamansir.mvplayout.client.service.NewsServiceAsync;
+import name.shamansir.mvplayout.lib.mvp.IsPortletView;
+import name.shamansir.mvplayout.lib.mvp.PortletPresenter;
+import name.shamansir.mvplayout.lib.ui.ErrorsSafeCallback;
+import name.shamansir.mvplayout.shared.dao.NewsItem;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
-import com.mvp4g.client.presenter.LazyPresenter;
-import com.mvp4g.client.view.LazyView;
 
 @Presenter(view = NewsListView.class)
-public class NewsListPresenter extends LazyPresenter<NewsListPresenter.Display, NewsEventBus> {
+public class NewsListPresenter extends PortletPresenter<NewsListPresenter.Display, NewsEventBus> {
 
-	public interface Display extends LazyView {
-		
+	public interface Display extends IsPortletView {
+	    public void showNews(Set<NewsItem> news);
+        public Set<NewsItemWidget> getWidgets();
+	}
+	
+	@Inject NewsServiceAsync service;
+	
+	public void onNews() {
+	    service.getNews(new ErrorsSafeCallback<Set<NewsItem>>(eventBus) {
+
+            @Override
+            public void onSuccess(Set<NewsItem> news) {
+                view.showNews(news);
+                
+                for (final NewsItemWidget widget: view.getWidgets()) {
+                    widget.addClickHandler(new ClickHandler() {                                
+                        @Override
+                        public void onClick(ClickEvent event) {
+                            eventBus.showUserInfo(widget.getItem().author);
+                        }
+                    });
+                    url.link(widget.getShowAnchor(), P.NEWS_SHOW, 
+                            String.valueOf(widget.getItem().getId()));
+                    url.link(widget.getEditAnchor(), P.NEWS_EDIT, 
+                            String.valueOf(widget.getItem().getId()));                            
+                }                
+            }
+	        
+        });
 	}
 	
 }
