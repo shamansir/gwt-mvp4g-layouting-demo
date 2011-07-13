@@ -65,7 +65,12 @@ public class UserServiceImpl extends RemoteServiceServlet implements
 	        users.put(id, user);
 	    } else {
 	        id = users.size();
-	        users.put(id, User.applyId(user, id));
+	        final User newUser = new User(id);
+	        newUser.name = user.name;
+	        newUser.familyName = user.familyName;
+	        newUser.age = user.age;
+	        newUser.avatar = user.avatar;	        
+	        users.put(id, newUser);
 	    }
         return id;
 	}

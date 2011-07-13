@@ -49,6 +49,8 @@ public abstract class AMainPresenter<V extends IsMainView, E extends IsMainEvent
         if ((view.getCurPortal() != null) &&
             view.getCurPortal().equals(portal)) return; // no need in rebuilding layout
         
+        if (builder.built()) builder.reset();
+        
         unregisterHandlers();
         
         view.beforePortalChange(portal);

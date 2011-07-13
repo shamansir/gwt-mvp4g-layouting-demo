@@ -36,7 +36,7 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 	public final CanBuildLayout make(final Portal view, final E eventBus) {
 		if (cache.containsKey(view)) {
 			final CanBuildLayout builder = cache.get(view);
-			builder.reset();
+			//builder.reset(); // it will be manually reseted in handler, if required
 			return builder;
 		} else {
 			final CanBuildLayout newBuilder = new CanLayoutModuleView(view, eventBus);
@@ -108,9 +108,9 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 		
 		@Override
 		public void reset() {
-			//curState = null;
-			//built = false;
-			//layout.clear();
+			curState = null;
+			built = false;
+			layout.clear();
 		}
 		
 		

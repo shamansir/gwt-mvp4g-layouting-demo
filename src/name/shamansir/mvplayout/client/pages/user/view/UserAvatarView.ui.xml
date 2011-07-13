@@ -10,7 +10,7 @@
         </l:Plug>
     
         <l:Plug ui:field="ifEmpty" alias="user-avatar-empty">
-            <gwt:Label>No user selected</gwt:Label>
+            <gwt:Label>No user data</gwt:Label>
         </l:Plug>
         
         <l:Plug ui:field="whenLoading" alias="user-avatar-loading">
