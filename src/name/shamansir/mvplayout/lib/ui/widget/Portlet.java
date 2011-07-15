@@ -27,7 +27,7 @@ public abstract class Portlet extends Composite implements IsPortletView {
         plug = (Plug)widget;
         plug.setContainer(this);
         plugs.add(plug);
-		super.initWidget(plug);
+		//super.initWidget(plug);
 	}
 	
 	@Override

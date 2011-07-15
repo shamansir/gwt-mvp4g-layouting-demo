@@ -72,4 +72,8 @@ public interface MainEventBus extends IsMainEventBus {
 	@Event(handlers = MainPresenter.class, calledMethod = "subscribePageScroll")
 	public void subscribePageScroll(PageScrollListener listener);
 	
+	// =============== special =================================================
+	
+	// TODO: HistoryNotFound
+	
 }

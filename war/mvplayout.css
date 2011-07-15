@@ -111,17 +111,20 @@
 
 /* =========== Special ====================================================== */
 
-.plug-users-list > table table > tbody > tr > td > div {
+.plug-users-list > table table > tbody > tr > td > div,
+.plug-news-list > table table > tbody > tr > td > div {
 	cursor: pointer;
 	padding: 5px;
 	background-color: #ddd;
 }
 
-.plug-users-list > table table > tbody > tr > td > div:hover {
+.plug-users-list > table table > tbody > tr > td > div:hover,
+.plug-news-list > table table > tbody > tr > td > div:hover {
     background-color: #ccc;	
 }
 
-.plug-users-list > table table > tbody > tr > td > a {
+.plug-users-list > table table > tbody > tr > td > a,
+.plug-news-list > table table > tbody > tr > td > a {
     padding: 5px;
     display: block;
     background-color: #ddb;	

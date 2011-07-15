@@ -40,10 +40,10 @@ public class NewsServiceImpl extends RemoteServiceServlet implements NewsService
         
         int n3id = news.size();
         NewsItem newsThree = new NewsItem(n3id);
-        newsTwo.author = createUser("Boo", "Trolalah", 81, "foo.png");
-        newsTwo.title = "I don't know Internet";        
-        newsTwo.text = "Hello! The news are from the second hand";
-        newsTwo.postTime = new Date();
+        newsThree.author = createUser("Boo", "Trolalah", 81, "foo.png");
+        newsThree.title = "I don't know Internet";        
+        newsThree.text = "Hello! The news are from the second hand";
+        newsThree.postTime = new Date();
         news.put(n3id, newsThree);
     }
     
