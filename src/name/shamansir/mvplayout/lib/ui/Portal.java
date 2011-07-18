@@ -29,7 +29,15 @@ public class Portal implements MakesLink {
 	public final String id;
 	public final LayoutId layout;
 	public final Group group;
-	public final String event;
+	public final String event;		
+	
+	public Portal(PortalId id, LayoutId layout) {
+	    this(id, layout, null, "");
+	}
+	
+	public Portal(PortalId id, LayoutId layout, String event) {
+	    this(id, layout, null, event);
+	}
 	
 	public Portal(PortalId id, LayoutId layout, Group group, String event) {
 		this.layout = layout;
@@ -43,17 +51,24 @@ public class Portal implements MakesLink {
 
 	@Override
 	public String makeLink() {
+	    if (group == null) return event;
 		return group.name().toLowerCase() + EVENT_DELIM + event;
 	}
 	
 	@Override
 	public String toString() {
+	    if (group == null) return "./" + event + " [" + layout + "]";
 		return group.name().toLowerCase() + "/" + event + " [" + layout + "]";
 	}
 	
     public String name() {
+        if (group == null) return "root-" + event;
         return group + "-" + event;
-    }	
+    }
+    
+    public static Portal fromId(PortalId id) {
+        return portals.get(id.id());
+    }
 	
 	public static class PortalUrl implements MakesLink {
 	    
@@ -112,7 +127,9 @@ public class Portal implements MakesLink {
         public static PortalUrl fromEvent(Group group, String event,
                 String param) throws PortalNotFoundException {
         	for (Portal portal: Portal.portals.values()) {
-        		if (portal.group.equals(group) &&
+        	    
+        		if ((portal.group != null) &&
+        		    portal.group.equals(group) &&
         			portal.event.equals(event)) {
         			final PortalUrl url = new PortalUrl(portal);
         			if (param != null) url.addParams(param.split(PARAM_DELIM));
@@ -134,10 +151,10 @@ public class Portal implements MakesLink {
 	    //public String to(PortalId portal);
 	    public String build(Portal portal, String... params);
 	    public String build(PortalId portal, String... params);
-	    public void link(Anchor assignTo, Portal portal, String... params);
-	    public void link(Anchor assignTo, PortalId portal, String... params);
-	    public void link(Hyperlink assignTo, Portal portal, String... params);
-	    public void link(Hyperlink assignTo, PortalId portal, String... params);
+	    public Anchor link(Anchor assignTo, Portal portal, String... params);
+	    public Anchor link(Anchor assignTo, PortalId portal, String... params);
+	    public Hyperlink link(Hyperlink assignTo, Portal portal, String... params);
+	    public Hyperlink link(Hyperlink assignTo, PortalId portal, String... params);
 	    public String parameters(String... values);
 	}
 	
@@ -175,23 +192,25 @@ public class Portal implements MakesLink {
         }
 
         @Override
-        public void link(Anchor assignTo, Portal portal, String... params) {
+        public Anchor link(Anchor assignTo, Portal portal, String... params) {
             assignTo.setHref(URL_PREFIX + build(portal, params));
+            return assignTo;
         }
 
         @Override
-        public void link(Anchor assignTo, PortalId portal, String... params) {
-            link(assignTo, portals.get(portal.id()), params);
+        public Anchor link(Anchor assignTo, PortalId portal, String... params) {
+            return link(assignTo, portals.get(portal.id()), params);
         }        
 
         @Override
-        public void link(Hyperlink assignTo, Portal portal, String... params) {
+        public Hyperlink link(Hyperlink assignTo, Portal portal, String... params) {
             assignTo.setTargetHistoryToken(build(portal, params));
+            return assignTo;
         }
         
         @Override
-        public void link(Hyperlink assignTo, PortalId portal, String... params) {
-            link(assignTo, portals.get(portal.id()), params);
+        public Hyperlink link(Hyperlink assignTo, PortalId portal, String... params) {
+            return link(assignTo, portals.get(portal.id()), params);
         }        
 	    
 	}

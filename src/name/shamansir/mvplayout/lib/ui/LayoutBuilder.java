@@ -8,6 +8,7 @@ import name.shamansir.mvplayout.lib.mvp.IsMainEventBus;
 import name.shamansir.mvplayout.lib.ui.state.LayoutWithState;
 import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.lib.ui.structure.LayoutId;
+import name.shamansir.mvplayout.lib.ui.structure.PortalId;
 import name.shamansir.mvplayout.lib.ui.widget.Layout;
 
 import com.allen_sauer.gwt.log.client.Log;
@@ -154,10 +155,10 @@ public abstract class LayoutBuilder<E extends ChildEventBus> {
 	 */
 	public static abstract class CanLayoutMainView extends CanBuildStatedLayout implements Runnable {
 	
-		protected final IsMainEventBus eventBus;
+		protected final IsMainEventBus eventBus;		
 		
-		public CanLayoutMainView(Portal view, IsMainEventBus eventBus) {
-			super(view);
+		public CanLayoutMainView(PortalId view, IsMainEventBus eventBus) {
+			super(Portal.fromId(view));
 			this.eventBus = eventBus;
 		}
 		

@@ -18,6 +18,8 @@ import name.shamansir.mvplayout.lib.ui.structure.Place;
 import com.mvp4g.client.annotation.Debug;
 import com.mvp4g.client.annotation.Event;
 import com.mvp4g.client.annotation.Events;
+import com.mvp4g.client.annotation.InitHistory;
+import com.mvp4g.client.annotation.NotFoundHistory;
 import com.mvp4g.client.annotation.Start;
 import com.mvp4g.client.annotation.module.ChildModule;
 import com.mvp4g.client.annotation.module.ChildModules;
@@ -32,6 +34,7 @@ import com.mvp4g.client.annotation.module.ChildModules;
 public interface MainEventBus extends IsMainEventBus {
     
     @Start
+    @InitHistory
     @Event(handlers = MainPresenter.class)
     public void start();
     
@@ -74,6 +77,8 @@ public interface MainEventBus extends IsMainEventBus {
 	
 	// =============== special =================================================
 	
-	// TODO: HistoryNotFound
+	@NotFoundHistory
+	@Event(handlers = MainPresenter.class)
+	public void show404();
 	
 }

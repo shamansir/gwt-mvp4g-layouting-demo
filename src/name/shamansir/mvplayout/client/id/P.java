@@ -14,6 +14,9 @@ import name.shamansir.mvplayout.lib.ui.structure.PortalId;
  */
 public enum P implements PortalId {
     
+    LINKS(L.SINGLE, null, "links"),
+    VIEW_404(L.SINGLE, null, "404"),
+    
     USERS_LIST(L.LIST, G.USER, "list"),
     USER_EDIT(L.EDIT, G.USER, "edit"),
     USER_SHOW(L.ITEM, G.USER, "show"),

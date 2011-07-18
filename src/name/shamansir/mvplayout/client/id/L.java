@@ -10,7 +10,7 @@ import name.shamansir.mvplayout.lib.ui.structure.LayoutId;
  *
  */
 public enum L implements LayoutId {
-    LIST, EDIT, ITEM;
+    LIST, EDIT, ITEM, SINGLE;
 
     @Override
     public String id() { return name(); }

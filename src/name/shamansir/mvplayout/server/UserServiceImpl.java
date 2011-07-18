@@ -55,6 +55,7 @@ public class UserServiceImpl extends RemoteServiceServlet implements
 
 	@Override
 	public User getUser(int uid) throws ItemNotFoundException {
+	    if (!users.containsKey(uid)) throw new ItemNotFoundException(uid);
 		return users.get(uid);
 	}
 
