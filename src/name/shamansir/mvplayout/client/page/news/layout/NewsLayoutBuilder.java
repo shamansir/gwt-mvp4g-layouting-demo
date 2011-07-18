@@ -16,12 +16,12 @@ public class NewsLayoutBuilder extends LayoutBuilder<NewsEventBus> {
         switch (P.by(view)) {
             case NEWS_LIST: {
                 eventBus.plugNewsList(O.A);
-                eventBus.plugUserInfo(O.B);
+                eventBus.plugUserCard(O.B);
                 eventBus.plugTestWidget(O.C);
             } return true;
             case NEWS_SHOW: {
                 eventBus.plugNewsInfo(O.A);
-                eventBus.plugUserInfo(O.B);
+                eventBus.plugUserCard(O.B);
                 eventBus.plugTestWidget(O.C);              
             } return true;
             case NEWS_EDIT: {

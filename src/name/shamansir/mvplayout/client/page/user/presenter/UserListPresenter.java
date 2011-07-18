@@ -8,7 +8,7 @@ import name.shamansir.mvplayout.client.page.user.view.UserListView;
 import name.shamansir.mvplayout.client.service.UserServiceAsync;
 import name.shamansir.mvplayout.lib.mvp.state.IsStatedPortletView;
 import name.shamansir.mvplayout.lib.mvp.state.StatedPortletPresenter;
-import name.shamansir.mvplayout.lib.ui.ErrorsSafeCallback;
+import name.shamansir.mvplayout.lib.utils.SafeCallback;
 import name.shamansir.mvplayout.shared.dao.User;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -40,7 +40,7 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
 	public void onUsers(String filter) {	    
 	    //state.loading();
 	    
-	    service.getUsers(filter, new ErrorsSafeCallback<Set<User>>(eventBus) {
+	    service.getUsers(filter, new SafeCallback<Set<User>>(eventBus) {
 			
 			@Override
 			public void onSuccess(final Set<User> users) {

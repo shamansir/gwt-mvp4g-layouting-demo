@@ -2,6 +2,8 @@ package name.shamansir.mvplayout.client.page.news;
 
 import name.shamansir.mvplayout.client.page.news.history.NewsHistoryConverter;
 import name.shamansir.mvplayout.client.page.news.presenter.NewsListPresenter;
+import name.shamansir.mvplayout.client.page.news.presenter.TestWidgetPresenter;
+import name.shamansir.mvplayout.client.page.news.presenter.UserCardPresenter;
 import name.shamansir.mvplayout.client.page.news.view.NewsListView;
 import name.shamansir.mvplayout.lib.mvp.ChildEventBus;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
@@ -28,18 +30,18 @@ public interface NewsEventBus extends ChildEventBus {
 
     // secondary events	
 	
-	@Event/*(handlers = NewsListPresenter.class, calledMethod = "show")*/
-	public void showUserInfo(User user);
+	@Event(handlers = UserCardPresenter.class)
+	public void showUserCard(User user);
 	
 	// projecting events, portlets
 	
 	@Event(handlers = NewsListPresenter.class, calledMethod = "plug")
 	public void plugNewsList(Place where);	
 	
-	@Event/*(handlers = NewsListPresenter.class, calledMethod = "plug")*/
-	public void plugUserInfo(Place where);
+	@Event(handlers = UserCardPresenter.class, calledMethod = "plug")
+	public void plugUserCard(Place where);
 	
-	@Event/*(handlers = NewsListPresenter.class, calledMethod = "plug")*/
+	@Event(handlers = TestWidgetPresenter.class, calledMethod = "plug")
 	public void plugTestWidget(Place where);
 	
 	@Event/*(handlers = NewsListPresenter.class, calledMethod = "plug")*/

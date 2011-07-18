@@ -3,7 +3,7 @@ package name.shamansir.mvplayout.client.page.news.view;
 import java.util.HashSet;
 import java.util.Set;
 
-import name.shamansir.mvplayout.client.page.news.presenter.NewsListPresenter.Display;
+import name.shamansir.mvplayout.client.page.news.presenter.NewsListPresenter;
 import name.shamansir.mvplayout.client.page.news.widget.NewsItemWidget;
 import name.shamansir.mvplayout.lib.ui.widget.Portlet;
 import name.shamansir.mvplayout.shared.dao.NewsItem;
@@ -15,7 +15,7 @@ import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-public final class NewsListView extends Portlet implements Display {
+public final class NewsListView extends Portlet implements NewsListPresenter.Display {
 
 	@UiTemplate("NewsListView.ui.xml")	
 	interface ListViewUiBinder extends UiBinder<Widget, NewsListView> { }	

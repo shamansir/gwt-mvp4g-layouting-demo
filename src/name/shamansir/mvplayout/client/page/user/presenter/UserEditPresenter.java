@@ -18,9 +18,9 @@ import name.shamansir.mvplayout.client.page.user.view.UserEditView;
 import name.shamansir.mvplayout.client.service.UserServiceAsync;
 import name.shamansir.mvplayout.lib.mvp.state.IsStatedPortalView;
 import name.shamansir.mvplayout.lib.mvp.state.StatedPortalPresenter;
-import name.shamansir.mvplayout.lib.ui.ErrorsSafeCallback;
 import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.structure.Place;
+import name.shamansir.mvplayout.lib.utils.SafeCallback;
 import name.shamansir.mvplayout.shared.dao.User;
 
 /**
@@ -62,7 +62,7 @@ public class UserEditPresenter extends
             
             @Override
             public void onClick(ClickEvent event) {
-                service.saveUser(view.collect(), new ErrorsSafeCallback<Integer>(eventBus) {
+                service.saveUser(view.collect(), new SafeCallback<Integer>(eventBus) {
 
                     @Override
                     public void onSuccess(Integer newId) {
@@ -78,7 +78,7 @@ public class UserEditPresenter extends
     
     public void onEdit(final int uid) {
         if (uid != -1) {
-            service.getUser(uid, new ErrorsSafeCallback<User>(eventBus) {
+            service.getUser(uid, new SafeCallback<User>(eventBus) {
                 
                 @Override
                 public void onSuccess(final User user) {

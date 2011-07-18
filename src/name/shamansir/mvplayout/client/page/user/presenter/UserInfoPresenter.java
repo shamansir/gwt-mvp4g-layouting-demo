@@ -5,7 +5,7 @@ import name.shamansir.mvplayout.client.page.user.view.UserInfoView;
 import name.shamansir.mvplayout.client.service.UserServiceAsync;
 import name.shamansir.mvplayout.lib.mvp.state.IsStatedPortletView;
 import name.shamansir.mvplayout.lib.mvp.state.StatedPortletPresenter;
-import name.shamansir.mvplayout.lib.ui.ErrorsSafeCallback;
+import name.shamansir.mvplayout.lib.utils.SafeCallback;
 import name.shamansir.mvplayout.shared.dao.User;
 
 import com.google.gwt.user.client.Timer;
@@ -26,7 +26,7 @@ public class UserInfoPresenter extends StatedPortletPresenter<UserInfoPresenter.
 	public void onShow(int uid) {	    
 	    //state.loading();
 	    if (uid != -1) {
-    	    service.getUser(uid, new ErrorsSafeCallback<User>(eventBus) {
+    	    service.getUser(uid, new SafeCallback<User>(eventBus) {
     
                 @Override
                 public void onSuccess(final User user) {

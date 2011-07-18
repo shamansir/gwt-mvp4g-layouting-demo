@@ -1,14 +1,14 @@
-package name.shamansir.mvplayout.lib.ui;
+package name.shamansir.mvplayout.lib.utils;
 
 import name.shamansir.mvplayout.lib.mvp.ChildEventBus;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-public abstract class ErrorsSafeCallback<T> implements AsyncCallback<T> {
+public abstract class SafeCallback<T> implements AsyncCallback<T> {
 	
 	private final ChildEventBus eventBus;
 	
-	public ErrorsSafeCallback(ChildEventBus eventBus) {
+	public SafeCallback(ChildEventBus eventBus) {
 		this.eventBus = eventBus;
 	}
 

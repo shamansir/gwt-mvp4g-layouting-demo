@@ -9,7 +9,7 @@ import name.shamansir.mvplayout.client.page.news.widget.NewsItemWidget;
 import name.shamansir.mvplayout.client.service.NewsServiceAsync;
 import name.shamansir.mvplayout.lib.mvp.IsPortletView;
 import name.shamansir.mvplayout.lib.mvp.PortletPresenter;
-import name.shamansir.mvplayout.lib.ui.ErrorsSafeCallback;
+import name.shamansir.mvplayout.lib.utils.SafeCallback;
 import name.shamansir.mvplayout.shared.dao.NewsItem;
 
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -28,7 +28,7 @@ public class NewsListPresenter extends PortletPresenter<NewsListPresenter.Displa
 	@Inject NewsServiceAsync service;
 	
 	public void onNews() {
-	    service.getNews(new ErrorsSafeCallback<Set<NewsItem>>(eventBus) {
+	    service.getNews(new SafeCallback<Set<NewsItem>>(eventBus) {
 
             @Override
             public void onSuccess(Set<NewsItem> news) {
@@ -38,7 +38,7 @@ public class NewsListPresenter extends PortletPresenter<NewsListPresenter.Displa
                     widget.addClickHandler(new ClickHandler() {                                
                         @Override
                         public void onClick(ClickEvent event) {
-                            eventBus.showUserInfo(widget.getItem().author);
+                            eventBus.showUserCard(widget.getItem().author);
                         }
                     });
                     url.link(widget.getShowAnchor(), P.NEWS_SHOW, 
