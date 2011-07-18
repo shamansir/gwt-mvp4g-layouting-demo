@@ -42,7 +42,7 @@ public class NewsServiceImpl extends RemoteServiceServlet implements NewsService
         NewsItem newsThree = new NewsItem(n3id);
         newsThree.author = createUser("Boo", "Trolalah", 81, "foo.png");
         newsThree.title = "I don't know Internet";        
-        newsThree.text = "Hello! The news are from the second hand";
+        newsThree.text = "I had a dream, when I was young, a dream of sweet illusion.";
         newsThree.postTime = new Date();
         news.put(n3id, newsThree);
     }
@@ -63,6 +63,7 @@ public class NewsServiceImpl extends RemoteServiceServlet implements NewsService
 
     @Override
     public NewsItem getNewsItem(int nid) throws ItemNotFoundException {
+        if (!news.containsKey(nid)) throw new ItemNotFoundException(nid);
         return news.get(nid);
     }
 

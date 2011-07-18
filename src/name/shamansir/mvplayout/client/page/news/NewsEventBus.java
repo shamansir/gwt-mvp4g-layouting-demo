@@ -1,6 +1,7 @@
 package name.shamansir.mvplayout.client.page.news;
 
 import name.shamansir.mvplayout.client.page.news.history.NewsHistoryConverter;
+import name.shamansir.mvplayout.client.page.news.presenter.NewsInfoPresenter;
 import name.shamansir.mvplayout.client.page.news.presenter.NewsListPresenter;
 import name.shamansir.mvplayout.client.page.news.presenter.TestWidgetPresenter;
 import name.shamansir.mvplayout.client.page.news.presenter.UserCardPresenter;
@@ -22,7 +23,9 @@ public interface NewsEventBus extends ChildEventBus {
 	       historyConverter = NewsHistoryConverter.class)
 	public void news();	
 	
-	@Event(/*name = "show", navigationEvent = true*/)
+	@Event(name = "show", navigationEvent = true,
+	       handlers = NewsInfoPresenter.class,
+	       historyConverter = NewsHistoryConverter.class)
 	public void show(int nid);
 	
 	@Event(/*name = "edit", navigationEvent = true*/)
@@ -44,7 +47,7 @@ public interface NewsEventBus extends ChildEventBus {
 	@Event(handlers = TestWidgetPresenter.class, calledMethod = "plug")
 	public void plugTestWidget(Place where);
 	
-	@Event/*(handlers = NewsListPresenter.class, calledMethod = "plug")*/
+	@Event(handlers = NewsInfoPresenter.class, calledMethod = "plug")
 	public void plugNewsInfo(Place where);
 	
 	// projecting events, portals	

@@ -40,7 +40,8 @@ public class NewsItemWidget extends FlowPanel implements HasClickHandlers {
         clickable.add(new Label(item.title + 
                 " (" + item.author.name + " " +  item.author.familyName + ")"));
         
-        // TODO: show all info
+        // TODO: show complete info
+        
         wrapper.add(clickable);
         
         this.showAnchor = new Anchor("show");
