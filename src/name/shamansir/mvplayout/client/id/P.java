@@ -25,9 +25,8 @@ public enum P implements PortalId {
     NEWS_EDIT(L.TRIPLE, G.NEWS, "edit"),
     NEWS_SHOW(L.ITEM, G.NEWS, "show"),
     
-    COMPANY_LIST(L.LIST, G.COMPANY, "list"),
-    COMPANY_EDIT(L.EDIT, G.COMPANY, "edit"),
-    COMPANY_SHOW(L.ITEM, G.COMPANY, "show");
+    COMPANY_LIST(L.SINGLE, G.COMPANY, "list"),
+    COMPANY_SHOW(L.SINGLE, G.COMPANY, "show");
     
     public final Portal portal;
     
