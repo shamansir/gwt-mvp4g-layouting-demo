@@ -10,7 +10,7 @@ import name.shamansir.mvplayout.lib.ui.structure.Place;
 
 import com.mvp4g.client.presenter.LazyPresenter;
 
-public abstract class PortalPresenter<V extends IsPortalView/*LazyView*/, 
+public abstract class PortalPresenter<V extends IsPortalView, 
                                       E extends ChildEventBus,
                                       L extends LayoutBuilder<E>> 
                       extends LazyPresenter<V, E> {

@@ -27,10 +27,7 @@ import name.shamansir.mvplayout.lib.ui.structure.Place;
  * @date Apr 28, 2011 10:16:17 PM 
  *
  */
-public abstract class StatedPortalPresenter<V extends IsStatedPortalView
-                                                      /*LazyView &
-                                                      HasStatesPanels &
-                                                      HandlesStateChange*/,  
+public abstract class StatedPortalPresenter<V extends IsStatedPortalView,  
                                    E extends ChildEventBus,
                                    L extends LayoutBuilder<E>> 
                                    extends PortalPresenter<V, E, L> 

@@ -6,7 +6,7 @@ import name.shamansir.mvplayout.lib.ui.structure.Place;
 
 import com.mvp4g.client.presenter.LazyPresenter;
 
-public abstract class PortletPresenter<V extends IsPortletView/*LazyView & HasMainView*/,
+public abstract class PortletPresenter<V extends IsPortletView,
                                        E extends ChildEventBus> 
                       extends LazyPresenter<V, E> {
     
