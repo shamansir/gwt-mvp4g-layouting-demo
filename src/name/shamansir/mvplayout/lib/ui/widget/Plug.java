@@ -13,6 +13,7 @@ import name.shamansir.mvplayout.lib.utils.StringUtils;
 
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 /**
  * <dl>
@@ -23,6 +24,8 @@ import com.google.gwt.user.client.ui.FlowPanel;
  * <code>Plug</code>
  *
  * <p>Description</p>
+ * 
+ * TODO: CustomPlug<FlowPanel>, replace all Plug restrictions with Pluggable
  *
  * @author Ulric Wilfred <shaman.sir@gmail.com>
  * @date Jun 16, 2011 8:57:10 PM 
@@ -97,6 +100,12 @@ public class Plug extends FlowPanel implements Pluggable {
     @Override
     public State getState() { // may be null
         return this.state;
+    }
+    
+    public static Plug of(String alias, Widget widget) {
+        final Plug plug = new Plug(alias);
+        plug.add(widget);
+        return plug;
     }
 	
 }

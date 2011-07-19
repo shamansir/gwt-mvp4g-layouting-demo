@@ -21,9 +21,6 @@ public class UserCardView extends Portlet implements Display {
         initWidget(widget);
     }
 
-    /* (non-Javadoc)
-     * @see name.shamansir.mvplayout.client.page.news.presenter.UserCardPresenter.Display#loadUser(name.shamansir.mvplayout.shared.dao.User)
-     */
     @Override
     public void loadUser(User user) {
         widget.loadUser(user);

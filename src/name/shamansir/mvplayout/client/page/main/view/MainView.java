@@ -56,20 +56,16 @@ public final class MainView extends AMainView implements IMainView {
 
     @Override
     public Pluggable get404View() {
-        final Plug plug = new Plug("404-view");
-        plug.add(new Label("404"));
-        return plug;
+        return Plug.of("404-view", new Label("404"));
     }
 
     @Override
     public Pluggable getLinksView(UrlBuilder url) {
-        final Plug plug = new Plug("links-view");
-        final VerticalPanel vert = new VerticalPanel();
-        vert.add(url.link(new Anchor("Users"), P.USERS_LIST));
-        vert.add(url.link(new Anchor("News"), P.NEWS_LIST));
-        vert.add(url.link(new Anchor("Companies"), P.COMPANY_LIST));
-        plug.add(vert);
-        return plug;
+        final VerticalPanel panel = new VerticalPanel();
+        panel.add(url.link(new Anchor("Users"), P.USERS_LIST));
+        panel.add(url.link(new Anchor("News"), P.NEWS_LIST));
+        panel.add(url.link(new Anchor("Companies"), P.COMPANY_LIST));
+        return Plug.of("links-view", panel);
     }
     
 }

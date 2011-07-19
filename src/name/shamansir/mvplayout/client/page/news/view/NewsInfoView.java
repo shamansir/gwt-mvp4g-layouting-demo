@@ -21,9 +21,7 @@ public class NewsInfoView extends Portlet implements Display {
     
     @Override
     public void createView() {
-        final Plug plug = new Plug("news-info");
-        plug.add(panel);
-        initWidget(plug);
+        initWidget(Plug.of("news-info", panel));
     }
 
 

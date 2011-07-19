@@ -23,9 +23,7 @@ public class TestWidgetPresenter extends PortletPresenter<TestWidgetPresenter.Te
 
         @Override
         public void createView() {
-            final Plug plug = new Plug("test-widget");
-            plug.add(new TestWidget());
-            initWidget(plug);
+            initWidget(Plug.of("test-widget", new TestWidget()));
         }
         
     }
