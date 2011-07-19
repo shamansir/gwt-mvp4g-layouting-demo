@@ -22,7 +22,7 @@ public enum P implements PortalId {
     USER_SHOW(L.ITEM, G.USER, "show"),
     
     NEWS_LIST(L.LIST, G.NEWS, "list"),
-    NEWS_EDIT(L.EDIT, G.NEWS, "edit"),
+    NEWS_EDIT(L.TRIPLE, G.NEWS, "edit"),
     NEWS_SHOW(L.ITEM, G.NEWS, "show"),
     
     COMPANY_LIST(L.LIST, G.COMPANY, "list"),

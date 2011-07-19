@@ -3,6 +3,8 @@ package name.shamansir.mvplayout.client;
 import name.shamansir.mvplayout.client.id.G;
 import name.shamansir.mvplayout.client.id.L;
 import name.shamansir.mvplayout.client.id.P;
+import name.shamansir.mvplayout.client.layout.LayoutDouble;
+import name.shamansir.mvplayout.client.layout.LayoutTriple;
 import name.shamansir.mvplayout.client.layout.LayoutEdit;
 import name.shamansir.mvplayout.client.layout.LayoutItem;
 import name.shamansir.mvplayout.client.layout.LayoutList;
@@ -50,7 +52,11 @@ public class LayoutingDemo implements EntryPoint {
         Layouts.register(L.ITEM, new Layouts.LazyMaker() {            
             @Override public Layout create() { return new LayoutItem(); }});
         Layouts.register(L.SINGLE, new Layouts.LazyMaker() {            
-            @Override public Layout create() { return new LayoutSingle(); }});        
+            @Override public Layout create() { return new LayoutSingle(); }});
+        Layouts.register(L.DOUBLE, new Layouts.LazyMaker() {            
+            @Override public Layout create() { return new LayoutDouble(); }});        
+        Layouts.register(L.DOUBLE, new Layouts.LazyMaker() {            
+            @Override public Layout create() { return new LayoutTriple(); }});        
 	}
 	
     private void registerBuilders() {
