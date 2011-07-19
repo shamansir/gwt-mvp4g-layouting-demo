@@ -28,7 +28,7 @@ public class NewsLayoutBuilder extends LayoutBuilder<NewsEventBus> {
                 eventBus.plugNewsItemEditor(O.A);
                 eventBus.plugSaveButton(O.B);
                 eventBus.plugUserCard(O.C);
-            }
+            } return true;
         }
     
         return false;

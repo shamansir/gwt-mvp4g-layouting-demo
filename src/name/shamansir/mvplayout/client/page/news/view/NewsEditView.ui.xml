@@ -9,12 +9,12 @@
         <l:Plug ui:field="infoPlug" alias="news-edit-info">
             <gwt:VerticalPanel>
                 <gwt:HorizontalPanel>
-                    <gwt:Label text="Name:" />
-                    <gwt:TextBox ui:field="name" />                    
+                    <gwt:Label text="Title:" />
+                    <gwt:TextBox ui:field="title" />                    
                 </gwt:HorizontalPanel>
                 <gwt:HorizontalPanel>
-                    <gwt:Label text="Family name:" />
-                    <gwt:TextBox ui:field="familyName" />                
+                    <gwt:Label text="Text:" />
+                    <gwt:TextArea ui:field="text" />                
                 </gwt:HorizontalPanel>                
             </gwt:VerticalPanel>           
         </l:Plug>

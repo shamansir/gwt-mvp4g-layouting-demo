@@ -28,5 +28,10 @@ public class UserCardView extends Portlet implements Display {
     public void loadUser(User user) {
         widget.loadUser(user);
     }
+    
+    @Override
+    public void clear() {
+        widget.clear();
+    }    
 
 }

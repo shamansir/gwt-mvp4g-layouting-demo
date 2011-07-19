@@ -29,13 +29,18 @@ public interface NewsEventBus extends ChildEventBus {
 	       historyConverter = NewsHistoryConverter.class)
 	public void show(int nid);
 	
-	@Event(/*name = "edit", navigationEvent = true*/)
+	@Event(name = "edit", navigationEvent = true,
+	       handlers = NewsEditPresenter.class,
+	       historyConverter = NewsHistoryConverter.class)
 	public void edit(int nid);	
 
     // secondary events	
 	
 	@Event(handlers = UserCardPresenter.class)
 	public void showUserCard(User user);
+	
+	@Event(handlers = UserCardPresenter.class)
+    public void clearUserCard();
 	
 	// projecting events, portlets
 	

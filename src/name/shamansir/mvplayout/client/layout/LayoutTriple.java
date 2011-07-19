@@ -31,7 +31,7 @@ public class LayoutTriple extends Layout {
     @UiField Outlet placeC;
     
     public LayoutTriple() {
-        super(L.DOUBLE, new Place[] { O.A, O.B, O.C });
+        super(L.TRIPLE, new Place[] { O.A, O.B, O.C });
 
         initWidget(uiBinder.createAndBindUi(this));     
     }
@@ -41,6 +41,7 @@ public class LayoutTriple extends Layout {
             throws IndexOutOfBoundsException {
         if (place.equals(O.A)) return placeA;
         if (place.equals(O.B)) return placeB;
+        if (place.equals(O.C)) return placeC;
         throw new IndexOutOfBoundsException("No widget position at place " + place + " for layout " + id());
     }    
 

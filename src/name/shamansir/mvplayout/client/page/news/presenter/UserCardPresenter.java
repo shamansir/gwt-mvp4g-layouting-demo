@@ -20,10 +20,15 @@ public class UserCardPresenter extends PortletPresenter<UserCardPresenter.Displa
 
     public interface Display extends IsPortletView {
         public void loadUser(User user);
+        public void clear();
     }
     
     public void onShowUserCard(User user) {
         view.loadUser(user);
+    }
+    
+    public void onClearUserCard() {
+        view.clear();
     }
     
 }

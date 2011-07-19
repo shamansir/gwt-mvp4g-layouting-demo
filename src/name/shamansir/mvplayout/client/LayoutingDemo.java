@@ -55,7 +55,7 @@ public class LayoutingDemo implements EntryPoint {
             @Override public Layout create() { return new LayoutSingle(); }});
         Layouts.register(L.DOUBLE, new Layouts.LazyMaker() {            
             @Override public Layout create() { return new LayoutDouble(); }});        
-        Layouts.register(L.DOUBLE, new Layouts.LazyMaker() {            
+        Layouts.register(L.TRIPLE, new Layouts.LazyMaker() {            
             @Override public Layout create() { return new LayoutTriple(); }});        
 	}
 	

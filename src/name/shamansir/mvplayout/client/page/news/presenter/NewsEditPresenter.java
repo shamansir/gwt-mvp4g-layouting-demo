@@ -47,12 +47,14 @@ public class NewsEditPresenter extends PortalPresenter<NewsEditPresenter.Display
             
             @Override
             public void onClick(ClickEvent event) {
-                service.saveNewsItem(view.collect(), new SafeCallback<Integer>(eventBus) {
+                final NewsItem item = view.collect();
+                service.saveNewsItem(item, new SafeCallback<Integer>(eventBus) {
 
                     @Override
                     public void onSuccess(Integer newId) {
                         History.newItem(url.build(P.NEWS_EDIT, String.valueOf(newId)));
                         view.itemSavedAs(newId);
+                        eventBus.showUserCard(item.author);
                     }
                     
                 });
@@ -73,6 +75,7 @@ public class NewsEditPresenter extends PortalPresenter<NewsEditPresenter.Display
             });
 	    } else {
 	        view.clear();
+	        eventBus.clearUserCard();
 	    }
 	}
 	

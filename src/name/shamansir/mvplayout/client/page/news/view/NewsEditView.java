@@ -3,17 +3,24 @@
  */
 package name.shamansir.mvplayout.client.page.news.view;
 
+import java.util.Date;
+
 import name.shamansir.mvplayout.client.page.news.presenter.NewsEditPresenter.Display;
 import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.widget.Plug;
 import name.shamansir.mvplayout.lib.ui.widget.Portal;
 import name.shamansir.mvplayout.shared.dao.NewsItem;
+import name.shamansir.mvplayout.shared.dao.User;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.TextArea;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
 /**
@@ -29,6 +36,14 @@ public class NewsEditView extends Portal implements Display {
     @UiField Plug infoPlug;
     @UiField Plug savePlug;
     
+    @UiField TextBox title;
+    @UiField TextArea text;
+    @UiField Button save;
+    
+    private int currentItem = -1;
+    private User currentAuthor;
+    private Date currentPostTime;
+    
     @Override
     public void createView() {
         initWidget(uiBinder.createAndBindUi(this));
@@ -36,44 +51,60 @@ public class NewsEditView extends Portal implements Display {
 
     @Override
     public void loadItem(NewsItem item) {
-        // TODO Auto-generated method stub
-        
+        this.currentItem = item.getId();
+        this.currentAuthor = item.author;
+        this.currentPostTime = item.postTime;
+        title.setValue(item.title);
+        text.setValue(item.text);
     }
 
     @Override
     public NewsItem collect() {
-        // TODO Auto-generated method stub
-        return null;
+        final NewsItem result = new NewsItem(currentItem);
+        result.title = title.getValue();
+        result.text = text.getValue();
+        result.author = currentAuthor != null ? currentAuthor : createDefaultAuthor();
+        result.postTime = currentPostTime != null ? currentPostTime : new Date();
+        return result;
+    }
+
+    private User createDefaultAuthor() {
+        final User author = new User(-1);
+        author.name = "Default";
+        author.familyName = "Default";
+        author.age = 84;
+        author.avatar = "default.jpg";
+        return author;
     }
 
     @Override
     public void itemSavedAs(int newId) {
-        // TODO Auto-generated method stub
-        
+        this.currentItem = newId;
+        Window.alert("News item " + newId + " is saved");
     }
 
     @Override
     public void clear() {
-        // TODO Auto-generated method stub
-        
+        currentItem = -1;
+        currentAuthor = null;
+        currentPostTime = null;        
+        title.setValue("");
+        text.setValue("");
     }
 
     @Override
     public HasClickHandlers getSaveButton() {
-        // TODO Auto-generated method stub
-        return null;
+        return save;
     }
 
     @Override
     public Pluggable getItemEditor() {
-        // TODO Auto-generated method stub
-        return null;
+        return infoPlug;
     }
 
     @Override
     public Pluggable getSavePlug() {
-        // TODO Auto-generated method stub
-        return null;
+        return savePlug;
     }
 
 }
