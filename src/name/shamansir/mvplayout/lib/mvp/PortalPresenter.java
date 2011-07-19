@@ -2,14 +2,15 @@ package name.shamansir.mvplayout.lib.mvp;
 
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilders;
+import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.Portal;
 import name.shamansir.mvplayout.lib.ui.Portal.PortalUrlBuilder;
 import name.shamansir.mvplayout.lib.ui.Portal.UrlBuilder;
+import name.shamansir.mvplayout.lib.ui.structure.Place;
 
 import com.mvp4g.client.presenter.LazyPresenter;
-import com.mvp4g.client.view.LazyView;
 
-public abstract class PortalPresenter<V extends LazyView, 
+public abstract class PortalPresenter<V extends IsPortalView/*LazyView*/, 
                                       E extends ChildEventBus,
                                       L extends LayoutBuilder<E>> 
                       extends LazyPresenter<V, E> {
@@ -25,5 +26,9 @@ public abstract class PortalPresenter<V extends LazyView,
 	}
 	
 	@Override public abstract void bindView();
+	
+	protected void plug(Place where, Pluggable what) {
+	    eventBus.plug(where, what);
+	}
 	
 }

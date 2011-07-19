@@ -3,14 +3,10 @@
  */
 package name.shamansir.mvplayout.lib.mvp.state;
 
-import com.mvp4g.client.view.LazyView;
-
 import name.shamansir.mvplayout.lib.mvp.ChildEventBus;
 import name.shamansir.mvplayout.lib.mvp.PortalPresenter;
 import name.shamansir.mvplayout.lib.ui.LayoutBuilder;
 import name.shamansir.mvplayout.lib.ui.Portal;
-import name.shamansir.mvplayout.lib.ui.state.HandlesStateChange;
-import name.shamansir.mvplayout.lib.ui.state.HasStatesPanels;
 import name.shamansir.mvplayout.lib.ui.state.PlugsStates;
 import name.shamansir.mvplayout.lib.ui.state.PortalStateDirector;
 import name.shamansir.mvplayout.lib.ui.state.State;
@@ -31,9 +27,10 @@ import name.shamansir.mvplayout.lib.ui.structure.Place;
  * @date Apr 28, 2011 10:16:17 PM 
  *
  */
-public abstract class StatedPortalPresenter<V extends LazyView &
+public abstract class StatedPortalPresenter<V extends IsStatedPortalView
+                                                      /*LazyView &
                                                       HasStatesPanels &
-                                                      HandlesStateChange,  
+                                                      HandlesStateChange*/,  
                                    E extends ChildEventBus,
                                    L extends LayoutBuilder<E>> 
                                    extends PortalPresenter<V, E, L> 
@@ -52,17 +49,17 @@ public abstract class StatedPortalPresenter<V extends LazyView &
     
     @Override    
     public void plugEmpty(Place where) {
-        eventBus.plug(where, view.getViewFor(State.NO_DATA));
+        plug(where, view.getViewFor(State.NO_DATA));
     }
     
     @Override    
     public void plugLoading(Place where) {
-        eventBus.plug(where, view.getViewFor(State.LOADING_DATA));
+        plug(where, view.getViewFor(State.LOADING_DATA));
     }
     
     @Override
     public void plugNoMatches(Place where) {
-        eventBus.plug(where, view.getViewFor(State.NO_MATCHES));
+        plug(where, view.getViewFor(State.NO_MATCHES));
     }
 
 }

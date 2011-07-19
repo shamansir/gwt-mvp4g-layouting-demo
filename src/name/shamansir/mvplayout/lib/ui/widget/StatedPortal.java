@@ -11,7 +11,6 @@ import com.google.gwt.uibinder.client.UiConstructor;
 
 public abstract class StatedPortal extends Portal implements IsStatedPortalView {
 	
-	private Plugs plugs;
 	private final Map<State, Plug> states = new HashMap<State, Plug>();	
 	
 	@UiConstructor
@@ -34,10 +33,5 @@ public abstract class StatedPortal extends Portal implements IsStatedPortalView 
     public boolean hasViewFor(State state) {
         return states.containsKey(state);
     }
-    
-    @Override
-    public Plugs getPlugs() {
-        return plugs;
-    }
-	
+    	
 }
