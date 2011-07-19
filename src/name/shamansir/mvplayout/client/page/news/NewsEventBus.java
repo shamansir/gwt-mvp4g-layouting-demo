@@ -1,6 +1,7 @@
 package name.shamansir.mvplayout.client.page.news;
 
 import name.shamansir.mvplayout.client.page.news.history.NewsHistoryConverter;
+import name.shamansir.mvplayout.client.page.news.presenter.NewsEditPresenter;
 import name.shamansir.mvplayout.client.page.news.presenter.NewsInfoPresenter;
 import name.shamansir.mvplayout.client.page.news.presenter.NewsListPresenter;
 import name.shamansir.mvplayout.client.page.news.presenter.TestWidgetPresenter;
@@ -50,6 +51,12 @@ public interface NewsEventBus extends ChildEventBus {
 	@Event(handlers = NewsInfoPresenter.class, calledMethod = "plug")
 	public void plugNewsInfo(Place where);
 	
-	// projecting events, portals	
+	// projecting events, portals
+	
+	@Event(handlers = NewsEditPresenter.class, calledMethod = "plugItemEditor")
+	public void plugNewsItemEditor(Place where);
+	
+	@Event(handlers = NewsEditPresenter.class, calledMethod = "plugSaveButton")
+    public void plugSaveButton(Place where);
 	
 }

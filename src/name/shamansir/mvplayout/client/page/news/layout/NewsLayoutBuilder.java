@@ -25,22 +25,9 @@ public class NewsLayoutBuilder extends LayoutBuilder<NewsEventBus> {
                 eventBus.plugTestWidget(O.C);              
             } return true;
             case NEWS_EDIT: {
-                switch (state) {
-                    case HAS_DATA: {
-                        /*eventBus.plugUserInfoEditor(O.A);
-                        eventBus.plugUserAgeEditor(O.B);
-                        eventBus.plugUserAvatarEditor(O.C);
-                        eventBus.plugTestWidget(O.D); */
-                    } return true;
-                    case LOADING_DATA: {
-                        /* eventBus.plugLoadingUserInEditor(O.STATUS);
-                        eventBus.plugTestWidget(O.D); */
-                    } return true;
-                    case NO_DATA: {
-                        /* eventBus.plugNoUserInEditor(O.STATUS);
-                        eventBus.plugTestWidget(O.D); */
-                    } return true;      
-                }
+                eventBus.plugNewsItemEditor(O.A);
+                eventBus.plugSaveButton(O.B);
+                eventBus.plugUserCard(O.C);
             }
         }
     

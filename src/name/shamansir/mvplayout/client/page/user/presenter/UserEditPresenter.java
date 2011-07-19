@@ -102,19 +102,19 @@ public class UserEditPresenter extends
     }
     
     public void plugInfoEditor(Place where) {
-        eventBus.plug(where, view.getInfoEditor());
+        plug(where, view.getInfoEditor());
     }
     
     public void plugAgeEditor(Place where) {
-        eventBus.plug(where, view.getAgeEditor());
+        plug(where, view.getAgeEditor());
     }
     
     public void plugAvatarEditor(Place where) {
-        eventBus.plug(where, view.getAvatarEditor());
+        plug(where, view.getAvatarEditor());
     }
     
     public void plugTestWidget(Place where) {
-        eventBus.plug(where, view.getTestWidget());
+        plug(where, view.getTestWidget());
     }
 
 }

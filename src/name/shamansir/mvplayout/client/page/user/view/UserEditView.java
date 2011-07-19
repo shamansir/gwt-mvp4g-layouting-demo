@@ -4,7 +4,7 @@ import name.shamansir.mvplayout.client.page.user.presenter.UserEditPresenter.Dis
 import name.shamansir.mvplayout.lib.ui.Pluggable;
 import name.shamansir.mvplayout.lib.ui.state.State;
 import name.shamansir.mvplayout.lib.ui.widget.Plug;
-import name.shamansir.mvplayout.lib.ui.widget.StatedPortlet;
+import name.shamansir.mvplayout.lib.ui.widget.StatedPortal;
 import name.shamansir.mvplayout.shared.dao.User;
 
 import com.google.gwt.core.client.GWT;
@@ -17,7 +17,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
-public final class UserEditView extends StatedPortlet implements Display {
+public final class UserEditView extends StatedPortal implements Display {
     
     @UiTemplate("UserEditView.ui.xml")	
 	interface EditViewUiBinder extends UiBinder<Widget, UserEditView> { }	
