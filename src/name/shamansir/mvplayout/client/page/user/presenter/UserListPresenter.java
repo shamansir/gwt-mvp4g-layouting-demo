@@ -6,6 +6,7 @@ import name.shamansir.mvplayout.client.id.P;
 import name.shamansir.mvplayout.client.page.user.UserEventBus;
 import name.shamansir.mvplayout.client.page.user.view.UserListView;
 import name.shamansir.mvplayout.client.service.UserServiceAsync;
+import name.shamansir.mvplayout.lib.exception.NoMatchesException;
 import name.shamansir.mvplayout.lib.mvp.state.IsStatedPortletView;
 import name.shamansir.mvplayout.lib.mvp.state.StatedPortletPresenter;
 import name.shamansir.mvplayout.lib.utils.SafeCallback;
@@ -15,6 +16,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.Timer;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
@@ -67,6 +69,15 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
                     }
 			        
 			    }.schedule(3000); // emulate slow data load
+			}
+			
+			@Override
+			public void onFailure(Throwable caught) {
+			    if (caught instanceof NoMatchesException) {
+			        state.noMatches();
+			        return;
+			    }
+			    super.onFailure(caught);
 			}
 			
 		});

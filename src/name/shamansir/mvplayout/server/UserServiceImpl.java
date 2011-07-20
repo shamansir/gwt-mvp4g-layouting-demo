@@ -49,8 +49,20 @@ public class UserServiceImpl extends RemoteServiceServlet implements
 
 	@Override
 	public Set<User> getUsers(String filter) throws NoMatchesException {
-	    // TODO: apply filter
-		return new HashSet<User>(users.values());
+	    if ((filter == null) || filter.isEmpty()) {
+	        return new HashSet<User>(users.values());	        
+	    } else {
+	        final Set<User> store = new HashSet<User>();
+	        for (User user: users.values()) {
+	            if (user.name.startsWith(filter) ||
+	                user.familyName.startsWith(filter)) {
+	                store.add(user);
+	            }
+	        }
+	        if (store.isEmpty()) throw new NoMatchesException();
+	        return store;
+	    }
+
 	}
 
 	@Override
