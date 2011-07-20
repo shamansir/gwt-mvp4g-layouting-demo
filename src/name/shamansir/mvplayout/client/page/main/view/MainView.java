@@ -65,6 +65,14 @@ public final class MainView extends AMainView implements IMainView {
         panel.add(url.link(new Anchor("Users"), P.USERS_LIST));
         panel.add(url.link(new Anchor("News"), P.NEWS_LIST));
         panel.add(url.link(new Anchor("Companies"), P.COMPANY_LIST));
+        
+        panel.add(new Label("----------"));
+        
+        panel.add(url.link(new Anchor("Users starting with B"), P.USERS_LIST, "B"));
+        panel.add(url.link(new Anchor("Users starting with Z"), P.USERS_LIST, "Z"));
+        panel.add(url.link(new Anchor("Create user"), P.USER_EDIT)); // no id param switches it to create mode
+        panel.add(url.link(new Anchor("Create news item"), P.NEWS_EDIT)); // no id param switches it to create mode
+        panel.add(url.link(new Anchor("Show second company"), P.COMPANY_SHOW, String.valueOf(1))); // 0, [1], 2
         return Plug.of("links-view", panel);
     }
     

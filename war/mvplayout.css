@@ -111,21 +111,30 @@
 
 /* =========== Special ====================================================== */
 
-.plug-users-list > table table > tbody > tr > td > div,
-.plug-news-list > table table > tbody > tr > td > div {
+.plug-user-list > table table > tbody > tr > td > div,
+.plug-news-list > table table > tbody > tr > td > div,
+.plug-company-list > table table > tbody > tr > td > div {
 	cursor: pointer;
 	padding: 5px;
 	background-color: #ddd;
 }
 
-.plug-users-list > table table > tbody > tr > td > div:hover,
-.plug-news-list > table table > tbody > tr > td > div:hover {
+.plug-user-list > table table > tbody > tr > td > div:hover,
+.plug-news-list > table table > tbody > tr > td > div:hover,
+.plug-company-list > table table > tbody > tr > td > div:hover {
     background-color: #ccc;	
 }
 
-.plug-users-list > table table > tbody > tr > td > a,
-.plug-news-list > table table > tbody > tr > td > a {
+.plug-user-list > table table > tbody > tr > td > a,
+.plug-news-list > table table > tbody > tr > td > a,
+.plug-company-list > table table > tbody > tr > td > a {
     padding: 5px;
     display: block;
     background-color: #ddb;	
 }
+
+/* a.separator, a.separator:hover, a.separator:visited {
+	color: #000;
+	text-decoration: none;
+	cursor: auto;
+} */

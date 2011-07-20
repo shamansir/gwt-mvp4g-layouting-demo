@@ -28,6 +28,7 @@ public class NewsListPresenter extends PortletPresenter<NewsListPresenter.Displa
 	@Inject NewsServiceAsync service;
 	
 	public void onNews() {
+	    eventBus.clearUserCard();
 	    service.getNews(new SafeCallback<Set<NewsItem>>(eventBus) {
 
             @Override

@@ -22,7 +22,7 @@
   <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
   
   <!-- <set-property name="user.agent" value="ie6,gecko,gecko1_8,safari,opera" /> -->
-  <set-property name="user.agent" value="gecko1_8,safari" />
+  <!-- <set-property name="user.agent" value="gecko1_8,safari" />  -->
 
   <!-- Other module inherits                                      -->
   
