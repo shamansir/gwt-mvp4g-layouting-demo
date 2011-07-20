@@ -29,12 +29,9 @@ public class CompanyPortlet extends Portlet {
     }
     
     public void load(Company company, MakesLink showUrl) {
-        wrapper.add(new Label(company.title));
-        wrapper.add(new Anchor("Show single", Portal.URL_PREFIX + showUrl.makeLink()));
-    }
-    
-    public void clear() {
         wrapper.clear();
+        wrapper.add(new Label(company.title));
+        wrapper.add(new Anchor("Show", Portal.URL_PREFIX + showUrl.makeLink()));
     }
 
     @Override
