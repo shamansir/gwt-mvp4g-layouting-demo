@@ -46,16 +46,23 @@ public abstract class AMainPresenter<V extends IsMainView, E extends IsMainEvent
             return; // throw anonymous away
         } */
         
-        if ((view.getCurPortal() != null) &&
-            view.getCurPortal().equals(portal)) return; // no need in rebuilding layout
+        final State state = builder.layoutHasStates() ? DEFAULT_LAYOUT_STATE : null;
         
         if (builder.built()) builder.reset();
+        
+        if ((view.getCurPortal() != null) &&
+            view.getCurPortal().equals(portal)) {
+            
+            // if portal not changed - we already have this builder,
+            // so just re-build, nothing else
+            builder.build(state);
+            
+            return;
+        }
         
         unregisterHandlers();
         
         view.beforePortalChange(portal);
-        
-        final State state = builder.layoutHasStates() ? DEFAULT_LAYOUT_STATE : null;
         
         currentBuilder = builder;
         final Layout layoutBuilt = builder.build(state);
