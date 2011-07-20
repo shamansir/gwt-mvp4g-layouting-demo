@@ -68,6 +68,11 @@ public class Plugs extends Widget implements HasWidgets {
         for (Plug plug: plugs) {
             plug.setContainer(portlet);
         }
-    }
+        /*if (portlet instanceof Widget) {
+            setElement(((Widget)portlet).getElement());
+        } else {
+            throw new IllegalStateException("Portlet must be a widget");
+        }*/
+    }    
 
 }

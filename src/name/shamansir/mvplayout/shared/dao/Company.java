@@ -1,7 +1,5 @@
 package name.shamansir.mvplayout.shared.dao;
 
-import java.util.Set;
-
 import name.shamansir.mvplayout.shared.Card;
 
 public class Company extends Card {
@@ -11,6 +9,6 @@ public class Company extends Card {
 	public Company(int cid) { super(cid); }
 	
 	public String title;
-	public Set<User> employee;
+	//public Set<User> employee;
 
 }

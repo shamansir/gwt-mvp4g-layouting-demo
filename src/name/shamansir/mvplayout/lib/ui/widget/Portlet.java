@@ -25,8 +25,8 @@ public abstract class Portlet extends Composite implements IsPortletView {
             throw new IllegalStateException("Plug instance must be a root of Portlet view");
         plugs = new Plugs();
         plug = (Plug)widget;
-        plug.setContainer(this);
         plugs.add(plug);
+        plugs.setContainer(this);        
 		//super.initWidget(plug);
 	}
 	
@@ -41,5 +41,8 @@ public abstract class Portlet extends Composite implements IsPortletView {
     
     @Override
     public Place getPlace() { return place; }	
+    
+    @Override 
+    public Widget asWidget() { return plug; }
 
 }

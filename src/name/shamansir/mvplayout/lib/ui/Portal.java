@@ -18,7 +18,8 @@ public class Portal implements MakesLink {
     
     private static final Map<String, Portal> portals = 
                                         new HashMap<String, Portal>();
-	
+
+    // TODO: wrap this constants with some configuration class
     // means URL_PREFIX group EVENT_DELIM event [ PARAM_MARKER param1 [ PARAM_DELIM param2 [ PARAM_DELIM param3 ... ]  ] ]
     //       #          user  /           show    ?            1        /           no_info    /         read_only  
     public static final String URL_PREFIX = "#";
@@ -69,7 +70,7 @@ public class Portal implements MakesLink {
     public static Portal fromId(PortalId id) {
         return portals.get(id.id());
     }
-	
+	    
 	public static class PortalUrl implements MakesLink {
 	    
 	    private final Portal portal;
@@ -149,6 +150,8 @@ public class Portal implements MakesLink {
 	public static interface UrlBuilder {
 	    //public String to(Portal portal);
 	    //public String to(PortalId portal);
+	    public MakesLink from(Portal portal, String... params);
+	    public MakesLink from(PortalId portal, String... params);
 	    public String build(Portal portal, String... params);
 	    public String build(PortalId portal, String... params);
 	    public Anchor link(Anchor assignTo, Portal portal, String... params);
@@ -157,6 +160,8 @@ public class Portal implements MakesLink {
 	    public Hyperlink link(Hyperlink assignTo, PortalId portal, String... params);
 	    public String parameters(String... values);
 	}
+	
+	// TODO: add PortalUrlWithNamedParamsBuilder
 	
 	public static class PortalUrlBuilder implements UrlBuilder {
 	    
@@ -173,13 +178,21 @@ public class Portal implements MakesLink {
         public String to(PortalId portal) {
             return to(portals.get(portal.id()));
         } */    
+
+        public MakesLink from(Portal portal, String... params) {
+            return new PortalUrl(portal).addParams(params);
+        }
+        
+        public MakesLink from(PortalId portal, String... params) {
+            return from(portals.get(portal.id()), params);
+        }        
 	    
 	    public String build(Portal portal, String... params) {
-	        return new PortalUrl(portal).addParams(params).makeLink();
+	        return from(portal, params).makeLink();
 	    }
 	    
 	    public String build(PortalId portal, String... params) {
-            return build(portals.get(portal.id()), params);
+	        return from(portal, params).makeLink();
         }
 	    
         public String parameters(String... values) {

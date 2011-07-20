@@ -52,4 +52,7 @@ public abstract class StatedPortlet extends Portlet implements IsStatedPortletVi
         return plugs;
     }
 	
+    @Override 
+    public Widget asWidget() { return plugs; }    
+    
 }
