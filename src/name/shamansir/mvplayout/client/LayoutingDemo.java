@@ -29,22 +29,22 @@ import com.mvp4g.client.Mvp4gModule;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class LayoutingDemo implements EntryPoint {
-	
-	public void onModuleLoad() {
-	    registerPortals();
-	    registerLayouts();
-	    registerBuilders();
-	    
-		Mvp4gModule mvpModule = (Mvp4gModule) GWT.create(MainModule.class);
-    	mvpModule.createAndStartModule();
-    	RootLayoutPanel.get().add((Widget) mvpModule.getStartView());
-	}
-	
-	private void registerPortals() {
-	    Portal.registerAll(P.values());
-	}
-	
-	private void registerLayouts() {
+    
+    public void onModuleLoad() {
+        registerPortals();
+        registerLayouts();
+        registerBuilders();
+        
+    	Mvp4gModule mvpModule = (Mvp4gModule) GWT.create(MainModule.class);
+        mvpModule.createAndStartModule();
+        RootLayoutPanel.get().add((Widget) mvpModule.getStartView());
+    }
+    
+    private void registerPortals() {
+        Portal.registerAll(P.values());
+    }
+    
+    private void registerLayouts() {
         Layouts.register(L.LIST, new Layouts.LazyMaker() {            
             @Override public Layout create() { return new LayoutList(); }});
         Layouts.register(L.EDIT, new Layouts.LazyMaker() {            
@@ -57,8 +57,8 @@ public class LayoutingDemo implements EntryPoint {
             @Override public Layout create() { return new LayoutDouble(); }});        
         Layouts.register(L.TRIPLE, new Layouts.LazyMaker() {            
             @Override public Layout create() { return new LayoutTriple(); }});        
-	}
-	
+    }
+    
     private void registerBuilders() {
         LayoutBuilders.register(G.USER, new LayoutBuilders.LazyMaker() {            
             @Override public LayoutBuilder<?> create() { 
@@ -77,5 +77,5 @@ public class LayoutingDemo implements EntryPoint {
         });        
         
     }
-	
+    
 }

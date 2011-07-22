@@ -16,19 +16,19 @@ public abstract class PortalPresenter<V extends IsPortalView,
                       extends LazyPresenter<V, E> {
     
     protected final UrlBuilder url = PortalUrlBuilder.get();
-	protected final Portal portal;
-	protected final L layoutBuilder; // FIXME: do we really need it?
-	
-	@SuppressWarnings("unchecked")
-	protected PortalPresenter(Portal portal) {
-		this.portal = portal;
-		this.layoutBuilder = (L) LayoutBuilders.get(portal.group);		
-	}
-	
-	@Override public abstract void bindView();
-	
-	protected void plug(Place where, Pluggable what) {
-	    eventBus.plug(where, what);
-	}
-	
+    protected final Portal portal;
+    protected final L layoutBuilder; // FIXME: do we really need it?
+    
+    @SuppressWarnings("unchecked")
+    protected PortalPresenter(Portal portal) {
+    	this.portal = portal;
+    	this.layoutBuilder = (L) LayoutBuilders.get(portal.group);		
+    }
+    
+    @Override public abstract void bindView();
+    
+    protected void plug(Place where, Pluggable what) {
+        eventBus.plug(where, what);
+    }
+    
 }

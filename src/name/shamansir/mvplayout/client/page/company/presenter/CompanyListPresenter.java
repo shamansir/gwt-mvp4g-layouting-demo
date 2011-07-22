@@ -19,10 +19,10 @@ public class CompanyListPresenter extends PortletPresenter<CompanyListPresenter.
 
     @Inject CompanyServiceAsync service;
     
-	public interface Display extends IsPortletView {
+    public interface Display extends IsPortletView {
         public void showCompanies(Set<Company> companies, UrlBuilder url);
-	}
-	
+    }
+    
     public void onCompanies() {
         service.getCompanies("", new SafeCallback<Set<Company>>(eventBus) {
 
@@ -32,6 +32,6 @@ public class CompanyListPresenter extends PortletPresenter<CompanyListPresenter.
             }
             
         });
-    }	
-	
+    }    
+    
 }

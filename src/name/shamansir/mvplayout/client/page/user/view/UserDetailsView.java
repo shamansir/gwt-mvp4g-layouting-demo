@@ -15,18 +15,18 @@ import com.google.gwt.user.client.ui.Widget;
 
 public final class UserDetailsView extends StatedPortlet implements Display {
     
-    @UiTemplate("UserDetailsView.ui.xml")	
-	interface DetailsViewUiBinder extends UiBinder<Widget, UserDetailsView> { }	
-	private static DetailsViewUiBinder uiBinder = GWT.create(DetailsViewUiBinder.class);
-	
-    public UserDetailsView() { }	
+    @UiTemplate("UserDetailsView.ui.xml")    
+    interface DetailsViewUiBinder extends UiBinder<Widget, UserDetailsView> { }	
+    private static DetailsViewUiBinder uiBinder = GWT.create(DetailsViewUiBinder.class);
+    
+    public UserDetailsView() { }    
     
     @UiField Label dataSummary;
     
     @UiField Plug mainView;
     @UiField Plug ifEmpty;
     @UiField Plug whenLoading;    
-	
+    
     @Override
     public void createView() {
         initWidget(uiBinder.createAndBindUi(this));

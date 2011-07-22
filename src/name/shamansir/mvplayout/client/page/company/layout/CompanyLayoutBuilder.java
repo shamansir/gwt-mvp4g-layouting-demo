@@ -10,9 +10,9 @@ import name.shamansir.mvplayout.lib.ui.widget.Layout;
 
 public class CompanyLayoutBuilder extends LayoutBuilder<CompanyEventBus> {
 
-	@Override
-	protected boolean layout(Portal view, Layout layout, State state,
-	                         CompanyEventBus eventBus) {
+    @Override
+    protected boolean layout(Portal view, Layout layout, State state,
+                             CompanyEventBus eventBus) {
         switch (P.by(view)) {
             case COMPANY_LIST: {
                 eventBus.plugCompaniesList(O.A);
@@ -22,6 +22,6 @@ public class CompanyLayoutBuilder extends LayoutBuilder<CompanyEventBus> {
             } return true;
         }
         return false;
-	}
+    }
 
 }

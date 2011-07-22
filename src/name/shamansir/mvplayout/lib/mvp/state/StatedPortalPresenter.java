@@ -31,7 +31,7 @@ public abstract class StatedPortalPresenter<V extends IsStatedPortalView,
                                    E extends ChildEventBus,
                                    L extends LayoutBuilder<E>> 
                                    extends PortalPresenter<V, E, L> 
-								   implements PlugsStates {
+    							   implements PlugsStates {
     
     protected StateDirector state;    
     

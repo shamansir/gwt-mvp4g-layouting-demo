@@ -14,7 +14,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  */
 @RemoteServiceRelativePath("companies")
 public interface CompanyService extends RemoteService {
-	Set<Company> getCompanies(String filter) throws NoMatchesException;
-	Company getCompany(int cid) throws ItemNotFoundException;
-	int saveCompany(Company company); 
+    Set<Company> getCompanies(String filter) throws NoMatchesException;
+    Company getCompany(int cid) throws ItemNotFoundException;
+    int saveCompany(Company company); 
 }

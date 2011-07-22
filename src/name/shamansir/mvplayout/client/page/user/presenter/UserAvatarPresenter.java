@@ -11,18 +11,18 @@ import com.mvp4g.client.annotation.Presenter;
 
 @Presenter(view = UserAvatarView.class)
 public class UserAvatarPresenter extends StatedPortletPresenter<UserAvatarPresenter.Display, UserEventBus> {
-	
-	public interface Display extends IsStatedPortletView {
+    
+    public interface Display extends IsStatedPortletView {
         void showAvatar(String avatar);
-	}	
+    }	
 
-	public UserAvatarPresenter() {
-	    super(State.NO_DATA);
-	}
-	
+    public UserAvatarPresenter() {
+        super(State.NO_DATA);
+    }
+    
     public void onShowAdditionalInfo(User user) {
         state.gotData();
         view.showAvatar(user.avatar);
     }
-		
+    	
 }

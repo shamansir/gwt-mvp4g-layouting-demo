@@ -23,7 +23,7 @@ import com.mvp4g.client.annotation.Presenter;
 public class NewsEditPresenter extends PortalPresenter<NewsEditPresenter.Display, NewsEventBus, NewsLayoutBuilder> {
 
     public interface Display extends IsPortalView {
-	    public void loadItem(NewsItem item);
+        public void loadItem(NewsItem item);
         public NewsItem collect();
         public void itemSavedAs(int newId);
         
@@ -33,16 +33,16 @@ public class NewsEditPresenter extends PortalPresenter<NewsEditPresenter.Display
         
         public Pluggable getItemEditor();
         public Pluggable getSavePlug();
-	}
-	
-	@Inject NewsServiceAsync service;
-	
+    }
+    
+    @Inject NewsServiceAsync service;
+    
     protected NewsEditPresenter() {
         super(P.NEWS_EDIT.portal);
     }
     
     @Override
-	public void bindView() {
+    public void bindView() {
         view.getSaveButton().addClickHandler(new ClickHandler() {
             
             @Override
@@ -60,12 +60,12 @@ public class NewsEditPresenter extends PortalPresenter<NewsEditPresenter.Display
                 });
             }
             
-        });	    
-	}
-	
-	public void onEdit(int nid) {
-	    if (nid != -1) {
-    	    service.getNewsItem(nid, new SafeCallback<NewsItem>(eventBus) {
+        });        
+    }
+    
+    public void onEdit(int nid) {
+        if (nid != -1) {
+            service.getNewsItem(nid, new SafeCallback<NewsItem>(eventBus) {
     
                 @Override
                 public void onSuccess(NewsItem item) {
@@ -73,19 +73,19 @@ public class NewsEditPresenter extends PortalPresenter<NewsEditPresenter.Display
                     eventBus.showUserCard(item.author);
                 }
             });
-	    } else {
-	        view.clear();
-	        eventBus.clearUserCard();
-	    }
-	}
-	
-	public void plugItemEditor(Place where) {
-	    plug(where, view.getItemEditor());
-	}
-	
+        } else {
+            view.clear();
+            eventBus.clearUserCard();
+        }
+    }
+    
+    public void plugItemEditor(Place where) {
+        plug(where, view.getItemEditor());
+    }
+    
     public void plugSaveButton(Place where) {
         plug(where, view.getSavePlug());
     }
-	
-	
+    
+    
 }

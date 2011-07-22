@@ -14,12 +14,12 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public final class CompanyListView extends Portlet implements Display {
 
-	private final VerticalPanel panel = new VerticalPanel();
+    private final VerticalPanel panel = new VerticalPanel();
     
-	@Override
-	public void createView() {
-		initWidget(Plug.of("company-list", panel));
-	}
+    @Override
+    public void createView() {
+    	initWidget(Plug.of("company-list", panel));
+    }
 
     @Override
     public void showCompanies(Set<Company> companies, UrlBuilder url) {

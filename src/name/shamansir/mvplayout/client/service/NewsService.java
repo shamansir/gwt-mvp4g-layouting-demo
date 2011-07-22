@@ -13,7 +13,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  */
 @RemoteServiceRelativePath("news")
 public interface NewsService extends RemoteService {
-	Set<NewsItem> getNews();
-	NewsItem getNewsItem(int nid) throws ItemNotFoundException;
-	int saveNewsItem(NewsItem newsItem); 
+    Set<NewsItem> getNews();
+    NewsItem getNewsItem(int nid) throws ItemNotFoundException;
+    int saveNewsItem(NewsItem newsItem); 
 }

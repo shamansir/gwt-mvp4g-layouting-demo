@@ -28,15 +28,15 @@ public interface ChildEventBus extends EventBus, UpdatesStateByPlace {
     public void portalNotFound(PortalNotFoundException pnfe);
 
     @Event(forwardToParent = true)
-	public void handle(Throwable caught);
+    public void handle(Throwable caught);
     
     @Event(forwardToParent = true)
     public void plug(Place where, Pluggable what);
     
-	@Event(forwardToParent = true)
-	public void subscribePageResize(PageResizeListener listener);
-	
-	@Event(forwardToParent = true)
-	public void subscribePageScroll(PageScrollListener listener);
+    @Event(forwardToParent = true)
+    public void subscribePageResize(PageResizeListener listener);
+    
+    @Event(forwardToParent = true)
+    public void subscribePageScroll(PageScrollListener listener);
     
 }

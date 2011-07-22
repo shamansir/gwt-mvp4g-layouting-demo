@@ -11,19 +11,19 @@ import com.mvp4g.client.annotation.Presenter;
 
 @Presenter(view = UserDetailsView.class)
 public class UserDetailsPresenter extends StatedPortletPresenter<UserDetailsPresenter.Display, UserEventBus> {
-	
-	public interface Display extends IsStatedPortletView {
+    
+    public interface Display extends IsStatedPortletView {
         void showDetails(User user);
-	}	
+    }	
 
-	public UserDetailsPresenter() {
-	    super(State.NO_DATA);
-	}
-	
-	//@FromEventBus
-	public void onShowAdditionalInfo(User user) {
-	    state.gotData();
-	    view.showDetails(user);
-	}
-		
+    public UserDetailsPresenter() {
+        super(State.NO_DATA);
+    }
+    
+    //@FromEventBus
+    public void onShowAdditionalInfo(User user) {
+        state.gotData();
+        view.showDetails(user);
+    }
+    	
 }

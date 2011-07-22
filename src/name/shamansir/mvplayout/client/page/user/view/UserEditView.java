@@ -19,36 +19,36 @@ import com.google.gwt.user.client.ui.Widget;
 
 public final class UserEditView extends StatedPortal implements Display {
     
-    @UiTemplate("UserEditView.ui.xml")	
-	interface EditViewUiBinder extends UiBinder<Widget, UserEditView> { }	
-	private static EditViewUiBinder uiBinder = GWT.create(EditViewUiBinder.class);
-	
-	@UiField Plug ifEmpty;
-	@UiField Plug whenLoading;
-	
-	@UiField Plug basicInfoPlug;
-	@UiField Plug avatarPlug;
-	@UiField Plug agePlug;
-	@UiField Plug testPlug;
-	
-	@UiField TextBox name;
-	@UiField TextBox familyName;
-	@UiField TextBox age;
-	@UiField TextBox avatar;
-	@UiField Button save;
-	
-	private int currentUser = -1;
-	
+    @UiTemplate("UserEditView.ui.xml")    
+    interface EditViewUiBinder extends UiBinder<Widget, UserEditView> { }	
+    private static EditViewUiBinder uiBinder = GWT.create(EditViewUiBinder.class);
+    
+    @UiField Plug ifEmpty;
+    @UiField Plug whenLoading;
+    
+    @UiField Plug basicInfoPlug;
+    @UiField Plug avatarPlug;
+    @UiField Plug agePlug;
+    @UiField Plug testPlug;
+    
+    @UiField TextBox name;
+    @UiField TextBox familyName;
+    @UiField TextBox age;
+    @UiField TextBox avatar;
+    @UiField Button save;
+    
+    private int currentUser = -1;
+    
     public UserEditView() { 
-    }	
-	
-	@Override
-	public void createView() {
-		initWidget(uiBinder.createAndBindUi(this));
-		
+    }    
+    
+    @Override
+    public void createView() {
+    	initWidget(uiBinder.createAndBindUi(this));
+    	
         register(ifEmpty, State.NO_DATA);
-        register(whenLoading, State.LOADING_DATA);		
-	}
+        register(whenLoading, State.LOADING_DATA);    	
+    }
 
     @Override
     public void prepareFor(State to) {

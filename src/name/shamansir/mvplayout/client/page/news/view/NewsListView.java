@@ -17,18 +17,18 @@ import com.google.gwt.user.client.ui.Widget;
 
 public final class NewsListView extends Portlet implements NewsListPresenter.Display {
 
-	@UiTemplate("NewsListView.ui.xml")	
-	interface ListViewUiBinder extends UiBinder<Widget, NewsListView> { }	
-	private static ListViewUiBinder uiBinder = GWT.create(ListViewUiBinder.class);
-	
-	@UiField VerticalPanel newsHolder;
-	
-	final Set<NewsItemWidget> widgets = new HashSet<NewsItemWidget>();
-	
-	@Override
-	public void createView() {
-		initWidget(uiBinder.createAndBindUi(this));
-	}
+    @UiTemplate("NewsListView.ui.xml")	
+    interface ListViewUiBinder extends UiBinder<Widget, NewsListView> { }	
+    private static ListViewUiBinder uiBinder = GWT.create(ListViewUiBinder.class);
+    
+    @UiField VerticalPanel newsHolder;
+    
+    final Set<NewsItemWidget> widgets = new HashSet<NewsItemWidget>();
+    
+    @Override
+    public void createView() {
+    	initWidget(uiBinder.createAndBindUi(this));
+    }
 
     @Override
     public void showNews(Set<NewsItem> news) {

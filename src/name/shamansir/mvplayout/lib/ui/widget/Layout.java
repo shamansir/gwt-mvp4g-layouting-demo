@@ -18,56 +18,56 @@ import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.user.client.ui.Composite;
 
 public abstract class Layout extends Composite implements PageScrollListener, PageResizeListener {
-	
-	private final LayoutId id;
-	private final Place[] places;
-	protected final Map<Place, IsOutlet> outlets = new HashMap<Place, IsOutlet>();
-	private final Map<Place, Pluggable> plugged = new HashMap<Place, Pluggable>();
-	
-	private boolean outletsLoaded;	
-	
-	protected Layout(LayoutId id, Place[] places) {
-		this.id = id;
-		this.places = places;		
-	}
-	
+    
+    private final LayoutId id;
+    private final Place[] places;
+    protected final Map<Place, IsOutlet> outlets = new HashMap<Place, IsOutlet>();
+    private final Map<Place, Pluggable> plugged = new HashMap<Place, Pluggable>();
+    
+    private boolean outletsLoaded;	
+    
+    protected Layout(LayoutId id, Place[] places) {
+    	this.id = id;
+    	this.places = places;		
+    }
+    
     protected Layout(LayoutId id, List<Place> places) {
         this(id, places.toArray(new Place[places.size()]));       
-    }	
+    }    
 
-	public LayoutId id() { return id; }
-	
-	protected abstract IsOutlet prepareOutlet(Place place) throws IndexOutOfBoundsException;	
-	
-	public final Place[] places() { return places; };	
-	public final boolean has(Place place) { ensureOutletsLoaded(); return outlets.containsKey(place); };
-	
-	public final IsOutlet outlet(Place place) { ensureOutletsLoaded(); return outlets.get(place); }	
-	public final Map<Place, IsOutlet> outlets() { ensureOutletsLoaded(); return outlets; }
- 	
-	protected void ensureOutletsLoaded() {
-		if (outletsLoaded) return;
-		for (Place place: this.places) {
-			this.outlets.put(place, prepareOutlet(place));
-		}
-		outletsLoaded = true;
-	}
-	
-	public void clear() {
-		for (Place place: this.places) {
-			outlets.get(place).clear();
-		}
-		plugged.clear();		
-	}	
-	
-	public void onPageScroll(PageScrollEvent event) {
-		Log.debug("Layout " + id + " handled scrolling event");
-	}
-	
-	public void onPageResize(PageResizeEvent event) { 
-		Log.debug("Layout " + id + " handled resize event");
-	}
-	
+    public LayoutId id() { return id; }
+    
+    protected abstract IsOutlet prepareOutlet(Place place) throws IndexOutOfBoundsException;	
+    
+    public final Place[] places() { return places; };	
+    public final boolean has(Place place) { ensureOutletsLoaded(); return outlets.containsKey(place); };
+    
+    public final IsOutlet outlet(Place place) { ensureOutletsLoaded(); return outlets.get(place); }	
+    public final Map<Place, IsOutlet> outlets() { ensureOutletsLoaded(); return outlets; }
+     
+    protected void ensureOutletsLoaded() {
+    	if (outletsLoaded) return;
+    	for (Place place: this.places) {
+    		this.outlets.put(place, prepareOutlet(place));
+    	}
+    	outletsLoaded = true;
+    }
+    
+    public void clear() {
+    	for (Place place: this.places) {
+    		outlets.get(place).clear();
+    	}
+    	plugged.clear();		
+    }	
+    
+    public void onPageScroll(PageScrollEvent event) {
+    	Log.debug("Layout " + id + " handled scrolling event");
+    }
+    
+    public void onPageResize(PageResizeEvent event) { 
+    	Log.debug("Layout " + id + " handled resize event");
+    }
+    
     public void plug(Place where, Pluggable what) {
         if (!has(where)) throw new IllegalStateException("Layout " + id + " has no place " + where);
         // if it is the same place and the same pluggable there, just refresh it

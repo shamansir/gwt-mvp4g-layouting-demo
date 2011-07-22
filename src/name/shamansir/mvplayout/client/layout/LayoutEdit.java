@@ -26,22 +26,22 @@ public class LayoutEdit extends LayoutWithState {
     @UiField Outlet placeD;
     @UiField Outlet status;
     
-	public LayoutEdit() {
-		super(L.EDIT, new Place[] { O.A, O.B, O.C, O.D }, O.STATUS );
+    public LayoutEdit() {
+    	super(L.EDIT, new Place[] { O.A, O.B, O.C, O.D }, O.STATUS );
 
-        initWidget(uiBinder.createAndBindUi(this));		
-	}
+        initWidget(uiBinder.createAndBindUi(this));    	
+    }
 
-	@Override
-	protected IsOutlet prepareOutlet(Place place)
-			throws IndexOutOfBoundsException {
+    @Override
+    protected IsOutlet prepareOutlet(Place place)
+    		throws IndexOutOfBoundsException {
         if (place.equals(O.A)) return placeA;
         if (place.equals(O.B)) return placeB;
         if (place.equals(O.C)) return placeC;
         if (place.equals(O.D)) return placeD;
         if (place.equals(O.STATUS)) return status;
         throw new IndexOutOfBoundsException("No widget position at place " + place + " for layout " + id());
-	}
+    }
 
     @Override
     public void prepare(State state) {

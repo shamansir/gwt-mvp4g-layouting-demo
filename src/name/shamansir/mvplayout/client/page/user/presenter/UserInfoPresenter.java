@@ -14,19 +14,19 @@ import com.mvp4g.client.annotation.Presenter;
 
 @Presenter(view = UserInfoView.class)
 public class UserInfoPresenter extends StatedPortletPresenter<UserInfoPresenter.Display, UserEventBus> {    
-	
-	public interface Display extends IsStatedPortletView {
-		public void showUser(User user);
-	}	
+    
+    public interface Display extends IsStatedPortletView {
+    	public void showUser(User user);
+    }	
 
-	public UserInfoPresenter() { }
-	
-	@Inject UserServiceAsync service;
+    public UserInfoPresenter() { }
+    
+    @Inject UserServiceAsync service;
 
-	public void onShow(int uid) {	    
-	    //state.loading();
-	    if (uid != -1) {
-    	    service.getUser(uid, new SafeCallback<User>(eventBus) {
+    public void onShow(int uid) {	    
+        //state.loading();
+        if (uid != -1) {
+            service.getUser(uid, new SafeCallback<User>(eventBus) {
     
                 @Override
                 public void onSuccess(final User user) {
@@ -43,7 +43,7 @@ public class UserInfoPresenter extends StatedPortletPresenter<UserInfoPresenter.
     
                 }
             });
-	    } else throw new IllegalArgumentException("UID is -1");    
-	}	
-	
+        } else throw new IllegalArgumentException("UID is -1");    
+    }	
+    
 }

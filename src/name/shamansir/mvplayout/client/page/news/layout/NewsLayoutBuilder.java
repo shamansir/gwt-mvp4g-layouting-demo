@@ -10,9 +10,9 @@ import name.shamansir.mvplayout.lib.ui.widget.Layout;
 
 public class NewsLayoutBuilder extends LayoutBuilder<NewsEventBus> {
 
-	@Override
-	protected boolean layout(Portal view, Layout layout, State state,
-	                         NewsEventBus eventBus) {
+    @Override
+    protected boolean layout(Portal view, Layout layout, State state,
+                             NewsEventBus eventBus) {
         switch (P.by(view)) {
             case NEWS_LIST: {
                 eventBus.plugNewsList(O.A);
@@ -33,6 +33,6 @@ public class NewsLayoutBuilder extends LayoutBuilder<NewsEventBus> {
     
         return false;
 
-	}
+    }
 
 }

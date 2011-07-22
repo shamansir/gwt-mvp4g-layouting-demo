@@ -78,14 +78,14 @@ public class Plug extends FlowPanel implements Pluggable {
         this.refreshHandler = refreshHandler;
     }
 
-	@Override
-	public PlugsContainer getContainer() {
-		return parent;
-	}
-	
-	public void setContainer(PlugsContainer parent) {
-		this.parent = parent;
-	}	
+    @Override
+    public PlugsContainer getContainer() {
+    	return parent;
+    }
+    
+    public void setContainer(PlugsContainer parent) {
+    	this.parent = parent;
+    }	
 
     public final void changeState(State state) {
         if (this.state != null) removeStyleName(generateStateCSSClassName(this.state));
@@ -107,5 +107,5 @@ public class Plug extends FlowPanel implements Pluggable {
         plug.add(widget);
         return plug;
     }
-	
+    
 }

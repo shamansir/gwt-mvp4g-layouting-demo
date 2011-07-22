@@ -28,13 +28,13 @@ public class StringUtils {
         final StringBuffer buffer = new StringBuffer();
         final Iterator<String> iter = source.iterator();
         while (iter.hasNext()) {
-        	final String item = iter.next();
-        	if (item != null) {
-	            buffer.append(item);
-	            if (iter.hasNext()) {
-	                buffer.append(delim);
-	            }
-        	}
+            final String item = iter.next();
+            if (item != null) {
+                buffer.append(item);
+                if (iter.hasNext()) {
+                    buffer.append(delim);
+                }
+            }
         }
         return buffer.toString();
     }

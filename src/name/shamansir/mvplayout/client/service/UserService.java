@@ -14,7 +14,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  */
 @RemoteServiceRelativePath("users")
 public interface UserService extends RemoteService {
-	Set<User> getUsers(String filter) throws NoMatchesException;
-	User getUser(int uid) throws ItemNotFoundException;
-	int saveUser(User user); 
+    Set<User> getUsers(String filter) throws NoMatchesException;
+    User getUser(int uid) throws ItemNotFoundException;
+    int saveUser(User user); 
 }

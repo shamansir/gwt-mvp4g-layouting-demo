@@ -14,10 +14,10 @@ import com.google.gwt.user.client.ui.Widget;
 
 public final class UserAvatarView extends StatedPortlet implements Display {
     
-    @UiTemplate("UserAvatarView.ui.xml")	
-	interface AvatarViewUiBinder extends UiBinder<Widget, UserAvatarView> { }	
-	private static AvatarViewUiBinder uiBinder = GWT.create(AvatarViewUiBinder.class);
-	
+    @UiTemplate("UserAvatarView.ui.xml")    
+    interface AvatarViewUiBinder extends UiBinder<Widget, UserAvatarView> { }	
+    private static AvatarViewUiBinder uiBinder = GWT.create(AvatarViewUiBinder.class);
+    
     public UserAvatarView() {  }
     
     @UiField Label avatarPath;
@@ -25,15 +25,15 @@ public final class UserAvatarView extends StatedPortlet implements Display {
     @UiField Plug mainView;
     @UiField Plug ifEmpty;
     @UiField Plug whenLoading;
-	
-	@Override
-	public void createView() {
-		initWidget(uiBinder.createAndBindUi(this));
-		
-		register(mainView, State.HAS_DATA);
-		register(ifEmpty, State.NO_DATA);
-		register(whenLoading, State.LOADING_DATA);
-	}
+    
+    @Override
+    public void createView() {
+    	initWidget(uiBinder.createAndBindUi(this));
+    	
+    	register(mainView, State.HAS_DATA);
+    	register(ifEmpty, State.NO_DATA);
+    	register(whenLoading, State.LOADING_DATA);
+    }
 
     @Override
     public void prepareFor(State to) {

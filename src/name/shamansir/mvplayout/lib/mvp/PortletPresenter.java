@@ -15,5 +15,5 @@ public abstract class PortletPresenter<V extends IsPortletView,
     public void plug(Place where) {
         eventBus.plug(where, view.getMainView());
     }
-		
+    	
 }

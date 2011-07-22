@@ -20,16 +20,16 @@ import com.mvp4g.client.annotation.Presenter;
 @Presenter(view = NewsListView.class)
 public class NewsListPresenter extends PortletPresenter<NewsListPresenter.Display, NewsEventBus> {
 
-	public interface Display extends IsPortletView {
-	    public void showNews(Set<NewsItem> news);
+    public interface Display extends IsPortletView {
+        public void showNews(Set<NewsItem> news);
         public Set<NewsItemWidget> getWidgets();
-	}
-	
-	@Inject NewsServiceAsync service;
-	
-	public void onNews() {
-	    eventBus.clearUserCard();
-	    service.getNews(new SafeCallback<Set<NewsItem>>(eventBus) {
+    }
+    
+    @Inject NewsServiceAsync service;
+    
+    public void onNews() {
+        eventBus.clearUserCard();
+        service.getNews(new SafeCallback<Set<NewsItem>>(eventBus) {
 
             @Override
             public void onSuccess(Set<NewsItem> news) {
@@ -48,8 +48,8 @@ public class NewsListPresenter extends PortletPresenter<NewsListPresenter.Displa
                             String.valueOf(widget.getItem().getId()));                            
                 }                
             }
-	        
+            
         });
-	}
-	
+    }
+    
 }

@@ -16,37 +16,37 @@ import com.mvp4g.client.annotation.Events;
 
 @Events(module = UserModule.class, startView = UserListView.class)
 public interface UserEventBus extends ChildEventBus {
-	
+    
     // navigation events
     
-	@Event(name = "list", navigationEvent = true,
-		   handlers = UserListPresenter.class, 
-		   historyConverter = UserHistoryConverter.class)
-	public void users(String filter);
-	
-	@Event(name = "show", navigationEvent = true,
-	       handlers = UserInfoPresenter.class, 
-	       historyConverter = UserHistoryConverter.class)
-	public void show(int uid);
-	
-	@Event(name = "edit", navigationEvent = true,
-	       handlers = UserEditPresenter.class,
-	       historyConverter = UserHistoryConverter.class)
-	public void edit(int uid);
-	
-	// secondary events
-	
-	@Event(handlers = { UserDetailsPresenter.class, 
-	                    UserAvatarPresenter.class })
+    @Event(name = "list", navigationEvent = true,
+    	   handlers = UserListPresenter.class, 
+    	   historyConverter = UserHistoryConverter.class)
+    public void users(String filter);
+    
+    @Event(name = "show", navigationEvent = true,
+           handlers = UserInfoPresenter.class, 
+           historyConverter = UserHistoryConverter.class)
+    public void show(int uid);
+    
+    @Event(name = "edit", navigationEvent = true,
+           handlers = UserEditPresenter.class,
+           historyConverter = UserHistoryConverter.class)
+    public void edit(int uid);
+    
+    // secondary events
+    
+    @Event(handlers = { UserDetailsPresenter.class, 
+                        UserAvatarPresenter.class })
     public void showAdditionalInfo(User user);
-	
-	// projecting events, portlets
-	
-	@Event(handlers = UserInfoPresenter.class, calledMethod = "plug")
+    
+    // projecting events, portlets
+    
+    @Event(handlers = UserInfoPresenter.class, calledMethod = "plug")
     public void plugUserInfo(Place where);
-	
+    
     @Event(handlers = UserListPresenter.class, calledMethod = "plug")
-	public void plugUsersList(Place where);
+    public void plugUsersList(Place where);
     
     @Event(handlers = UserDetailsPresenter.class, calledMethod = "plug")
     public void plugUserDetails(Place where);    

@@ -14,14 +14,14 @@ import com.mvp4g.client.annotation.Presenter;
 @Presenter(view = NewsInfoView.class)
 public class NewsInfoPresenter extends PortletPresenter<NewsInfoPresenter.Display, NewsEventBus> {
 
-	public interface Display extends IsPortletView {
-	    public void showItem(NewsItem item);
-	}
-	
-	@Inject NewsServiceAsync service;
-	
-	public void onShow(int nid) {
-	    service.getNewsItem(nid, new SafeCallback<NewsItem>(eventBus) {
+    public interface Display extends IsPortletView {
+        public void showItem(NewsItem item);
+    }
+    
+    @Inject NewsServiceAsync service;
+    
+    public void onShow(int nid) {
+        service.getNewsItem(nid, new SafeCallback<NewsItem>(eventBus) {
 
             @Override
             public void onSuccess(NewsItem item) {
@@ -29,6 +29,6 @@ public class NewsInfoPresenter extends PortletPresenter<NewsInfoPresenter.Displa
                 eventBus.showUserCard(item.author);
             }
         });
-	}
-	
+    }
+    
 }

@@ -17,7 +17,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
  */
 @SuppressWarnings("serial")
 public class CompanyServiceImpl extends RemoteServiceServlet implements
-		CompanyService {
+    	CompanyService {
     
     final Map<Integer, Company> companies = new HashMap<Integer, Company>();
 
@@ -38,21 +38,21 @@ public class CompanyServiceImpl extends RemoteServiceServlet implements
         companies.put(c3id, companyThree);        
     }
     
-	@Override
-	public Set<Company> getCompanies(String filter) throws NoMatchesException {
-        // TODO: apply filter	    
-		return new HashSet<Company>(companies.values());
-	}
+    @Override
+    public Set<Company> getCompanies(String filter) throws NoMatchesException {
+        // TODO: apply filter        
+    	return new HashSet<Company>(companies.values());
+    }
 
-	@Override
-	public Company getCompany(int cid) throws ItemNotFoundException {
+    @Override
+    public Company getCompany(int cid) throws ItemNotFoundException {
         if (!companies.containsKey(cid)) throw new ItemNotFoundException(cid);
         return companies.get(cid);
-	}
+    }
 
-	@Override
-	public int saveCompany(Company company) {
-		throw new UnsupportedOperationException();
-	}
+    @Override
+    public int saveCompany(Company company) {
+    	throw new UnsupportedOperationException();
+    }
 
 }

@@ -23,31 +23,31 @@ import com.mvp4g.client.annotation.Presenter;
 @Presenter(view = UserListView.class)
 public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.Display, UserEventBus> {
     
-	public interface Display extends IsStatedPortletView {
-		public void showUsers(Set<User> users);
+    public interface Display extends IsStatedPortletView {
+    	public void showUsers(Set<User> users);
         public Set<UserRow> getRows();
-	}
-	
+    }
+    
     public interface UserRow extends HasClickHandlers {
         public User getUser();
         public Anchor getEditAnchor();
         public Anchor getShowAnchor();
-    }	
+    }    
 
-	public UserListPresenter() { }
-	
-	@Inject UserServiceAsync service;
+    public UserListPresenter() { }
+    
+    @Inject UserServiceAsync service;
 
-	public void onUsers(String filter) {	    
-	    //state.loading();
-	    
-	    service.getUsers(filter, new SafeCallback<Set<User>>(eventBus) {
-			
-			@Override
-			public void onSuccess(final Set<User> users) {
-			    new Timer() {
+    public void onUsers(String filter) {	    
+        //state.loading();
+        
+        service.getUsers(filter, new SafeCallback<Set<User>>(eventBus) {
+    		
+    		@Override
+    		public void onSuccess(final Set<User> users) {
+    		    new Timer() {
 
-			        @Override public void run() {
+    		        @Override public void run() {
                         state.gotData(users);
                         view.showUsers(users);
                         
@@ -66,20 +66,20 @@ public class UserListPresenter extends StatedPortletPresenter<UserListPresenter.
                                     String.valueOf(row.getUser().getId()));                            
                         }
                     }
-			        
-			    }.schedule(3000); // emulate slow data load
-			}
-			
-			@Override
-			public void onFailure(Throwable caught) {
-			    if (caught instanceof NoMatchesException) {
-			        state.noMatches();
-			        return;
-			    }
-			    super.onFailure(caught);
-			}
-			
-		});
-	}	
-	
+    		        
+    		    }.schedule(3000); // emulate slow data load
+    		}
+    		
+    		@Override
+    		public void onFailure(Throwable caught) {
+    		    if (caught instanceof NoMatchesException) {
+    		        state.noMatches();
+    		        return;
+    		    }
+    		    super.onFailure(caught);
+    		}
+    		
+    	});
+    }	
+    
 }

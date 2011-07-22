@@ -19,24 +19,24 @@ import com.mvp4g.client.annotation.Presenter;
 @Presenter(view = MainView.class)
 public class MainPresenter extends AMainPresenter<MainPresenter.IMainView, MainEventBus> {
     
-	public interface IMainView extends IsMainView {
+    public interface IMainView extends IsMainView {
         public Pluggable get404View();
         public Pluggable getLinksView(UrlBuilder url);
-	}
-	
-	private CanLayoutMainView page404;
-	private CanLayoutMainView pageWithLinks;
-	
-	public void createPresenter() {	    
-	    this.page404 = new CanLayoutMainView(P.VIEW_404, eventBus) {
+    }
+    
+    private CanLayoutMainView page404;
+    private CanLayoutMainView pageWithLinks;
+    
+    public void createPresenter() {	    
+        this.page404 = new CanLayoutMainView(P.VIEW_404, eventBus) {
             @Override
             protected boolean doLayout(Portal view, Layout layout, State state) {
                 layout.plug(O.A, MainPresenter.this.view.get404View());
                 return true;
             }
-	    };
-	    
-	    this.pageWithLinks = new CanLayoutMainView(P.LINKS, eventBus) {
+        };
+        
+        this.pageWithLinks = new CanLayoutMainView(P.LINKS, eventBus) {
             @Override
             protected boolean doLayout(Portal view, Layout layout, State state) {
                 layout.plug(O.A, MainPresenter.this.view.getLinksView(url));
@@ -44,8 +44,8 @@ public class MainPresenter extends AMainPresenter<MainPresenter.IMainView, MainE
             }
         };
         
-	}
-	
+    }
+    
     public void onStart() {        
         if (History.getToken().isEmpty()) {
             //History.newItem(url.build(P.USERS_LIST), false); // if you want just open a child page at start

@@ -27,9 +27,9 @@ import com.mvp4g.client.annotation.module.ChildModules;
 @Debug
 @Events(module = MainModule.class, startView = MainView.class, historyOnStart = true)
 @ChildModules( {
-	@ChildModule(moduleClass = UserModule.class, autoDisplay = false, async = true),
-	@ChildModule(moduleClass = CompanyModule.class, autoDisplay = false, async = true),	
-	@ChildModule(moduleClass = NewsModule.class, autoDisplay = false, async = true),
+    @ChildModule(moduleClass = UserModule.class, autoDisplay = false, async = true),
+    @ChildModule(moduleClass = CompanyModule.class, autoDisplay = false, async = true),	
+    @ChildModule(moduleClass = NewsModule.class, autoDisplay = false, async = true),
 } )
 public interface MainEventBus extends IsMainEventBus {
     
@@ -40,17 +40,17 @@ public interface MainEventBus extends IsMainEventBus {
     
     // =============== navigation ==============================================
 
-	@Event(modulesToLoad = UserModule.class)
-	public void users(String filter);
+    @Event(modulesToLoad = UserModule.class)
+    public void users(String filter);
 
-	@Event(modulesToLoad = CompanyModule.class)	
-	public void companies();
+    @Event(modulesToLoad = CompanyModule.class)	
+    public void companies();
 
-	@Event(modulesToLoad = NewsModule.class)
-	public void news();
-	
-	// =============== portals =================================================
-	
+    @Event(modulesToLoad = NewsModule.class)
+    public void news();
+    
+    // =============== portals =================================================
+    
     @Event(handlers = MainPresenter.class)
     public void newPortal(Portal portal, CanBuildLayout builder);
     
@@ -60,25 +60,25 @@ public interface MainEventBus extends IsMainEventBus {
     @Event(handlers = MainPresenter.class, calledMethod = "clearPage")
     public void clearPage();
     
-	@Event(handlers = MainPresenter.class)
-	public void portalNotFound(PortalNotFoundException pnfe);
-	
-	@Event(handlers = MainPresenter.class, calledMethod = "plug")
-    public void plug(Place where, Pluggable what);	
-	
-	@Event(handlers = MainPresenter.class)
-	public void handle(Throwable caught);
-	
-	@Event(handlers = MainPresenter.class, calledMethod = "subscribePageResize")
-	public void subscribePageResize(PageResizeListener listener);
-	
-	@Event(handlers = MainPresenter.class, calledMethod = "subscribePageScroll")
-	public void subscribePageScroll(PageScrollListener listener);
-	
-	// =============== special =================================================
-	
-	@NotFoundHistory
-	@Event(handlers = MainPresenter.class)
-	public void show404();
-	
+    @Event(handlers = MainPresenter.class)
+    public void portalNotFound(PortalNotFoundException pnfe);
+    
+    @Event(handlers = MainPresenter.class, calledMethod = "plug")
+    public void plug(Place where, Pluggable what);    
+    
+    @Event(handlers = MainPresenter.class)
+    public void handle(Throwable caught);
+    
+    @Event(handlers = MainPresenter.class, calledMethod = "subscribePageResize")
+    public void subscribePageResize(PageResizeListener listener);
+    
+    @Event(handlers = MainPresenter.class, calledMethod = "subscribePageScroll")
+    public void subscribePageScroll(PageScrollListener listener);
+    
+    // =============== special =================================================
+    
+    @NotFoundHistory
+    @Event(handlers = MainPresenter.class)
+    public void show404();
+    
 }

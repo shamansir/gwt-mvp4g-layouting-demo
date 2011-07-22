@@ -26,32 +26,32 @@ import com.google.gwt.user.client.ui.Widget;
 
 public final class UserListView extends StatedPortlet implements Display {
     
-    @UiTemplate("UserListView.ui.xml")	
-	interface ListViewUiBinder extends UiBinder<Widget, UserListView> { }	
-	private static ListViewUiBinder uiBinder = GWT.create(ListViewUiBinder.class);
-	
-	@UiField Plug mainView;
-	@UiField Plug ifEmpty;
-	@UiField Plug whenLoading;
-	@UiField Plug noMatches;
-	
-	@UiField VerticalPanel usersHolder;	
-	
-	private final Set<UserRow> rows = new HashSet<UserRow>();
-	
+    @UiTemplate("UserListView.ui.xml")    
+    interface ListViewUiBinder extends UiBinder<Widget, UserListView> { }	
+    private static ListViewUiBinder uiBinder = GWT.create(ListViewUiBinder.class);
+    
+    @UiField Plug mainView;
+    @UiField Plug ifEmpty;
+    @UiField Plug whenLoading;
+    @UiField Plug noMatches;
+    
+    @UiField VerticalPanel usersHolder;	
+    
+    private final Set<UserRow> rows = new HashSet<UserRow>();
+    
     public UserListView() { 
         rows.clear();
-    }	
-	
-	@Override
-	public void createView() {
-		initWidget(uiBinder.createAndBindUi(this));
-		
-		register(ifEmpty, State.NO_DATA);
-		register(whenLoading, State.LOADING_DATA);
-		register(noMatches, State.NO_MATCHES);
-		register(mainView, State.HAS_DATA);
-	}
+    }    
+    
+    @Override
+    public void createView() {
+    	initWidget(uiBinder.createAndBindUi(this));
+    	
+    	register(ifEmpty, State.NO_DATA);
+    	register(whenLoading, State.LOADING_DATA);
+    	register(noMatches, State.NO_MATCHES);
+    	register(mainView, State.HAS_DATA);
+    }
 
     @Override
     public void showUsers(Set<User> users) {

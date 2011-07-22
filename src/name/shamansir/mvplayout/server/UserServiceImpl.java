@@ -17,7 +17,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
  */
 @SuppressWarnings("serial")
 public class UserServiceImpl extends RemoteServiceServlet implements
-		UserService {
+    	UserService {
     
     final Map<Integer, User> users = new HashMap<Integer, User>();
     
@@ -47,45 +47,45 @@ public class UserServiceImpl extends RemoteServiceServlet implements
         users.put(u3id, userThree);
     }
 
-	@Override
-	public Set<User> getUsers(String filter) throws NoMatchesException {
-	    if ((filter == null) || filter.isEmpty()) {
-	        return new HashSet<User>(users.values());	        
-	    } else {
-	        final Set<User> store = new HashSet<User>();
-	        for (User user: users.values()) {
-	            if (user.name.startsWith(filter) ||
-	                user.familyName.startsWith(filter)) {
-	                store.add(user);
-	            }
-	        }
-	        if (store.isEmpty()) throw new NoMatchesException();
-	        return store;
-	    }
+    @Override
+    public Set<User> getUsers(String filter) throws NoMatchesException {
+        if ((filter == null) || filter.isEmpty()) {
+            return new HashSet<User>(users.values());	        
+        } else {
+            final Set<User> store = new HashSet<User>();
+            for (User user: users.values()) {
+                if (user.name.startsWith(filter) ||
+                    user.familyName.startsWith(filter)) {
+                    store.add(user);
+                }
+            }
+            if (store.isEmpty()) throw new NoMatchesException();
+            return store;
+        }
 
-	}
+    }
 
-	@Override
-	public User getUser(int uid) throws ItemNotFoundException {
-	    if (!users.containsKey(uid)) throw new ItemNotFoundException(uid);
-		return users.get(uid);
-	}
+    @Override
+    public User getUser(int uid) throws ItemNotFoundException {
+        if (!users.containsKey(uid)) throw new ItemNotFoundException(uid);
+    	return users.get(uid);
+    }
 
-	@Override
-	public int saveUser(User user) {
-	    int id = user.getId();
-	    if (id != -1) {
-	        users.put(id, user);
-	    } else {
-	        id = users.size();
-	        final User newUser = new User(id);
-	        newUser.name = user.name;
-	        newUser.familyName = user.familyName;
-	        newUser.age = user.age;
-	        newUser.avatar = user.avatar;	        
-	        users.put(id, newUser);
-	    }
+    @Override
+    public int saveUser(User user) {
+        int id = user.getId();
+        if (id != -1) {
+            users.put(id, user);
+        } else {
+            id = users.size();
+            final User newUser = new User(id);
+            newUser.name = user.name;
+            newUser.familyName = user.familyName;
+            newUser.age = user.age;
+            newUser.avatar = user.avatar;	        
+            users.put(id, newUser);
+        }
         return id;
-	}
-	
+    }
+    
 }

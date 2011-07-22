@@ -24,24 +24,24 @@ import com.google.gwt.user.client.ui.Widget;
 
 public final class MainView extends AMainView implements IMainView {
 
-	@UiTemplate("MainView.ui.xml")
-	interface EurekaPageUiBinder extends UiBinder<Widget, MainView> { }	
-	private static EurekaPageUiBinder uiBinder = GWT.create(EurekaPageUiBinder.class);
-	
-	@UiField ScrollPanel scrollable;	
-	@UiField FlowPanel layoutHolder;
-	
-	@Override
-	public void makeView() {
-		initWidget(uiBinder.createAndBindUi(this));				
-	}
-	
+    @UiTemplate("MainView.ui.xml")
+    interface EurekaPageUiBinder extends UiBinder<Widget, MainView> { }	
+    private static EurekaPageUiBinder uiBinder = GWT.create(EurekaPageUiBinder.class);
+    
+    @UiField ScrollPanel scrollable;	
+    @UiField FlowPanel layoutHolder;
+    
+    @Override
+    public void makeView() {
+    	initWidget(uiBinder.createAndBindUi(this));				
+    }
+    
     @Override
     public void whenPortalChanged(Portal portal) { }
     
     @Override
     public void showError(Throwable caught) {
-    	Window.alert("Error: " + caught.getMessage());
+        Window.alert("Error: " + caught.getMessage());
     }
 
     @Override

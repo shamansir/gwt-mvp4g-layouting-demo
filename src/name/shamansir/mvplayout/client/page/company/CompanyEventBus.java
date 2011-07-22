@@ -15,15 +15,15 @@ public interface CompanyEventBus extends ChildEventBus {
     
     // navigation events    
     
-	@Event(name = "list", navigationEvent = true,
-	       handlers = CompanyListPresenter.class,
-	       historyConverter = CompanyHistoryConverter.class)
-	public void companies();
-	
+    @Event(name = "list", navigationEvent = true,
+           handlers = CompanyListPresenter.class,
+           historyConverter = CompanyHistoryConverter.class)
+    public void companies();
+    
     @Event(name = "show", navigationEvent = true,
            handlers = CompanyInfoPresenter.class,
            historyConverter = CompanyHistoryConverter.class)
-	public void show(int cid);
+    public void show(int cid);
     
     // projecting events, portlets
     
