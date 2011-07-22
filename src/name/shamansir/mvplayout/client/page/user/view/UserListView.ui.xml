@@ -9,10 +9,10 @@
             <gwt:VerticalPanel ui:field="usersHolder" />    
         </l:Plug>
     
-	    <l:Plug ui:field="ifEmpty" alias="user-list-empty">
-	        <gwt:Label>No users found</gwt:Label>
-	    </l:Plug>
-	    
+        <l:Plug ui:field="ifEmpty" alias="user-list-empty">
+            <gwt:Label>No users found</gwt:Label>
+        </l:Plug>
+        
         <l:Plug ui:field="whenLoading" alias="user-list-loading">
             <gwt:Label>Loading users list...</gwt:Label>
         </l:Plug>

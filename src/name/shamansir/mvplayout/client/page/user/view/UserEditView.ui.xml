@@ -20,13 +20,13 @@
             </gwt:VerticalPanel>           
         </l:Plug>
     
-	    <l:Plug ui:field="avatarPlug" alias="user-edit-avatar">
+        <l:Plug ui:field="avatarPlug" alias="user-edit-avatar">
             <gwt:HorizontalPanel>
                 <gwt:Label text="Avatar:" />
                 <gwt:TextBox ui:field="avatar" />                
             </gwt:HorizontalPanel>
-	    </l:Plug>
-	    
+        </l:Plug>
+        
         <l:Plug ui:field="agePlug" alias="user-edit-age">
             <gwt:HorizontalPanel>
                 <gwt:Label text="Age:" />

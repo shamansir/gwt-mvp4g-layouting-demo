@@ -5,14 +5,14 @@
     
     <gwt:VerticalPanel width="100%">
         <l:Outlet ui:field="placeA" />
-	    <gwt:HorizontalPanel width="100%">
-	       <gwt:cell width="60%">
-	            <l:Outlet ui:field="placeC" />
-	       </gwt:cell>
-	       <gwt:cell width="38%">
-	            <l:Outlet ui:field="placeB" />
-	       </gwt:cell>
-	    </gwt:HorizontalPanel>
+        <gwt:HorizontalPanel width="100%">
+           <gwt:cell width="60%">
+                <l:Outlet ui:field="placeC" />
+           </gwt:cell>
+           <gwt:cell width="38%">
+                <l:Outlet ui:field="placeB" />
+           </gwt:cell>
+        </gwt:HorizontalPanel>
     </gwt:VerticalPanel>
     
 </ui:UiBinder>

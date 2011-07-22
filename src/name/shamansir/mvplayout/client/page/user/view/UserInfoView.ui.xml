@@ -18,10 +18,10 @@
             </gwt:VerticalPanel>            
         </l:Plug>
     
-	    <l:Plug ui:field="ifEmpty" alias="user-item-empty">
-	        <gwt:Label>No user loaded</gwt:Label>
-	    </l:Plug>
-	    
+        <l:Plug ui:field="ifEmpty" alias="user-item-empty">
+            <gwt:Label>No user loaded</gwt:Label>
+        </l:Plug>
+        
         <l:Plug ui:field="whenLoading" alias="user-item-loading">
             <gwt:Label>Loading user...</gwt:Label>
         </l:Plug>

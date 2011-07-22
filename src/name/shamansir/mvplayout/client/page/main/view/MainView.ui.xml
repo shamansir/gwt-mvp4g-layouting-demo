@@ -15,14 +15,14 @@
             </gwt:SimplePanel>
         </gwt:cell>
         <gwt:cell width="100%">
-	        <gwt:HorizontalPanel styleName="footer" width="99%">
-	            <gwt:cell width="70%">
-	                <gwt:Label styleName="copy">Copy</gwt:Label>
-	            </gwt:cell>
-	            <gwt:cell>
-	               <gwt:Label styleName="logo">Logo</gwt:Label>
-	            </gwt:cell>                
-	        </gwt:HorizontalPanel>
+            <gwt:HorizontalPanel styleName="footer" width="99%">
+                <gwt:cell width="70%">
+                    <gwt:Label styleName="copy">Copy</gwt:Label>
+                </gwt:cell>
+                <gwt:cell>
+                   <gwt:Label styleName="logo">Logo</gwt:Label>
+                </gwt:cell>                
+            </gwt:HorizontalPanel>
         </gwt:cell>             
     </gwt:VerticalPanel>
 

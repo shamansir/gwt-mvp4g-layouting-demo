@@ -5,10 +5,10 @@
     
     <gwt:HorizontalPanel width="100%">
         <gwt:cell width="35%">
-	        <gwt:VerticalPanel width="100%">
-	             <l:Outlet ui:field="placeB" />
-	             <l:Outlet ui:field="placeC" />
-	        </gwt:VerticalPanel>                
+            <gwt:VerticalPanel width="100%">
+                 <l:Outlet ui:field="placeB" />
+                 <l:Outlet ui:field="placeC" />
+            </gwt:VerticalPanel>                
         </gwt:cell>
         <gwt:cell width="60%">            
             <l:Outlet ui:field="placeA" />
