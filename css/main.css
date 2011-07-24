@@ -51,3 +51,9 @@ a:visited {
     color: #009;
 } */
 
+body p:last-child a {
+    margin-top: 40px;
+    color: #666;
+    font-size: 0.8em;
+}
+

@@ -9,3 +9,5 @@ title: Лэйауты
 
 ![Лэйауты](http://dl.dropbox.com/u/928694/blog/ru/img/mvp4g-layouts.png)
 
+[[Содержание]](./index-ru.html)
+

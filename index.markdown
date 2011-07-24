@@ -14,7 +14,7 @@ No pages here for the moment. At all.
 * [Definitions](./definitions.html)
 * [Pages](./pages.html)
 * [Scenario](./scenario.html)
-* [How does it works?](./works-how.html)
+* [How does it work?](./works-how.html)
 
 ## Links
 
