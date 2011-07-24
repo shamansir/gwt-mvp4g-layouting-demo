@@ -11,4 +11,5 @@ safe: true
 destination: _pages
 lsi: false
 pygments: true
+markdown: rdiscount
 
