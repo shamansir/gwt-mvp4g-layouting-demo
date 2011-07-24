@@ -1,11 +1,11 @@
 body {
-    font-family: Georgia, DejaVu Serif, Times New Roman, serif;
+    font-family: 'Ovo', 'Georgia', 'DejaVu Serif', 'Times New Roman', serif;
     font-size: 16px;
     margin: 30px 23%;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Droid Sans, Trebuchet MS, Helvetica, Lucida Sans, Times, Times New Roman, DejaVu Sans, Arial, sans-serif;
+    font-family: 'Droid Sans', 'Trebuchet MS', 'Helvetica', 'Lucida Sans', 'Times', 'Times New Roman', 'DejaVu Sans', 'Arial', sans-serif;
     padding-top: 45px;
     padding-bottom: 5px;
 }
@@ -23,11 +23,29 @@ h3 {
 }
 
 code {
-    font-family: DejaVu Mono, Inconsolata, Courier, monospace;
-    font-size: 14px;
+    font-family: 'Inconsolata', 'Courier New', 'Courier', 'DejaVu Monospace', monospace;
+    font-size: 17px;
+    color: #333;
 }
 
 p {
     line-height: 1.33em;
 }
+
+ul li, ol li {
+    margin-bottom: 15px;
+}
+
+li ul li:first-child,
+li ul li:first-child {
+    margin-top: 15px;
+}
+
+/* a {
+    color: #004;
+}
+
+a:visited {
+    color: #009;
+} */
 

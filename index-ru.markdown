@@ -25,7 +25,7 @@ title: GWT + mvp4g — лэйауты, порталы, портлеты
 
 В исполняемом и кликабельном состоянии (что называется _in action_) пример доступен на GAE: [gwt-mvp4g-layouting-demo.appspot.com](http://gwt-mvp4g-layouting-demo.appspot.com/). Это чисто технический пример, поэтому в нём нет никакого дизайна.
 
-Документация на русском также расположена на github
+Документация на русском также расположена на github: [shamansir.github.com/gwt-mvp4g-layouting-demo](http://shamansir.github.com/gwt-mvp4g-layouting-demo/index-ru.html)
 
 Код разделён на пакеты `client`, `shared`, `server` и `lib`: первые три пакета содержат только код, относящийся к примеру, а последний пакет — код самой библиотеки, который можно даже выделить в отдельный `.jar`.
 
