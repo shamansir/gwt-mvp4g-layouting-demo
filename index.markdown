@@ -5,7 +5,7 @@ title: GWT + mvp4g Layouting Demo
 
 # GWT + mvp4g Layouting Demo
 
-[EN](./index.html) | [RU](./index-ru.html)
+[EN](./index.html) - [RU](./index-ru.html)
 
 No pages here for the moment. At all.
 

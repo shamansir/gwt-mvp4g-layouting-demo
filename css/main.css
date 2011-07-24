@@ -1,0 +1,33 @@
+body {
+    font-family: Georgia, DejaVu Serif, Times New Roman, serif;
+    font-size: 16px;
+    margin: 30px 23%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Droid Sans, Trebuchet MS, Helvetica, Lucida Sans, Times, Times New Roman, DejaVu Sans, Arial, sans-serif;
+    padding-top: 45px;
+    padding-bottom: 5px;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+code {
+    font-family: DejaVu Mono, Inconsolata, Courier, monospace;
+    font-size: 14px;
+}
+
+p {
+    line-height: 1.33em;
+}
+
