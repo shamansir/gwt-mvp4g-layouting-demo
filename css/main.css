@@ -8,6 +8,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Droid Sans', 'Trebuchet MS', 'Helvetica', 'Lucida Sans', 'Times', 'Times New Roman', 'DejaVu Sans', 'Arial', sans-serif;
     padding-top: 45px;
     padding-bottom: 5px;
+    word-spacing: 0.1em;
 }
 
 h1 {
@@ -30,6 +31,7 @@ code {
 
 p {
     line-height: 1.33em;
+    word-spacing: 0.23em;
 }
 
 ul li, ol li {
