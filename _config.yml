@@ -8,7 +8,6 @@ write-back: yes
 auto: true
 server: true
 safe: true
-source: https://github.com/shamansir/gwt-mvp4g-layouting-demo
 destination: _pages
 lsi: false
 pygments: true
