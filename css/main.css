@@ -51,8 +51,10 @@ a:visited {
     color: #009;
 } */
 
-body p:last-child a {
-    margin-top: 40px;
+body p:last-child > a {
+    position: relative;
+    top: 40px;
+    padding-bottom: 15px;
     color: #666;
     font-size: 0.8em;
 }
