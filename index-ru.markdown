@@ -34,6 +34,7 @@ title: GWT + mvp4g — лэйауты, порталы, портлеты
 * [Термины](./definitions-ru.html)
 * [Страницы](./pages-ru.html)
 * [Сценарии](./scenario-ru.html)
+* [Стили](./style-ru.html)
 * [Как это работает?](./works-how-ru.html)
 
 ## Ссылки
