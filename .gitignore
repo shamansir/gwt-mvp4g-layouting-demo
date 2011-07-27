@@ -25,3 +25,5 @@ war/WEB-INF/lib/geronimo-jpa*-*.jar
 war/WEB-INF/lib/geronimo-jta*-*.jar
 war/WEB-INF/lib/jdo2-api-*.jar
 war/WEB-INF/lib/jsr*cache-*.jar
+
+_pages/
