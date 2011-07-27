@@ -21,16 +21,14 @@ title: Как это работает?
 
 По сути, это весь механизм, остальное — тонкости, которые, надеюсь, будут понятны из кода.
 
-Подробнее рассмотрю дочерние пакеты и основные классы в пакете `lib`.
-
 P.S. На данный момент в коде не используются ни аннотации, ни Dependency Injection, хотя возможно, надо бы.
 
 [[Содержание]](./index-ru.html)
 
-[PortalsHistoryConverter]:
-[ChildEventBus]:
-[IsMainEventBus]:
-[AMainPresenter]:
-[CanBuildLayout]:
-[LayoutBuilder]:
+[PortalsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/PortalsHistoryConverter.java#files
+[ChildEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/ChildEventBus.java#files
+[IsMainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/IsMainEventBus.java#files
+[AMainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/AMainPresenter.java#files
+[CanBuildLayout]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/LayoutBuilder.java#L37
+[LayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/LayoutBuilder.java#files
 
