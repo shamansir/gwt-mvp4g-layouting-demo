@@ -7,8 +7,6 @@ title: GWT + mvp4g — лэйауты, порталы, портлеты
 
 [EN](./index.html) - [RU](./index-ru.html)
 
-(В данный момент страницы создаются, если вы обнаружите некрасивую или недоделанную страницу, не беспокойтесь)
-
 ## Вступление
 
 ![mvp4g logo](http://mvp4g.googlecode.com/svn/logo/mvp4g-logo-small.png)
