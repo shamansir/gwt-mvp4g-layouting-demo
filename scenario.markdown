@@ -32,27 +32,27 @@ It is difficult to describe everything with words, sometimes it is easier to loo
 ### 2a. Making a new layout
 
  1. Add a new layout ID to layouts `enum`. See example [id/L.java][L].
- 1. If you have one, add new placeholder IDs to placeholders `enum`. See example [id/O.java][O].
- 1. If you need to describe layout declarative way, create an according `ui.xml` file. To mark the places where portlets will be placed (placeholders), it is required to use [Outlet][] widget. See example [layout/LayoutItem.ui.xml][LayoutItem.ux]. If you want to declare layout using standard OOP techninques, then you'll need to use [Outlet][] constructor.
- 1. Create a layout class, inherit it from [Layout][]. Pass a new layout ID to parent constructor. Also, pass the IDs of all placeholders owned by this layout. In the `prepareOutlet()` overriden method return the appropriate `Outlet` using the received ID. Widget must be initiated directly inside of constructor. See example [layout/LayoutItem.java][LayoutItem].
+ 1. If you have some, add new placeholder IDs to placeholders `enum`. See example [id/O.java][O].
+ 1. If you need to describe layout using declarative way, create an according `ui.xml` file. To mark the places where portlets will be placed (placeholders), it is required to use [Outlet][] widget. See example [layout/LayoutItem.ui.xml][LayoutItem.ux]. If you want to declare layout using standard OOP techninques, then you'll need to use [Outlet][] constructor.
+ 1. Create a layout class, inherit it from [Layout][]. Pass a new layout ID to parent constructor. Also, pass the IDs of all placeholders owned by this layout. In the `prepareOutlet()` overriden method return the appropriate `Outlet` using the received ID. Widget must be initialized right inside the constructor. See example [layout/LayoutItem.java][LayoutItem].
  1. Register a layout in entry point using `Layouts.register()` method. See example [LayoutingDemo.java:47][LayoutingDemo.L47].
 
 ### 2b. Making a new layout with state
 
- 1. Добавьте идентификатор нового лэйаута в `enum` лэйатуов. см. в примере [id/L.java][L].
- 1. Если нужно, добавьте идентификаторы новых плейсходеров в `enum` плейсхолдеров. Туда же добавьте плейсхолдер для информирования о состоянии (я назвал его `STATUS`), если вы его ещё не завели. см. в примере [id/O.java][O].
- 1. Если вы хотите описать лэйаут декларативно, создайте соответствующий `ui.xml`. В этом `ui.xml` для обозначения мест, куда будут вставляться портлеты (плейсхолдеров) потребуется использовать виджет [Outlet][]. Для места, куда будет вставляться сообщение о состоянии тоже подготовьте плэйсхолдер. см. [layout/LayoutEdit.ui.xml][LayoutEdit.ux] в примере. Можно описывать лэйаут и не декларативно, тогда придётся создавать плэйсхолдеры используя конструктор [Outlet][].
- 1. Создайте класс лэйаута, отнаследовав его от [LayoutWithState][]. В родительский конструктор передайте новый идентификатор лэйаута и идентификаторы всех плейсходеров, принадлежащих этому лэйауту. Отдельно (последним параметром) передайте идентификатор плэйсхолдера, предназначенного для сообщения о состоянии. В переопределённом методе `prepareOutlet()` возвратите нужный `Outlet` по переданному идентификатору. В методе `prepare(State)` вы можете по переданному состоянию переключать видимость тех или иных виджетов внутри лэйаута и/или делать что-то ещё, если нужно. Виджет должен инициироваться прямо в конструкторе. см. [layout/LayoutEdit.java][LayoutEdit] в примере.
- 1. Зарегистрируйте лэйаут в точке входа через метод `Layouts.register()`. см. [LayoutingDemo.java:47][LayoutingDemo.L47] в примере.
+ 1. Add a new layout ID to layouts `enum`. See example [id/L.java][L].
+ 1. If you have some, add new placeholder IDs to placeholders `enum`. Add there a placeholder to inform about state (I've called it `STATUS`), also if you still have no such placeholder. See example [id/O.java][O].
+ 1. If you need to describe layout using declarative way, create an according `ui.xml` file. To mark the places where portlets will be placed (placeholders), it is required to use [Outlet][] widget. See example [layout/LayoutEdit.ui.xml][LayoutEdit.ux]. If you want to declare layout using standard OOP techninques, then you'll need to use [Outlet][] constructor. Remember that you'll need a placeholder to inform about layout status.
+  1. Create a layout class, inherit it from [LayoutWithState][]. Pass a new layout ID to parent constructor. Also, pass the IDs of all placeholders owned by this layout. Pass a status placeholder ID as the last parameter. In the `prepareOutlet()` overriden method return the appropriate `Outlet` using the received ID. In `prepare(State)` method you may switch visibility of the inner widgets and/or perform something else using the passed state. Layout Widget must be initialized right inside the constructor. See example [layout/LayoutEdit.java][LayoutEdit].
+ 1. Register a layout in entry point using `Layouts.register()` method. See example [LayoutingDemo.java:47][LayoutingDemo.L47].
 
 ### 3. Making a page group (module)
 
- 1. Добавьте идентификатор новой группы в `enum` для групп. см. в примере [id/G.java][G].
- 1. Создайте модуль для группы, ничем не отличающийся от модуля mvp4g. см. в примере [page/user/UserModule.java][UserModule]. Не забудьте добавить его в `ChildModules` главной шины событий. см. в примере [page/main/MainEventBus.java][MainEventBus].
- 1. Создайте шину событий для вашей группы и отнаследуйте её от [ChildEventBus][]. см. в примере [page/user/UserEventBus.java][UserEventBus].
- 1. Создайте `HistoryConverter` и отнаследуйте его от [PortalsHistoryConverter][]. Передайте в родительский конструктор идентификатор группы. Метод `convertFromUrl` предназначен для того, чтобы по полученным `PortalUrl`/`Portal` (используйте метод `P.by()` из пункта 1.2.1) вызвать нужный метод в шине событий. см. в примере [page/user/history/UserHistoryConverter.java][UserHistoryConverter].
- 1. Создайте своего наследника [LayoutBuilder][] для соответствующей шины событий. Метод `layout()` вставляет портлеты в плейсходеры и вовращает `true`, если всё прошло удачно. здесь также удобно использовать метод `P.by()`. см. в примере [page/user/layout/UserLayoutBuilder.java][UserLayoutBuilder].
- 1. Зарегистрируйте билдер в точке входа через метод `LayoutBuilders.register()`. см. [LayoutingDemo.java:62][LayoutingDemo.L62] в примере.
+ 1. Add new group ID to groups `enum` для групп. See example [id/G.java][G].
+ 1. Crate a group module, no difference from mvp4g module structure. See example [page/user/UserModule.java][UserModule]. Don't forget to add it to `ChildModules` annotation of main event bus. See example [page/main/MainEventBus.java][MainEventBus].
+ 1. Create an event bus for your group and extend it from [ChildEventBus][]. See example [page/user/UserEventBus.java][UserEventBus].
+ 1. Create a `HistoryConverter` and extend it from [PortalsHistoryConverter][]. Pass a new group ID to parent constructor. Method `convertFromUrl` is intended to call the required method from event bus depending on the received `PortalUrl`/`Portal` (use `P.by()` from 1.2.1). See example [page/user/history/UserHistoryConverter.java][UserHistoryConverter].
+ 1. Create your own [LayoutBuilder][] child to work with new event bus. `layout()` menthod inserts portlets into placeholders and returns `true`, if everything gone well. It also useful to use `P.by()` method here. See example [page/user/layout/UserLayoutBuilder.java][UserLayoutBuilder].
+ 1. Register that builder in entry point using `LayoutBuilders.register()` method. See example [LayoutingDemo.java:62][LayoutingDemo.L62].
 
 ### 4a. Making a complete page without state support
 
