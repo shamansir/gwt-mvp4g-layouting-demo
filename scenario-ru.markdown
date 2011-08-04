@@ -15,15 +15,15 @@ title: Сценарии
 
  1. Продумать систему навигации вашего проекта, желательно чтобы она ложилась на схему `тип-объекта/действие`.
  1. Создать четыре `enum`-файла. Эти четыре `enum`-файла — главная и единственная конфигурация структуры страниц и лэйатуов в проекте (они не должны сразу же отражать действительность, но что-то потенциально реальное в них всё же должно быть):
-   * Один (в примере: [id/P.java][P]) для перечисления _страниц_,описания _URL_-ов (группа — тип объекта, а событие — действие в упомянутой схеме `тип-объекта/действие`) и связывания их с _лэйаутами_. Для каждой страницы автоматически создаётся ID по методу `id()` (в примере в качестве ID везде берётся `name()` элемента из `enum`, но это может быть что угодно) и привязывается к созданному инстансу класса `Portal`: для этого `enum` должен имплементить интерфейс `PortalId`. Также вам понадобится быстрый способ получить значение `enum` из идентификатора `Portal`: в примере это метод `by(Portal page)`, для этого инстансы `Portal` хранятся внутри.
+   * Один (в примере: [id/P.java][P]) для перечисления _страниц_, описания _URL_-ов (группа — тип объекта, а событие — действие в упомянутой схеме `тип-объекта/действие`) и связывания их с _лэйаутами_. Для каждой страницы автоматически создаётся ID по методу `id()` (в примере в качестве ID везде берётся `name()` элемента из `enum`, но это может быть что угодно) и привязывается к созданному инстансу класса `Portal`: для этого `enum` должен имплементить интерфейс `PortalId`. Также вам понадобится быстрый способ получить значение `enum` из идентификатора `Portal`: в примере это метод `by(Portal page)`, для этого инстансы `Portal` хранятся внутри.
    * Второй (в примере: [id/G.java][G]) для перечисления _групп_. Должен имплементить интерфейс `Group`: возвращать уникальный ID в методе `id()`.
    * Третий (в примере: [id/L.java][L]) для перечисления _лэйаутов_. Должен имплементить интерфейс `LayoutId`: возвращать уникальный ID в методе `id()`.
    * Четвёртый (в примере: [id/O.java][O]) для перечисления _плэйсхолдеров_. Должен имплементить интерфейс `Place`: возвращать уникальный ID в методе `id()`.
- 1. Создать `EntryPoint` вашего проекта и зарегистрировать в нём описанные порталы, причём выполнить это до запуска модуля mvp4g. В дальнейшем тут же нужно будет регистрировать новые лэйауты и лэйаут-билдеры, но в данный момент это необзяательно. см. точку входа [LayoutingDemo.java][LayoutingDemo] в примере.
+ 1. Создать `EntryPoint` вашего проекта и зарегистрировать в нём описанные порталы, причём выполнить это до запуска модуля mvp4g. В дальнейшем тут же нужно будет регистрировать новые лэйауты и лэйаут-билдеры, но в данный момент это необязательно. см. точку входа [LayoutingDemo.java][LayoutingDemo] в примере.
  1. Создать `Presenter` главной страницы и отнаследовать его от [AMainPresenter][]. Ничего больше особенного здесь делать не нужно. см. [page/main/presenter/MainPresenter.java][MainPresenter] в примере.
- 1. Создать `View` главной страницы и отнаследовать его от [AMainView][] в примере.
+ 1. Создать `View` главной страницы и отнаследовать его от [AMainView][] (см. [page/main/view/MainView.java][MainView] в примере). Методы, которые требуется определить:
    * Метод `getLayoutHolder()` должен возвращать панель, в которую будет "вставляться" лэйаут.
-   * Метод `getPortalHolder()` может возвращать панель, оборачиваю предыдущую, а может ту же самую. Этот метод применяется только для назначения CSS-классов, классы портала и лэйаута будут назначены одному элементу в последнем случае.
+   * Метод `getPortalHolder()` может возвращать панель, оборачивающую предыдущую, а может ту же самую. Этот метод применяется только для назначения CSS-классов, классы портала и лэйаута будут назначены одному элементу в последнем случае.
    * Метод `getScrollable()` может возвращать область, которая будет скроллиться внутри страницы. Если такой области нет, метод может возвращать `null`, но тогда не будет работать подписка на скролл-события страницы по шине событий (`addPageScrollHandler`).
  1. Создать главную шину событий, имплеменитирующую [IsMainEventBus][]. В главной шине нужно переопределить все методы `IsMainEventBus` и перенаправить их в презентер главной страницы . Также нужно создать главный модуль, ничем не отличающийся от главного модуля mvp4g. см. [page/main/MainEventBus.java][MainEventBus] и [page/main/MainModule.java][MainModule] в примере.
 
@@ -50,6 +50,7 @@ title: Сценарии
  1. Создайте шину событий для вашей группы и отнаследуйте её от [ChildEventBus][]. см. в примере [page/user/UserEventBus.java][UserEventBus].
  1. Создайте `HistoryConverter` и отнаследуйте его от [PortalsHistoryConverter][]. Передайте в родительский конструктор идентификатор группы. Метод `convertFromUrl` предназначен для того, чтобы по полученным `PortalUrl`/`Portal` (используйте метод `P.by()` из пункта 1.2.1) вызвать нужный метод в шине событий. см. в примере [page/user/history/UserHistoryConverter.java][UserHistoryConverter].
  1. Создайте своего наследника [LayoutBuilder][] для соответствующей шины событий. Метод `layout()` вставляет портлеты в плейсходеры и вовращает `true`, если всё прошло удачно. здесь также удобно использовать метод `P.by()`. см. в примере [page/user/layout/UserLayoutBuilder.java][UserLayoutBuilder].
+  1. Зарегистрируйте билдер в точке входа через метод `LayoutBuilders.register()`. см. [LayoutingDemo.java:62][LayoutingDemo.L62] в примере.
 
 ### 4a. Создание цельной страницы без поддержки состояний
 
@@ -98,7 +99,7 @@ title: Сценарии
 [O]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/id/O.java#files
 
 [AMainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/AMainPresenter.java#files
-[AMainView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/AMainView.java#files). см. [page/main/view/MainView.java](https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/view/MainView.java#files
+[AMainView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/AMainView.java#files
 [IsMainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/IsMainEventBus.java#files
 [ChildEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/lib/mvp/ChildEventBus.java#files
 [PortalsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/PortalsHistoryConverter.java#files
@@ -120,6 +121,8 @@ title: Сценарии
 [Plugs]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/Plugs.java#files
 
 [LayoutingDemo]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/LayoutingDemo.java#files
+[LayoutingDemo.L47]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/LayoutingDemo.java#L47
+[LayoutingDemo.L62]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/LayoutingDemo.java#L62
 
 [MainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/MainEventBus.java#files
 [UserEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/page/user/UserEventBus.java#files
@@ -134,6 +137,7 @@ title: Сценарии
 [UserModule]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/page/user/UserModule.java#files
 
 [MainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/presenter/MainPresenter.java#files
+[MainView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/view/MainView.java#files
 
 [Layout]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/Layout.java#files
 [LayoutWithState]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/state/LayoutWithState.java#files
@@ -143,7 +147,6 @@ title: Сценарии
 [LayoutEdit]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/layout/LayoutEdit.java#files
 [LayoutItem.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/layout/LayoutItem.ui.xml
 [LayoutEdit.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/layout/LayoutEdit.ui.xml
-[LayoutingDemo.L47]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/LayoutingDemo.java#L47
 
 [NewsEditPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/presenter/NewsEditPresenter.java#files
 [NewsEditView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/view/NewsEditView.java#files
