@@ -32,7 +32,8 @@ The code is separated in `client`, `shared`, `server` and `lib` packages: the fi
 * [Definitions](./definitions.html)
 * [Pages](./pages.html)
 * [Scenario](./scenario.html)
-* [How does it work?](./works-how.html)
+* [Styles](./style.html)
+* [Works how?](./works-how.html)
 
 <!--
 ## Something more?
