@@ -5,10 +5,10 @@ title: Terms
 
 # Terms
 
-Part of them are established ones, part of them are invented by me (possibly), due to the fact I discovered a lack of them. I will list the terms that are specific to the example, I will skip the GWT/MVP/mvp4g-related ones. Also, the definitions in fact are related to example, they are not globally-definite in any case.
+Some of these terms are established ones, part of them are invented by me (possibly), due to the fact I discovered a lack of them. I will list the terms that are specific to the example, and I will skip the GWT/MVP/mvp4g-related ones. Also, the definitions in fact are only related to example, they are not globally-definite in any case.
 
 * **Layout** — the predifined disposition of a blocks in a page, no binding to blocks contentbut to topograp.
-* **Portal** — in fact, an analogue of "application page", it has a layout bound to it, and a portlets inside, positioned with this specified layout.
+* **Portal** — in fact, an analogue of "application page", it has a layout bound to it, and a portlets inside, positioned with a structure of this specific layout.
 * **Portlet** — any standalone or composite widget that may be inserted whole or in part in a concrete place inside of layout.
 * **Place[holder]** — an identidier of the place inside a layout, where you can put any visual object (widget, widgets group). In the example the letters `A`, `B`, `C`, `D`, `S` identify the places. You can use words if you want: `NAV`, `ASIDE`, `MAIN`, `TOOLBAR`, `STATUS` and so on.
 * **Outlet** — a physical place inside of layout, where you can put any object that implements `Pluggable` interface; uniquely defined with `Place` identifier.

@@ -7,11 +7,11 @@ title: Scenario
 
 In fact, in [`name.shamansir.mvplayout.lib`](https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/lib) package there is a code you may use as a library with ease. I'm not wrapping it with `jar` package, but potentially it is quite reliable for usage — a stable-working complex example illustrates it, and the core idea (not actual and totally-fixed one, however) version works in [our project](http://experika.com)
 
-Let me explain how concretely you may use this code if you've taken a decision to build a project based on it. You can see below a number of scenarios: they can be used simultaneously as a conseсuitive ones or a separate ones. Executing them one by one (however, you must repeat some actions of those until-it-is-necessary), you can write a complete application, but you can execute each action separately as application changes need.
+Let me explain how concretely you may use this code if you've taken a decision to build a project based on it. You can see a number of scenarios below: they can be used simultaneously as a conseсuitive ones or a separate ones. Executing them one by one (however, you must repeat some actions of those until-it-is-necessary), you can write a complete application, but you can execute each action separately as application changes its need.
 
-It is difficult to describe everything with words, sometimes it is easier to look at examples by following the links in the order of scenario goes. Don't hesitate to use this opportunity :).
+It is difficult to describe everything with words, sometimes it is easier to look at code examples by following the links in the order of scenario goes. Don't hesitate to use this opportunity :).
 
-(My method is to use `enum` instances to configurate project navigation/pages structure, it was applied to implement this framework fast; but later, I suppose, it will be better to change this principle to annotations or `xml`-files, if you will not find it easy in use)
+(My method is to use `enum` instances to configure project navigation/pages structure, it was applied to implement this framework fast; but later, I suppose, it will be better to change this principle to annotations or `xml`-files, if you will not find it easy in use)
 
 ### 1. Application skeleton
 

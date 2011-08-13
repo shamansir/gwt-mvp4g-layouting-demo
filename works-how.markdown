@@ -5,7 +5,7 @@ title: Works how?
 
 # Works how?
 
-The whole source code is separeated into packages `client`, `shared`, `server` and `lib`: the first three ones are contain only the example-related code and the latter one contains the library code itself.
+The whole source code is separated into packages `client`, `shared`, `server` and `lib`: the first three contain only the example-related code and the latter one contains the library code itself.
 
 All the main events used in this code are happen due to passing signals with forwarding technique from child event buses ([ChildEventBus][]) to the main event bus ([IsMainEventBus][]). So, you can see such events are enumerated in [IsMainEventBus][] interface. From the main event bus they are passed to the main page presenter ([AMainPresenter][]) and are appropriately handled there.
 
