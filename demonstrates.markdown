@@ -7,12 +7,12 @@ title: Demonstrates what?
 
 This example demontrates:
 
-- *Шины событий*: Использование главной и дочерних шин событий в mvp4g: главная шина управляет загрузкой _модулей_ пользователей, групп и компаний, а соответствующие этим модулям дочерние шины событий отвечают за _действия_ с ними: просмотр списка, редактирование и просмотр отдельного элемента. Эта возможность доступна в самом mvp4g "из коробки".
-- *Общая и изменяемая части страниц*: Использование внутренней  части некой общей страницы (это может быть и вся страница) для расположения виджетов внутри неё в соответствии с назначенным данной странице приложения лэйаутом (в примере это область между тулбаром и футером).
-- *Лэйауты, страницы и URL*: Использование одного-единственого `enum` для связывания страниц с лэйаутами, а также в качестве общей точки управления ссылками. Этот `enum` используется повсеместно там, где происходит работа с историей, нужно отпарсить или создать ссылку. При необходимости его можно расширить для работы с именованными параметрами. Один `ui.xml` предназначен для описания одного лэйаута.
-- *Порталы и портлеты*: Наполнение страницы виджетами по цепочке: история -> построитель лэйаута -> шина событий -> презентер портлета (виджета) или портала (страницы). То есть можно управлять всей страницей через один презентер (`PortalPresenter`), а можно через группу отдельных переиспользуемых презентеров (`PortletPresenter`), а можно вообще всё это перемешать (комментарии по этому поводу  ниже)
-- *Состояния*: Отдельные виджеты (портлеты) и/или страницы целиком (порталы) могут иметь состояния: "нет данных", "данные загружаются", "данные получены", "нет совпадений", при этом структура может быть вложенной.
-- *Дружба с CSS*: Для каждого элемента, соответствующего логическому блоку (странице, порталу, лэйауту, плэйсхолдеру, виджету) создаётся минимум по два CSS-класса, позволяющие однозначно определить его принадлежность (см. ниже)
+- *Event buses*: Using main and child event buses in mvp4g: the main event bus manages loading _modules_ for users, groups and companies, and the event buses, corresponding to this modules, are responsible for _actions_ user can do with them: watch a list of elements, edit or view a separate element. This possiblity exists in mvp4g out-of-the-box.
+- *Common and variable parts of the pages*: Using some inner part of the general page (or a whole page, if required) to place widgets into, according to layout that assigned to this concrete application page (it is the area between toolbar and footer in the example).
+- *Layouts, pages and URLs*: Using the very single `enum` to bind pages to layout and also as the common point of URLs/navigation control. This `enum` is used everywhere the history management happens and/or it is required to construct or parse some URL. If required, you can extend it to work with named parameters. One `ui.xml` is intended to describe one layout.
+- *Portals and portlets*: Filling a page with widgets, following to a chain: history -> layout builder -> event bus -> portlet (some widget) or portal (some page) presenter. So you can manage the whole page with one presenter (`PortalPresenter`) or using several distinct re-used presenters (`PortletPresenter`s) or you even can mix this mehtods (see [scenario][./scenario.html]).
+- *States*: A self-contained widgets (portlets) and/or the whole pages (portals) may have following states: "no data", "loading data", "got data", "no matches", and this structure may even be nested.
+- *CSS-friendly*: Every element corresponding to the logical block (page, portal, layout, placeholder, widget) has a minimum of two CSS-classes that allows to determine its identity unambiguously (see [style][./style.html])
 
 [[Contents]](./index.html)
 

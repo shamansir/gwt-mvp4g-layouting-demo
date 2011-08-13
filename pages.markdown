@@ -3,20 +3,20 @@ layout: main-en
 title: Pages
 ---
 
-# Страницы
+# Pages
 
-Каждая страница примера демонстрирует свой приём:
+Every page demonstrates its own technique:
 
- * `/` (главная страница) — сборка страницы с лэйаутом `SINGLE` изнутри презентера в пределах главной шины + использование `UrlBuilder` для создания ссылок на внутренние страницы
- * `/404` ("страница не найдена") — быстрая сборка страницы по событию `@NotFoundHistory` изнутри презентера в пределах главной шины.
- * `/user/list[?<фильтр>]` — портал, управляемый несколькими `PortletPresenter`-ами, в котором каждый портлет (список пользователей (A), путь к аватару пользователя (B), возраст пользователя (C)) имеет поддержку состояний: при загрузке списка пользователей портлет списка находится в состоянии "пользователи загружаются"; при отсутствии пользователей, совпадающих с фильтром портлет списка сообщит именно об отсуствии совпадений, а не отсутствии пользователей; портлеты аватара и возраста находятся в состоянии "нет данных", пока не выбран конкретный пользователь.
- * `/user/show?<id>` — портал, управляемый несколькими `PortletPresenter`-ами, в котором каждый из портлетов (информация о пользователе `A`, путь к аватару пользователя `B`, возраст пользователя `C`) имеет поддержку состояний, при этом используются те же портлеты аватара и возраста, что и на странице со списком пользователей.
- * `/user/edit[?<id>]` — портал, управляемый одним `PortalPresenter`, лэйаут поддерживает переключение состояний из презентера: в процессе загрузки пользователя портлеты `A`, `B`, `C` подменяются на панель состояния "пользователь загружается". При сохранении пользователя, новые данные собираются презентером из `View` и отправляются серверу.
- * `news/list` — портал, управляемый несколькими `PortletPresenter`-ами, но лэйаут и портлеты не имеют состояний; для одного из портлетов используется `TestWidgetPresenter`, в котором `View` создаётся прямо внутри презентера, сам `TestWidget` доступен всем страницам; также показано взаимодействие с соседними презентерами (`UserCardPresenter`).
- * `news/edit[?<id>]` — портал, управляемый одним `PortalPresenter`, лэйаут не поддерживает состояний; используется тот же `UserCardPresenter`, что и для `news/list`.
- * `news/show?id` — портал, управляемый несколькими `PortletPresenter`-ами, портлеты не поддерживают состояний; используется тот же `UserCardPresenter`, что и для `news/list`, а также `TestWidgetPresenter`.
- * `company/list` — портал c одним портлетом, управляемый одним `PortletPresenter`-ом, который в свою очередь внешний портлет-виджет использует для отображения каждой компании.
- * `company/show?<id>` — портал c одним портлетом,  управляемый одним `PortletPresenter`-ом, при этом портлетом является тот же самый портлет-виджет, который используется для списка, без посредников и обёрток.
+ * `/` (main page) — construction of a page with a `SINGLE` layout from inside of the main presenter, in bounds of the main event bus + using `UrlBuilder` to build hyperlinks pointing to internal pages
+ * `/404` ("page not found") — quick page construction in case of `@NotFoundHistory` event handled, from inside of the main presenter, in bounds of the main event bus.
+ * `/user/list[?<filter>]` — a portal that is directed with several `PortletPresenter`s, where every portlet (users list (`A`), user avatar file path (`B`), user age (`C`)) has a state support: when loading a users list, portlet is in a "users are loading" state; when there is no users matching the filter, portlet will inform about there is no matches, not absence of users; avatar and an age portlets are in "no data" state, when there is no user was chosen.
+ * `/user/show?<id>` — portal, directed with several `PortletPresenter`s, where every portlet (user information (`A`), user avatar file path (`B`), user age (`C`)) has a state support, herewith the same age and avatar portlets from users list page are used.
+ * `/user/edit[?<id>]` — portal, directed with a single `PortalPresenter`, layout supports switching states from presenter: while loading a user portlets `A`, `B`, `C` are replaced with a state panel "loading user". When saving a user, new data is collected by presenter from `view` and sent to the server.
+ * `news/list` — portal, directed with several `PortletPresenter`s, but layout and portlets do not support states; for one of the portlets `TestWidgetPresenter` is used, where `View` is created directly from inside the presenter, the `TestWidget` itself is accessible to all pages; also the interaction with neighbour presenters is demonstrated (`UserCardPresenter`).
+ * `news/edit[?<id>]` — portal, directed with one `PortalPresenter`, layout do not supports states; the same `UserCardPresenter` as for `news/list` is used.
+ * `news/show?id` — portal, directed with several `PortletPresenter`s, portlets do not support states; the same `UserCardPresenter` as for `news/list` is used, and also `TestWidgetPresenter`.
+ * `company/list` — portal with a single portlet, directed with single `PortletPresenter`, that in its turn used by the external portlet-widget to display each company.
+ * `company/show?<id>` — portal with a single portlet, directed with single `PortletPresenter`, while this portlet is the same portlet-widget that is used for companies list, no mediators or wrappers.
 
 [[Contents]](./index.html)
 
