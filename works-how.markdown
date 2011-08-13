@@ -23,7 +23,7 @@ In fact, it is the complete mechanism, the rest are subtleties, I hope, you'll u
 
 P.S. For the moment no annotations or Dependency Injection used in the code. May be it'd be nice to.
 
-[[Contents]](./index-ru.html)
+[[Contents]](./index.html)
 
 [PortalsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/PortalsHistoryConverter.java#files
 [ChildEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/ChildEventBus.java#files

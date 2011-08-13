@@ -9,5 +9,5 @@ The six layouts named `SINGLE`, `DOUBLE`, `TRIPLE`, `LIST`, `EDIT`, `ITEM` are u
 
 ![Layouts](http://dl.dropbox.com/u/928694/blog/ru/img/mvp4g-layouts.png)
 
-[[Contents]](./index-ru.html)
+[[Contents]](./index.html)
 

@@ -1,5 +1,5 @@
 ---
-layout: main-ru
+layout: main-en
 title: Styles
 ---
 
@@ -30,5 +30,5 @@ For example, this structure at [user/list](http://gwt-mvp4g-layouting-demo.appsp
             place place-c
                 state-has-data plug plug-user-details
 
-[[Содержание]](./index-ru.html)
+[[Contents]](./index.html)
 

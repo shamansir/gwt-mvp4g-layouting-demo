@@ -1,5 +1,5 @@
 ---
-layout: main-ru
+layout: main-en
 title: Scenario
 ---
 
@@ -90,7 +90,7 @@ It is difficult to describe everything with words, sometimes it is easier to loo
  1. `View` for each of this portlets must be inherited from [StatedPortlet][] widget (or [Portlet][], if this widget has no states). The root element of the `view` with state must be a [Plugs][] widget, containing a [Plug][] widgets with the main and secondary supported states. To bind the state widgets to the corresponding states, use `register(Plug, State)` methods inside the `createView` realization. For stateless `view`, the root element must be a [Plug][], it will be a main view itself, so everything is simple here. See example views with states: [page/user/view/UserAvatarView.java][UserAvatarView], [page/user/view/UserAvatarView.ui.xml][UserAvatarView.ux], [page/user/view/UserDetailsView.java][UserDetailsView], [page/user/view/UserDetailsView.ui.xml][UserDetailsView.ux], [page/user/view/UserInfoView.java][UserInfoView], [page/user/view/UserInfoView.ui.xml][UserInfoView.ux], without states: [page/news/view/NewsInfoView.java][NewsInfoView], [page/news/view/NewsInfoView.ui.xml][NewsInfoView.ux].
   1. On the basis of the layout you have chosen, add a page construction code to `LayoutBuilder` of your module. To ease the construction, register in the module's event bus a new `plug...` event (taking `Place` as a parameter) for every widget that will be placed into placeholder. All these events must go to the appropriate presenters you've created at p.3 and call their inherited `plug(Place)` method that physically puts widgets to placeholders. In this case the `view` is unambiguous, you don't need to override something manually in presenters. Then, in `LayoutBuilder`, call the events you've created one by one, passing the required placeholders IDs in parameter. This way you manage a page structure independently from its content. See example [page/user/layout/UserLayoutBuilder.java][UserLayoutBuilder] и [page/user/UserEventBus.java][UserEventBus]. For `USER_SHOW` such methods are `plugUserInfo`, `plugUserAvatar` and `plugUserDetails`. For `USERS_LIST` such methods are `plugUserInfo`, `plugUserAvatar` and `plugUsersList`.
 
-[[Contents]](./index-ru.html)
+[[Contents]](./index.html)
 
 
 

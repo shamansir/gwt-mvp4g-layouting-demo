@@ -1,5 +1,5 @@
 ---
-layout: main
+layout: main-en
 title: GWT + mvp4g Layouting Demo
 ---
 
@@ -21,7 +21,7 @@ Source code is located at github: [github.com/shamansir/gwt-mvp4g-layouting-demo
 
 In the executable and clickable state (_in action_, you say) you can check it out at GAE: [gwt-mvp4g-layouting-demo.appspot.com](http://gwt-mvp4g-layouting-demo.appspot.com/). Is is a technical example, so there is an absence of design.
 
-Documentation is located at github: [shamansir.github.com/gwt-mvp4g-layouting-demo](http://shamansir.github.com/gwt-mvp4g-layouting-demo/index-ru.html)
+Documentation is located at github: [shamansir.github.com/gwt-mvp4g-layouting-demo](http://shamansir.github.com/gwt-mvp4g-layouting-demo/index.html)
 
 ## More details?
 
