@@ -1,6 +1,6 @@
 Running demo is here: http://gwt-mvp4g-layouting-demo.appspot.com
 
-Documentation is [planned to be] here: http://shamansir.github.com/gwt-mvp4g-layouting-demo/
+Documentation is here: http://shamansir.github.com/gwt-mvp4g-layouting-demo/
 
 # Eclipse
 
