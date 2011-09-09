@@ -1,0 +1,22 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+             xmlns:l="urn:import:name.shamansir.mvp4glayout.client.ui.widget">
+
+    <l:Plugs>
+
+        <l:Plug ui:field="mainView" alias="user-details">
+            <gwt:Label ui:field="dataSummary" />    
+        </l:Plug>
+    
+        <l:Plug ui:field="ifEmpty" alias="user-details-empty">
+            <gwt:Label>No user data</gwt:Label>
+        </l:Plug>
+        
+        <l:Plug ui:field="whenLoading" alias="user-details-loading">
+            <gwt:Label>Loading details...</gwt:Label>
+        </l:Plug>
+        
+    </l:Plugs>
+
+</ui:UiBinder>

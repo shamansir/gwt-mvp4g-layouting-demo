@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+    xmlns:l="urn:import:name.shamansir.mvp4glayout.client.ui.widget">
+    
+    <gwt:VerticalPanel width="100%">
+        <gwt:cell height="50%">
+            <l:Outlet ui:field="placeA" />
+        </gwt:cell>
+        <gwt:cell height="40%">
+            <l:Outlet ui:field="placeB" />
+        </gwt:cell>        
+        <gwt:cell height="10%">
+            <l:Outlet ui:field="placeC" />
+        </gwt:cell>
+    </gwt:VerticalPanel>
+    
+</ui:UiBinder>
