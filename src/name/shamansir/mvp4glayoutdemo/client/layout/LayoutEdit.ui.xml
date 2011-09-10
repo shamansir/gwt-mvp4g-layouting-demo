@@ -1,0 +1,18 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+    xmlns:gwt="urn:import:com.google.gwt.user.client.ui"
+    xmlns:l="urn:import:name.shamansir.mvp4glayout.client.ui.widget">
+    
+    <gwt:FlowPanel>
+        <gwt:HorizontalPanel width="100%">
+            <l:Outlet ui:field="placeA" width="60%"/>
+            <l:Outlet ui:field="status" width="60%" />            
+            <gwt:VerticalPanel width="40%">
+    	        <l:Outlet ui:field="placeB" />
+                <l:Outlet ui:field="placeD" />    	        
+    	        <l:Outlet ui:field="placeC" />
+            </gwt:VerticalPanel>
+        </gwt:HorizontalPanel>
+    </gwt:FlowPanel>
+    
+</ui:UiBinder>

@@ -15,17 +15,17 @@
   
   <servlet>
     <servlet-name>usersServlet</servlet-name>
-    <servlet-class>name.shamansir.mvplayout.server.UserServiceImpl</servlet-class>
+    <servlet-class>name.shamansir.mvp4glayoutdemo.server.UserServiceImpl</servlet-class>
   </servlet>
   
   <servlet>
     <servlet-name>companiesServlet</servlet-name>
-    <servlet-class>name.shamansir.mvplayout.server.CompanyServiceImpl</servlet-class>
+    <servlet-class>name.shamansir.mvp4glayoutdemo.server.CompanyServiceImpl</servlet-class>
   </servlet>
   
   <servlet>
     <servlet-name>newsServlet</servlet-name>
-    <servlet-class>name.shamansir.mvplayout.server.NewsServiceImpl</servlet-class>
+    <servlet-class>name.shamansir.mvp4glayoutdemo.server.NewsServiceImpl</servlet-class>
   </servlet>  
   
   <servlet-mapping>
