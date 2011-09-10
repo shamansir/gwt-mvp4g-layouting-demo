@@ -3,13 +3,13 @@
  */
 package name.shamansir.mvp4glayout.client.mvp;
 
+import com.google.gwt.event.shared.HandlerRegistration;
+import com.mvp4g.client.view.LazyView;
+
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageResizeListener;
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageScrollListener;
 import name.shamansir.mvp4glayout.client.ui.Portal;
 import name.shamansir.mvp4glayout.client.ui.widget.Layout;
-
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.mvp4g.client.view.LazyView;
 
 /**
  * @author Ulric Wilfred <shaman.sir@gmail.com>

@@ -1,5 +1,7 @@
 package name.shamansir.mvp4glayout.client.mvp;
 
+import com.mvp4g.client.history.HistoryConverter;
+
 import name.shamansir.mvp4glayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvp4glayout.client.ui.LayoutBuilder;
 import name.shamansir.mvp4glayout.client.ui.LayoutBuilders;
@@ -8,8 +10,6 @@ import name.shamansir.mvp4glayout.client.ui.Portal.PortalUrl;
 import name.shamansir.mvp4glayout.client.ui.Portal.PortalUrlBuilder;
 import name.shamansir.mvp4glayout.client.ui.Portal.UrlBuilder;
 import name.shamansir.mvp4glayout.client.ui.structure.Group;
-
-import com.mvp4g.client.history.HistoryConverter;
 
 public abstract class PortalsHistoryConverter<E extends ChildEventBus> implements HistoryConverter<E> {
 

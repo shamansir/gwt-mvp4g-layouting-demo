@@ -1,10 +1,10 @@
 package name.shamansir.mvp4glayout.client.ui.widget;
 
-import name.shamansir.mvp4glayout.client.mvp.IsPortalView;
-
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
+
+import name.shamansir.mvp4glayout.client.mvp.IsPortalView;
 
 public abstract class Portal extends Composite implements IsPortalView {
     

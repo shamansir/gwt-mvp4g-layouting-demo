@@ -3,9 +3,9 @@
  */
 package name.shamansir.mvp4glayout.client.ui;
 
-import name.shamansir.mvp4glayout.client.ui.state.ChangesState;
-
 import com.google.gwt.user.client.ui.IsWidget;
+
+import name.shamansir.mvp4glayout.client.ui.state.ChangesState;
 
 /**
  * <dl>

@@ -2,9 +2,9 @@ package name.shamansir.mvp4glayoutdemo.client.service;
 
 import java.util.Set;
 
-import name.shamansir.mvp4glayoutdemo.shared.dao.Company;
-
 import com.google.gwt.user.client.rpc.AsyncCallback;
+
+import name.shamansir.mvp4glayoutdemo.shared.dao.Company;
 
 /**
  * The async counterpart of <code>UserService</code>.

@@ -3,6 +3,10 @@
  */
 package name.shamansir.mvp4glayout.client.ui.widget;
 
+import com.google.gwt.uibinder.client.UiConstructor;
+import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.Widget;
+
 import name.shamansir.mvp4glayout.client.ui.CanBePlaced;
 import name.shamansir.mvp4glayout.client.ui.Pluggable;
 import name.shamansir.mvp4glayout.client.ui.PlugsContainer;
@@ -10,10 +14,6 @@ import name.shamansir.mvp4glayout.client.ui.RefreshHandler;
 import name.shamansir.mvp4glayout.client.ui.state.State;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
 import name.shamansir.mvp4glayout.util.StringUtils;
-
-import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.Widget;
 
 /**
  * <dl>

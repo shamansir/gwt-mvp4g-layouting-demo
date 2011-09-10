@@ -5,12 +5,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+
 import name.shamansir.mvp4glayout.client.exception.ItemNotFoundException;
 import name.shamansir.mvp4glayout.client.exception.NoMatchesException;
+
 import name.shamansir.mvp4glayoutdemo.client.service.CompanyService;
 import name.shamansir.mvp4glayoutdemo.shared.dao.Company;
-
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
  * The server side implementation of the RPC service.

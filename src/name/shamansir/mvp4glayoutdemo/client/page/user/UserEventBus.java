@@ -1,7 +1,11 @@
 package name.shamansir.mvp4glayoutdemo.client.page.user;
 
+import com.mvp4g.client.annotation.Event;
+import com.mvp4g.client.annotation.Events;
+
 import name.shamansir.mvp4glayout.client.mvp.ChildEventBus;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
+
 import name.shamansir.mvp4glayoutdemo.client.page.user.history.UserHistoryConverter;
 import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserAvatarPresenter;
 import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserDetailsPresenter;
@@ -10,9 +14,6 @@ import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserInfoPresent
 import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserListPresenter;
 import name.shamansir.mvp4glayoutdemo.client.page.user.view.UserListView;
 import name.shamansir.mvp4glayoutdemo.shared.dao.User;
-
-import com.mvp4g.client.annotation.Event;
-import com.mvp4g.client.annotation.Events;
 
 @Events(module = UserModule.class, startView = UserListView.class)
 public interface UserEventBus extends ChildEventBus {

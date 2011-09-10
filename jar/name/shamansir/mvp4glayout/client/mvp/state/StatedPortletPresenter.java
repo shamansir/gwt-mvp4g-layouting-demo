@@ -3,6 +3,8 @@
  */
 package name.shamansir.mvp4glayout.client.mvp.state;
 
+import com.allen_sauer.gwt.log.client.Log;
+
 import name.shamansir.mvp4glayout.client.mvp.ChildEventBus;
 import name.shamansir.mvp4glayout.client.mvp.PortletPresenter;
 import name.shamansir.mvp4glayout.client.ui.Pluggable;
@@ -10,8 +12,6 @@ import name.shamansir.mvp4glayout.client.ui.state.PortletStateDirector;
 import name.shamansir.mvp4glayout.client.ui.state.State;
 import name.shamansir.mvp4glayout.client.ui.state.StateDirector;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
-
-import com.allen_sauer.gwt.log.client.Log;
 
 /**
  * <dl>

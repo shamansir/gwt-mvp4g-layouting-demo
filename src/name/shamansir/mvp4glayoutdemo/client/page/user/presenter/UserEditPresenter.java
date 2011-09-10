@@ -3,18 +3,6 @@
  */
 package name.shamansir.mvp4glayoutdemo.client.page.user.presenter;
 
-import name.shamansir.mvp4glayout.client.SafeCallback;
-import name.shamansir.mvp4glayout.client.mvp.state.IsStatedPortalView;
-import name.shamansir.mvp4glayout.client.mvp.state.StatedPortalPresenter;
-import name.shamansir.mvp4glayout.client.ui.Pluggable;
-import name.shamansir.mvp4glayout.client.ui.structure.Place;
-import name.shamansir.mvp4glayoutdemo.client.id.P;
-import name.shamansir.mvp4glayoutdemo.client.page.user.UserEventBus;
-import name.shamansir.mvp4glayoutdemo.client.page.user.layout.UserLayoutBuilder;
-import name.shamansir.mvp4glayoutdemo.client.page.user.view.UserEditView;
-import name.shamansir.mvp4glayoutdemo.client.service.UserServiceAsync;
-import name.shamansir.mvp4glayoutdemo.shared.dao.User;
-
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
@@ -22,6 +10,19 @@ import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.Timer;
 import com.google.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
+
+import name.shamansir.mvp4glayout.client.SafeCallback;
+import name.shamansir.mvp4glayout.client.mvp.state.IsStatedPortalView;
+import name.shamansir.mvp4glayout.client.mvp.state.StatedPortalPresenter;
+import name.shamansir.mvp4glayout.client.ui.Pluggable;
+import name.shamansir.mvp4glayout.client.ui.structure.Place;
+
+import name.shamansir.mvp4glayoutdemo.client.id.P;
+import name.shamansir.mvp4glayoutdemo.client.page.user.UserEventBus;
+import name.shamansir.mvp4glayoutdemo.client.page.user.layout.UserLayoutBuilder;
+import name.shamansir.mvp4glayoutdemo.client.page.user.view.UserEditView;
+import name.shamansir.mvp4glayoutdemo.client.service.UserServiceAsync;
+import name.shamansir.mvp4glayoutdemo.shared.dao.User;
 
 /**
  * @author Ulric Wilfred <shaman.sir@gmail.com>

@@ -1,5 +1,14 @@
 package name.shamansir.mvp4glayoutdemo.client.page.main;
 
+import com.mvp4g.client.annotation.Debug;
+import com.mvp4g.client.annotation.Event;
+import com.mvp4g.client.annotation.Events;
+import com.mvp4g.client.annotation.InitHistory;
+import com.mvp4g.client.annotation.NotFoundHistory;
+import com.mvp4g.client.annotation.Start;
+import com.mvp4g.client.annotation.module.ChildModule;
+import com.mvp4g.client.annotation.module.ChildModules;
+
 import name.shamansir.mvp4glayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageResizeListener;
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageScrollListener;
@@ -9,20 +18,12 @@ import name.shamansir.mvp4glayout.client.ui.Pluggable;
 import name.shamansir.mvp4glayout.client.ui.Portal;
 import name.shamansir.mvp4glayout.client.ui.state.State;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
+
 import name.shamansir.mvp4glayoutdemo.client.page.company.CompanyModule;
 import name.shamansir.mvp4glayoutdemo.client.page.main.presenter.MainPresenter;
 import name.shamansir.mvp4glayoutdemo.client.page.main.view.MainView;
 import name.shamansir.mvp4glayoutdemo.client.page.news.NewsModule;
 import name.shamansir.mvp4glayoutdemo.client.page.user.UserModule;
-
-import com.mvp4g.client.annotation.Debug;
-import com.mvp4g.client.annotation.Event;
-import com.mvp4g.client.annotation.Events;
-import com.mvp4g.client.annotation.InitHistory;
-import com.mvp4g.client.annotation.NotFoundHistory;
-import com.mvp4g.client.annotation.Start;
-import com.mvp4g.client.annotation.module.ChildModule;
-import com.mvp4g.client.annotation.module.ChildModules;
 
 @Debug
 @Events(module = MainModule.class, startView = MainView.class, historyOnStart = true)

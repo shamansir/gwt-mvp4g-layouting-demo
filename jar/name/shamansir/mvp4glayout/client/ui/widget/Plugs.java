@@ -7,11 +7,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-import name.shamansir.mvp4glayout.client.ui.PlugsContainer;
-
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
+
+import name.shamansir.mvp4glayout.client.ui.PlugsContainer;
 
 /**
  * <dl>

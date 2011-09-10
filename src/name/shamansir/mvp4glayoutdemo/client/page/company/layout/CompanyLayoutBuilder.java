@@ -4,6 +4,7 @@ import name.shamansir.mvp4glayout.client.ui.LayoutBuilder;
 import name.shamansir.mvp4glayout.client.ui.Portal;
 import name.shamansir.mvp4glayout.client.ui.state.State;
 import name.shamansir.mvp4glayout.client.ui.widget.Layout;
+
 import name.shamansir.mvp4glayoutdemo.client.id.O;
 import name.shamansir.mvp4glayoutdemo.client.id.P;
 import name.shamansir.mvp4glayoutdemo.client.page.company.CompanyEventBus;

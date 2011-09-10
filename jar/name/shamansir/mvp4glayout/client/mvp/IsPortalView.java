@@ -3,9 +3,9 @@
  */
 package name.shamansir.mvp4glayout.client.mvp;
 
-import name.shamansir.mvp4glayout.client.ui.PlugsContainer;
-
 import com.mvp4g.client.view.LazyView;
+
+import name.shamansir.mvp4glayout.client.ui.PlugsContainer;
 
 /**
  * <dl>

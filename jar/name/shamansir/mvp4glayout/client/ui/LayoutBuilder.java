@@ -3,6 +3,8 @@ package name.shamansir.mvp4glayout.client.ui;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.allen_sauer.gwt.log.client.Log;
+
 import name.shamansir.mvp4glayout.client.mvp.ChildEventBus;
 import name.shamansir.mvp4glayout.client.mvp.IsMainEventBus;
 import name.shamansir.mvp4glayout.client.ui.state.LayoutWithState;
@@ -10,8 +12,6 @@ import name.shamansir.mvp4glayout.client.ui.state.State;
 import name.shamansir.mvp4glayout.client.ui.structure.LayoutId;
 import name.shamansir.mvp4glayout.client.ui.structure.PortalId;
 import name.shamansir.mvp4glayout.client.ui.widget.Layout;
-
-import com.allen_sauer.gwt.log.client.Log;
 
 public abstract class LayoutBuilder<E extends ChildEventBus> {
     

@@ -4,6 +4,7 @@
 package name.shamansir.mvp4glayoutdemo.client.page.news.view;
 
 import name.shamansir.mvp4glayout.client.ui.widget.Portlet;
+
 import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.UserCardPresenter.Display;
 import name.shamansir.mvp4glayoutdemo.client.page.news.widget.UserCardWidget;
 import name.shamansir.mvp4glayoutdemo.shared.dao.User;

@@ -1,13 +1,14 @@
 package name.shamansir.mvp4glayoutdemo.client.page.user.history;
 
+import com.mvp4g.client.annotation.History;
+
 import name.shamansir.mvp4glayout.client.mvp.PortalsHistoryConverter;
 import name.shamansir.mvp4glayout.client.ui.Portal;
 import name.shamansir.mvp4glayout.client.ui.Portal.PortalUrl;
+
 import name.shamansir.mvp4glayoutdemo.client.id.G;
 import name.shamansir.mvp4glayoutdemo.client.id.P;
 import name.shamansir.mvp4glayoutdemo.client.page.user.UserEventBus;
-
-import com.mvp4g.client.annotation.History;
 
 @History
 public class UserHistoryConverter extends PortalsHistoryConverter<UserEventBus> {

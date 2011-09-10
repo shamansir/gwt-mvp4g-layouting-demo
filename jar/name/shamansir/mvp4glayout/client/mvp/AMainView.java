@@ -3,11 +3,6 @@
  */
 package name.shamansir.mvp4glayout.client.mvp;
 
-import name.shamansir.mvp4glayout.client.ui.Portal;
-import name.shamansir.mvp4glayout.client.ui.structure.Place;
-import name.shamansir.mvp4glayout.client.ui.widget.Layout;
-import name.shamansir.mvp4glayout.util.StringUtils;
-
 import com.allen_sauer.gwt.log.client.Log;
 import com.google.gwt.event.dom.client.ScrollEvent;
 import com.google.gwt.event.dom.client.ScrollHandler;
@@ -21,6 +16,11 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasScrolling;
 import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.Widget;
+
+import name.shamansir.mvp4glayout.client.ui.Portal;
+import name.shamansir.mvp4glayout.client.ui.structure.Place;
+import name.shamansir.mvp4glayout.client.ui.widget.Layout;
+import name.shamansir.mvp4glayout.util.StringUtils;
 
 /**
  * @author Ulric Wilfred <shaman.sir@gmail.com>

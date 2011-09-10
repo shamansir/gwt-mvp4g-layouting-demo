@@ -3,13 +3,6 @@ package name.shamansir.mvp4glayoutdemo.client.page.user.view;
 import java.util.HashSet;
 import java.util.Set;
 
-import name.shamansir.mvp4glayout.client.ui.state.State;
-import name.shamansir.mvp4glayout.client.ui.widget.Plug;
-import name.shamansir.mvp4glayout.client.ui.widget.StatedPortlet;
-import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserListPresenter.Display;
-import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserListPresenter.UserRow;
-import name.shamansir.mvp4glayoutdemo.shared.dao.User;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
@@ -23,6 +16,14 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+
+import name.shamansir.mvp4glayout.client.ui.state.State;
+import name.shamansir.mvp4glayout.client.ui.widget.Plug;
+import name.shamansir.mvp4glayout.client.ui.widget.StatedPortlet;
+
+import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserListPresenter.Display;
+import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserListPresenter.UserRow;
+import name.shamansir.mvp4glayoutdemo.shared.dao.User;
 
 public final class UserListView extends StatedPortlet implements Display {
     

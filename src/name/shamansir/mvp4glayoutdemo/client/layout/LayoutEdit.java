@@ -11,6 +11,7 @@ import name.shamansir.mvp4glayout.client.ui.state.LayoutWithState;
 import name.shamansir.mvp4glayout.client.ui.state.State;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
 import name.shamansir.mvp4glayout.client.ui.widget.Outlet;
+
 import name.shamansir.mvp4glayoutdemo.client.id.L;
 import name.shamansir.mvp4glayoutdemo.client.id.O;
 

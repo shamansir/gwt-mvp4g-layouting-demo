@@ -3,11 +3,11 @@ package name.shamansir.mvp4glayout.client.ui.widget;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.google.gwt.uibinder.client.UiConstructor;
+
 import name.shamansir.mvp4glayout.client.mvp.state.IsStatedPortalView;
 import name.shamansir.mvp4glayout.client.ui.Pluggable;
 import name.shamansir.mvp4glayout.client.ui.state.State;
-
-import com.google.gwt.uibinder.client.UiConstructor;
 
 public abstract class StatedPortal extends Portal implements IsStatedPortalView {
     

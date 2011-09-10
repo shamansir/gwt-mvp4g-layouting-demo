@@ -4,6 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.allen_sauer.gwt.log.client.Log;
+import com.google.gwt.user.client.ui.Composite;
+
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageResizeEvent;
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageResizeListener;
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageScrollEvent;
@@ -13,9 +16,6 @@ import name.shamansir.mvp4glayout.client.ui.Pluggable;
 import name.shamansir.mvp4glayout.client.ui.structure.LayoutId;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
 import name.shamansir.mvp4glayout.util.StringUtils;
-
-import com.allen_sauer.gwt.log.client.Log;
-import com.google.gwt.user.client.ui.Composite;
 
 public abstract class Layout extends Composite implements PageScrollListener, PageResizeListener {
     

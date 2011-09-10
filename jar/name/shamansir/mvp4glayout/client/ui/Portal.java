@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.Hyperlink;
+
 import name.shamansir.mvp4glayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvp4glayout.client.ui.structure.Group;
 import name.shamansir.mvp4glayout.client.ui.structure.LayoutId;
 import name.shamansir.mvp4glayout.client.ui.structure.PortalId;
 import name.shamansir.mvp4glayout.util.StringUtils;
-
-import com.google.gwt.user.client.ui.Anchor;
-import com.google.gwt.user.client.ui.Hyperlink;
 
 public class Portal implements MakesLink {
     

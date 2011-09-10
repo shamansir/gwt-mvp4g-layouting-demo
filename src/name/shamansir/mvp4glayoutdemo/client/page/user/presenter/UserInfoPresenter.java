@@ -1,16 +1,17 @@
 package name.shamansir.mvp4glayoutdemo.client.page.user.presenter;
 
+import com.google.gwt.user.client.Timer;
+import com.google.inject.Inject;
+import com.mvp4g.client.annotation.Presenter;
+
 import name.shamansir.mvp4glayout.client.SafeCallback;
 import name.shamansir.mvp4glayout.client.mvp.state.IsStatedPortletView;
 import name.shamansir.mvp4glayout.client.mvp.state.StatedPortletPresenter;
+
 import name.shamansir.mvp4glayoutdemo.client.page.user.UserEventBus;
 import name.shamansir.mvp4glayoutdemo.client.page.user.view.UserInfoView;
 import name.shamansir.mvp4glayoutdemo.client.service.UserServiceAsync;
 import name.shamansir.mvp4glayoutdemo.shared.dao.User;
-
-import com.google.gwt.user.client.Timer;
-import com.google.inject.Inject;
-import com.mvp4g.client.annotation.Presenter;
 
 @Presenter(view = UserInfoView.class)
 public class UserInfoPresenter extends StatedPortletPresenter<UserInfoPresenter.Display, UserEventBus> {    

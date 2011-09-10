@@ -3,13 +3,14 @@
  */
 package name.shamansir.mvp4glayoutdemo.client.page.news.view;
 
-import name.shamansir.mvp4glayout.client.ui.widget.Plug;
-import name.shamansir.mvp4glayout.client.ui.widget.Portlet;
-import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.NewsInfoPresenter.Display;
-import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
-
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Label;
+
+import name.shamansir.mvp4glayout.client.ui.widget.Plug;
+import name.shamansir.mvp4glayout.client.ui.widget.Portlet;
+
+import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.NewsInfoPresenter.Display;
+import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
 
 /**
  * @author Ulric Wilfred <shaman.sir@gmail.com>

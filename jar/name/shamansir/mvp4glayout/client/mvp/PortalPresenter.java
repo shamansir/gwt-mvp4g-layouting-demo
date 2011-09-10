@@ -1,5 +1,7 @@
 package name.shamansir.mvp4glayout.client.mvp;
 
+import com.mvp4g.client.presenter.LazyPresenter;
+
 import name.shamansir.mvp4glayout.client.ui.LayoutBuilder;
 import name.shamansir.mvp4glayout.client.ui.LayoutBuilders;
 import name.shamansir.mvp4glayout.client.ui.Pluggable;
@@ -7,8 +9,6 @@ import name.shamansir.mvp4glayout.client.ui.Portal;
 import name.shamansir.mvp4glayout.client.ui.Portal.PortalUrlBuilder;
 import name.shamansir.mvp4glayout.client.ui.Portal.UrlBuilder;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
-
-import com.mvp4g.client.presenter.LazyPresenter;
 
 public abstract class PortalPresenter<V extends IsPortalView, 
                                       E extends ChildEventBus,

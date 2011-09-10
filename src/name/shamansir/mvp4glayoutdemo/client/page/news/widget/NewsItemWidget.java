@@ -3,8 +3,6 @@
  */
 package name.shamansir.mvp4glayoutdemo.client.page.news.widget;
 
-import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
-
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.shared.HandlerRegistration;
@@ -13,6 +11,8 @@ import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
+
+import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
 
 /**
  * @author Ulric Wilfred <shaman.sir@gmail.com>

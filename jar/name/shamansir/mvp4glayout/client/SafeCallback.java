@@ -1,8 +1,8 @@
 package name.shamansir.mvp4glayout.client;
 
-import name.shamansir.mvp4glayout.client.mvp.ChildEventBus;
-
 import com.google.gwt.user.client.rpc.AsyncCallback;
+
+import name.shamansir.mvp4glayout.client.mvp.ChildEventBus;
 
 public abstract class SafeCallback<T> implements AsyncCallback<T> {
     

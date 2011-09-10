@@ -1,13 +1,14 @@
 package name.shamansir.mvp4glayoutdemo.client.page.news.history;
 
+import com.mvp4g.client.annotation.History;
+
 import name.shamansir.mvp4glayout.client.mvp.PortalsHistoryConverter;
 import name.shamansir.mvp4glayout.client.ui.Portal;
 import name.shamansir.mvp4glayout.client.ui.Portal.PortalUrl;
+
 import name.shamansir.mvp4glayoutdemo.client.id.G;
 import name.shamansir.mvp4glayoutdemo.client.id.P;
 import name.shamansir.mvp4glayoutdemo.client.page.news.NewsEventBus;
-
-import com.mvp4g.client.annotation.History;
 
 @History
 public class NewsHistoryConverter extends PortalsHistoryConverter<NewsEventBus> {

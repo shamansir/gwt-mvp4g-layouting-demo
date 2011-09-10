@@ -1,7 +1,11 @@
 package name.shamansir.mvp4glayoutdemo.client.page.news;
 
+import com.mvp4g.client.annotation.Event;
+import com.mvp4g.client.annotation.Events;
+
 import name.shamansir.mvp4glayout.client.mvp.ChildEventBus;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
+
 import name.shamansir.mvp4glayoutdemo.client.page.news.history.NewsHistoryConverter;
 import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.NewsEditPresenter;
 import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.NewsInfoPresenter;
@@ -10,9 +14,6 @@ import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.TestWidgetPrese
 import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.UserCardPresenter;
 import name.shamansir.mvp4glayoutdemo.client.page.news.view.NewsListView;
 import name.shamansir.mvp4glayoutdemo.shared.dao.User;
-
-import com.mvp4g.client.annotation.Event;
-import com.mvp4g.client.annotation.Events;
 
 @Events(module = NewsModule.class, startView = NewsListView.class)
 public interface NewsEventBus extends ChildEventBus {

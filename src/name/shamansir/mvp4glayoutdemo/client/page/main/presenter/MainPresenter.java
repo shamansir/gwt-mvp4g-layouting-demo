@@ -1,5 +1,8 @@
 package name.shamansir.mvp4glayoutdemo.client.page.main.presenter;
 
+import com.google.gwt.user.client.History;
+import com.mvp4g.client.annotation.Presenter;
+
 import name.shamansir.mvp4glayout.client.mvp.AMainPresenter;
 import name.shamansir.mvp4glayout.client.mvp.IsMainView;
 import name.shamansir.mvp4glayout.client.ui.LayoutBuilder.CanLayoutMainView;
@@ -8,13 +11,11 @@ import name.shamansir.mvp4glayout.client.ui.Portal;
 import name.shamansir.mvp4glayout.client.ui.Portal.UrlBuilder;
 import name.shamansir.mvp4glayout.client.ui.state.State;
 import name.shamansir.mvp4glayout.client.ui.widget.Layout;
+
 import name.shamansir.mvp4glayoutdemo.client.id.O;
 import name.shamansir.mvp4glayoutdemo.client.id.P;
 import name.shamansir.mvp4glayoutdemo.client.page.main.MainEventBus;
 import name.shamansir.mvp4glayoutdemo.client.page.main.view.MainView;
-
-import com.google.gwt.user.client.History;
-import com.mvp4g.client.annotation.Presenter;
 
 @Presenter(view = MainView.class)
 public class MainPresenter extends AMainPresenter<MainPresenter.IMainView, MainEventBus> {

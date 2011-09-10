@@ -3,16 +3,17 @@
  */
 package name.shamansir.mvp4glayoutdemo.client.page.company.view.widget;
 
-import name.shamansir.mvp4glayout.client.ui.MakesLink;
-import name.shamansir.mvp4glayout.client.ui.Portal;
-import name.shamansir.mvp4glayout.client.ui.widget.Plug;
-import name.shamansir.mvp4glayout.client.ui.widget.Portlet;
-import name.shamansir.mvp4glayoutdemo.shared.dao.Company;
-
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Panel;
+
+import name.shamansir.mvp4glayout.client.ui.MakesLink;
+import name.shamansir.mvp4glayout.client.ui.Portal;
+import name.shamansir.mvp4glayout.client.ui.widget.Plug;
+import name.shamansir.mvp4glayout.client.ui.widget.Portlet;
+
+import name.shamansir.mvp4glayoutdemo.shared.dao.Company;
 
 /**
  * @author Ulric Wilfred <shaman.sir@gmail.com>

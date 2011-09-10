@@ -1,17 +1,17 @@
 package name.shamansir.mvp4glayout.client.mvp;
 
+import com.mvp4g.client.annotation.Event;
+import com.mvp4g.client.event.EventBus;
+
 import name.shamansir.mvp4glayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageResizeListener;
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageScrollListener;
+import name.shamansir.mvp4glayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvp4glayout.client.ui.Pluggable;
 import name.shamansir.mvp4glayout.client.ui.Portal;
-import name.shamansir.mvp4glayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvp4glayout.client.ui.state.State;
 import name.shamansir.mvp4glayout.client.ui.state.UpdatesStateByPlace;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
-
-import com.mvp4g.client.annotation.Event;
-import com.mvp4g.client.event.EventBus;
 
 public interface ChildEventBus extends EventBus, UpdatesStateByPlace {
     

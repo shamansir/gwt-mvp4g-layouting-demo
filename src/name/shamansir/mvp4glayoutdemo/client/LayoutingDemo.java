@@ -1,10 +1,17 @@
 package name.shamansir.mvp4glayoutdemo.client;
 
+import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
+import com.google.gwt.user.client.ui.Widget;
+import com.mvp4g.client.Mvp4gModule;
+
 import name.shamansir.mvp4glayout.client.ui.LayoutBuilder;
 import name.shamansir.mvp4glayout.client.ui.LayoutBuilders;
 import name.shamansir.mvp4glayout.client.ui.Layouts;
 import name.shamansir.mvp4glayout.client.ui.Portal;
 import name.shamansir.mvp4glayout.client.ui.widget.Layout;
+
 import name.shamansir.mvp4glayoutdemo.client.id.G;
 import name.shamansir.mvp4glayoutdemo.client.id.L;
 import name.shamansir.mvp4glayoutdemo.client.id.P;
@@ -18,12 +25,6 @@ import name.shamansir.mvp4glayoutdemo.client.page.company.layout.CompanyLayoutBu
 import name.shamansir.mvp4glayoutdemo.client.page.main.MainModule;
 import name.shamansir.mvp4glayoutdemo.client.page.news.layout.NewsLayoutBuilder;
 import name.shamansir.mvp4glayoutdemo.client.page.user.layout.UserLayoutBuilder;
-
-import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.user.client.ui.RootLayoutPanel;
-import com.google.gwt.user.client.ui.Widget;
-import com.mvp4g.client.Mvp4gModule;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.

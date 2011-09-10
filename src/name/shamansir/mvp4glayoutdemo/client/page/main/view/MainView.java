@@ -1,13 +1,5 @@
 package name.shamansir.mvp4glayoutdemo.client.page.main.view;
 
-import name.shamansir.mvp4glayout.client.mvp.AMainView;
-import name.shamansir.mvp4glayout.client.ui.Pluggable;
-import name.shamansir.mvp4glayout.client.ui.Portal;
-import name.shamansir.mvp4glayout.client.ui.Portal.UrlBuilder;
-import name.shamansir.mvp4glayout.client.ui.widget.Plug;
-import name.shamansir.mvp4glayoutdemo.client.id.P;
-import name.shamansir.mvp4glayoutdemo.client.page.main.presenter.MainPresenter.IMainView;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -21,6 +13,15 @@ import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+
+import name.shamansir.mvp4glayout.client.mvp.AMainView;
+import name.shamansir.mvp4glayout.client.ui.Pluggable;
+import name.shamansir.mvp4glayout.client.ui.Portal;
+import name.shamansir.mvp4glayout.client.ui.Portal.UrlBuilder;
+import name.shamansir.mvp4glayout.client.ui.widget.Plug;
+
+import name.shamansir.mvp4glayoutdemo.client.id.P;
+import name.shamansir.mvp4glayoutdemo.client.page.main.presenter.MainPresenter.IMainView;
 
 public final class MainView extends AMainView implements IMainView {
 

@@ -1,17 +1,18 @@
 package name.shamansir.mvp4glayoutdemo.client.page.user.view;
 
-import name.shamansir.mvp4glayout.client.ui.state.State;
-import name.shamansir.mvp4glayout.client.ui.widget.Plug;
-import name.shamansir.mvp4glayout.client.ui.widget.StatedPortlet;
-import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserInfoPresenter.Display;
-import name.shamansir.mvp4glayoutdemo.shared.dao.User;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
+
+import name.shamansir.mvp4glayout.client.ui.state.State;
+import name.shamansir.mvp4glayout.client.ui.widget.Plug;
+import name.shamansir.mvp4glayout.client.ui.widget.StatedPortlet;
+
+import name.shamansir.mvp4glayoutdemo.client.page.user.presenter.UserInfoPresenter.Display;
+import name.shamansir.mvp4glayoutdemo.shared.dao.User;
 
 public final class UserInfoView extends StatedPortlet implements Display {
     

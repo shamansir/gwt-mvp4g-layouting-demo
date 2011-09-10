@@ -3,11 +3,11 @@
  */
 package name.shamansir.mvp4glayout.client.ui.widget;
 
-import name.shamansir.mvp4glayout.client.ui.IsOutlet;
-
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Widget;
+
+import name.shamansir.mvp4glayout.client.ui.IsOutlet;
 
 /**
  * <dl>

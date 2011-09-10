@@ -3,12 +3,12 @@ package name.shamansir.mvp4glayout.client.ui.widget;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.google.gwt.uibinder.client.UiConstructor;
+import com.google.gwt.user.client.ui.Widget;
+
 import name.shamansir.mvp4glayout.client.mvp.state.IsStatedPortletView;
 import name.shamansir.mvp4glayout.client.ui.Pluggable;
 import name.shamansir.mvp4glayout.client.ui.state.State;
-
-import com.google.gwt.uibinder.client.UiConstructor;
-import com.google.gwt.user.client.ui.Widget;
 
 public abstract class StatedPortlet extends Portlet implements IsStatedPortletView {
     

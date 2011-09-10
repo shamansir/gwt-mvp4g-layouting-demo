@@ -3,17 +3,18 @@ package name.shamansir.mvp4glayoutdemo.client.page.news.view;
 import java.util.HashSet;
 import java.util.Set;
 
-import name.shamansir.mvp4glayout.client.ui.widget.Portlet;
-import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.NewsListPresenter;
-import name.shamansir.mvp4glayoutdemo.client.page.news.widget.NewsItemWidget;
-import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiTemplate;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
+
+import name.shamansir.mvp4glayout.client.ui.widget.Portlet;
+
+import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.NewsListPresenter;
+import name.shamansir.mvp4glayoutdemo.client.page.news.widget.NewsItemWidget;
+import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
 
 public final class NewsListView extends Portlet implements NewsListPresenter.Display {
 

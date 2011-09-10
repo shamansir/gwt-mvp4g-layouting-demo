@@ -6,23 +6,23 @@ package name.shamansir.mvp4glayout.client.mvp;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.allen_sauer.gwt.log.client.Log;
+import com.google.gwt.event.shared.HandlerRegistration;
+import com.mvp4g.client.presenter.LazyPresenter;
+
 import name.shamansir.mvp4glayout.client.exception.PortalNotFoundException;
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageResizeListener;
 import name.shamansir.mvp4glayout.client.mvp.AMainView.PageScrollListener;
+import name.shamansir.mvp4glayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvp4glayout.client.ui.Pluggable;
 import name.shamansir.mvp4glayout.client.ui.PlugsContainer;
 import name.shamansir.mvp4glayout.client.ui.Portal;
-import name.shamansir.mvp4glayout.client.ui.LayoutBuilder.CanBuildLayout;
 import name.shamansir.mvp4glayout.client.ui.Portal.PortalUrlBuilder;
 import name.shamansir.mvp4glayout.client.ui.Portal.UrlBuilder;
 import name.shamansir.mvp4glayout.client.ui.state.HasStatesPanels;
 import name.shamansir.mvp4glayout.client.ui.state.State;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
 import name.shamansir.mvp4glayout.client.ui.widget.Layout;
-
-import com.allen_sauer.gwt.log.client.Log;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.mvp4g.client.presenter.LazyPresenter;
 
 /**
  * @author Ulric Wilfred <shaman.sir@gmail.com>

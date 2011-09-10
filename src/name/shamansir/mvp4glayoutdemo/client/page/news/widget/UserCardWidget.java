@@ -6,6 +6,7 @@ package name.shamansir.mvp4glayoutdemo.client.page.news.widget;
 import com.google.gwt.user.client.ui.Label;
 
 import name.shamansir.mvp4glayout.client.ui.widget.Plug;
+
 import name.shamansir.mvp4glayoutdemo.shared.dao.User;
 
 /**

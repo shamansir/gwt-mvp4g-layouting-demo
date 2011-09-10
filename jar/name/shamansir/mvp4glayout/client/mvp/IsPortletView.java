@@ -3,11 +3,11 @@
  */
 package name.shamansir.mvp4glayout.client.mvp;
 
+import com.mvp4g.client.view.LazyView;
+
 import name.shamansir.mvp4glayout.client.ui.CanBePlaced;
 import name.shamansir.mvp4glayout.client.ui.HasMainView;
 import name.shamansir.mvp4glayout.client.ui.PlugsContainer;
-
-import com.mvp4g.client.view.LazyView;
 
 /**
  * <dl>

@@ -8,6 +8,7 @@ import com.mvp4g.client.annotation.Presenter;
 import name.shamansir.mvp4glayout.client.mvp.PortletPresenter;
 import name.shamansir.mvp4glayout.client.ui.widget.Plug;
 import name.shamansir.mvp4glayout.client.ui.widget.Portlet;
+
 import name.shamansir.mvp4glayoutdemo.client.page.news.NewsEventBus;
 import name.shamansir.mvp4glayoutdemo.client.widget.TestWidget;
 

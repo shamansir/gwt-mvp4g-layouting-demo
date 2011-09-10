@@ -1,23 +1,24 @@
 package name.shamansir.mvp4glayoutdemo.client.page.news.presenter;
 
-import name.shamansir.mvp4glayout.client.SafeCallback;
-import name.shamansir.mvp4glayout.client.mvp.IsPortalView;
-import name.shamansir.mvp4glayout.client.mvp.PortalPresenter;
-import name.shamansir.mvp4glayout.client.ui.Pluggable;
-import name.shamansir.mvp4glayout.client.ui.structure.Place;
-import name.shamansir.mvp4glayoutdemo.client.id.P;
-import name.shamansir.mvp4glayoutdemo.client.page.news.NewsEventBus;
-import name.shamansir.mvp4glayoutdemo.client.page.news.layout.NewsLayoutBuilder;
-import name.shamansir.mvp4glayoutdemo.client.page.news.view.NewsEditView;
-import name.shamansir.mvp4glayoutdemo.client.service.NewsServiceAsync;
-import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
-
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.History;
 import com.google.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
+
+import name.shamansir.mvp4glayout.client.SafeCallback;
+import name.shamansir.mvp4glayout.client.mvp.IsPortalView;
+import name.shamansir.mvp4glayout.client.mvp.PortalPresenter;
+import name.shamansir.mvp4glayout.client.ui.Pluggable;
+import name.shamansir.mvp4glayout.client.ui.structure.Place;
+
+import name.shamansir.mvp4glayoutdemo.client.id.P;
+import name.shamansir.mvp4glayoutdemo.client.page.news.NewsEventBus;
+import name.shamansir.mvp4glayoutdemo.client.page.news.layout.NewsLayoutBuilder;
+import name.shamansir.mvp4glayoutdemo.client.page.news.view.NewsEditView;
+import name.shamansir.mvp4glayoutdemo.client.service.NewsServiceAsync;
+import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
 
 @Presenter(view = NewsEditView.class)
 public class NewsEditPresenter extends PortalPresenter<NewsEditPresenter.Display, NewsEventBus, NewsLayoutBuilder> {

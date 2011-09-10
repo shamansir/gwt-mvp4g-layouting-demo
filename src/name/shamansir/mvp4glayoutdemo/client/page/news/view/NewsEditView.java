@@ -5,13 +5,6 @@ package name.shamansir.mvp4glayoutdemo.client.page.news.view;
 
 import java.util.Date;
 
-import name.shamansir.mvp4glayout.client.ui.Pluggable;
-import name.shamansir.mvp4glayout.client.ui.widget.Plug;
-import name.shamansir.mvp4glayout.client.ui.widget.Portal;
-import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.NewsEditPresenter.Display;
-import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
-import name.shamansir.mvp4glayoutdemo.shared.dao.User;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -22,6 +15,14 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+
+import name.shamansir.mvp4glayout.client.ui.Pluggable;
+import name.shamansir.mvp4glayout.client.ui.widget.Plug;
+import name.shamansir.mvp4glayout.client.ui.widget.Portal;
+
+import name.shamansir.mvp4glayoutdemo.client.page.news.presenter.NewsEditPresenter.Display;
+import name.shamansir.mvp4glayoutdemo.shared.dao.NewsItem;
+import name.shamansir.mvp4glayoutdemo.shared.dao.User;
 
 /**
  * @author Ulric Wilfred <shaman.sir@gmail.com>
