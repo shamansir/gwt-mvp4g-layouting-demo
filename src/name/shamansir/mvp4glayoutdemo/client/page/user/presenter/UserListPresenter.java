@@ -11,7 +11,6 @@ import com.google.inject.Inject;
 import com.mvp4g.client.annotation.Presenter;
 
 import name.shamansir.mvp4glayout.client.SafeCallback;
-import name.shamansir.mvp4glayout.client.exception.NoMatchesException;
 import name.shamansir.mvp4glayout.client.mvp.state.IsStatedPortletView;
 import name.shamansir.mvp4glayout.client.mvp.state.StatedPortletPresenter;
 
@@ -19,6 +18,7 @@ import name.shamansir.mvp4glayoutdemo.client.id.P;
 import name.shamansir.mvp4glayoutdemo.client.page.user.UserEventBus;
 import name.shamansir.mvp4glayoutdemo.client.page.user.view.UserListView;
 import name.shamansir.mvp4glayoutdemo.client.service.UserServiceAsync;
+import name.shamansir.mvp4glayoutdemo.client.service.exception.NoMatchesException;
 import name.shamansir.mvp4glayoutdemo.shared.dao.User;
 
 @Presenter(view = UserListView.class)

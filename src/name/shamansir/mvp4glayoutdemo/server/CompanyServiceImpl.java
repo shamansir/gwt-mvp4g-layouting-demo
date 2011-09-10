@@ -7,10 +7,9 @@ import java.util.Set;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-import name.shamansir.mvp4glayout.client.exception.ItemNotFoundException;
-import name.shamansir.mvp4glayout.client.exception.NoMatchesException;
-
 import name.shamansir.mvp4glayoutdemo.client.service.CompanyService;
+import name.shamansir.mvp4glayoutdemo.client.service.exception.ItemNotFoundException;
+import name.shamansir.mvp4glayoutdemo.client.service.exception.NoMatchesException;
 import name.shamansir.mvp4glayoutdemo.shared.dao.Company;
 
 /**

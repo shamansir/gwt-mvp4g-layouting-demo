@@ -1,4 +1,4 @@
-package name.shamansir.mvp4glayout.client.exception;
+package name.shamansir.mvp4glayoutdemo.client.service.exception;
 
 @SuppressWarnings("serial")
 public class ItemNotFoundException extends Exception {
