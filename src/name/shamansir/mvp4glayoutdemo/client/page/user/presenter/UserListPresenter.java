@@ -2,10 +2,11 @@ package name.shamansir.mvp4glayoutdemo.client.page.user.presenter;
 
 import java.util.Set;
 
+
+import name.shamansir.mvp4glayout.client.SafeCallback;
 import name.shamansir.mvp4glayout.client.exception.NoMatchesException;
 import name.shamansir.mvp4glayout.client.mvp.state.IsStatedPortletView;
 import name.shamansir.mvp4glayout.client.mvp.state.StatedPortletPresenter;
-import name.shamansir.mvp4glayout.util.SafeCallback;
 import name.shamansir.mvp4glayoutdemo.client.id.P;
 import name.shamansir.mvp4glayoutdemo.client.page.user.UserEventBus;
 import name.shamansir.mvp4glayoutdemo.client.page.user.view.UserListView;

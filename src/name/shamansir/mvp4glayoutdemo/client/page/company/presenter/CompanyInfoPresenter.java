@@ -1,7 +1,7 @@
 package name.shamansir.mvp4glayoutdemo.client.page.company.presenter;
 
+import name.shamansir.mvp4glayout.client.SafeCallback;
 import name.shamansir.mvp4glayout.client.mvp.PortletPresenter;
-import name.shamansir.mvp4glayout.util.SafeCallback;
 import name.shamansir.mvp4glayoutdemo.client.id.P;
 import name.shamansir.mvp4glayoutdemo.client.page.company.CompanyEventBus;
 import name.shamansir.mvp4glayoutdemo.client.page.company.view.widget.CompanyPortlet;

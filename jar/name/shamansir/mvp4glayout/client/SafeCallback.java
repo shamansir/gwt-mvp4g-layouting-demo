@@ -1,4 +1,4 @@
-package name.shamansir.mvp4glayout.util;
+package name.shamansir.mvp4glayout.client;
 
 import name.shamansir.mvp4glayout.client.mvp.ChildEventBus;
 

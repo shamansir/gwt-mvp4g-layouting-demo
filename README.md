@@ -8,4 +8,6 @@ Download `eclipse-files.zip` from this repo to import Eclipse Project easily (an
 
 Run configuration:
 
-    -remoteUI "${gwt_remote_ui_server_port}:${unique_id}" -logLevel INFO -war /home/shamansir/Workspace/gwt-mvp4g-layouting-demo/war -server com.google.appengine.tools.development.gwt.AppEngineLauncher -codeServerPort 9997 -port 8888 name.shamansir.mvplayout.mvplayout
+    -remoteUI "${gwt_remote_ui_server_port}:${unique_id}" -logLevel INFO -war
+    <projects-dir>/gwt-mvp4g-layouting-demo/war -server com.google.appengine.tools.development.gwt.AppEngineLauncher 
+    -codeServerPort 9997 -port 8888 name.shamansir.mvp4glayoutdemo.mvplayout

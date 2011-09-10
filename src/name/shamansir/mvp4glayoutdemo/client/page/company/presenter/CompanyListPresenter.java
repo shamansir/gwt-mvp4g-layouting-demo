@@ -2,10 +2,11 @@ package name.shamansir.mvp4glayoutdemo.client.page.company.presenter;
 
 import java.util.Set;
 
+
+import name.shamansir.mvp4glayout.client.SafeCallback;
 import name.shamansir.mvp4glayout.client.mvp.IsPortletView;
 import name.shamansir.mvp4glayout.client.mvp.PortletPresenter;
 import name.shamansir.mvp4glayout.client.ui.Portal.UrlBuilder;
-import name.shamansir.mvp4glayout.util.SafeCallback;
 import name.shamansir.mvp4glayoutdemo.client.page.company.CompanyEventBus;
 import name.shamansir.mvp4glayoutdemo.client.page.company.view.CompanyListView;
 import name.shamansir.mvp4glayoutdemo.client.service.CompanyServiceAsync;

@@ -2,9 +2,10 @@ package name.shamansir.mvp4glayoutdemo.client.page.news.presenter;
 
 import java.util.Set;
 
+
+import name.shamansir.mvp4glayout.client.SafeCallback;
 import name.shamansir.mvp4glayout.client.mvp.IsPortletView;
 import name.shamansir.mvp4glayout.client.mvp.PortletPresenter;
-import name.shamansir.mvp4glayout.util.SafeCallback;
 import name.shamansir.mvp4glayoutdemo.client.id.P;
 import name.shamansir.mvp4glayoutdemo.client.page.news.NewsEventBus;
 import name.shamansir.mvp4glayoutdemo.client.page.news.view.NewsListView;

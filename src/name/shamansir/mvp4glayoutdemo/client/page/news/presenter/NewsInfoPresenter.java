@@ -1,8 +1,8 @@
 package name.shamansir.mvp4glayoutdemo.client.page.news.presenter;
 
+import name.shamansir.mvp4glayout.client.SafeCallback;
 import name.shamansir.mvp4glayout.client.mvp.IsPortletView;
 import name.shamansir.mvp4glayout.client.mvp.PortletPresenter;
-import name.shamansir.mvp4glayout.util.SafeCallback;
 import name.shamansir.mvp4glayoutdemo.client.page.news.NewsEventBus;
 import name.shamansir.mvp4glayoutdemo.client.page.news.view.NewsInfoView;
 import name.shamansir.mvp4glayoutdemo.client.service.NewsServiceAsync;

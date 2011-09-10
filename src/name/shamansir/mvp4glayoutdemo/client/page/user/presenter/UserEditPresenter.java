@@ -3,11 +3,11 @@
  */
 package name.shamansir.mvp4glayoutdemo.client.page.user.presenter;
 
+import name.shamansir.mvp4glayout.client.SafeCallback;
 import name.shamansir.mvp4glayout.client.mvp.state.IsStatedPortalView;
 import name.shamansir.mvp4glayout.client.mvp.state.StatedPortalPresenter;
 import name.shamansir.mvp4glayout.client.ui.Pluggable;
 import name.shamansir.mvp4glayout.client.ui.structure.Place;
-import name.shamansir.mvp4glayout.util.SafeCallback;
 import name.shamansir.mvp4glayoutdemo.client.id.P;
 import name.shamansir.mvp4glayoutdemo.client.page.user.UserEventBus;
 import name.shamansir.mvp4glayoutdemo.client.page.user.layout.UserLayoutBuilder;

@@ -5,7 +5,10 @@
 	<!-- Inherit the core Web Toolkit stuff.                        -->
 	<inherits name='com.google.gwt.user.User' />
 	
-	<!-- <inherits name='com.mvp4g.Mvp4gModule' />  -->
+	<!-- <inherits name='com.mvp4g.Mvp4gModule' />  -->	
+	
+    <source path="client" />
+    <source path="util" />	
 
 </module>
 
