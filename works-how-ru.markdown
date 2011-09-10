@@ -25,10 +25,10 @@ P.S. На данный момент в коде не используются н
 
 [[Содержание]](./index-ru.html)
 
-[PortalsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/PortalsHistoryConverter.java#files
-[ChildEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/ChildEventBus.java#files
-[IsMainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/IsMainEventBus.java#files
-[AMainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/AMainPresenter.java#files
-[CanBuildLayout]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/LayoutBuilder.java#L37
-[LayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/LayoutBuilder.java#files
+[PortalsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/PortalsHistoryConverter.java#files
+[ChildEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/ChildEventBus.java#files
+[IsMainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/IsMainEventBus.java#files
+[AMainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/AMainPresenter.java#files
+[CanBuildLayout]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/LayoutBuilder.java#L37
+[LayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/LayoutBuilder.java#files
 

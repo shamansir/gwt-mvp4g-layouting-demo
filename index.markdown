@@ -17,7 +17,9 @@ For some moment, in [our project](http://experika.com) we have faced with critic
 
 ## What else?
 
-Source code is located at github: [github.com/shamansir/gwt-mvp4g-layouting-demo](https://github.com/shamansir/gwt-mvp4g-layouting-demo).
+Source code of the library is located at github: [github.com/shamansir/gwt-mvp4g-layouting](https://github.com/shamansir/gwt-mvp4g-layouting). You can download it as a `jar` file there in *Downloads* section. Or just click [this link](https://github.com/downloads/shamansir/gwt-mvp4g-layouting/mvp4glayout-0.9-mvp4g1.3.jar).
+
+This demo source code is also located at github: [github.com/shamansir/gwt-mvp4g-layouting-demo](https://github.com/shamansir/gwt-mvp4g-layouting-demo).
 
 In the executable and clickable state (_in action_, you say) you can check it out at GAE: [gwt-mvp4g-layouting-demo.appspot.com](http://gwt-mvp4g-layouting-demo.appspot.com/). Is is a technical example, so there is an absence of design.
 

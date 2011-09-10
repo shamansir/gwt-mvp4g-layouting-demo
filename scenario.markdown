@@ -5,7 +5,9 @@ title: Scenario
 
 ## How I may use it?
 
-In fact, in [`name.shamansir.mvplayout.lib`](https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/lib) package there is a code you may use as a library with ease. I'm not wrapping it with `jar` package, but potentially it is quite reliable for usage — a stable-working complex example illustrates it, and the core idea (not actual and totally-fixed one, however) version works in [our project](http://experika.com)
+You can download the latest version of library at *Downloads* section of [its project](https://github.com/shamansir/gwt-mvp4g-layouting) at github and then add it to the project. To make it work correctly, you need of course to have a compatible version of [`mvp4g`](http://code.google.com/p/mvp4g) in your project (see `jar` name to know which version is compatible) and, currently, [`gwt-log`](http://code.google.com/p/gwt-log).
+
+Potentially this library is quite reliable for usage — a stable-working complex example illustrates it, and the core idea (not actual and totally-fixed one, however) version works in [our project](http://experika.com)
 
 Let me explain how concretely you may use this code if you've taken a decision to build a project based on it. You can see a number of scenarios below: they can be used simultaneously as a conseсuitive ones or a separate ones. Executing them one by one (however, you must repeat some actions of those until-it-is-necessary), you can write a complete application, but you can execute each action separately as application changes its need.
 
@@ -100,27 +102,27 @@ It is difficult to describe everything with words, sometimes it is easier to loo
 [L]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/id/L.java#files
 [O]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/id/O.java#files
 
-[AMainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/AMainPresenter.java#files
-[AMainView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/AMainView.java#files). см. [page/main/view/MainView.java](https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/view/MainView.java#files
-[IsMainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/IsMainEventBus.java#files
-[ChildEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/lib/mvp/ChildEventBus.java#files
-[PortalsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/PortalsHistoryConverter.java#files
-[LayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/LayoutBuilder.java#files
+[AMainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/AMainPresenter.java#files
+[AMainView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/AMainView.java#files).
+[IsMainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/IsMainEventBus.java#files
+[ChildEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/ChildEventBus.java#files
+[PortalsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/PortalsHistoryConverter.java#files
+[LayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/LayoutBuilder.java#files
 
-[PortalPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/PortalPresenter.java#files
-[IsPortalView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/IsPortalView.java#files
-[Portal]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/Portal.java#files
-[PortletPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/PortletPresenter.java#files
-[IsPortletView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/IsPortletView.java#files
-[Portlet]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/Portlet.java#files
-[StatedPortalPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/state/StatedPortalPresenter.java#files
-[StatedPortletPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/state/StatedPortletPresenter.java#files
-[IsStatedPortalView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/state/IsStatedPortalView.java#files
-[StatedPortal]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/StatedPortal.java#files
-[IsStatedPortletView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/mvp/state/IsStatedPortletView.java#files
-[StatedPortlet]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/StatedPortlet.java#files
-[Plug]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/Plug.java#files
-[Plugs]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/Plugs.java#files
+[PortalPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/PortalPresenter.java#files
+[IsPortalView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/IsPortalView.java#files
+[Portal]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Portal.java#files
+[PortletPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/PortletPresenter.java#files
+[IsPortletView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/IsPortletView.java#files
+[Portlet]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Portlet.java#files
+[StatedPortalPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/state/StatedPortalPresenter.java#files
+[StatedPortletPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/state/StatedPortletPresenter.java#files
+[IsStatedPortalView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/state/IsStatedPortalView.java#files
+[StatedPortal]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/StatedPortal.java#files
+[IsStatedPortletView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/state/IsStatedPortletView.java#files
+[StatedPortlet]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/StatedPortlet.java#files
+[Plug]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Plug.java#files
+[Plugs]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Plugs.java#files
 
 [LayoutingDemo]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/LayoutingDemo.java#files
 [LayoutingDemo.L47]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/LayoutingDemo.java#L47
@@ -141,9 +143,9 @@ It is difficult to describe everything with words, sometimes it is easier to loo
 [MainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/presenter/MainPresenter.java#files
 [MainView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/view/MainView.java#files
 
-[Layout]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/Layout.java#files
-[LayoutWithState]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/state/LayoutWithState.java#files
-[Outlet]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/lib/ui/widget/Outlet.java#files
+[Layout]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Layout.java#files
+[LayoutWithState]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/state/LayoutWithState.java#files
+[Outlet]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Outlet.java#files
 
 [LayoutItem]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/layout/LayoutItem.java#files
 [LayoutEdit]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/layout/LayoutEdit.java#files

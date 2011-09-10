@@ -19,7 +19,9 @@ title: GWT + mvp4g — лэйауты, порталы, портлеты
 
 ## Где посмотреть?
 
-Исходный код лежит на github: [github.com/shamansir/gwt-mvp4g-layouting-demo](https://github.com/shamansir/gwt-mvp4g-layouting-demo).
+Исходный код библиотеки расположен на github: [github.com/shamansir/gwt-mvp4g-layouting](https://github.com/shamansir/gwt-mvp4g-layouting). Там же, в разделе Downloads, в виде `jar`-файла. Или просто [нажмите ссылку](https://github.com/downloads/shamansir/gwt-mvp4g-layouting/mvp4glayout-0.9-mvp4g1.3.jar).
+
+Исходный код примера также расположен на github: [github.com/shamansir/gwt-mvp4g-layouting-demo](https://github.com/shamansir/gwt-mvp4g-layouting-demo).
 
 В исполняемом и кликабельном состоянии (что называется _in action_) пример доступен на GAE: [gwt-mvp4g-layouting-demo.appspot.com](http://gwt-mvp4g-layouting-demo.appspot.com/). Это чисто технический пример, поэтому в нём нет никакого дизайна.
 
