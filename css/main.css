@@ -30,12 +30,21 @@ code {
 }
 
 p {
-    line-height: 1.33em;
-    word-spacing: 0.23em;
+    padding-left: 20px;
+}
+
+p, ul li, ol li {
+    line-height: 1.37em;
+    word-spacing: 0.25em;
+}
+
+ul {
+    list-style-type: circle;
 }
 
 ul li, ol li {
-    margin-bottom: 15px;
+    margin-bottom: 7px;
+    padding-left: 10px;
 }
 
 li ul li:first-child,
@@ -57,5 +66,9 @@ body p:last-child > a {
     padding-bottom: 15px;
     color: #666;
     font-size: 0.8em;
+}
+
+img {
+    margin-bottom: 10px;
 }
 
