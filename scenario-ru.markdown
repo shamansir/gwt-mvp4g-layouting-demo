@@ -95,84 +95,84 @@ title: Сценарии
 
 
 
-[P]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/id/P.java#files
-[G]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/id/G.java#files
-[L]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/id/L.java#files
-[O]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/id/O.java#files
+[P]: https://github.com[P]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvp4glayoutdemo/client/id/P.java#files
+[G]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvp4glayoutdemo/client/id/G.java#files
+[L]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvp4glayoutdemo/client/id/L.java#files
+[O]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvp4glayoutdemo/client/id/O.java#files
 
-[AMainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/AMainPresenter.java#files
-[AMainView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/AMainView.java#files).
-[IsMainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/IsMainEventBus.java#files
-[ChildEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/ChildEventBus.java#files
-[PortalsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/PortalsHistoryConverter.java#files
-[LayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/LayoutBuilder.java#files
+[AMainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/AMainPresenter.java#files
+[AMainView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/AMainView.java#files).
+[IsMainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/IsMainEventBus.java#files
+[ChildEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/ChildEventBus.java#files
+[PortalsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/PortalsHistoryConverter.java#files
+[LayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/LayoutBuilder.java#files
 
-[PortalPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/PortalPresenter.java#files
-[IsPortalView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/IsPortalView.java#files
-[Portal]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Portal.java#files
-[PortletPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/PortletPresenter.java#files
-[IsPortletView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/IsPortletView.java#files
-[Portlet]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Portlet.java#files
-[StatedPortalPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/state/StatedPortalPresenter.java#files
-[StatedPortletPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/state/StatedPortletPresenter.java#files
-[IsStatedPortalView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/state/IsStatedPortalView.java#files
-[StatedPortal]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/StatedPortal.java#files
-[IsStatedPortletView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/mvp/state/IsStatedPortletView.java#files
-[StatedPortlet]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/StatedPortlet.java#files
-[Plug]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Plug.java#files
-[Plugs]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Plugs.java#files
+[PortalPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/PortalPresenter.java#files
+[IsPortalView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/IsPortalView.java#files
+[Portal]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/widget/Portal.java#files
+[PortletPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/PortletPresenter.java#files
+[IsPortletView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/IsPortletView.java#files
+[Portlet]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/widget/Portlet.java#files
+[StatedPortalPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/state/StatedPortalPresenter.java#files
+[StatedPortletPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/state/StatedPortletPresenter.java#files
+[IsStatedPortalView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/state/IsStatedPortalView.java#files
+[StatedPortal]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/widget/StatedPortal.java#files
+[IsStatedPortletView]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/mvp/state/IsStatedPortletView.java#files
+[StatedPortlet]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/widget/StatedPortlet.java#files
+[Plug]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/widget/Plug.java#files
+[Plugs]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/widget/Plugs.java#files
 
-[LayoutingDemo]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/LayoutingDemo.java#files
-[LayoutingDemo.L47]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/LayoutingDemo.java#L47
-[LayoutingDemo.L62]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/LayoutingDemo.java#L62
+[LayoutingDemo]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/LayoutingDemo.java#files
+[LayoutingDemo.L47]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/LayoutingDemo.java#L47
+[LayoutingDemo.L62]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/LayoutingDemo.java#L62
 
-[MainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/MainEventBus.java#files
-[UserEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/page/user/UserEventBus.java#files
-[NewsEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/NewsEventBus.java#files
+[MainEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/main/MainEventBus.java#files
+[UserEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/UserEventBus.java#files
+[NewsEventBus]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/NewsEventBus.java#files
 
-[UserHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/history/UserHistoryConverter.java#files
-[UserLayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/layout/UserLayoutBuilder.java#files
-[NewsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/history/NewsHistoryConverter.java#files
-[NewsLayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/layout/NewsLayoutBuilder.java#files
+[UserHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/history/UserHistoryConverter.java#files
+[UserLayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/layout/UserLayoutBuilder.java#files
+[NewsHistoryConverter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/history/NewsHistoryConverter.java#files
+[NewsLayoutBuilder]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/layout/NewsLayoutBuilder.java#files
 
-[MainModule]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/MainModule.java#files
-[UserModule]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvplayout/client/page/user/UserModule.java#files
+[MainModule]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/main/MainModule.java#files
+[UserModule]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/tree/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/UserModule.java#files
 
-[MainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/presenter/MainPresenter.java#files
-[MainView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/main/view/MainView.java#files
+[MainPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/main/presenter/MainPresenter.java#files
+[MainView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/main/view/MainView.java#files
 
-[Layout]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Layout.java#files
-[LayoutWithState]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/state/LayoutWithState.java#files
-[Outlet]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/name/shamansir/mvp4glayout/client/ui/widget/Outlet.java#files
+[Layout]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/widget/Layout.java#files
+[LayoutWithState]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/state/LayoutWithState.java#files
+[Outlet]: https://github.com/shamansir/gwt-mvp4g-layouting/blob/master/name/shamansir/mvp4glayout/client/ui/widget/Outlet.java#files
 
-[LayoutItem]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/layout/LayoutItem.java#files
-[LayoutEdit]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/layout/LayoutEdit.java#files
-[LayoutItem.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/layout/LayoutItem.ui.xml
-[LayoutEdit.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/layout/LayoutEdit.ui.xml
+[LayoutItem]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/layout/LayoutItem.java#files
+[LayoutEdit]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/layout/LayoutEdit.java#files
+[LayoutItem.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/layout/LayoutItem.ui.xml
+[LayoutEdit.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/layout/LayoutEdit.ui.xml
 
-[NewsEditPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/presenter/NewsEditPresenter.java#files
-[NewsEditView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/view/NewsEditView.java#files
-[NewsEditView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/view/NewsEditView.ui.xml
-[NewsInfoPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/presenter/NewsInfoPresenter.java#files
-[NewsInfoView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/view/NewsInfoView.java#files
-[NewsInfoView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/view/NewsInfoView.ui.xml#files
-[NewsListPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/presenter/NewsListPresenter.java#files
-[NewsListView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/view/NewsListView.java#files
-[NewsListView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/view/NewsListView.ui.xml#files
-[UserCardPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/presenter/UserCardPresenter.java#files
-[UserCardView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/news/view/UserCardView.java#files
+[NewsEditPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/presenter/NewsEditPresenter.java#files
+[NewsEditView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/view/NewsEditView.java#files
+[NewsEditView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/view/NewsEditView.ui.xml
+[NewsInfoPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/presenter/NewsInfoPresenter.java#files
+[NewsInfoView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/view/NewsInfoView.java#files
+[NewsInfoView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/view/NewsInfoView.ui.xml#files
+[NewsListPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/presenter/NewsListPresenter.java#files
+[NewsListView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/view/NewsListView.java#files
+[NewsListView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/view/NewsListView.ui.xml#files
+[UserCardPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/presenter/UserCardPresenter.java#files
+[UserCardView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/news/view/UserCardView.java#files
 
-[UserEditPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/presenter/UserEditPresenter.java#files
-[UserEditView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/view/UserEditView.java#files
-[UserEditView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/view/UserEditView.ui.xml#files
-[UserAvatarPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/presenter/UserAvatarPresenter.java#files
-[UserDetailsPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/presenter/UserDetailsPresenter.java#files
-[UserInfoPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/presenter/UserInfoPresenter.java#files
-[UserListPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/presenter/UserListPresenter.java#files
-[UserAvatarView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/view/UserAvatarView.java#files
-[UserAvatarView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/view/UserAvatarView.ui.xml#files
-[UserDetailsView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/view/UserDetailsView.java#files
-[UserDetailsView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/view/UserDetailsView.ui.xml#files
-[UserInfoView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/view/UserInfoView.java#files
-[UserInfoView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvplayout/client/page/user/view/UserInfoView.ui.xml#files
+[UserEditPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/presenter/UserEditPresenter.java#files
+[UserEditView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/view/UserEditView.java#files
+[UserEditView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/view/UserEditView.ui.xml#files
+[UserAvatarPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/presenter/UserAvatarPresenter.java#files
+[UserDetailsPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/presenter/UserDetailsPresenter.java#files
+[UserInfoPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/presenter/UserInfoPresenter.java#files
+[UserListPresenter]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/presenter/UserListPresenter.java#files
+[UserAvatarView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/view/UserAvatarView.java#files
+[UserAvatarView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/view/UserAvatarView.ui.xml#files
+[UserDetailsView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/view/UserDetailsView.java#files
+[UserDetailsView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/view/UserDetailsView.ui.xml#files
+[UserInfoView]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/view/UserInfoView.java#files
+[UserInfoView.ux]: https://github.com/shamansir/gwt-mvp4g-layouting-demo/blob/master/src/name/shamansir/mvp4glayoutdemo/client/page/user/view/UserInfoView.ui.xml#files
 
